@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link rel="stylesheet" href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+  
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+<meta name="keywords" content="Unity">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity Shader第三部分">
+<meta property="og:url" content="http://zentia.site/2018/10/22/Unity-Shader-IntrodutionToTopic-2/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-21T03:05:50.588Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Unity Shader第三部分">
+<meta name="twitter:description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+
+
+
+
+
+
+  <link rel="canonical" href="http://zentia.site/2018/10/22/Unity-Shader-IntrodutionToTopic-2/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Unity Shader第三部分 | </title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title"></span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/10/22/Unity-Shader-IntrodutionToTopic-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Unity Shader第三部分
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="透明效果"><a href="#透明效果" class="headerlink" title="透明效果"></a>透明效果</h2><h3 id="为什么渲染顺序很重要"><a href="#为什么渲染顺序很重要" class="headerlink" title="为什么渲染顺序很重要"></a>为什么渲染顺序很重要</h3><h3 id="Unity-Shader的渲染顺序"><a href="#Unity-Shader的渲染顺序" class="headerlink" title="Unity Shader的渲染顺序"></a>Unity Shader的渲染顺序</h3><h3 id="透明度测试"><a href="#透明度测试" class="headerlink" title="透明度测试"></a>透明度测试</h3><h3 id="透明度混合"><a href="#透明度混合" class="headerlink" title="透明度混合"></a>透明度混合</h3><p>透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。<br><strong>透明度混合：</strong>这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合因子，与已经存储在颜色缓冲区种的颜色进行混合，得到新的颜色。但是，<font color="red"><strong>透明度混合需要关闭深度写入</strong></font>，这使得我们要非常小心物体的渲染顺序。<br>为了进行混合，我们需要使用Unity提供的混合命令Blend。Blend是Unity提供的设置混合模式的命令。想要实现半透明的效果就需要把当前自身的颜色和已经存在于颜色缓冲区种的颜色值进行混合，混合时使用的函数就是由该指令决定的。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>语义</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blend Off</td>
+<td>关闭混合</td>
+</tr>
+<tr>
+<td>Blend SrcFactor DstFactor</td>
+<td>开启混合，并设置混合因子。源颜色（该片元产生的颜色）会乘以SrcFactor，而目标颜色（已经存在于颜色缓存的颜色）会乘以DstFactor，然后把两者相加后在存入颜色缓冲中</td>
+</tr>
+<tr>
+<td>Blend SrcFactor DstFactor, SrcFactorA DstFractorA</td>
+<td>和上面一样，只是使用不同的因子来混合透明通道</td>
+</tr>
+<tr>
+<td>BlendOp BlendOperation</td>
+<td>并非是把源颜色和目标颜色简单相加后混合，而是使用BlendOperation对它们进行其他操作</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>我们介绍第二种语义，即Blend SrcFactor DstFactor来进行混合。需要注意的是，这个命令在设置混合因子的同时也开启了混合模式。这是因为，只有开启了混合之后，设置片元的透明通道才有意义，而Unity在我们使用Blend命令的时候就自动帮我们打开了。很多初学者抱怨为什么自己的模型没有任何透明效果，这往往是因为他们没有在Pass中使用Blend命令，一方面是没有设置混合因子，更重要的是没有打开混合模式。我们会把源颜色的混合因子SrcFactor设为SrcAlpha，而目标颜色的混合因子DstFactor设为OneMinusSrcAlpha。这意味着，经过混合后新的颜色是：</p>
+<script type="math/tex; mode=display">DstColor_{new} = SrcAlpha*SrcColor+(1-SrcAlpha)*DstColor_{old}</script><h3 id="开启深度写入的半透明效果"><a href="#开启深度写入的半透明效果" class="headerlink" title="开启深度写入的半透明效果"></a>开启深度写入的半透明效果</h3><h3 id="ShaderLab的混合命令"><a href="#ShaderLab的混合命令" class="headerlink" title="ShaderLab的混合命令"></a>ShaderLab的混合命令</h3><h4 id="混合等式和参数"><a href="#混合等式和参数" class="headerlink" title="混合等式和参数"></a>混合等式和参数</h4><h4 id="混合操作"><a href="#混合操作" class="headerlink" title="混合操作"></a>混合操作</h4><h4 id="常见和混合类型"><a href="#常见和混合类型" class="headerlink" title="常见和混合类型"></a>常见和混合类型</h4><h3 id="双面渲染的透明效果"><a href="#双面渲染的透明效果" class="headerlink" title="双面渲染的透明效果"></a>双面渲染的透明效果</h3><h4 id="透明度测试的双面渲染"><a href="#透明度测试的双面渲染" class="headerlink" title="透明度测试的双面渲染"></a>透明度测试的双面渲染</h4><h4 id="透明度混合的双面渲染"><a href="#透明度混合的双面渲染" class="headerlink" title="透明度混合的双面渲染"></a>透明度混合的双面渲染</h4><h2 id="渲染路径Rendering-Path"><a href="#渲染路径Rendering-Path" class="headerlink" title="渲染路径Rendering Path"></a>渲染路径Rendering Path</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>LightMode</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Always</td>
+<td>不管使用哪种渲染路径，该Pass总是会被渲染，但不会计算任何光照</td>
+</tr>
+<tr>
+<td>ForwardBase</td>
+<td>用于前向渲染。该Pass会计算环境光、最重要的平行光、逐顶点/SH光源和Lightmaps</td>
+</tr>
+<tr>
+<td>ForwardAdd</td>
+<td>用于前向渲染。该Pass会计算额外的逐像素光源，每个Pass对应一个光源</td>
+</tr>
+<tr>
+<td>Deferred</td>
+<td>用于延迟渲染。该Pass会渲染G缓冲（G-buffer）</td>
+</tr>
+<tr>
+<td>ShadowCaster</td>
+<td>把物体的深度信息渲染到阴影映射纹理（shadowmap）或一张深度纹理中</td>
+</tr>
+<tr>
+<td>PrepassBase</td>
+<td>用于遗留的延迟渲染。该Pass会渲染法线和高光反射的指数部分</td>
+</tr>
+<tr>
+<td>PrepassFinal</td>
+<td>用于遗留的延迟渲染。该Pass通过合并纹理、光照和自发光来渲染得到最后的颜色</td>
+</tr>
+<tr>
+<td>Vertex、VertexLMRGBM和VertexLX</td>
+<td>用于遗留的顶点照明渲染</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Unity在处理多光源的情况时为我们提供了三种模式；修改的地方在Edit-&gt;Project Settings—Player—Other Settings—Redering Path</p>
+<ul>
+<li>顶点光Vertex Lit</li>
+<li>方向性Forward(默认)</li>
+<li>延迟照明 Deferred Lighting</li>
+</ul>
+<p>shader默认使用Forward</p>
+<h4 id="前向渲染路径"><a href="#前向渲染路径" class="headerlink" title="前向渲染路径"></a>前向渲染路径</h4><p>每进行一次完整的前向渲染，需要渲染该对象的渲染图元，并计算两个缓冲区的信息：一个是颜色缓冲区，一个是深度缓冲区。利用深度缓冲区来决定一个片元是否可见，如果可见就更新颜色缓冲区的的颜色值。我们可以用下面的伪代码来描述前向渲染路径的大致过程：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Pass </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">for</span> (each primitive in <span class="keyword">this</span> model) </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (failed in depth test)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果没有通过深度测试，说明该片元是不可见的</span></span><br><span class="line">            discard;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 如果该片元可见</span></span><br><span class="line">            <span class="comment">// 就进行光照计算</span></span><br><span class="line">            float4 color = Shading(materialInfo, pos, normal, lightDir, viewDir);</span><br><span class="line">            <span class="comment">// 更新帧缓冲</span></span><br><span class="line">            writeFrameBuffer(fragment, color);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于每个逐像素光源，我们都需要进行上面一次完整的渲染流程。如果一个物体在多个逐像素光源的影响区域内，那么该物体就需要执行多个Pass，每个Pass计算一个逐像素光源的光照结果，然后在帧缓冲中把这些光照结果混合起来得到最终的颜色值。假设，场景中有N个物体，每个物体物体受M个光源的影响，那么要渲染整个场景一共需要N*M个Pass。可以看出，如果有大量逐像素光照，那么需要执行的Pass数目也会很大。因此，渲染引擎通常会限制每个物体的逐像素光照的数目。</p>
+<h5 id="Unity中的前向渲染"><a href="#Unity中的前向渲染" class="headerlink" title="Unity中的前向渲染"></a>Unity中的前向渲染</h5><p>事实上，一个Pass不仅仅可以用来计算逐像素光照，它也可以用来计算逐顶点等其他光照。这取决于光照计算所处流水线阶段以及计算时使用的数学模型。当渲染一个物体时，Unity会计算哪些光源照亮了它，以及这些光源照亮该物体的方式。<br>在Unity中，前向渲染路径有3种处理光照（即照亮物体）的方式：逐顶点处理、逐像素处理，球谐函数（Spherical Harmonics, SH）处理。</p>
+<h4 id="顶点照明渲染路径"><a href="#顶点照明渲染路径" class="headerlink" title="顶点照明渲染路径"></a>顶点照明渲染路径</h4><h4 id="延迟渲染路径"><a href="#延迟渲染路径" class="headerlink" title="延迟渲染路径"></a>延迟渲染路径</h4><p>这是一种可以按照你的需求在场景中使用任意数目的光源的方法，而且这个方法还能同时保证性能仍然保持在一个合理的范围。它也不限制阴影的数量，如果场景中的对象实在光照范围之内的话，也不会增加额外的渲染批次（如果对象投影阴影的话则是例外）。</p>
+<p>在游戏中的实时光照，一般有三种常用的方法</p>
+<ol>
+<li>一遍渲染多个光源：所有光源都在一个着色器中进行。但一个着色器指令数量有限，所以这个技术只适用于光源数量较少的情况。</li>
+<li>多遍渲染多光源</li>
+<li>延迟渲染</li>
+</ol>
+<h3 id="菲涅尔反射"><a href="#菲涅尔反射" class="headerlink" title="菲涅尔反射"></a>菲涅尔反射</h3><p>在实时渲染中，经常会使用<strong>菲涅耳反射（Fresnelreflection）</strong>来根据视角方向控制反射程度。菲涅耳反射描述了一种光学现象，即当光线照射到物体表面上时，一部分发生反射，一部分进入物体内部，发生折射或散射。被反射的光和入射光之间存在一定的比率关系，这个比率关系可以通过菲涅耳等式进行计算。一个经常使用的例子是，当你站在湖边，直接低头看脚边的水面时，你会发现水几乎是透明的，你可以直接看到水底的小鱼和石子；但是，当你抬头看远处的水面时，会发现几乎看不到水下的情景，而只能看到水面反射的环境。这就是所谓的菲涅耳效果。事实上，不仅仅是水、玻璃这样的反光物体具有菲涅耳效果，几乎任何物体都或多或少包含了菲涅耳效果，这是基于物理的渲染中非常重要的一项高光反射计算因子。<br>那么，如何计算菲涅耳反射呢？这就需要使用菲涅耳等式。真实世界的菲涅耳等式是非常复杂的，但在实时渲染中，通常会使用一些近似公式来计算。其中一个著名的近似公式就是Schlick 菲涅耳近似等式：</p>
+<font size="4" color="red">
+$F_{Schlick}(v,n) = F_{0}+(1-F_{0})(1-v \cdot n)^5$
+</font>
+
+<p>其中，$F_{0}$是一个反射系数，用于控制菲涅耳反射的强度， v 是视角方向， n 是表面法线。另一个应用比较广泛的等式是Empricial菲涅耳近似等式：</p>
+<font size="4" color="red">
+$F_{Empricial}(v,n) = max(0,min(1,bias+scale x (1-v \cdot n)^power))$
+</font>
+其中，bias、scale和power是控制项。
+使用上面的菲涅尔近似等式，可以在边界处模拟反射光强和折射光强/漫反射光强之间的变化。在许多车漆、水面等材质的渲染中，会经常用到菲涅尔反射来模拟更加真实的反射。
+
+### 广告牌
+
+广告牌技术的本质就是构建旋转矩阵，而我们知道一个变换矩阵需要3个基向量。广告牌技术使用的基向量通常就是**表面法线（normal）、指向上的方向（up）以及指向右的方向（right）**。除此之外，我们还需要指定一个**锚点（anchor location）**，这个锚点在旋转过程中是固定不变的，以此来确定多边形在空间中的位置。
+广告牌技术的难点在于，如何根据需求构建3个相互正交的基向量。计算过程通常是，
+CPU写法：
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Vector3 Normal;</span><br><span class="line">Quaternion direction;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    direction = Quaternion.FromToRotation(<span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>), Normal);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    transform.rotation = Camera.main.transform.rotation * direction;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+## 屏幕后处理效果
+
+### 建立一个基本的屏幕后处理脚本系统
+
+    MonoBehaviour.OnRenderImage(RenderTexture src, RenderTexture dest);
+
+当在脚本中声明该函数后，Unity会把当前渲染得到的图像存储在第一个参数对应的源渲染纹理中，把第二参数对应的渲染纹理显示到屏幕上。
+
+    public static void Blit(Texture src, RenderTexture dest);
+    public static void Blit(Texture src, RenderTextrue dest, Material mat, int pass = -1);
+    public static void Blit(Texture src, Material mat, int pass = -1);
+
+参数pass的默认值胃-1，表示将会依次调用Shader内的所有Pass。否则，只会调用给定索引的Pass。
+
+### 边缘检测
+
+#### 卷积
+
+在图像处理中，卷积操作指的是使用一个卷积核（kernel）一张图像中的每个像素进行一些列操作。卷积核通常是一个四方形网格结构，该区域内每个方格都有一个权重值。当对图像中的某个像素进行卷积时，我们会把卷积核的中心放置于该像素上，翻转核之后再依次计算核中每个元素和其覆盖的图像像素值的乘积并求和，得到的结果就是该位置的新像素值。
+
+这样的过程虽然简单，但可以实现很多常见的图像处理效果，例如图像模糊、边缘检测等。
+
+#### 常见的边缘检测算子
+
+卷积操作的神奇之处在于选择的卷积核。那么，用于边缘检测的卷积核（也被称为边缘检测算子）应该张什么样呢？再回答这个问题前，我们可以首先回想一下边到底是如何形成的。如果相邻像素之间存在差别明显的颜色、亮度、纹理等属性，我们就会认为它们之间应该有一条编辑。这种相邻像素之间的差值可以用**梯度（gradient）**来表示，可以想想得到，边缘处的梯度绝对值会比较大。基于这样的理解，有几种不同的边缘检测算子被先后提出来。
+
+Roberts
+Gx{
+    -1,0,   
+     0,1, 
+}
+Gy{
+    0,-1,
+    1, 0,   
+}
+
+Prewitt
+Gx
+{
+    -1,-1,-1,   
+     0, 0, 0,
+     1, 1, 1,
+}
+Gy
+{
+    -1, 0, 1,
+    -1, 0, 1,
+    -1, -, 1,
+}
+
+Sobel
+Gx
+{
+    -1,-2,-1,
+     0, 0, 0,
+     1, 2, 1,
+}
+Gy
+{
+    -1, 0, 1,
+    -2, 0, 2,
+    -1, 0, 1,
+}
+3中常见的边缘检测算子，它们都包含了两个方向的卷积核，分别用于检测水平方向和竖直方向上的边缘信息。再进行边缘检测时，我们需要对每个像素分别进行一次卷积计算，得到两个方向上的梯度值Gx和Gy，而整体的梯度可按下面的公式计算而得：
+
+$$ G = \sqrt{G^2_x + G^2_y} $$ 
+
+由于上述符号包含了开根号操作，出于性能考虑，我们有时会使用绝对值操作来代替开根号操作：
+
+$$ G=|G_x|+|G_y| $$
+
+当得到梯度后，我们就可以据此来判断哪些像素对应了边缘（梯度值越大，越有可能是边缘点）。
+
+## 使用深度和法线纹理
+
+### 消融
+
+噪声纹理+透明度测试，我们使用对噪声纹理采样的结果和某个控制消融程度的阀值比较，如果小于阀值，就使用clip函数把它对应的像素裁减掉。
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Test&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _BurnAmount(&quot;Burn Amount&quot;, Range(0.0, 1.0)) = 0.0 // 控制消融程度，0为正常，1完全消融</span><br><span class="line">        _LineWith(&quot;Burn Line Width&quot;, Range(0.0, 0.2)) = 0.1 // 模拟烧焦效果的线宽，值越大，火焰边缘的蔓延范围越宽</span><br><span class="line">        _MainText (&quot;Base (RGB)&quot;, 2D) = &quot;white&quot; &#123;&#125; // 漫反射纹理</span><br><span class="line">        _BumpMap (&quot;Normal Map&quot;, 2D) = &quot;bump&quot; &#123;&#125; // 法线纹理</span><br><span class="line">        _BurnFirstColor(&quot;Burn First Color&quot;, Color) = (1,0,0,1) // 火焰边缘颜色</span><br><span class="line">        _BurnSecondColor(&quot;Burn Second Color&quot;, Color) = (1,0,0,1) // 火焰边缘颜色</span><br><span class="line">        _BurnMap(&quot;Burn Map&quot;, 2D) = &quot;white&quot; &#123;&#125; // 消融纹理</span><br><span class="line">    &#125;   </span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma vertex frag</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+### 水波效果
+
+在模拟实时水面的过程中，往往也会使用噪声纹理。此时，噪声纹理通常会用作一个高度图，以不断修改水面的法线方向。为了模拟水不断流动的效果，我们会使用和时间相关的变量来对噪声纹理进行采样，当得到法线信息后，在进行正常的反射+折射计算，得到最后的水面波动效果。
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">SubShader </span>&#123;</span><br><span class="line">    <span class="class">Tags </span>&#123;<span class="string">"Queue"</span>=<span class="string">"Transparent"</span> <span class="string">"RenderType"</span>=<span class="string">"Opaque"</span>&#125;</span><br><span class="line">    <span class="class">GrabPass </span>&#123;<span class="string">"_RefractionTex"</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+首先把SubShader的标签中渲染队列设置成Transparent，并把后面的RenderType设置为Opaque。把Queue设置成Transparent可以确保该物体渲染时，其他所有不透明的物体都已经被渲染到屏幕上了，否则就可能无法正确得到“透过水面看到的图像”。而设置RenderType则是为了在使用着色器替换（Shader Replacement）时，该物体可以在需要时被正确渲染。
+
+### 减少draw call数目
+
+#### 动态批处理
+
+基本原理：每一帧把可以进行批处理的模型网格进行合并，再把合并后的模型数据传递给GPU，然后使用同一个材质对其渲染。动态批处理的一个好处是实现方便，另一个好处是，经过批处理的物体仍然可以移动，这是由于在处理每帧时Unity都会重新合并一次网格。
+
+条件限制：
+
+- 能够进行动态批处理的网格的顶点属性规模要小于900。例如，如果shader中需要使用顶点位置、发现和纹理坐标这3个顶点属性，那么要想让模型能够被动态批处理，它的顶点数目不能超过300。
+- 多Pass的shader会中断批处理。在前向渲染中，我们有时需要使用额外的Pass来为模型添加更多的光照效果，但这样一来模型就不会被动态批处理了。
+
+#### 静态批处理
+
+#### 共享材质
+
+#### 批处理的注意事项
+
+### 16.5 减少需要处理的顶点数目
+
+#### 16.5.1 优化几何体
+
+移除不必要的硬边以及纹理衔接，避免边界平滑和纹理分离。
+
+#### 16.5.2 模型的LOD技术
+
+
+
+#### 16.5.3 遮挡剔除技术
+
+### 16.6 减少需要处理的片元数目
+
+#### 控制绘制顺序
+
+#### 时刻警惕透明物体
+
+#### 减少实时光照和阴影
+
+### 影响性能的因素
+
+首先，在学习如何优化之前，我们得先了解影响游戏性能的因素有哪些。对于一个游戏来说，它主要需要使用两种计算资源：CPU和GPU。它们会互相合作，来让我们的游戏可以在预期的帧率和分辨率下工作。其中，CPU主要负责保证帧率，GPU主要负责分辨率相关的一些处理。
+据此，可以把造成游戏性能瓶颈的主要原因分成以下几个方面。
+（1）CPU
+- 过多的draw call
+- 复杂的脚本或者物理模拟
+（2）GPU
+- 顶点处理
+   过多的顶点
+   过多的逐顶点计算
+- 片元处理
+   过多的片元（既可能是由于分辨率造成的，也可能是由于overdraw造成的）。
+   过多的逐片元计算。
+- 带宽
+   使用了尺寸很大且未压缩的纹理
+   分辨率过高的帧缓存
+
+对于CPU来说，限制它的主要是每一帧draw call的数目。简单来说，就是CPU在每次通知GPU进行渲染之前，都需要提前准备好顶点数据（如位置、法线、颜色、纹理坐标等），然后调用一系列API把它们放到GPU可以访问到的指定位置，最后，调用一个绘制命令，来告诉GPU。而调用一次绘制命令的时候，就会产生一个draw call。过多的draw call会造成CPU的性能瓶颈，这是因为每次调用draw call时，CPU往往都需要改变很多渲染状态的设置，而这些操作是非常耗时的。如果一帧中需要的draw call数目过多的话，就会导致CPU把大部分时间都花费在提交draw call的工作上面了。当然，其他原因也可能造成CPU瓶颈，例如物理、布料模拟、蒙皮、粒子模拟等，这些都是计算量很大的操作。
+而对于GPU来说，它负责整个渲染流水线。它从处理CPU传递过来的模拟数据开始，进行顶点着色器、片元着色器等一系列工作，最后输出屏幕上的每个像素。因此，GPU的性能瓶颈和需要处理的顶点数目、屏幕分辨率、显存等因素有关。而相关的优化策略可以减少处理的数据（包括顶点数目和片元数目）
+
+|信息名称|描述|
+|--|--|
+|每帧的时间和FPS|在Graphic的右侧显示，给出了处理和渲染一帧所需的时间，以及FPS数目|
+|Batches|一帧中需要进行的批处理数目|
+|Saved by batching|合并的批处理数目，这个数字表明了批处理为我们节省了多少的draw call|
+
+
+### 节省带宽
+
+#### 减少纹理大小
+
+- 纹理的长宽比最好是正方形，长宽值最好是2的整数幂
+- 多级渐远纹理技术（mipmapping）和纹理压缩。
+
+#### 利用分辨率缩放
+
+### 减少计算复杂度
+
+#### Shader的LOD技术
+
+#### 代码方面的优化
+
+#### 根据硬件进行缩放
+
+## 基于物理的渲染
+
+### 双向反射分布函数（BRDF）
+
+**辐射率（radiance）**是单位面积、单位方向上光源的辐射通量，通常用L表示，被认为是对单一光线的亮度和颜色评估。<font color="red">在渲染中，我们通常会基于表面的入射光线的入射辐射率 $ L_i  $ 来计算出射辐射率 $L_{0}$ ，这个过程往往也称为**着色（shading）**过程。</font>
+而要得到出射辐射率$L_{o}$，我们需要知道物体表面一点是如何和光进行交互的。而这个过程就可以使用**BRDF（Bidirectional Reflectance Distribution Function，双向反射分布函数）**来定量分析。在大多数情况下，BRDF可以用$f(I,v)$来表示，其中I为入射方向和v为观察方向（双向的含义）。这种情况下，绕着表面法线旋转入射方向或观察方向并不会影响BRDF的结果，这种BRDF被称为是**各项同性（isotropic）**的BRDF。与之对应的则是**各项异性（anisotropic）**的BRDF。
+
+### 反射率方程
+<font size="4">$L_{o}(p,w_{o}) = \int_\Omega(k_{d}{c \over \pi} + k_{s}{DGF \over 4(w_{o} \cdot n)(w_{i} \cdot n)})L_{i}(p,w_{i})(w_{i} \cdot n)dw_{i}$</font>
+
+<p>这是PBR的核心，也是主要的劝退点。<br>翻译成自然语言，大概是这样的：</p>
+<font size="4">$输出颜色 = \int_\Omega(漫反射比例{纹理颜色 \over \pi} + 镜面反射比例{镜面高光 x 几何遮蔽 x 菲涅尔效应 \over 4(view_{Dir} \cdot normal)(lightDir \cdot normal)})光源颜色(lightDir,normal)dw_{i}$</font>
+
+<p>先解释下这个公式遗留的部分。半球积分($\int_\Omega………dw_{i}$)</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Unity/" rel="tag"># Unity</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/21/Unity-Shader-IntroductionToTopic1/" rel="next" title="Unity Shader第二部分">
+                <i class="fa fa-chevron-left"></i> Unity Shader第二部分
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/09/fiction/" rel="prev" title="序章">
+                序章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives">
+                
+                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#透明效果"><span class="nav-number">1.</span> <span class="nav-text">透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么渲染顺序很重要"><span class="nav-number">1.1.</span> <span class="nav-text">为什么渲染顺序很重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity-Shader的渲染顺序"><span class="nav-number">1.2.</span> <span class="nav-text">Unity Shader的渲染顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度测试"><span class="nav-number">1.3.</span> <span class="nav-text">透明度测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度混合"><span class="nav-number">1.4.</span> <span class="nav-text">透明度混合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启深度写入的半透明效果"><span class="nav-number">1.5.</span> <span class="nav-text">开启深度写入的半透明效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShaderLab的混合命令"><span class="nav-number">1.6.</span> <span class="nav-text">ShaderLab的混合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合等式和参数"><span class="nav-number">1.6.1.</span> <span class="nav-text">混合等式和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合操作"><span class="nav-number">1.6.2.</span> <span class="nav-text">混合操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见和混合类型"><span class="nav-number">1.6.3.</span> <span class="nav-text">常见和混合类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双面渲染的透明效果"><span class="nav-number">1.7.</span> <span class="nav-text">双面渲染的透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度测试的双面渲染"><span class="nav-number">1.7.1.</span> <span class="nav-text">透明度测试的双面渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度混合的双面渲染"><span class="nav-number">1.7.2.</span> <span class="nav-text">透明度混合的双面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染路径Rendering-Path"><span class="nav-number">2.</span> <span class="nav-text">渲染路径Rendering Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前向渲染路径"><span class="nav-number">2.0.1.</span> <span class="nav-text">前向渲染路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unity中的前向渲染"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">Unity中的前向渲染</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顶点照明渲染路径"><span class="nav-number">2.0.2.</span> <span class="nav-text">顶点照明渲染路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延迟渲染路径"><span class="nav-number">2.0.3.</span> <span class="nav-text">延迟渲染路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菲涅尔反射"><span class="nav-number">2.1.</span> <span class="nav-text">菲涅尔反射</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/three/three.min.js"></script>
+
+  
+  <script src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+  <script src="/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
+  
+
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>
