@@ -28,9 +28,6 @@
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
 
 
 
@@ -132,14 +129,14 @@
 
 
   <meta name="description" content="更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。 对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。 减少FPS，在ProjectSetting-&amp;gt; Quality中的VSync Count 参数会影响你的FPS，EveryVBlank相当于FPS=60，EverySe">
-<meta name="keywords" content="Unity3D">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity优化">
 <meta property="og:url" content="http://zentia.site/2018/04/12/Unity-Optimize/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。 对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。 减少FPS，在ProjectSetting-&amp;gt; Quality中的VSync Count 参数会影响你的FPS，EveryVBlank相当于FPS=60，EverySe">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.585Z">
+<meta property="og:updated_time" content="2019-03-22T05:03:26.470Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity优化">
 <meta name="twitter:description" content="更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。 对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。 减少FPS，在ProjectSetting-&amp;gt; Quality中的VSync Count 参数会影响你的FPS，EveryVBlank相当于FPS=60，EverySe">
@@ -425,7 +422,7 @@
 <li>当我们设置了FPS后，再调整下Fixed timestep这个参数，这个参数在ProjectSetting-&gt;Time中，目的是减少物理计算的次数，来提高游戏性能。</li>
 <li>尽量少使用Update LateUpdate FixedUpdate，这样也可以提升性能和节省电量。多使用事件（不是SendMessage，使用自己写的，或者C#中的事件委托）。</li>
 <li>待机时，调整游戏的FPS为1，节省电量。</li>
-<li>图集大小最好不要高于1024，否则游戏安装之后、低端机直接崩溃、原因是手机系统版本低于2.2、超过1000的图集无法读取、导致。<br>2.2 以上没有遇见这个情况。<br>注意手机的RAM 与 ROM、小于 512M的手机、直接放弃机型适配。</li>
+<li>图集大小最好不要高于1024，否则游戏安装之后、低端机直接崩溃、原因是手机系统版本低于2.2、超过1000的图集无法读取、导致。2.2 以上没有遇见这个情况。注意手机的RAM 与 ROM、小于 512M的手机、直接放弃机型适配。</li>
 </ol>
 <h2 id="VSCount-垂直同步"><a href="#VSCount-垂直同步" class="headerlink" title="VSCount 垂直同步"></a>VSCount 垂直同步</h2><p>Unity3D中新建一个空场景的时候，帧速率（FPS总是很低），大概在60~70之间。在Unity3D中当运行场景打开Profiler的时候，我们会看到VSync 这一项占了很大的比重。<br>这个是什么呢，这个就是垂直同步。<br>我们可以关闭VSync来提高帧速率，选择edit-&gt;project settings-&gt;Quality。<br>在右侧面板中可以找到VSync Count,把它选成Don’t Sync。<br>这就关闭了VSync(垂直同步)，现在在运行场景看看，帧速率是不是提高很多。<br>现在来说说什么是垂直同步，要知道什么是垂直同步，必须要先明白显示器的工作原理，<br>显示器上的所有图像都是一线一线的扫描上去的，无论是隔行扫描还是逐行扫描，<br>显示器都有两种同步参数——水平同步和垂直同步。</p>
 <p>什么叫水平同步？什么叫垂直同步？<br>垂直和水平是CRT中两个基本的同步信号，水平同步信号决定了CRT画出一条横越屏幕线的时间，<br>垂直同步信号决定了CRT从屏幕顶部画到底部，再返回原始位置的时间，<br>而恰恰是垂直同步代表着CRT显示器的刷新率水平。</p>
@@ -440,10 +437,9 @@
 <p>需要注意的是：需要合并的纹理应该是物体在场景中距离相近的，如果物体在场景中的距离较远，<br>则不建议合并纹理，因为这样做很有可能非但起不到优化的作用，反而降低了运行效率。 </p>
 <p>mesh合并<br>分为2种方式合并</p>
 <ol>
-<li>自带的合并必须勾选静态。</li>
-</ol>
+<li><p>自带的合并必须勾选静态。</p>
 <p>所有被勾选了“Static”的GameObject，其中的Mesh Filter中的mesh都会被合并到 “Combined Mesha (root: scene)” 中</p>
-<ol>
+</li>
 <li><p>也可以用脚本来合并mesh 。</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Collections; </span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span>  <span class="title">MyClass</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span> (<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line"></span><br><span class="line">        MeshFilter [] meshFilters = GetComponentsInChildren&lt;MeshFilter&gt; ();</span><br><span class="line">        CombineInstance[] combine = <span class="keyword">new</span> CombineInstance[meshFilters.Length];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; meshFilters.Length; i++) </span><br><span class="line">        &#123;</span><br><span class="line">            combine[i].mesh = meshFilters[i].sharedMesh;</span><br><span class="line">            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;</span><br><span class="line">            meshFilters[i].gameObject.active = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        transform.GetComponent&lt;MeshFilter&gt;().mesh = <span class="keyword">new</span> Mesh ();</span><br><span class="line">        transform.GetComponent&lt;MeshFilter&gt;().mesh.CombineMeshes (combine);</span><br><span class="line">        transform.gameObject.active = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
@@ -530,7 +526,6 @@
 <p>Static batching, on the other hand, allows the engine to reduce draw calls for geometry of any size (provided it does not move and shares the same material). Static batching is significantly more efficient than dynamic batching. You should choose static batching as it will require less CPU power.<br>相对而言，静态批处理操作允许引擎对任意大小的几何物体进行批处理操作来降低绘制调用（只要这些物体不移动，并且拥有相同的材质）。因此，静态批处理比动态批处理更加有效，你应该尽量低使用它，因为它需要更少的CPU开销。</p>
 <p>In order to take advantage of static batching, you need explicitly specify that certain objects are static and willnot move, rotate or scale in the game. To do so, you can mark objects as static using the Static checkbox in the Inspector:<br>为了更好地使用静态批处理，你需要明确指出哪些物体是静止的，并且在游戏中永远不会移动、旋转和缩放。想完成这一步，你只需要在检测器（Inspector）中将Static复选框打勾即可；<br>Using static batching will require additional memory for storing the combined geometry. If several objects shared the same geometry before static batching, then a copy of geometry will be created for each object, either in the Editor or at runtime. This might not always be a good idea - sometimes you will have to sacrifice rendering performance by avoiding static batching for some objects to keep a smaller memory footprint. For example, marking trees as static in a dense forest level can have serious memory impact.<br>使用静态批处理操作需要额外的内存开销来储存合并后的几何数据。在静态批处理之前，如果一些物体共用了同样的几何数据，那么引擎会在编辑以及运行状态对每个物体创建一个几何数据的备份。这并不总是一个好的想法，因为有时候，你将不得不牺牲一点渲染性能来防止一些物体的静态批处理，从而保持较少的内存开销。比如，将浓密森里中树设为Static，会导致严重的内存开销。</p>
 <p>Static batching is only available in Unity iOS Advanced.<br>静态批处理目前只支持Unity iOS Advanced。</p>
-<p>备注：最近一直在研究Unity3D的性能优化问题，这段时间可能会多翻译这方面的文章。</p>
 <p>前两天，MadFinger，就是当今iOS与Android上画质最牛逼闪闪的游戏之一——ShadowGun的开发商，令人惊异地放出了一个ShadowGun的样例关卡以及若干可免费使用的Shader，国外同行们的分享精神真的是令人赞叹不已。原文在这里，以下是我的一些摘录和笔记。</p>
 <p>首先是一些优化常识。针对图形方面的优化主要包括三角形数量，纹理所占内存，以及Shader，前两项基本没什么好讲的，针对设备机能的限制制定相应的指标即可，所以Shader就成为了图形性能优化的关键。</p>
 <p>Alpha blending</p>
@@ -572,12 +567,66 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unity3D/" rel="tag"># Unity3D</a>
+            <a href="/tags/Unity/" rel="tag"># Unity</a>
           
         </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+            
+          </div>
+        
+        </div>
       
       
 
@@ -666,7 +715,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">168</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -691,7 +740,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -806,7 +861,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">51</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1367,6 +1430,16 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
 
   
 

@@ -28,9 +28,6 @@
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
 
 
 
@@ -349,7 +346,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/time/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -369,7 +366,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/time/" class="post-title-link" itemprop="url">time</a>
+                <a href="/2017/10/30/port-security-1/" class="post-title-link" itemprop="url">port-security</a>
               
             
           </h2>
@@ -419,14 +416,13 @@
         
           
             <p>
-              设置时间同步timedatectl set-ntp yes
-
+              
               
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/time/#more" rel="contents">
+              <a class="btn" href="/2017/10/30/port-security-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -486,7 +482,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/systemctl/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -506,7 +502,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/systemctl/" class="post-title-link" itemprop="url">systemctl</a>
+                <a href="/2017/10/30/port-security/" class="post-title-link" itemprop="url">端口映射</a>
               
             
           </h2>
@@ -556,13 +552,13 @@
         
           
             <p>
-              显示防火墙状态：systemctl status firewalld.service关闭防火墙：systemctl stop firewalld.service开启防火墙：systemctl start firewalld.service上面的firewalld的，不过我后来安装了iptables换
+              端口安全（Port Security），从基本原理上讲，Port Security特性会通过MAC地址表记录连接到交换机端口的以太网MAC地址（即网卡号），并只允许某个MAC地址通过本端口通信。其它MAC地址发送的数据包通过此端口是，端口安全特性会组织它。使用端口安全特性可以防止未经允许的设备访问网
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/systemctl/#more" rel="contents">
+              <a class="btn" href="/2017/10/30/port-security/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -622,7 +618,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-set/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/ps/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -642,7 +638,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/server-set/" class="post-title-link" itemprop="url">服务器搭建和日常维护</a>
+                <a href="/2017/10/30/ps/" class="post-title-link" itemprop="url">ps</a>
               
             
           </h2>
@@ -692,13 +688,13 @@
         
           
             <p>
-              1 概述2 系统软硬件要求软件：所有的服务器程序都可以在linux和windows系统上。推荐使用linux系统。我们一般使用的系统是suse10.1，不过按要求，我们在tlinux的服务器上实验编译并运行了我们的所有服务器成。Gcc版本：gcc(GCC)4.8.5数据库使用MYSQL。版本：5.6
+              USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDroot      44936 99.1  1.4 148660 14340 ?        R    10月28 2004:47 ./XGMS_d g
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/server-set/#more" rel="contents">
+              <a class="btn" href="/2017/10/30/ps/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -758,7 +754,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-install/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/28/poll/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -778,7 +774,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/server-install/" class="post-title-link" itemprop="url">服务器安装说明</a>
+                <a href="/2017/10/28/poll/" class="post-title-link" itemprop="url">poll</a>
               
             
           </h2>
@@ -828,17 +824,15 @@
         
           
             <p>
-              
-解压服务器执行文件xx_svr_binfull_XXXX.tgz到指定文件夹。
-解压配置文件xx_svr_cfgfull_XXXX.tgz到相同的文件夹。
-解压配置文件xx_svr_resfull_XXXX.tgz到相同的文件夹。
-将我们提供的key文件修改文件名为auth-info.key放在X
+              Poll就是监控文件是否可读的一种机制，作用与select一样。应用程序的调用如下：
+int poll(struct pollfd *fds, nfds_t nfds, int timeout)
+Poll机制会判断fds中的文件是否可读，如果可读则立即返回，返回的就是可读fd的数量，如果不可读，那么
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/server-install/#more" rel="contents">
+              <a class="btn" href="/2017/10/28/poll/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -898,7 +892,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/uwa/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/game-framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -918,7 +912,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/23/uwa/" class="post-title-link" itemprop="url">uwa</a>
+                <a href="/2017/10/27/game-framework/" class="post-title-link" itemprop="url">XXSY服务器游戏架构</a>
               
             
           </h2>
@@ -968,13 +962,152 @@
         
           
             <p>
-              AssetBundle lockpersistentmanager开销观察性能曲线，发现某一帧AssetBundle加载中，lockpersistentmanager耗时比较大。请问这块是否能够优化？这说明当前帧或前几帧中存在较大量的资源在通过LoadAsync来进行加载，其本质是所加载的资源过大所
+              总体架构图
+大区架构图
+逻辑服务器架构图
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/27/game-framework/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/Apache/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/27/Apache/" class="post-title-link" itemprop="url">Apache</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              [1] 安装 httpd.[root@linuxprobe ~]# yum -y install httpd# 删除默认欢迎页面[root@linuxprobe ~]# rm -f /etc/httpd/conf.d/welcome.conf[2] 配置httpd，将服务器名称替换为您自己的环境[r
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/23/uwa/#more" rel="contents">
+              <a class="btn" href="/2017/10/27/Apache/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1034,7 +1167,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/gcc/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/vs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1054,7 +1187,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/23/gcc/" class="post-title-link" itemprop="url">gcc</a>
+                <a href="/2017/10/26/vs/" class="post-title-link" itemprop="url">vs</a>
               
             
           </h2>
@@ -1104,14 +1237,153 @@
         
           
             <p>
-              extern staticextern 指为导出到其它文件所使用的非statice变量static是当前文件的静态变量二者不能同时定义setarch i386 ./config -m32编译32位的openssh缺少 gnu/stubs-32.h
-yum install glibc-devel.i6
+              $(TargetDir)\XGZS_d.exe../data/cfg/network/cfg_relation.txt
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/26/vs/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/netstat/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/26/netstat/" class="post-title-link" itemprop="url">netstat</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              
+netstat -tln 查看端口占用情况\p 可以显示进程每一列含义协议类型  接受流量 发送流量 本机地址 目的地址 状态自己的IP地址就是本地地址，需要连接的地址的就是目的地址
+
+nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{“type”:0,”pid
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/23/gcc/#more" rel="contents">
+              <a class="btn" href="/2017/10/26/netstat/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1171,7 +1443,7 @@ yum install glibc-devel.i6
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/ShaderLab/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/lang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1191,7 +1463,7 @@ yum install glibc-devel.i6
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/23/ShaderLab/" class="post-title-link" itemprop="url">Unity Shader PBR</a>
+                <a href="/2017/10/25/lang/" class="post-title-link" itemprop="url">多语言规范</a>
               
             
           </h2>
@@ -1241,13 +1513,14 @@ yum install glibc-devel.i6
         
           
             <p>
-              观察两个空间阴影映射(Shadow Mapping)牵涉到两个空间的Z深度比较,一个是灯光空间,一个是相机空间,首先打开ShadowMapping_2下的场景,场景是默认的相机视角,单击下面的Light View按钮,可以切换到灯光视角,13.1.2 两个视角的Z深度分别单机LightView De
+              概述部分多语言资源，客户端和服务器放在不同目录里，公用的部分使用外链。
+客户端多语言根目录：Assets\Art\lang二级目录mb：存放mb的多语言数据二级目录res: 存放界面文本，以及其它资源的多语言数据（比如图片和prefab等）三级目录：用各种语言名字来命令的目录config.txt：保
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/23/ShaderLab/#more" rel="contents">
+              <a class="btn" href="/2017/10/25/lang/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1307,7 +1580,7 @@ yum install glibc-devel.i6
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/newindex/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/fork/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1327,7 +1600,7 @@ yum install glibc-devel.i6
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/23/newindex/" class="post-title-link" itemprop="url">Lua中元方法_newindex详解</a>
+                <a href="/2017/10/25/fork/" class="post-title-link" itemprop="url">fork</a>
               
             
           </h2>
@@ -1377,286 +1650,13 @@ yum install glibc-devel.i6
         
           
             <p>
-              __index元方法用于处理调用table中不存在的字段和查询__newindex用于更新
-local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function()        print("hello,I’
+              通过系统调用创建一个与原来进程几乎完全相同的进程，也就是说两个进程可以做完全相同的事情，但如果初始参数或者传入的变量不同，两个进程也可以做不同的事。一个进程调用fork()函数之后，系统先给新的进程分配资源，例如存储数据和代码的空间。然后吧原来的进程的所有值都复制到新的进程中，只有少数值与原来进程的
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/23/newindex/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/22/c/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/22/c/" class="post-title-link" itemprop="url">c</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              先被声明为‘extern’后又被声明为‘static’In file included from src/mt_mysql_connector.cpp:14:0:/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:/usr/includ
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/22/c/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/20/lua-select/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/20/lua-select/" class="post-title-link" itemprop="url">lua-select</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/20/lua-select/#more" rel="contents">
+              <a class="btn" href="/2017/10/25/fork/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1705,7 +1705,7 @@ local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function(
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1747,7 +1747,7 @@ local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function(
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">168</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1772,7 +1772,13 @@ local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function(
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1887,7 +1893,15 @@ local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function(
                     
                       
                     
-                    <span class="site-state-item-count">51</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2469,6 +2483,16 @@ local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function(
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
 
   
 

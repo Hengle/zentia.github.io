@@ -28,9 +28,6 @@
 
 
 
-  <meta http-equiv="Cache-Control" content="no-transform">
-  <meta http-equiv="Cache-Control" content="no-siteapp">
-
 
 
 
@@ -132,19 +129,17 @@
 
 
   <meta name="description" content="JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。">
-<meta name="keywords" content="-Java">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM的新生代、老年代、MinorGC、MajorGC">
 <meta property="og:url" content="http://zentia.site/2018/03/21/JVM-heap/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/JVM-heap-1.png">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.564Z">
+<meta property="og:updated_time" content="2019-03-22T05:07:26.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM的新生代、老年代、MinorGC、MajorGC">
 <meta name="twitter:description" content="JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。">
-<meta name="twitter:image" content="http://oxcvfpext.bkt.clouddn.com/JVM-heap-1.png">
 
 
 
@@ -420,7 +415,7 @@
       
 
       
-        <p>JVM中的堆，一般分为三大部分：新生代、老年代、永久代：<br><img src="http://oxcvfpext.bkt.clouddn.com/JVM-heap-1.png"><br>一、新生代<br>主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。<br>新生代又分为Eden区、ServivorFrom、ServivorTo三个区。</p>
+        <p>JVM中的堆，一般分为三大部分：新生代、老年代、永久代：<br>一、新生代<br>主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。<br>新生代又分为Eden区、ServivorFrom、ServivorTo三个区。</p>
 
       
     </div>
@@ -444,12 +439,66 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># -Java</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+            
+          </div>
+        
+        </div>
       
       
 
@@ -529,7 +578,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">157</span>
+                    <span class="site-state-item-count">168</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -554,7 +603,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -669,7 +724,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">51</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1213,6 +1276,16 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
 
   
 
