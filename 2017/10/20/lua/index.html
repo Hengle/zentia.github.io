@@ -393,6 +393,19 @@
           
             
             
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/20/lua/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/20/lua/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -599,6 +612,10 @@ Lua设计的初衷之一就为了最好的和宿主系统相结合。它是一�
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -645,7 +662,7 @@ Lua设计的初衷之一就为了最好的和宿主系统相结合。它是一�
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">168</span>
+                    <span class="site-state-item-count">170</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -799,7 +816,9 @@ Lua设计的初衷之一就为了最好的和宿主系统相结合。它是一�
                     
                       
                     
-                    <span class="site-state-item-count">55</span>
+                      
+                    
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -992,6 +1011,35 @@ Lua设计的初衷之一就为了最好的和宿主系统相结合。它是一�
 
   
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Syu6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
+    appKey: 'ODzJ92E6yKW6EoYLUShbfMV',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
   

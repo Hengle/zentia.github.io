@@ -130,7 +130,7 @@
 
   <meta name="description" content="Overviewurl: www.realtimerendering.com The Graphics Rendering Pipeline 核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生成或绘制一幅二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Real-Time Rendering 3rd">
+<meta property="og:title" content="Real Time Rendering 3rd">
 <meta property="og:url" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="Overviewurl: www.realtimerendering.com The Graphics Rendering Pipeline 核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生成或绘制一幅二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染">
@@ -138,10 +138,9 @@
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/overview.png">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/tgrp.png">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/viewport.png">
-<meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/pipeline.png">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.574Z">
+<meta property="og:updated_time" content="2019-03-26T12:16:28.155Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Real-Time Rendering 3rd">
+<meta name="twitter:title" content="Real Time Rendering 3rd">
 <meta name="twitter:description" content="Overviewurl: www.realtimerendering.com The Graphics Rendering Pipeline 核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生成或绘制一幅二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染">
 <meta name="twitter:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/overview.png">
 
@@ -160,7 +159,7 @@
   };
 </script>
 
-  <title>Real-Time Rendering 3rd | </title>
+  <title>Real Time Rendering 3rd | </title>
   
 
 
@@ -371,7 +370,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Real-Time Rendering 3rd
+          <h2 class="post-title" itemprop="name headline">Real Time Rendering 3rd
 
               
             
@@ -394,6 +393,19 @@
 
           
             
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/09/29/Real-Time-Rendering-3rd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/Real-Time-Rendering-3rd/" itemprop="commentCount"></span>
+                </a>
+              </span>
             
           
 
@@ -426,11 +438,30 @@
 <ul>
 <li>应用程序阶段（The Application Stage)</li>
 <li>几何阶段(The Geometry Stage)</li>
-<li>光栅化阶段(The Rasterizer Stage)<br>如下图：<br><img src="/2017/09/29/Real-Time-Rendering-3rd/pipeline.png"><br>原书图2.2绘制管线的基本结构包括3个阶段：应用程序，几何，光栅化。</li>
+<li>光栅化阶段(The Rasterizer Stage)<br>如下图：<br>原书图2.2绘制管线的基本结构包括3个阶段：应用程序，几何，光栅化。</li>
 </ul>
 <p>几个要点：<br>-每个阶段本身也可能是一条管线，如图中的几何阶段所示。此外，还可以对有的阶段进行全部或者部分的并行化处理，如图中的光栅化阶段。应用程序阶段虽然是一个单独的过程，但是依然可以对之进行管线化或者并行化处理。<br>-最慢的管线阶段决定绘制速度，即图像的更新速度，这种速度一般用FPS表示，也就是帧率。</p>
 <h3 id="应用程序阶段The-Application-Stage"><a href="#应用程序阶段The-Application-Stage" class="headerlink" title="应用程序阶段The Application Stage"></a>应用程序阶段The Application Stage</h3><p>-应用程序阶段一般是图形渲染管线概念上的第一个阶段。应用程序阶段是通过软件方式来实现的阶段，开发者能够对该阶段发生的情况进行完全控制，可以通过改变实现方法来改变实际性能。其他阶段，他们全部或者部分建立在硬件的基础上，因此要改变实现过程会非常困难。<br>-正因应用程序阶段是软件方式实现，因此不能像集合和光栅化阶段那样继续分为诺干个子阶段。但为了提高性能，该阶段还是可以在几个并行处理器上同时执行。在CPU设计商，称这种形式为超标量体系(superscalar)结构，因为它可以在同一个阶段同一个时间做不同的几件事情。<br>-应用程序阶段通常实现的方法有碰撞检测，加速算法，输入检测，动画，力反馈以及纹理动画，变化仿真，几何变形，以及一些不在其他阶段执行的计算，如层次堆裁剪等加速算法就可以在这里实现。<br>-应用程序阶段的主要任务：在应用程序阶段的末端，将需要在屏幕(具体形式取决于具体输入设备)显示出来绘制的几何体(也就是绘制图元,rendering primitives,如点，线，矩形等)输入到绘制管线的下一个阶段。<br>-对于被渲染的每一帧，应用程序阶段将摄像机位置，光照和模型的图元输出到管线的下一个主要阶段-几何阶段。</p>
 <h3 id="几何阶段-The-Geometry-Stage"><a href="#几何阶段-The-Geometry-Stage" class="headerlink" title="几何阶段 The Geometry Stage"></a>几何阶段 The Geometry Stage</h3><p>几何阶段主要负责大部分多边形操作和顶点操作。</p>
+<h1 id="GPU渲染管线和可编程着色器"><a href="#GPU渲染管线和可编程着色器" class="headerlink" title="GPU渲染管线和可编程着色器"></a>GPU渲染管线和可编程着色器</h1><h2 id="GPU渲染管线流程图"><a href="#GPU渲染管线流程图" class="headerlink" title="GPU渲染管线流程图"></a>GPU渲染管线流程图</h2><p><div id="flowchart-0" class="flow-chart"></div><br><code>graph LR
+    绘图 --&gt; 导出图像
+    导出图像 --&gt; 上传服务器
+    上传服务器 --&gt; 文章插入</code><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">op1=>operation: 顶点着色器|past
+op2=>operation: 几何着色器|current
+op3=>operation: Clipping
+裁剪
+op4=>operation: Screen Mapping
+屏幕映射
+op5=>operation: Triangle Setup
+三角形设定
+op6=>operation: Trangle Traversal
+三角形遍历
+op7=>operation: Pixel Shader
+像素着色器
+op8=>operation: Merger
+合并阶段
+
+op1--"对每个顶点的相关属性进行修改/创建/忽略"---op2->op3->op4->op5->op6->op7</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
 
       
     </div>
@@ -550,6 +581,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -596,7 +631,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">168</span>
+                    <span class="site-state-item-count">170</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -750,7 +785,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">55</span>
+                      
+                    
+                    <span class="site-state-item-count">56</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -786,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Graphics-Rendering-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">The Graphics Rendering Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心内容分节提炼"><span class="nav-number">2.1.</span> <span class="nav-text">核心内容分节提炼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像渲染管线架构概述-Architecture"><span class="nav-number">2.1.1.</span> <span class="nav-text">图像渲染管线架构概述 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序阶段The-Application-Stage"><span class="nav-number">2.1.2.</span> <span class="nav-text">应用程序阶段The Application Stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何阶段-The-Geometry-Stage"><span class="nav-number">2.1.3.</span> <span class="nav-text">几何阶段 The Geometry Stage</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Graphics-Rendering-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">The Graphics Rendering Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心内容分节提炼"><span class="nav-number">2.1.</span> <span class="nav-text">核心内容分节提炼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像渲染管线架构概述-Architecture"><span class="nav-number">2.1.1.</span> <span class="nav-text">图像渲染管线架构概述 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序阶段The-Application-Stage"><span class="nav-number">2.1.2.</span> <span class="nav-text">应用程序阶段The Application Stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何阶段-The-Geometry-Stage"><span class="nav-number">2.1.3.</span> <span class="nav-text">几何阶段 The Geometry Stage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU渲染管线和可编程着色器"><span class="nav-number">3.</span> <span class="nav-text">GPU渲染管线和可编程着色器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU渲染管线流程图"><span class="nav-number">3.1.</span> <span class="nav-text">GPU渲染管线流程图</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -943,6 +980,35 @@
 
   
   
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'Syu6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
+    appKey: 'ODzJ92E6yKW6EoYLUShbfMV',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+</script>
+
+
 
 
   
