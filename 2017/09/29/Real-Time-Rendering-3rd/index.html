@@ -138,7 +138,10 @@
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/overview.png">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/tgrp.png">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/viewport.png">
-<meta property="og:updated_time" content="2019-03-26T12:16:28.155Z">
+<meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/1.png">
+<meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/2.jpg">
+<meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/3.jpg">
+<meta property="og:updated_time" content="2019-03-26T15:08:35.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Real Time Rendering 3rd">
 <meta name="twitter:description" content="Overviewurl: www.realtimerendering.com The Graphics Rendering Pipeline 核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生成或绘制一幅二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染">
@@ -413,6 +416,13 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon" title="阅读次数">
+            <i class="fa fa-eye"></i>
+            
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -438,30 +448,53 @@
 <ul>
 <li>应用程序阶段（The Application Stage)</li>
 <li>几何阶段(The Geometry Stage)</li>
-<li>光栅化阶段(The Rasterizer Stage)<br>如下图：<br>原书图2.2绘制管线的基本结构包括3个阶段：应用程序，几何，光栅化。</li>
+<li>光栅化阶段(The Rasterizer Stage)</li>
 </ul>
-<p>几个要点：<br>-每个阶段本身也可能是一条管线，如图中的几何阶段所示。此外，还可以对有的阶段进行全部或者部分的并行化处理，如图中的光栅化阶段。应用程序阶段虽然是一个单独的过程，但是依然可以对之进行管线化或者并行化处理。<br>-最慢的管线阶段决定绘制速度，即图像的更新速度，这种速度一般用FPS表示，也就是帧率。</p>
-<h3 id="应用程序阶段The-Application-Stage"><a href="#应用程序阶段The-Application-Stage" class="headerlink" title="应用程序阶段The Application Stage"></a>应用程序阶段The Application Stage</h3><p>-应用程序阶段一般是图形渲染管线概念上的第一个阶段。应用程序阶段是通过软件方式来实现的阶段，开发者能够对该阶段发生的情况进行完全控制，可以通过改变实现方法来改变实际性能。其他阶段，他们全部或者部分建立在硬件的基础上，因此要改变实现过程会非常困难。<br>-正因应用程序阶段是软件方式实现，因此不能像集合和光栅化阶段那样继续分为诺干个子阶段。但为了提高性能，该阶段还是可以在几个并行处理器上同时执行。在CPU设计商，称这种形式为超标量体系(superscalar)结构，因为它可以在同一个阶段同一个时间做不同的几件事情。<br>-应用程序阶段通常实现的方法有碰撞检测，加速算法，输入检测，动画，力反馈以及纹理动画，变化仿真，几何变形，以及一些不在其他阶段执行的计算，如层次堆裁剪等加速算法就可以在这里实现。<br>-应用程序阶段的主要任务：在应用程序阶段的末端，将需要在屏幕(具体形式取决于具体输入设备)显示出来绘制的几何体(也就是绘制图元,rendering primitives,如点，线，矩形等)输入到绘制管线的下一个阶段。<br>-对于被渲染的每一帧，应用程序阶段将摄像机位置，光照和模型的图元输出到管线的下一个主要阶段-几何阶段。</p>
-<h3 id="几何阶段-The-Geometry-Stage"><a href="#几何阶段-The-Geometry-Stage" class="headerlink" title="几何阶段 The Geometry Stage"></a>几何阶段 The Geometry Stage</h3><p>几何阶段主要负责大部分多边形操作和顶点操作。</p>
-<h1 id="GPU渲染管线和可编程着色器"><a href="#GPU渲染管线和可编程着色器" class="headerlink" title="GPU渲染管线和可编程着色器"></a>GPU渲染管线和可编程着色器</h1><h2 id="GPU渲染管线流程图"><a href="#GPU渲染管线流程图" class="headerlink" title="GPU渲染管线流程图"></a>GPU渲染管线流程图</h2><p><div id="flowchart-0" class="flow-chart"></div><br><code>graph LR
-    绘图 --&gt; 导出图像
-    导出图像 --&gt; 上传服务器
-    上传服务器 --&gt; 文章插入</code><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">op1=>operation: 顶点着色器|past
-op2=>operation: 几何着色器|current
-op3=>operation: Clipping
-裁剪
-op4=>operation: Screen Mapping
-屏幕映射
-op5=>operation: Triangle Setup
-三角形设定
-op6=>operation: Trangle Traversal
-三角形遍历
-op7=>operation: Pixel Shader
-像素着色器
-op8=>operation: Merger
-合并阶段
-
-op1--"对每个顶点的相关属性进行修改/创建/忽略"---op2->op3->op4->op5->op6->op7</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+<p>绘制管线的基本结构包括3个阶段：应用程序，几何，光栅化。</p>
+<p>几个要点：</p>
+<ul>
+<li>每个阶段本身也可能是一条管线，如图中的几何阶段所示。此外，还可以对有的阶段进行全部或者部分的并行化处理，如图中的光栅化阶段。应用程序阶段虽然是一个单独的过程，但是依然可以对之进行管线化或者并行化处理。</li>
+<li><p>最慢的管线阶段决定绘制速度，即图像的更新速度，这种速度一般用FPS表示，也就是帧率。</p>
+<h3 id="应用程序阶段（The-Application-Stage）"><a href="#应用程序阶段（The-Application-Stage）" class="headerlink" title="应用程序阶段（The Application Stage）"></a>应用程序阶段（The Application Stage）</h3></li>
+<li><p>应用程序阶段一般是图形渲染管线概念上的第一个阶段。应用程序阶段是通过软件方式来实现的阶段，开发者能够对该阶段发生的情况进行完全控制，可以通过改变实现方法来改变实际性能。其他阶段，他们全部或者部分建立在硬件的基础上，因此要改变实现过程会非常困难。</p>
+</li>
+<li>正因应用程序阶段是软件方式实现，因此不能像集合和光栅化阶段那样继续分为诺干个子阶段。但为了提高性能，该阶段还是可以在几个并行处理器上同时执行。在CPU设计商，称这种形式为超标量体系(superscalar)结构，因为它可以在同一个阶段同一个时间做不同的几件事情。</li>
+<li>应用程序阶段通常实现的方法有碰撞检测，加速算法，输入检测，动画，力反馈以及纹理动画，变化仿真，几何变形，以及一些不在其他阶段执行的计算，如层次堆裁剪等加速算法就可以在这里实现。</li>
+<li>应用程序阶段的主要任务：在应用程序阶段的末端，将需要在屏幕(具体形式取决于具体输入设备)显示出来绘制的几何体(也就是绘制图元,rendering primitives,如点，线，矩形等)输入到绘制管线的下一个阶段。</li>
+<li>对于被渲染的每一帧，应用程序阶段将摄像机位置，光照和模型的图元输出到管线的下一个主要阶段-几何阶段。<h3 id="几何阶段-The-Geometry-Stage"><a href="#几何阶段-The-Geometry-Stage" class="headerlink" title="几何阶段 The Geometry Stage"></a>几何阶段 The Geometry Stage</h3></li>
+</ul>
+<p>几何阶段主要负责大部分多边形操作和顶点操作。</p>
+<h1 id="GPU渲染管线和可编程着色器"><a href="#GPU渲染管线和可编程着色器" class="headerlink" title="GPU渲染管线和可编程着色器"></a>GPU渲染管线和可编程着色器</h1><h2 id="GPU渲染管线流程图"><a href="#GPU渲染管线流程图" class="headerlink" title="GPU渲染管线流程图"></a>GPU渲染管线流程图</h2><img src="/2017/09/29/Real-Time-Rendering-3rd/1.png"> <img src="/2017/09/29/Real-Time-Rendering-3rd/2.jpg"> 
+<p>其中：</p>
+<ul>
+<li>绿色的阶段都是完全可以编程的。</li>
+<li>黄色的阶段可配置，但不可编程。</li>
+<li>蓝色的阶段完全固定。</li>
+</ul>
+<ol>
+<li>顶点着色器（The Vertex Shader）是完全可编程的阶段，顶点着色器可以对每个顶点进行诸如变换和变形在内的很多操作，提供了修改/创建/忽略顶点相关属性的功能，这些顶点属性包括颜色、法线、纹理坐标和位置。顶点着色器的必须完成的任务是将顶点从模型空间转换到齐次裁剪空间。</li>
+<li>几何着色器（The Geometry Shader）位于顶点着色器之后，允许GPU高效的创建和销毁几何图元。几何着色器是可选的，完全可编程的阶段，主要对图元（点、线、三角形）的顶点进行操作。几何着色器接受顶点着色器的输出作为输入，通过高效的几何运算，将数据输出，数据随后经过几何阶段和光栅化的其他处理后，会发送给片段着色器。</li>
+<li>裁剪（Clipping）属于可配置的功能阶段，在此阶段可选运行的裁剪方式，以及添加自定义的裁剪面。</li>
+<li>屏幕映射（Screen Mapping）、三角形设置（Triangle Setup）和三角形遍历（Triangle Traversal）阶段是固定功能阶段。</li>
+<li>像素着色器（Pixel Shader，Direct3D中的叫法）常常又称为片段着色器，片元着色器（Fragment Shader，OpenGL中的叫法），是完全可编程的阶段，主要作用是进行像素的处理，让复杂的着色方程在每一个像素上执行。</li>
+<li>合并阶段（The Merger Stage）处于完全可编程和固定功能之间，尽管不能编程，但是高度可配置，可以进行一系列的啊哦做。其除了进行合并操作，还分管颜色修改（Color Modifying），Z缓冲（Z-Buffer），混合（Blend），模版（Stencil）和相关缓存的处理。</li>
+</ol>
+<h2 id="可编程着色模型"><a href="#可编程着色模型" class="headerlink" title="可编程着色模型"></a>可编程着色模型</h2><ul>
+<li>现代着色阶段（比如支持Shader Model 4.0，DirectX 10以及之后）使用了通用着色核心（common-shader core），这就表明顶点，片段，几何着色器共享一套编程模型。</li>
+<li>早起的着色模型可以用汇编语言直接编程，但DX10之后，汇编就只在调试输出阶段可见，改用高级着色语言。</li>
+<li>目前的着色语言都是C-like的着色语言，比如HLSL，CG和GLSL，其被编译成独立于机器的汇编语言，也称为中间语言（IL）。这些汇编语言在单独的阶段，通常实在驱动中，被转化成实际的机器语言。这样的安排可以兼容不同的硬件实现。这些汇编语言可以被看做是定义一个作为着色语言编译器的虚拟机。这个虚拟机是一个处理多种类型寄存器和数据源、预编了一系列指令的处理器。</li>
+<li><p>着色语言虚拟机可以理解为一个处理多种类型寄存器和数据源、预编译一系列指令的处理器。考虑到很多图形操作都使用短矢量（最高四位），处理器拥有4路SIMD（single-instruction multiple-data，单指令多数据）兼容性。每个寄存器包含四个独立的值。32位单精度浮点的标量和矢量是其基本数据类型；也随后支持32位整型。浮点矢量通常包含数据如位置（xyzw），法线，矩阵行，颜色（rgba），或者纹理坐标（uvwq）。而整型通常用来表示，计数器，索引，或者位掩码。也支持综合数据类型比如结构体，数组，和矩阵。而为了便于使用向量，向量操作如调和（swizzling，也就是向量分量和重新排序或复制），和屏蔽（masking，只是用指定的矢量元素），也能够支持。</p>
+<img src="/2017/09/29/Real-Time-Rendering-3rd/3.jpg">
+<p>上图为DX10下的通用Shader核心虚拟机架构以及寄存器布局。每个资源旁边显示最大可用编号。其中，用两个斜杠分开的三个数值，分别是顶点、几何、像素着色器对应的可用最大数量。</p>
+</li>
+<li><p>一个绘制调用（Draw Call）会调用图形API来绘制一系列的图元，会驱使图形管线的运行。</p>
+</li>
+<li>每个可编程着色阶段拥有两种类型的输入：<ul>
+<li>uniform输入，在一个draw call中保持不变的值（但在不同draw call之间可以改变）</li>
+<li>varying输入，shader里对每个顶点和像素的处理都不同的值。纹理是特殊的uniform输入，曾经一直是一张应用到表面的彩色图片，但现在可以认为是存储着大量数据的数组。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -823,7 +856,7 @@ op1--"对每个顶点的相关属性进行修改/创建/忽略"---op2->op3->op4-
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Graphics-Rendering-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">The Graphics Rendering Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心内容分节提炼"><span class="nav-number">2.1.</span> <span class="nav-text">核心内容分节提炼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像渲染管线架构概述-Architecture"><span class="nav-number">2.1.1.</span> <span class="nav-text">图像渲染管线架构概述 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序阶段The-Application-Stage"><span class="nav-number">2.1.2.</span> <span class="nav-text">应用程序阶段The Application Stage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何阶段-The-Geometry-Stage"><span class="nav-number">2.1.3.</span> <span class="nav-text">几何阶段 The Geometry Stage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU渲染管线和可编程着色器"><span class="nav-number">3.</span> <span class="nav-text">GPU渲染管线和可编程着色器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU渲染管线流程图"><span class="nav-number">3.1.</span> <span class="nav-text">GPU渲染管线流程图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">1.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Graphics-Rendering-Pipeline"><span class="nav-number">2.</span> <span class="nav-text">The Graphics Rendering Pipeline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#核心内容分节提炼"><span class="nav-number">2.1.</span> <span class="nav-text">核心内容分节提炼</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像渲染管线架构概述-Architecture"><span class="nav-number">2.1.1.</span> <span class="nav-text">图像渲染管线架构概述 Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用程序阶段（The-Application-Stage）"><span class="nav-number">2.1.2.</span> <span class="nav-text">应用程序阶段（The Application Stage）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几何阶段-The-Geometry-Stage"><span class="nav-number">2.1.3.</span> <span class="nav-text">几何阶段 The Geometry Stage</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GPU渲染管线和可编程着色器"><span class="nav-number">3.</span> <span class="nav-text">GPU渲染管线和可编程着色器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#GPU渲染管线流程图"><span class="nav-number">3.1.</span> <span class="nav-text">GPU渲染管线流程图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可编程着色模型"><span class="nav-number">3.2.</span> <span class="nav-text">可编程着色模型</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -864,6 +897,32 @@ op1--"对每个顶点的相关属性进行修改/创建/忽略"---op2->op3->op4-
 
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
 
 
 
