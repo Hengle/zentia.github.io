@@ -66,11 +66,17 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
     
     
-    <link rel="stylesheet" href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -129,7 +135,7 @@
 
 
   <meta name="description" content="Tables NGUI UGUI     锚点 Anchor RectTransform Anchor   图片 Sprite Image   文字 Label Text   根节点 UIRoot Canvas   UI面板 Panel Canvas   UI容器 Lets you essentially lower the heightmap resolution used for re">
-<meta name="keywords" content="Unity3D">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="UGUI vs NGUI">
 <meta property="og:url" content="http://zentia.site/2017/09/24/UGUIvsNGUI/index.html">
@@ -138,7 +144,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.site/2017/09/24/UGUIvsNGUI/1.jpg">
 <meta property="og:image" content="http://zentia.site/2017/09/24/UGUIvsNGUI/2.jpg">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.578Z">
+<meta property="og:updated_time" content="2019-03-28T11:18:32.148Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UGUI vs NGUI">
 <meta name="twitter:description" content="Tables NGUI UGUI     锚点 Anchor RectTransform Anchor   图片 Sprite Image   文字 Label Text   根节点 UIRoot Canvas   UI面板 Panel Canvas   UI容器 Lets you essentially lower the heightmap resolution used for re">
@@ -347,6 +353,8 @@
   
 
   
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -443,72 +451,72 @@
 <thead>
 <tr>
 <th>Tables</th>
-<th style="text-align:center">NGUI</th>
-<th style="text-align:right">UGUI</th>
+<th>NGUI</th>
+<th>UGUI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>锚点</td>
-<td style="text-align:center">Anchor</td>
-<td style="text-align:right">RectTransform Anchor</td>
+<td>Anchor</td>
+<td>RectTransform Anchor</td>
 </tr>
 <tr>
 <td>图片</td>
-<td style="text-align:center">Sprite</td>
-<td style="text-align:right">Image</td>
+<td>Sprite</td>
+<td>Image</td>
 </tr>
 <tr>
 <td>文字</td>
-<td style="text-align:center">Label</td>
-<td style="text-align:right">Text</td>
+<td>Label</td>
+<td>Text</td>
 </tr>
 <tr>
 <td>根节点</td>
-<td style="text-align:center">UIRoot</td>
-<td style="text-align:right">Canvas</td>
+<td>UIRoot</td>
+<td>Canvas</td>
 </tr>
 <tr>
 <td>UI面板</td>
-<td style="text-align:center">Panel</td>
-<td style="text-align:right">Canvas</td>
+<td>Panel</td>
+<td>Canvas</td>
 </tr>
 <tr>
 <td>UI容器</td>
-<td style="text-align:center">Lets you essentially lower the heightmap resolution used for rendering.</td>
+<td>Lets you essentially lower the heightmap resolution used for rendering.</td>
 </tr>
 <tr>
 <td>heightmapPixelError</td>
-<td style="text-align:center">An approximation of how many pixels the terrain will pop in the worst case when switching lod.</td>
+<td>An approximation of how many pixels the terrain will pop in the worst case when switching lod.</td>
 </tr>
 <tr>
 <td>lightmapindex</td>
-<td style="text-align:center">The index of the lightmap applied to this renderer.</td>
+<td>The index of the lightmap applied to this renderer.</td>
 </tr>
 <tr>
 <td>terrainData</td>
-<td style="text-align:center">The Terrain Data that stres htightmaps,terrain textures,detail meshes and trees.</td>
+<td>The Terrain Data that stres htightmaps,terrain textures,detail meshes and trees.</td>
 </tr>
 <tr>
 <td>treeBillboardDistance</td>
-<td style="text-align:center">Distance from the camera where trees will be rendered as billboards only.</td>
+<td>Distance from the camera where trees will be rendered as billboards only.</td>
 </tr>
 <tr>
 <td>terrCrossFadeLength</td>
-<td style="text-align:center">Total distance delta that trees will use to transition from billboard orientation to to mesh orientation.</td>
+<td>Total distance delta that trees will use to transition from billboard orientation to to mesh orientation.</td>
 </tr>
 <tr>
 <td>treeDistance</td>
-<td style="text-align:center">The maximum distance at which trees are rendered.</td>
+<td>The maximum distance at which trees are rendered.</td>
 </tr>
 <tr>
 <td>treeMaximumFullLODCount</td>
-<td style="text-align:center">Maximum number of trees rendered at full LOD.</td>
+<td>Maximum number of trees rendered at full LOD.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h1 id="UGUI"><a href="#UGUI" class="headerlink" title="UGUI"></a>UGUI</h1><img src="/2017/09/24/UGUIvsNGUI/1.jpg">
+<h1 id="NGUI"><a href="#NGUI" class="headerlink" title="NGUI"></a>NGUI</h1><img src="/2017/09/24/UGUIvsNGUI/1.jpg">
 <p>上图是UIWidget，UIGeometry和UIDrawCall的关系图<br>UIPanel用来收集和管理它下面所有的widget的组件。通过widget的geometry创建实际的draw call。没有panel所有东西都不能被渲染出来。可以把UIPanel当作Renderer。</p>
 <p>每一个UIWidget都有一个UIGeometry，但是并不都有一个UIDrawCall，而是要通过Batch合并达到减少DrawCall的数量。<br>所有Panel都有一个Depth值，会影响所有它包含的widget。Panel的depth权重要高于widget的depth权重，但是低于render queue。</p>
 <p>当勾选static的时候，该panel下面所有的widget都不会被移动，这样可以提高性能。此时，NGUI会忽略所有的position/rotation/scale改变。所以在运行时移动widget不会有效。</p>
@@ -546,7 +554,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unity3D/" rel="tag"># Unity3D</a>
+            <a href="/tags/Unity/" rel="tag"># Unity</a>
           
         </div>
       
@@ -698,7 +706,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">170</span>
+                    <span class="site-state-item-count">173</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -729,7 +737,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -854,7 +864,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">56</span>
+                      
+                    
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -890,7 +902,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UGUI"><span class="nav-number">1.</span> <span class="nav-text">UGUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UIDrawCall"><span class="nav-number">1.0.1.</span> <span class="nav-text">UIDrawCall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIRoot"><span class="nav-number">1.0.2.</span> <span class="nav-text">UIRoot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UICamera"><span class="nav-number">1.0.3.</span> <span class="nav-text">UICamera</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIPanel"><span class="nav-number">1.0.4.</span> <span class="nav-text">UIPanel</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NGUI"><span class="nav-number">1.</span> <span class="nav-text">NGUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#UIDrawCall"><span class="nav-number">1.0.1.</span> <span class="nav-text">UIDrawCall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIRoot"><span class="nav-number">1.0.2.</span> <span class="nav-text">UIRoot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UICamera"><span class="nav-number">1.0.3.</span> <span class="nav-text">UICamera</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIPanel"><span class="nav-number">1.0.4.</span> <span class="nav-text">UIPanel</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1023,6 +1035,8 @@
 
 
 
+  
+
 
 
   
@@ -1039,6 +1053,9 @@
 
   
   <script src="/lib/three/three-waves.min.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -1091,8 +1108,8 @@
     el: '#comments',
     verify: false,
     notify: false,
-    appId: 'Syu6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
-    appKey: 'ODzJ92E6yKW6EoYLUShbfMV',
+    appId: '8yU6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
+    appKey: 'ODzJO92E6yKW6EoYlUShbfMV',
     placeholder: 'Just go go',
     avatar: 'mm',
     meta: guest,
@@ -1494,6 +1511,15 @@
   
 
   
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
 
   
   <style>

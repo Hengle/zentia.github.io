@@ -66,11 +66,17 @@
   
 
   
+    
+      
+    
+
+    
+  
 
   
     
     
-    <link rel="stylesheet" href="https://fonts.cat.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -136,7 +142,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.605Z">
+<meta property="og:updated_time" content="2019-03-28T11:37:40.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试经历">
 <meta name="twitter:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
@@ -344,6 +350,8 @@
   
 
   
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
@@ -460,7 +468,12 @@
 <p>2.Awake,Start,OnEnable的执行顺序<br>简直简单的一逼，Awake-&gt;OnEnable-&gt;Start<br>3.啥子是反射？写一段加载程序集，然后获取类型Type，然后通过方法名调用<br>网上答案：<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">InvokeReflection</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        Learn00();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Learn00</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * System.Reflection.Assembly类有两个静态方法：Assembly.Load(string assemblyname)和Assembly.LoadFrom(string filename) 。</span></span><br><span class="line"><span class="comment">         * 通常用这两个方法把程序集加载到应用程序域中。 如果你希望加载的程序集超出了CLR的预定探查范围，你可以用Assembly.LoadFrom直接从一个文件位置加载程序集。</span></span><br><span class="line"><span class="comment">         * Assembly.LoadFrom()和Assembly.LoadFile()，两者的主要区别有两点：</span></span><br><span class="line"><span class="comment">         * 一：Assembly.LoadFile()只载入指定的dll文件，而不会自动加载相关的dll文件。如果下文例子使用Assembly.LoadFile()加载SayHello.dll，那么程序就只会加载</span></span><br><span class="line"><span class="comment">         * SayHello.dll而不会去加载SayHello.dll引用的BaseClass.dll文件。</span></span><br><span class="line"><span class="comment">         * 二：Assembly.LoadFrom()载入一个Assembly时，会先检查前面是否已经载入过相同名字的Assembly；Assembly.LoadFile()则不会做类似的检查。</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="comment">//C:\Users\Administrator\Desktop\New Unity Project\Assets\DLL</span></span><br><span class="line">        Assembly assemly2 = Assembly.LoadFrom(<span class="string">@"C:\Users\Administrator\Desktop\New Unity Project\Assets\Scripts\TestReflection.dll"</span>);</span><br><span class="line">        Assembly assemly1 = Assembly.LoadFile(<span class="string">@"C:\Users\Administrator\Desktop\New Unity Project\Assets\Scripts\TestReflection.dll"</span>);</span><br><span class="line">        Assembly assemly = Assembly.Load(<span class="string">"TestReflection"</span>);<span class="comment">//1填加DLL</span></span><br><span class="line">        Type testType = assemly.GetType(<span class="string">"HaiLan.TestReflection.TestReflectionDLL"</span>);<span class="comment">//2获取对应的类信息，需要填加对应的命名空间</span></span><br><span class="line">        <span class="keyword">object</span> oTestReflectionDLL = Activator.CreateInstance(testType);<span class="comment">//3 创建对象</span></span><br><span class="line">        IReflectionDLL iTestReflectionDLL = oTestReflectionDLL <span class="keyword">as</span> IReflectionDLL;<span class="comment">//4 类型转换</span></span><br><span class="line">        iTestReflectionDLL.TestShow1();<span class="comment">//5 方法调用</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> assemly.GetModules())</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.Log(item.Name);<span class="comment">//打印结果 TestReflection.dll</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">foreach</span> (<span class="keyword">var</span> type <span class="keyword">in</span> assemly.GetTypes())</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.Log(type.Name);</span><br><span class="line">            <span class="keyword">foreach</span> (<span class="keyword">var</span> item <span class="keyword">in</span> type.GetMethods())</span><br><span class="line">            &#123;</span><br><span class="line">                Debug.Log(item.Name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>4.avatar如何换装？<br>5.啥子是Prefab，如何获取一个Prefab实例化的GameObject的类型？PrefabInstance和PrefabModelInstance有啥子区别（我都不知道他在问啥子）<br>6.获取一个Render的材质，然后设置流光shader的uniform/<br>7.地震了，狗跑了，房屋塌了，人慌了，这是哪个设计模式？写出伪代码或者画出流程图；要求可扩展<br>8.给你一个新项目，内存贼高，FPS贼低，咋优化，是Xlua和C#写的。<br>我答：<br>UI：用Profile抓GC，DrawCall，如果是Lua写的，抓函数逻辑占用的内存大小和GC<br>场景：检查面数，静态合批，<br>角色：<br>脚本：<br>预制体：检查是否有Miss Script，检查是否有太多的无用序列化逻辑<br>减少灯光的数量<br>9.说一哈AssetBundle的打包和加载</p>
 <h2 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h2><p>显示针对笔试题答得不好的问了几个，我没写设计模式那个，他问了问，还有换装那个我也不会他也问了一下。<br>问：你经过过啥子比较难忘的经历在项目上，或者遇到啥子困难，来扯会蛋。我实在不知道咋扯，就说了剧情编辑器的旋转bug和撤销重做bug。<br>还问了一个咋子判断线段和多边形是否相交？这个我做触发器写的，然鹅给忘了。。<br>正解：判断点（p）是否在多边形中，可以先以点p向左引一条射线（L），我们知道，从射线L左端的无穷远处开始一直到点P的过程中，当遇到多边形的第一个交点是L进入多边形，当遇到第二个交点时，L穿出了多边形。可知，规律如下，当在遇到P点之前L与多边形的交点为偶数个时，说明p点不在多边形内，当在遇到p点之前L与多边形交点为奇数个时，说明P点在多边形内。<br>但是，这个规律并不具有普遍性，还有几种特殊情况不满足此规律，需要额外考虑：<br>（1）当点P在多边形的某条边上，可以直接判断其在多边形中。<br>（2）对于多边形的水平边不做考虑</p>
-<p>然后实在不想和我尬聊了吧，就说你对我们这块有想了解点啥。我寻思不用尬聊了，我就说我面试的太菜了，就啥也不问了。<br>再见。</p>
+<h2 id="深圳易凡互动"><a href="#深圳易凡互动" class="headerlink" title="深圳易凡互动"></a>深圳易凡互动</h2><ol>
+<li>NGUI的uv和顶点是怎么生成的？</li>
+<li>客户端网络是否有用多线程？为什么要用？</li>
+<li>TCP IPV6是怎么实现的？</li>
+<li>Unity5.6和Unity2018的光照图有什么区别，流程是怎样的？</li>
+</ol>
 
       
     </div>
@@ -636,7 +649,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">170</span>
+                    <span class="site-state-item-count">173</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -667,7 +680,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -792,7 +807,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">56</span>
+                      
+                    
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -828,7 +845,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络面试"><span class="nav-number">2.</span> <span class="nav-text">冰川网络面试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#笔试题"><span class="nav-number">2.1.</span> <span class="nav-text">笔试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题"><span class="nav-number">2.2.</span> <span class="nav-text">面试题</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络面试"><span class="nav-number">2.</span> <span class="nav-text">冰川网络面试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#笔试题"><span class="nav-number">2.1.</span> <span class="nav-text">笔试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题"><span class="nav-number">2.2.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">2.3.</span> <span class="nav-text">深圳易凡互动</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -961,6 +978,8 @@
 
 
 
+  
+
 
 
   
@@ -977,6 +996,9 @@
 
   
   <script src="/lib/three/three-waves.min.js"></script>
+
+  
+  <script src="/lib/reading_progress/reading_progress.js"></script>
 
 
   
@@ -1029,8 +1051,8 @@
     el: '#comments',
     verify: false,
     notify: false,
-    appId: 'Syu6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
-    appKey: 'ODzJ92E6yKW6EoYLUShbfMV',
+    appId: '8yU6gvODOHdX3WaGCQV08wuU-gzGzoHsz',
+    appKey: 'ODzJO92E6yKW6EoYlUShbfMV',
     placeholder: 'Just go go',
     avatar: 'mm',
     meta: guest,
@@ -1432,6 +1454,15 @@
   
 
   
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
 
   
   <style>
