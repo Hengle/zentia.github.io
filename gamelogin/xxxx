@@ -2,7 +2,7 @@
   {"type":0,"pid":-1,"Attr1":0,"id":1,"Attr2":0,"name":"AndroidWX","tag":0},
   {"type":0,"pid":1,"Attr1":0,"id":2,"Attr2":0,"name":"AreaTest","tag":1},
   {"type":0,"pid":1,"Attr1":0,"id":6,"Attr2":0,"name":"InsertSame","tag":1},
-  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"ProgrmaServer","Attr1":100,"Flag":64,"Url":"18.217.23.219:20046","id":43,"tag":1},
-  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"测试服","Attr1":100,"Flag":64,"Url":"192.168.0.121:20046","id":44,"tag":1},
-  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"ceshifu1","Attr1":100,"Flag":64,"Url":"192.168.0.171:20046","id":45,"tag":1}
+  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"程序服","Attr1":100,"Flag":64,"Url":"106.12.98.12:20046","id":43,"tag":1},
+  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"测试外服","Attr1":100,"Flag":64,"Url":"192.168.0.121:20046","id":44,"tag":1},
+  {"type":1,"pid":2,"UserData":{"txhttp":"xxxxxx", "ver":"1.1.1.1"},"Attr2":900,"RoleCount":0,"RoleInfos":{},"name":"测试内服","Attr1":100,"Flag":64,"Url":"192.168.0.171:20046","id":45,"tag":1}
 ]

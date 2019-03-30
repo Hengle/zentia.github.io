@@ -142,10 +142,12 @@
 <meta property="og:site_name">
 <meta property="og:description" content="向量积模长：（在这里$\theta$表示两向量之间的夹角（共起点的前提下）（$0^。\le \theta \le 180^。$），它位于这两个矢量所定义的平面上。） $|\vec a \times \vec b| = |\vec a| \cdot |\vec b| \cdot sin\theta$  方向：a向量与b向量的向量积的方向与这两个向量所在平面垂直，且遵守右手定则。（一个简单的确定满足“">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.603Z">
+<meta property="og:image" content="http://zentia.site/2019/03/13/graphics/1.png">
+<meta property="og:updated_time" content="2019-03-30T06:36:56.389Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图形学">
 <meta name="twitter:description" content="向量积模长：（在这里$\theta$表示两向量之间的夹角（共起点的前提下）（$0^。\le \theta \le 180^。$），它位于这两个矢量所定义的平面上。） $|\vec a \times \vec b| = |\vec a| \cdot |\vec b| \cdot sin\theta$  方向：a向量与b向量的向量积的方向与这两个向量所在平面垂直，且遵守右手定则。（一个简单的确定满足“">
+<meta name="twitter:image" content="http://zentia.site/2019/03/13/graphics/1.png">
 
 
 
@@ -244,6 +246,23 @@
   
     <ul id="menu" class="menu">
       
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
         
         
@@ -462,6 +481,13 @@
         <h1 id="向量积"><a href="#向量积" class="headerlink" title="向量积"></a>向量积</h1><p>模长：（在这里$\theta$表示两向量之间的夹角（共起点的前提下）（$0^。\le \theta \le 180^。$），它位于这两个矢量所定义的平面上。）</p>
 <p>$|\vec a \times \vec b| = |\vec a| \cdot |\vec b| \cdot sin\theta$ </p>
 <p>方向：a向量与b向量的向量积的方向与这两个向量所在平面垂直，且遵守右手定则。（一个简单的确定满足“右手定则”的结果向量的方向的方法是这样的：若坐标系是满足右手定则的，当右手的四指从a以不超过180度的转角转向b时，竖起的大拇指指向的方向就是c的方向。）</p>
+<h2 id="计算多边形面积"><a href="#计算多边形面积" class="headerlink" title="计算多边形面积"></a>计算多边形面积</h2><p>设多边形有n个顶点$V_{0}(X_0,Y_0),V_{1}(X_1,Y_1)…V_{n-1}(X_n-1,Y_n-1)$，从原点O(0,0)与每条边做三角形，计算的面积和就是多边形面积。三角形的面积可以用叉积计算，比如$OV_{0}V_1$面积为：</p>
+<p>$S_{0}=0.5 * OV_{0} \cdot OV_{1} = 0.5 * (X_{0}Y_{1} - X_{1}Y_{0})$</p>
+<h2 id="判断两线段是否相交"><a href="#判断两线段是否相交" class="headerlink" title="判断两线段是否相交"></a>判断两线段是否相交</h2><p>判断线段是否相交一般分为两步进行</p>
+<ol>
+<li>快速排序<br>设有线段$P_{1}P_{2}$和$Q_{1}Q_{2}$，以线段$P_{1}P_{2}$为对角线的矩形为R，以线段$Q_{1}Q_{2}$为对角线的矩形为T，如果R和T不想交，显然两线段不会相交，否则进入第二步。<img src="/2019/03/13/graphics/1.png"></li>
+<li>跨立实验<br>如果两线段先交，那么两线段必然互相跨立对方。</li>
+</ol>
 <h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><p>把刑辱z=a+bi（a，b均为实数）的数成为复数，其中a称为实部，b称为虚部，i称为<strong>虚数</strong>单位。当虚部等于零时，这个复数可以视为实数；当z的虚部不等于零时，实部等于零时，常称z为纯虚数。</p>
 <p>数集扩展到实数范围内，仍有些运算无法进行（比如对复数开偶数次方），为了使方程有解，我们将数集再次扩充。<br>在实数域上定义二元有序对z=(a,b)，并规定有序对之间有运算”+”、”x”(记$z_{1}=(a,b),z){2}=(c,d)$):<br>$z_{1}+z_{2}=(a+c,b+d)$<br>$z_{1} \times z_{2}=(ac-db,bc+ad)$</p>
 <h1 id="四元数"><a href="#四元数" class="headerlink" title="四元数"></a>四元数</h1><p>四元数是简单的超复数。复数是由实数加上虚数单位i组成，其中i^2=-1。相似地，四元数都是由实数加上三个虚数单位i、j、k组成，而且它们有如下的关系：i^2=j^2=k^2=-1，i^0=j^0=k^0=1，每个四元数都是1、i、j和k的线性组合，既是四元数一般可表示为a+bi+cj+dk，其中a、b、c、d是实数。</p>
@@ -640,7 +666,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">173</span>
+                    <span class="site-state-item-count">179</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -673,7 +699,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -800,7 +834,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">57</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -836,7 +874,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#向量积"><span class="nav-number">1.</span> <span class="nav-text">向量积</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复数"><span class="nav-number">2.</span> <span class="nav-text">复数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四元数"><span class="nav-number">3.</span> <span class="nav-text">四元数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#向量积"><span class="nav-number">1.</span> <span class="nav-text">向量积</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#计算多边形面积"><span class="nav-number">1.1.</span> <span class="nav-text">计算多边形面积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断两线段是否相交"><span class="nav-number">1.2.</span> <span class="nav-text">判断两线段是否相交</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复数"><span class="nav-number">2.</span> <span class="nav-text">复数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四元数"><span class="nav-number">3.</span> <span class="nav-text">四元数</span></a></li></ol></div>
             
 
           </div>

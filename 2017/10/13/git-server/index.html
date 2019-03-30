@@ -142,7 +142,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="首先要明确现在代码的分布情况，开发者电脑上的本地仓库，git服务器上的远端仓库，web服务器上的另一个本地仓库，我们浏览器访问的就是这里的代码。其实自动部署就是要当开发者本地仓库提交代码到远端仓库的时候，自动把代码部署到web服务器的本地仓库，实现开发着本地仓库和web服务器的本地仓库同步。（即通过GitHook中的post-receive脚本文件） 1、安装Git12yum install cu">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.602Z">
+<meta property="og:updated_time" content="2019-03-28T12:16:30.738Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 服务器搭建">
 <meta name="twitter:description" content="首先要明确现在代码的分布情况，开发者电脑上的本地仓库，git服务器上的远端仓库，web服务器上的另一个本地仓库，我们浏览器访问的就是这里的代码。其实自动部署就是要当开发者本地仓库提交代码到远端仓库的时候，自动把代码部署到web服务器的本地仓库，实现开发着本地仓库和web服务器的本地仓库同步。（即通过GitHook中的post-receive脚本文件） 1、安装Git12yum install cu">
@@ -244,6 +244,23 @@
   
     <ul id="menu" class="menu">
       
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
         
         
         
@@ -459,6 +476,8 @@
 <pre><code>git pull origin master
 </code></pre><p>把本地仓库代码提交</p>
 <pre><code>git push -u origin master
+</code></pre><p>查看远程仓库地址</p>
+<pre><code>git remote -v
 </code></pre>
       
     </div>
@@ -634,7 +653,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">173</span>
+                    <span class="site-state-item-count">179</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -667,7 +686,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -794,7 +821,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">57</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">59</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
