@@ -142,7 +142,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="本文讨论如何判断一个点是在多边形内部，边上还是在外部。为了方便，这里的多边形默认为有向多边形，规定沿多边形的正向，边的左侧为多边形的内测域，即多边形按逆时针方向遍历，不考了自交等复杂情况。 比较常见的判断点与多边形关系的算法有射线法、面积法、点线判断法和弧长法等，算法复杂度都为O(n)，不过只有射线法可以正确用于凹多边形，其他3个只可以用于凸多边形。 射线法射线法是使用最广泛的算法，这是由于相比较">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T04:57:17.030Z">
+<meta property="og:updated_time" content="2019-03-30T09:30:41.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="判断点和多边形关系">
 <meta name="twitter:description" content="本文讨论如何判断一个点是在多边形内部，边上还是在外部。为了方便，这里的多边形默认为有向多边形，规定沿多边形的正向，边的左侧为多边形的内测域，即多边形按逆时针方向遍历，不考了自交等复杂情况。 比较常见的判断点与多边形关系的算法有射线法、面积法、点线判断法和弧长法等，算法复杂度都为O(n)，不过只有射线法可以正确用于凹多边形，其他3个只可以用于凸多边形。 射线法射线法是使用最广泛的算法，这是由于相比较">
@@ -481,7 +481,8 @@
 <h1 id="射线法"><a href="#射线法" class="headerlink" title="射线法"></a>射线法</h1><p>射线法是使用最广泛的算法，这是由于相比较其他算法而言，它不但可以正确使用在凹多边形上，而且不需要考虑精度误差问题。该算法思想是从点出发向右水平做一条射线，计算该射线与多边形的边的相交个数，当点不在多边形上时，如果是奇数，那么点就一定在多边形内部，否则，在外部。<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nCount; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    Vector3 p1 = mNodes[i];</span><br><span class="line">    Vector3 p2 = mNodes[(i + <span class="number">1</span>) % nCount];</span><br><span class="line">    <span class="keyword">if</span> (p1.z == p2.z) <span class="comment">//p1p2与y=p0.y平行;</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">if</span> (pt.z &lt; Mathf.Min(p1.z, p2.z)) <span class="comment">// 交点在p1p2延长线上;</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">if</span> (pt.z &gt;= Mathf.Max(p1.z, p2.z)) <span class="comment">// 交点在p1p2延长线上;</span></span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="comment">// 求交点的X坐标;</span></span><br><span class="line">    <span class="keyword">float</span> x = (pt.z - p1.z) * (p2.x - p1.x) / (p2.z - p1.z) + p1.x;</span><br><span class="line">    <span class="keyword">if</span> (x &gt; pt.x) <span class="comment">// 只统计单边交点;</span></span><br><span class="line">        ++nCross;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>上面代码利用三角形原理，p1和p2的组成的直角三角形和p1和p组成直角三角形</p>
 <h1 id="面积法"><a href="#面积法" class="headerlink" title="面积法"></a>面积法</h1><p>面积法的思想是如果点在多边形内部或者边上，那么点与多边形所组成的三角形面积和等于多边形面积。多边形的面积公式可以使用叉积计算，不过计算面积是会有一定误差的，需要设置精度的误差范围。</p>
-
+<h1 id="点线判断法"><a href="#点线判断法" class="headerlink" title="点线判断法"></a>点线判断法</h1><p>对于多边形，如果一个点在它所有边的左边，那么这个点一定在多边形内部。利用叉积正好可以判断点与给定边的关系，即点在边的左边右边还是边上。</p>
+<h1 id="弧长法"><a href="#弧长法" class="headerlink" title="弧长法"></a>弧长法</h1>
       
     </div>
 
@@ -656,7 +657,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">179</span>
+                    <span class="site-state-item-count">185</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -697,7 +698,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -828,7 +835,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -864,7 +877,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#射线法"><span class="nav-number">1.</span> <span class="nav-text">射线法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积法"><span class="nav-number">2.</span> <span class="nav-text">面积法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#射线法"><span class="nav-number">1.</span> <span class="nav-text">射线法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#面积法"><span class="nav-number">2.</span> <span class="nav-text">面积法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#点线判断法"><span class="nav-number">3.</span> <span class="nav-text">点线判断法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#弧长法"><span class="nav-number">4.</span> <span class="nav-text">弧长法</span></a></li></ol></div>
             
 
           </div>

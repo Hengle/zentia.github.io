@@ -147,7 +147,7 @@
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/1.png">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/2.jpg">
 <meta property="og:image" content="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/3.jpg">
-<meta property="og:updated_time" content="2019-03-27T02:26:44.334Z">
+<meta property="og:updated_time" content="2019-03-30T11:36:55.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Real Time Rendering 3rd">
 <meta name="twitter:description" content="Overviewurl: www.realtimerendering.com The Graphics Rendering Pipeline 核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生成或绘制一幅二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染">
@@ -494,8 +494,14 @@
 <ul>
 <li>绿色的阶段都是完全可以编程的。</li>
 <li>黄色的阶段可配置，但不可编程。</li>
-<li>蓝色的阶段完全固定。<h3 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h3>顶点着色器（The Vertex Shader）是完全可编程的阶段，顶点着色器可以对每个顶点进行诸如变换和变形在内的很多操作，提供了修改/创建/忽略顶点相关属性的功能，这些顶点属性包括颜色、法线、纹理坐标和位置。顶点着色器的必须完成的任务是将顶点从模型空间转换到齐次裁剪空间。<h3 id="几何着色器"><a href="#几何着色器" class="headerlink" title="几何着色器"></a>几何着色器</h3>几何着色器（The Geometry Shader）位于顶点着色器之后，允许GPU高效的创建和销毁几何图元。几何着色器是可选的，完全可编程的阶段，主要对图元（点、线、三角形）的顶点进行操作。几何着色器接受顶点着色器的输出作为输入，通过高效的几何运算，将数据输出，数据随后经过几何阶段和光栅化的其他处理后，会发送给片段着色器。<br>几何着色器可以改变信新传递进来的图元的拓扑结构，且几何着色器可以接受任何拓扑类型的图元，但是只能输出点、折线（line strip）和三角形条（triangle strips）。<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3>裁剪（Clipping）属于可配置的功能阶段，在此阶段可选运行的裁剪方式，以及添加自定义的裁剪面。<h3 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h3>屏幕映射（Screen Mapping）、三角形设置（Triangle Setup）和三角形遍历（Triangle Traversal）阶段是固定功能阶段。<h3 id="像素着色器"><a href="#像素着色器" class="headerlink" title="像素着色器"></a>像素着色器</h3>像素着色器（Pixel Shader，Direct3D中的叫法）常常又称为片段着色器，片元着色器（Fragment Shader，OpenGL中的叫法），是完全可编程的阶段，主要作用是进行像素的处理，让复杂的着色方程在每一个像素上执行。<br>像素着色器常用来处理场景光照和与之相关的效果，如凹凸纹理映射和调色。称之为片段着色器似乎更加准确，因为对于着色器的调用和屏幕上的像素并非是一一对应的。比如，对于一个像素，片段着色器可能会被调用若干次来决定它最终的颜色，那些被遮挡的物体也会被计算，直到最后的深度缓冲才将各物体前后排序。<br>需要注意，像素着色器通常在最终合并阶段设置片段颜色以进行合并，而深度值也可以由像素着色器修改。模版缓冲（stencil buffer）值是不是修改的，而是将其传递给合并阶段（Merge Stage）。在SM 2.0以及以上版本，像素着色器也可以丢弃（discard）传入的片段数据，即不产生输出。这样的操作会消耗性能，因为通常在这种情况下不能使用由GPU执行的优化。诸如雾计算和alpha测试的操作已经从合并操作转移到SM 4.0中的像素着色器里计算。<br>可以发现，顶点着色程序的输出，在经历裁剪、屏幕映射、三角形设定、三角形遍历后，实际上变成了像素着色程序的输入。在Shader Model 4.0中，共有16个向量（每个向量含有4个值）可以从顶点着色器传到像素着色器。当使用几何着色器时，可以输出32个向量到像素着色器中。像素着色器的追加输入是Shader Model 3.0中引入的。例如，三角形的哪一面是可见的通过输入标志来假如的。这个值对于在单个通道中的正面和背面渲染不同材质十分重要。而且像素着色器也可以获得片段的屏幕位置。<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3>合并阶段（The Merger Stage）处于完全可编程和固定功能之间，尽管不能编程，但是高度可配置，可以进行一系列的啊哦做。其除了进行合并操作，还分管颜色修改（Color Modifying），Z缓冲（Z-Buffer），混合（Blend），模版（Stencil）和相关缓存的处理。</li>
+<li>蓝色的阶段完全固定。</li>
 </ul>
+<h3 id="顶点着色器"><a href="#顶点着色器" class="headerlink" title="顶点着色器"></a>顶点着色器</h3><p>顶点着色器（The Vertex Shader）是完全可编程的阶段，顶点着色器可以对每个顶点进行诸如变换和变形在内的很多操作，提供了修改/创建/忽略顶点相关属性的功能，这些顶点属性包括颜色、法线、纹理坐标和位置。顶点着色器的必须完成的任务是将顶点从模型空间转换到齐次裁剪空间。</p>
+<h3 id="几何着色器"><a href="#几何着色器" class="headerlink" title="几何着色器"></a>几何着色器</h3><p>几何着色器（The Geometry Shader）位于顶点着色器之后，允许GPU高效的创建和销毁几何图元。几何着色器是可选的，完全可编程的阶段，主要对图元（点、线、三角形）的顶点进行操作。几何着色器接受顶点着色器的输出作为输入，通过高效的几何运算，将数据输出，数据随后经过几何阶段和光栅化的其他处理后，会发送给片段着色器。<br>几何着色器可以改变信新传递进来的图元的拓扑结构，且几何着色器可以接受任何拓扑类型的图元，但是只能输出点、折线（line strip）和三角形条（triangle strips）。</p>
+<h3 id="裁剪"><a href="#裁剪" class="headerlink" title="裁剪"></a>裁剪</h3><p>裁剪（Clipping）属于可配置的功能阶段，在此阶段可选运行的裁剪方式，以及添加自定义的裁剪面。</p>
+<h3 id="屏幕映射"><a href="#屏幕映射" class="headerlink" title="屏幕映射"></a>屏幕映射</h3><p>屏幕映射（Screen Mapping）、三角形设置（Triangle Setup）和三角形遍历（Triangle Traversal）阶段是固定功能阶段。</p>
+<h3 id="像素着色器"><a href="#像素着色器" class="headerlink" title="像素着色器"></a>像素着色器</h3><p>像素着色器（Pixel Shader，Direct3D中的叫法）常常又称为片段着色器，片元着色器（Fragment Shader，OpenGL中的叫法），是完全可编程的阶段，主要作用是进行像素的处理，让复杂的着色方程在每一个像素上执行。<br>像素着色器常用来处理场景光照和与之相关的效果，如凹凸纹理映射和调色。称之为片段着色器似乎更加准确，因为对于着色器的调用和屏幕上的像素并非是一一对应的。比如，对于一个像素，片段着色器可能会被调用若干次来决定它最终的颜色，那些被遮挡的物体也会被计算，直到最后的深度缓冲才将各物体前后排序。<br>需要注意，像素着色器通常在最终合并阶段设置片段颜色以进行合并，而深度值也可以由像素着色器修改。模版缓冲（stencil buffer）值是不是修改的，而是将其传递给合并阶段（Merge Stage）。在SM 2.0以及以上版本，像素着色器也可以丢弃（discard）传入的片段数据，即不产生输出。这样的操作会消耗性能，因为通常在这种情况下不能使用由GPU执行的优化。诸如雾计算和alpha测试的操作已经从合并操作转移到SM 4.0中的像素着色器里计算。<br>可以发现，顶点着色程序的输出，在经历裁剪、屏幕映射、三角形设定、三角形遍历后，实际上变成了像素着色程序的输入。在Shader Model 4.0中，共有16个向量（每个向量含有4个值）可以从顶点着色器传到像素着色器。当使用几何着色器时，可以输出32个向量到像素着色器中。像素着色器的追加输入是Shader Model 3.0中引入的。例如，三角形的哪一面是可见的通过输入标志来假如的。这个值对于在单个通道中的正面和背面渲染不同材质十分重要。而且像素着色器也可以获得片段的屏幕位置。</p>
+<h3 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h3><p>合并阶段（The Merger Stage）处于完全可编程和固定功能之间，尽管不能编程，但是高度可配置，可以进行一系列的啊哦做。其除了进行合并操作，还分管颜色修改（Color Modifying），Z缓冲（Z-Buffer），混合（Blend），模版（Stencil）和相关缓存的处理。</p>
 <h2 id="可编程着色模型"><a href="#可编程着色模型" class="headerlink" title="可编程着色模型"></a>可编程着色模型</h2><ul>
 <li>现代着色阶段（比如支持Shader Model 4.0，DirectX 10以及之后）使用了通用着色核心（common-shader core），这就表明顶点，片段，几何着色器共享一套编程模型。</li>
 <li>早起的着色模型可以用汇编语言直接编程，但DX10之后，汇编就只在调试输出阶段可见，改用高级着色语言。</li>
@@ -789,7 +795,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">179</span>
+                    <span class="site-state-item-count">185</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -830,7 +836,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -961,7 +973,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

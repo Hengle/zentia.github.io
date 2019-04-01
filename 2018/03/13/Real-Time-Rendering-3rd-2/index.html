@@ -134,22 +134,18 @@
 
 
 
-  <meta name="description" content="一、全文内容思维导图1.章节框架思维导图 2.知识结构思维导图 二、核心内容分节提炼2.1 图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定再给虚拟相机、三维物体、光源、照明模式，以及纹理等诸多条件的情况下，生成或绘制一副二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染的底层工具。">
-<meta name="keywords" content="Real-Time Rendering 3rd">
+  <meta name="description" content="图形渲染与视觉外观渲染与视觉物理现象">
+<meta name="keywords" content="Real Time Rendering 3rd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【《Real-Time Rendering 3rd》 提炼总结】(二) 第二章 · 图形渲染管线 The Graphics Rendering Pipeline">
+<meta property="og:title" content="Real Time Rendering 3rd 第二部分">
 <meta property="og:url" content="http://zentia.site/2018/03/13/Real-Time-Rendering-3rd-2/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="一、全文内容思维导图1.章节框架思维导图 2.知识结构思维导图 二、核心内容分节提炼2.1 图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定再给虚拟相机、三维物体、光源、照明模式，以及纹理等诸多条件的情况下，生成或绘制一副二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染的底层工具。">
+<meta property="og:description" content="图形渲染与视觉外观渲染与视觉物理现象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-1.png">
-<meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-2.png">
-<meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-3.png">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.573Z">
+<meta property="og:updated_time" content="2019-03-30T11:43:08.998Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【《Real-Time Rendering 3rd》 提炼总结】(二) 第二章 · 图形渲染管线 The Graphics Rendering Pipeline">
-<meta name="twitter:description" content="一、全文内容思维导图1.章节框架思维导图 2.知识结构思维导图 二、核心内容分节提炼2.1 图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定再给虚拟相机、三维物体、光源、照明模式，以及纹理等诸多条件的情况下，生成或绘制一副二维图像的过程。对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染的底层工具。">
-<meta name="twitter:image" content="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-1.png">
+<meta name="twitter:title" content="Real Time Rendering 3rd 第二部分">
+<meta name="twitter:description" content="图形渲染与视觉外观渲染与视觉物理现象">
 
 
 
@@ -166,7 +162,7 @@
   };
 </script>
 
-  <title>【《Real-Time Rendering 3rd》 提炼总结】(二) 第二章 · 图形渲染管线 The Graphics Rendering Pipeline | </title>
+  <title>Real Time Rendering 3rd 第二部分 | </title>
   
 
 
@@ -396,7 +392,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【《Real-Time Rendering 3rd》 提炼总结】(二) 第二章 · 图形渲染管线 The Graphics Rendering Pipeline
+          <h2 class="post-title" itemprop="name headline">Real Time Rendering 3rd 第二部分
 
               
             
@@ -464,10 +460,7 @@
       
 
       
-        <h1 id="一、全文内容思维导图"><a href="#一、全文内容思维导图" class="headerlink" title="一、全文内容思维导图"></a>一、全文内容思维导图</h1><h2 id="1-章节框架思维导图"><a href="#1-章节框架思维导图" class="headerlink" title="1.章节框架思维导图"></a>1.章节框架思维导图</h2><p><img src="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-1.png"></p>
-<h2 id="2-知识结构思维导图"><a href="#2-知识结构思维导图" class="headerlink" title="2.知识结构思维导图"></a>2.知识结构思维导图</h2><p><img src="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-2.png"></p>
-<h1 id="二、核心内容分节提炼"><a href="#二、核心内容分节提炼" class="headerlink" title="二、核心内容分节提炼"></a>二、核心内容分节提炼</h1><h2 id="2-1-图像渲染管线架构概述-Architecture"><a href="#2-1-图像渲染管线架构概述-Architecture" class="headerlink" title="2.1 图像渲染管线架构概述 Architecture"></a>2.1 图像渲染管线架构概述 Architecture</h2><p>渲染管线的主要功能就是决定再给虚拟相机、三维物体、光源、照明模式，以及纹理等诸多条件的情况下，生成或绘制一副二维图像的过程。<br>对于实时渲染来说，渲染管线就是基础。因此，我们可以说，渲染管线是实时渲染的底层工具。<br><img src="http://oxcvfpext.bkt.clouddn.com/Real-Time-Rendering-3rd-2-3.png"></p>
-
+        <h1 id="图形渲染与视觉外观"><a href="#图形渲染与视觉外观" class="headerlink" title="图形渲染与视觉外观"></a>图形渲染与视觉外观</h1><h2 id="渲染与视觉物理现象"><a href="#渲染与视觉物理现象" class="headerlink" title="渲染与视觉物理现象"></a>渲染与视觉物理现象</h2>
       
     </div>
 
@@ -490,7 +483,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Real-Time-Rendering-3rd/" rel="tag"># Real-Time Rendering 3rd</a>
+            <a href="/tags/Real-Time-Rendering-3rd/" rel="tag"># Real Time Rendering 3rd</a>
           
         </div>
       
@@ -642,7 +635,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">179</span>
+                    <span class="site-state-item-count">185</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -683,7 +676,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -814,7 +813,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -850,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、全文内容思维导图"><span class="nav-number">1.</span> <span class="nav-text">一、全文内容思维导图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-章节框架思维导图"><span class="nav-number">1.1.</span> <span class="nav-text">1.章节框架思维导图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-知识结构思维导图"><span class="nav-number">1.2.</span> <span class="nav-text">2.知识结构思维导图</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、核心内容分节提炼"><span class="nav-number">2.</span> <span class="nav-text">二、核心内容分节提炼</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-图像渲染管线架构概述-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 图像渲染管线架构概述 Architecture</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图形渲染与视觉外观"><span class="nav-number">1.</span> <span class="nav-text">图形渲染与视觉外观</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染与视觉物理现象"><span class="nav-number">1.1.</span> <span class="nav-text">渲染与视觉物理现象</span></a></li></ol></li></ol></div>
             
 
           </div>

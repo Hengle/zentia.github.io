@@ -136,7 +136,7 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title">
-<meta property="og:url" content="http://zentia.site/tags/Git/index.html">
+<meta property="og:url" content="http://zentia.site/tags/git/index.html">
 <meta property="og:site_name">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
@@ -147,7 +147,7 @@
 
 
 
-  <link rel="canonical" href="http://zentia.site/tags/Git/">
+  <link rel="canonical" href="http://zentia.site/tags/git/">
 
 
 
@@ -157,7 +157,7 @@
   };
 </script>
 
-  <title>标签: Git | </title>
+  <title>标签: git | </title>
   
 
 
@@ -375,7 +375,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h2>Git<small>标签</small>
+        <h2>git<small>标签</small>
         </h2>
       </div>
 
@@ -387,17 +387,95 @@
 
       <h3 class="post-title">
         
-          <a class="post-title-link" href="/2017/10/13/git-server/" itemprop="url">
+          <a class="post-title-link" href="/2017/10/13/git-clone/" itemprop="url">
             
-              <span itemprop="name">Git 服务器搭建</span>
+              <span itemprop="name">git clone 命令</span>
             
           </a>
         
       </h3>
 
       <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2017-10-13T15:43:25+08:00" content="2017-10-13">
+        <time class="post-time" itemprop="dateCreated" datetime="2017-10-13T14:57:24+08:00" content="2017-10-13">
           10-13
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+          <a class="post-title-link" href="/2017/10/13/github-remote-error/" itemprop="url">
+            
+              <span itemprop="name">fatal:remote error You can't push to git 的解决办法</span>
+            
+          </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2017-10-13T13:34:04+08:00" content="2017-10-13">
+          10-13
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+          <a class="post-title-link" href="/2017/10/12/git-question/" itemprop="url">
+            
+              <span itemprop="name">git笔记</span>
+            
+          </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2017-10-12T14:58:01+08:00" content="2017-10-12">
+          10-12
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+          <a class="post-title-link" href="/2017/10/12/The-following-untracked/" itemprop="url">
+            
+              <span itemprop="name">The following untracked working tree files would be overwritten by merge</span>
+            
+          </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2017-10-12T14:53:23+08:00" content="2017-10-12">
+          10-12
         </time>
       </div>
 
@@ -453,7 +531,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">179</span>
+                    <span class="site-state-item-count">185</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -494,7 +572,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">17</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -625,7 +709,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">59</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">62</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1267,77 +1357,6 @@
       line-height: 20px;
       color: #333;
       white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-      
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      
-        right: 4px;
-        top: 8px;
-      
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1;
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function(i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; // Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.readOnly = true;
-        ta.value = code;
-        document.body.appendChild(ta);
-        ta.select();
-        ta.setSelectionRange(0, code.length);
-        ta.readOnly = false;
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); // For iOS
-        $(this).blur();
-      })).on('mouseleave', function(e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function() {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
-
-
-</body>
-</html>
-nowrap;
       vertical-align: middle;
       cursor: pointer;
       
