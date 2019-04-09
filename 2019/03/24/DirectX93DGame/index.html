@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -134,13 +137,13 @@
 
 
 
-  <meta name="description" content="随书代码下载地址：http://www.moon-labs.com/ml_book_samples.htm 三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光">
+  <meta name="description" content="三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光线的照射方向，以及在3D世界中的摄象机。向量为在3维空间中表示方向的提供了方便。　　　　　　向量与位置无关。">
 <meta name="keywords" content="DirectX">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DirectX 9 3D游戏设计入门">
 <meta property="og:url" content="http://zentia.site/2019/03/24/DirectX93DGame/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="随书代码下载地址：http://www.moon-labs.com/ml_book_samples.htm 三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光">
+<meta property="og:description" content="三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光线的照射方向，以及在3D世界中的摄象机。向量为在3维空间中表示方向的提供了方便。　　　　　　向量与位置无关。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.site/2019/03/24/DirectX93DGame/1.png">
 <meta property="og:image" content="http://zentia.site/2019/03/24/DirectX93DGame/2.png">
@@ -154,10 +157,10 @@
 <meta property="og:image" content="http://zentia.site/2019/03/24/DirectX93DGame/11.jpg">
 <meta property="og:image" content="http://zentia.site/2019/03/24/DirectX93DGame/1-2.jpg">
 <meta property="og:image" content="http://zentia.site/2019/03/24/DirectX93DGame/1-3.jpg">
-<meta property="og:updated_time" content="2019-03-30T13:39:00.936Z">
+<meta property="og:updated_time" content="2019-04-01T01:00:20.894Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DirectX 9 3D游戏设计入门">
-<meta name="twitter:description" content="随书代码下载地址：http://www.moon-labs.com/ml_book_samples.htm 三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光">
+<meta name="twitter:description" content="三维空间中的向量　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光线的照射方向，以及在3D世界中的摄象机。向量为在3维空间中表示方向的提供了方便。　　　　　　向量与位置无关。">
 <meta name="twitter:image" content="http://zentia.site/2019/03/24/DirectX93DGame/1.png">
 
 
@@ -228,7 +231,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -330,20 +333,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -473,8 +482,7 @@
       
 
       
-        <p>随书代码下载地址：<a href="http://www.moon-labs.com/ml_book_samples.htm" target="_blank" rel="noopener">http://www.moon-labs.com/ml_book_samples.htm</a></p>
-<h1 id="三维空间中的向量"><a href="#三维空间中的向量" class="headerlink" title="三维空间中的向量"></a>三维空间中的向量</h1><p>　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光线的照射方向，以及在3D世界中的摄象机。向量为在3维空间中表示方向的提供了方便。<br>　　<br>　　<img src="/2019/03/24/DirectX93DGame/1.png"><br>　　向量与位置无关。有同样长度和方向的两个向量是相等的，即使他们在不同的位置。观察彼此平行的两个向量，例如在图1中u和v是相等的。<br>　　我们继续学习左手坐标系。图2显示的是左手坐标系和右手坐标系。两者不同的是Z轴的方向。在左手坐标系中Z轴是向书的里面去的，而右手坐标系是向书的外边去的。<br>　　　　<img src="/2019/03/24/DirectX93DGame/2.png"><br>　　图2<br>　　因为向量的位置不能改变它的性质，我们可以把所有向量平移使他们的尾部和坐标系的原点重合。因此，当一个向量在标准位置我们能通过头点来描述向量。图3显示的是图1中的向量在标准位置的样子。<br>　　<img src="/2019/03/24/DirectX93DGame/3.png"><br>　　图3<br>　　我们通常用小写字母表示一个向量，但有时也用大写字母。如2、3和4维向量分别是：<br>　　　　　u = (ux, uy),<br>　　　　　N = (Nx, Ny, Nz),<br>　　　　　c = (cx, cy, cz, cw)。<br>　　我们现在介绍4个特殊的3D向量，就象图4显示的。首先是都由含有0的零向量；它被表示成加粗的0 = (0, 0, 0)。接下来3个特殊的向量标准基向量。它们被叫做i, j和k向量，分别沿着坐标系的x轴,y轴和z轴，并且有1的单位长：i = (1, 0, 0), j = (0, 1, 0), and k = (0, 0, 1)。<br>注意：只有1个单位长度的向量叫做单位向量（模长为1的向量）。<br>　　<img src="/2019/03/24/DirectX93DGame/4.png"><br>　　图4<br>在D3DX库中，我们能用D3DXVECTOR3类表示3维空间中的向量。它的定义是：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">D3DXVECTOR3</span> :</span> <span class="keyword">public</span> D3DVECTOR</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    D3DXVECTOR3() &#123;&#125;;</span><br><span class="line">    D3DXVECTOR3( CONST FLOAT * );</span><br><span class="line">    D3DXVECTOR3( CONST D3DVECTOR&amp; );</span><br><span class="line">    D3DXVECTOR3( CONST D3DXFLOAT16 * );</span><br><span class="line">    D3DXVECTOR3( FLOAT x, FLOAT y, FLOAT z );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// casting</span></span><br><span class="line">    <span class="keyword">operator</span> FLOAT* ();</span><br><span class="line">    <span class="keyword">operator</span> CONST FLOAT* () <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// assignment operators</span></span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> += ( CONST D3DXVECTOR3&amp; );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> -= ( CONST D3DXVECTOR3&amp; );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> *= ( FLOAT );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> /= ( FLOAT );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// unary operators</span></span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> + () <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> - () <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// binary operators</span></span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> + ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> - ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> * ( FLOAT ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> / ( FLOAT ) <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">friend</span> D3DXVECTOR3 <span class="keyword">operator</span> * ( FLOAT, CONST struct D3DXVECTOR3&amp; );</span><br><span class="line"></span><br><span class="line">    BOOL <span class="keyword">operator</span> == ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    BOOL <span class="keyword">operator</span> != ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">&#125; D3DXVECTOR3, *LPD3DXVECTOR3;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="三维空间中的向量"><a href="#三维空间中的向量" class="headerlink" title="三维空间中的向量"></a>三维空间中的向量</h1><p>　　几何学中，我们用有向线段表示向量，如图1。向量的两个属性是他的长度和他的顶点所指的方向。因此，可以用向量来模拟既有大小又有方向的物理模型。例如，以后我们要实现的粒子系统。我们用向量来模拟粒子的速度和加速度。在3D计算机图形学中我们用向量不仅仅模拟方向。例如我们常常想知道光线的照射方向，以及在3D世界中的摄象机。向量为在3维空间中表示方向的提供了方便。<br>　　<br>　　<img src="/2019/03/24/DirectX93DGame/1.png"><br>　　向量与位置无关。有同样长度和方向的两个向量是相等的，即使他们在不同的位置。观察彼此平行的两个向量，例如在图1中u和v是相等的。<br>　　我们继续学习左手坐标系。图2显示的是左手坐标系和右手坐标系。两者不同的是Z轴的方向。在左手坐标系中Z轴是向书的里面去的，而右手坐标系是向书的外边去的。<br>　　　　<img src="/2019/03/24/DirectX93DGame/2.png"><br>　　图2<br>　　因为向量的位置不能改变它的性质，我们可以把所有向量平移使他们的尾部和坐标系的原点重合。因此，当一个向量在标准位置我们能通过头点来描述向量。图3显示的是图1中的向量在标准位置的样子。<br>　　<img src="/2019/03/24/DirectX93DGame/3.png"><br>　　图3<br>　　我们通常用小写字母表示一个向量，但有时也用大写字母。如2、3和4维向量分别是：<br>　　　　　u = (ux, uy),<br>　　　　　N = (Nx, Ny, Nz),<br>　　　　　c = (cx, cy, cz, cw)。<br>　　我们现在介绍4个特殊的3D向量，就象图4显示的。首先是都由含有0的零向量；它被表示成加粗的0 = (0, 0, 0)。接下来3个特殊的向量标准基向量。它们被叫做i, j和k向量，分别沿着坐标系的x轴,y轴和z轴，并且有1的单位长：i = (1, 0, 0), j = (0, 1, 0), and k = (0, 0, 1)。<br>注意：只有1个单位长度的向量叫做单位向量（模长为1的向量）。<br>　　<img src="/2019/03/24/DirectX93DGame/4.png"><br>　　图4<br>在D3DX库中，我们能用D3DXVECTOR3类表示3维空间中的向量。它的定义是：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">D3DXVECTOR3</span> :</span> <span class="keyword">public</span> D3DVECTOR</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    D3DXVECTOR3() &#123;&#125;;</span><br><span class="line">    D3DXVECTOR3( CONST FLOAT * );</span><br><span class="line">    D3DXVECTOR3( CONST D3DVECTOR&amp; );</span><br><span class="line">    D3DXVECTOR3( CONST D3DXFLOAT16 * );</span><br><span class="line">    D3DXVECTOR3( FLOAT x, FLOAT y, FLOAT z );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// casting</span></span><br><span class="line">    <span class="keyword">operator</span> FLOAT* ();</span><br><span class="line">    <span class="keyword">operator</span> CONST FLOAT* () <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// assignment operators</span></span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> += ( CONST D3DXVECTOR3&amp; );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> -= ( CONST D3DXVECTOR3&amp; );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> *= ( FLOAT );</span><br><span class="line">    D3DXVECTOR3&amp; <span class="keyword">operator</span> /= ( FLOAT );</span><br><span class="line"></span><br><span class="line">    <span class="comment">// unary operators</span></span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> + () <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> - () <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// binary operators</span></span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> + ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> - ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> * ( FLOAT ) <span class="keyword">const</span>;</span><br><span class="line">    D3DXVECTOR3 <span class="keyword">operator</span> / ( FLOAT ) <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">friend</span> D3DXVECTOR3 <span class="keyword">operator</span> * ( FLOAT, CONST struct D3DXVECTOR3&amp; );</span><br><span class="line"></span><br><span class="line">    BOOL <span class="keyword">operator</span> == ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line">    BOOL <span class="keyword">operator</span> != ( CONST D3DXVECTOR3&amp; ) <span class="keyword">const</span>;</span><br><span class="line"></span><br><span class="line">&#125; D3DXVECTOR3, *LPD3DXVECTOR3;</span><br></pre></td></tr></table></figure></p>
 <p>注意D3DXVECTOR3是从D3DVECTOR继承的。它的定义是：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">D3DVECTOR</span> &#123;</span></span><br><span class="line">    <span class="keyword">float</span> x, y, z;</span><br><span class="line">&#125; D3DVECTOR;</span><br></pre></td></tr></table></figure></p>
 <p>　　向量有它们自己的算法，就像你在D3DXVECTOR3定义中看到的数学运算。现在你不需要知道它们怎么使用。以后介绍这些向量运算以及一些有用的函数和关于向量的重要的详细资料。<br>注意：在3D图形程序中，虽然我们主要关心3D向量，但有时也会用到2D和4D向量。在D3DX库中提供了D3DXVECTOR2和D3DXVECTOR4类来分别表现2D和4D向量。不同维数的向量有着和3D向量一样的性质，也就是它们描述大小和方向，仅仅是在不同的维数中。所有这些向量的数学运算对于不同维数向量都有效只是有一个除外，就是向量积。这些运算我们可通过论述3D向量扩展到2D, 4D甚至n维向量。</p>
 <h2 id="向量相等"><a href="#向量相等" class="headerlink" title="向量相等"></a>向量相等</h2><p>　　几何学上，有同样方向和长度的两个向量相等。数学上，我们说有同样维数和分量的向量相等。例如：如果ux = vx, uy = vy, 且 uz = vz.那么(ux, uy, uz) = (vx, vy, vz)。在代码中我们能够用“==”判断两个向量相等。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">D3DXVECTOR <span class="title">u</span><span class="params">(<span class="number">1.0f</span>, <span class="number">0.0f</span>, <span class="number">1.0f</span>)</span></span>;</span><br><span class="line"><span class="function">D3DXVECTOR <span class="title">v</span><span class="params">(<span class="number">0.0f</span>, <span class="number">1.0f</span>, <span class="number">0.0f</span>)</span></span>;</span><br><span class="line"><span class="keyword">if</span>( u == v ) <span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure></p>
@@ -2913,60 +2921,6 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
 
       
       
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
-        </div>
-      
       
 
       
@@ -3058,7 +3012,7 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3105,7 +3059,15 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3242,7 +3204,11 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3501,342 +3467,20 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -3910,16 +3554,6 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

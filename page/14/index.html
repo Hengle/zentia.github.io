@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -211,7 +214,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -313,20 +316,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -369,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/28/poll/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -389,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/28/poll/" class="post-title-link" itemprop="url">poll</a>
+                <a href="/2018/03/03/note4/" class="post-title-link" itemprop="url">第四部分 图像效果</a>
               
             
           </h2>
@@ -420,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/28/poll/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/28/poll/" itemprop="commentCount"></span>
+                <a href="/2018/03/03/note4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note4/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,15 +461,13 @@
         
           
             <p>
-              Poll就是监控文件是否可读的一种机制，作用与select一样。应用程序的调用如下：
-int poll(struct pollfd *fds, nfds_t nfds, int timeout)
-Poll机制会判断fds中的文件是否可读，如果可读则立即返回，返回的就是可读fd的数量，如果不可读，那么
+              第四部分 图像效果第二十一章 真正的Impostor第二十二章 在GPU上处理发现贴图第二十三章 高速的离屏粒子第二十四章 保持线性的重要性第二十五章 在CPU上渲染向量图第二十六章 通过颜色进行对象探测：使用CPU 进行实时视频图像处理第二十七章 作为后置处理效果的运动模糊第二十八章 使用景深后期
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/28/poll/#more" rel="contents">
+              <a class="btn" href="/2018/03/03/note4/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -520,7 +527,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/game-framework/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -540,7 +547,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/27/game-framework/" class="post-title-link" itemprop="url">XXSY服务器游戏架构</a>
+                <a href="/2018/03/03/note3/" class="post-title-link" itemprop="url">第三部分 渲染</a>
               
             
           </h2>
@@ -571,8 +578,8 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/27/game-framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/game-framework/" itemprop="commentCount"></span>
+                <a href="/2018/03/03/note3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note3/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -603,16 +610,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
         
           
             <p>
-              总体架构图
-大区架构图
-逻辑服务器架构图
-
+              第三部分 渲染第十四章 用于真实感实时皮肤渲染的高级技术第十五章 可播放的全方位捕捉第十六章 Crysis 中植被的过程化动画和着色第十七章 鲁棒的多镜面反射和折射第十八章 用于浮雕映射的松散式锥形步进第十九章 Tabula Rasa中的延迟着色第二十章 基于GPU的重要性采样
               
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/27/game-framework/#more" rel="contents">
+              <a class="btn" href="/2018/03/03/note3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -672,7 +676,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/Apache/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -692,7 +696,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/27/Apache/" class="post-title-link" itemprop="url">Apache</a>
+                <a href="/2018/03/03/note2/" class="post-title-link" itemprop="url">第二部分 光照和阴影</a>
               
             
           </h2>
@@ -723,8 +727,8 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/27/Apache/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/Apache/" itemprop="commentCount"></span>
+                <a href="/2018/03/03/note2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -755,13 +759,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
         
           
             <p>
-              [1] 安装 httpd.[root@linuxprobe ~]# yum -y install httpd# 删除默认欢迎页面[root@linuxprobe ~]# rm -f /etc/httpd/conf.d/welcome.conf[2] 配置httpd，将服务器名称替换为您自己的环境[r
+              第二部分 光照和阴影第八章 区域求和的差值阴影贴图8.1 介绍8.2 相关工作8.3 percentage-closer 过滤8.4 插值阴影贴图8.5 区域求和插值阴影贴图8.6 percentage-closer 软阴影8.7 结论8.8 参考资料第九章 使用全局照明实现互动的电影级重光照9.1
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/27/Apache/#more" rel="contents">
+              <a class="btn" href="/2018/03/03/note2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -821,7 +825,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/vs/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/GPU-Gems-3-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -841,7 +845,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/26/vs/" class="post-title-link" itemprop="url">vs</a>
+                <a href="/2018/03/03/GPU-Gems-3-note/" class="post-title-link" itemprop="url">第一部分 几何体</a>
               
             
           </h2>
@@ -872,8 +876,8 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/26/vs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/vs/" itemprop="commentCount"></span>
+                <a href="/2018/03/03/GPU-Gems-3-note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/GPU-Gems-3-note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -904,166 +908,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
         
           
             <p>
-              $(TargetDir)\XGZS_d.exe../data/cfg/network/cfg_relation.txt
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/26/vs/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/netstat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/26/netstat/" class="post-title-link" itemprop="url">netstat</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/26/netstat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/netstat/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              
-netstat -tln 查看端口占用情况\p 可以显示进程每一列含义协议类型  接受流量 发送流量 本机地址 目的地址 状态自己的IP地址就是本地地址，需要连接的地址的就是目的地址
-
-nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{“type”:0,”pid
+              第一部分 几何体尽管像素和像素着色器更加吸引人们的目光，但几何体才是一切的根源所在。没有了几何体，我们将发现光照、阴影和反射毫无意义。这是为什么呢？因为提高底层几何体的复杂度，将同时像素的质量。该书本部分描述的主题正式“复杂性”，以前需要使用CPU来增强场景复杂度的方法，现在已经能在GPU上实现。很
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/26/netstat/#more" rel="contents">
+              <a class="btn" href="/2018/03/03/GPU-Gems-3-note/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1123,7 +974,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/lang/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/12/10/Study_unreal4_Rendering_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1143,7 +994,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/25/lang/" class="post-title-link" itemprop="url">多语言规范</a>
+                <a href="/2017/12/10/Study_unreal4_Rendering_1/" class="post-title-link" itemprop="url">虚幻引擎学习之路：渲染模块之光照系统</a>
               
             
           </h2>
@@ -1174,8 +1025,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/25/lang/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/lang/" itemprop="commentCount"></span>
+                <a href="/2017/12/10/Study_unreal4_Rendering_1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/10/Study_unreal4_Rendering_1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1206,14 +1057,14 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              概述部分多语言资源，客户端和服务器放在不同目录里，公用的部分使用外链。
-客户端多语言根目录：Assets\Art\lang二级目录mb：存放mb的多语言数据二级目录res: 存放界面文本，以及其它资源的多语言数据（比如图片和prefab等）三级目录：用各种语言名字来命令的目录config.txt：保
+              我们准备从三方面来介绍Unreal 4引擎的渲染模块，主要包括：光照系统，材质系统喝图像后处理。本篇文章重点讲解第一部分：光照系统。在对比Unreal 4与Unity两者引擎时，本文分别采用的版本是Unreal 4.18.1和Unity 5.3.8.f1。
+本节将介绍Unreal 4引擎的光照系统。
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/25/lang/#more" rel="contents">
+              <a class="btn" href="/2017/12/10/Study_unreal4_Rendering_1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1273,7 +1124,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/fork/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/11/07/word-boss/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1293,7 +1144,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/25/fork/" class="post-title-link" itemprop="url">fork</a>
+                <a href="/2017/11/07/word-boss/" class="post-title-link" itemprop="url">世界boss设计</a>
               
             
           </h2>
@@ -1324,8 +1175,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/25/fork/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/fork/" itemprop="commentCount"></span>
+                <a href="/2017/11/07/word-boss/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/07/word-boss/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1356,13 +1207,13 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              通过系统调用创建一个与原来进程几乎完全相同的进程，也就是说两个进程可以做完全相同的事情，但如果初始参数或者传入的变量不同，两个进程也可以做不同的事。一个进程调用fork()函数之后，系统先给新的进程分配资源，例如存储数据和代码的空间。然后吧原来的进程的所有值都复制到新的进程中，只有少数值与原来进程的
+              设计目的作为主要的金钱额外发放通道，驱动尽可能多的玩家参与。将世界boss分为大小两个类型，阶梯性的学习，鼓励低级用户参与，降低挫折感在世界boss和潜在的竞争对手的压力下，让玩家开始自发的组织，逐步形成社会关系。由于小boss需要的组织难度较低，玩家很容易形成组织。而大boss普通玩家只需要
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/25/fork/#more" rel="contents">
+              <a class="btn" href="/2017/11/07/word-boss/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1422,7 +1273,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/time/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/11/02/shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1442,7 +1293,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/time/" class="post-title-link" itemprop="url">time</a>
+                <a href="/2017/11/02/shell/" class="post-title-link" itemprop="url">Shell</a>
               
             
           </h2>
@@ -1473,8 +1324,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/24/time/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/time/" itemprop="commentCount"></span>
+                <a href="/2017/11/02/shell/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/02/shell/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1505,163 +1356,13 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              设置时间同步timedatectl set-ntp yes
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/time/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/systemctl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/24/systemctl/" class="post-title-link" itemprop="url">systemctl</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/24/systemctl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/systemctl/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              显示防火墙状态：systemctl status firewalld.service关闭防火墙：systemctl stop firewalld.service开启防火墙：systemctl start firewalld.service上面的firewalld的，不过我后来安装了iptables换
+              ${}用来做变量替换。一般情况下，$var与${var}并没啥不一样但是用${}会比较精确的界定变量名称的范围，比方说：$ A=B$ echo $ABg++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURC
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/systemctl/#more" rel="contents">
+              <a class="btn" href="/2017/11/02/shell/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1721,7 +1422,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-set/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/zentia-note1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1741,7 +1442,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/server-set/" class="post-title-link" itemprop="url">服务器搭建和日常维护</a>
+                <a href="/2017/10/30/zentia-note1/" class="post-title-link" itemprop="url">日记</a>
               
             
           </h2>
@@ -1772,8 +1473,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/24/server-set/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/server-set/" itemprop="commentCount"></span>
+                <a href="/2017/10/30/zentia-note1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/zentia-note1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1804,13 +1505,311 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              1 概述2 系统软硬件要求软件：所有的服务器程序都可以在linux和windows系统上。推荐使用linux系统。我们一般使用的系统是suse10.1，不过按要求，我们在tlinux的服务器上实验编译并运行了我们的所有服务器成。Gcc版本：gcc(GCC)4.8.5数据库使用MYSQL。版本：5.6
+              遇到问题：CLS起不来，自我感觉应该是SSH验证，因为XCLS2中的auth-info解析出来的地址是3.6，研究中。线索：通过上传记录发现配置文件和openresty一块上传，认为配置文件是通过openresty生成的，故而研究openresty。Message:cls 加上认证，win32平台测
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/server-set/#more" rel="contents">
+              <a class="btn" href="/2017/10/30/zentia-note1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/30/port-security-1/" class="post-title-link" itemprop="url">port-security</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/30/port-security-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/port-security-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/30/port-security-1/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/30/port-security/" class="post-title-link" itemprop="url">端口映射</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/30/port-security/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/port-security/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              端口安全（Port Security），从基本原理上讲，Port Security特性会通过MAC地址表记录连接到交换机端口的以太网MAC地址（即网卡号），并只允许某个MAC地址通过本端口通信。其它MAC地址发送的数据包通过此端口是，端口安全特性会组织它。使用端口安全特性可以防止未经允许的设备访问网
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/30/port-security/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1859,7 +1858,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1901,7 +1900,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1948,7 +1947,15 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2085,7 +2092,11 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2321,342 +2332,20 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2727,16 +2416,6 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

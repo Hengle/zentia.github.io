@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -211,7 +214,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -313,20 +316,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -369,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/10/unity-nature-review/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/17/Unity-ECS-README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -389,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/10/unity-nature-review/" class="post-title-link" itemprop="url">unity-nature-review</a>
+                <a href="/2018/04/17/Unity-ECS-README/" class="post-title-link" itemprop="url">Unity ECS Readme</a>
               
             
           </h2>
@@ -420,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/10/unity-nature-review/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/10/unity-nature-review/" itemprop="commentCount"></span>
+                <a href="/2018/04/17/Unity-ECS-README/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/17/Unity-ECS-README/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,13 +461,26 @@
         
           
             <p>
-              是否有多维子材质：多维子材质材质测试，三个子材质，50个物体，使用多维子材质12帧，330个dc，343面。拆开之后20帧，154dc，134面。多维子材质Unity无法动态合并。叠加模式贴图，可以不用Alpha通道特效粒子贴图是否合并是否有些粒子能使用序列帧，不过和视角有关，去掉alpha贴图合并
+              
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+
+
+Entitas - The Entity Component System Framework for C# and UnityEntitas is a 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/10/unity-nature-review/#more" rel="contents">
+              <a class="btn" href="/2018/04/17/Unity-ECS-README/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -518,7 +540,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/Lua-5-1-refer-manual/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/16/Unity-Coroutine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -538,7 +560,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/Lua-5-1-refer-manual/" class="post-title-link" itemprop="url">Lua refer manual</a>
+                <a href="/2018/04/16/Unity-Coroutine/" class="post-title-link" itemprop="url">Unity ECS</a>
               
             
           </h2>
@@ -569,8 +591,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/Lua-5-1-refer-manual/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Lua-5-1-refer-manual/" itemprop="commentCount"></span>
+                <a href="/2018/04/16/Unity-Coroutine/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Coroutine/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -601,13 +623,13 @@
         
           
             <p>
-              Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C 
+              CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/Lua-5-1-refer-manual/#more" rel="contents">
+              <a class="btn" href="/2018/04/16/Unity-Coroutine/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -667,7 +689,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/Unix/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/16/Unity-Manual/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -687,7 +709,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/Unix/" class="post-title-link" itemprop="url">大端模式与小端模式</a>
+                <a href="/2018/04/16/Unity-Manual/" class="post-title-link" itemprop="url">Unity Manual</a>
               
             
           </h2>
@@ -718,8 +740,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/Unix/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Unix/" itemprop="commentCount"></span>
+                <a href="/2018/04/16/Unity-Manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Manual/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -750,16 +772,29 @@
         
           
             <p>
-              字节序
-Little-Endian         低位字节放在内存的低地址端，高位字节放在内存的高地址端。
-Big-Endian            高位字节放在内存的高地址端，低位字节放在内存的低地址端。
-Network byte order    TPC/IP各层协议将字节序定义为Big-E
+              
+
+
+
+
+
+
+
+
+
+public static float Mathf.Round(float f)
+四舍五入
+
+
+
+
+YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, WaitForFixedUpdate, Coroutine and MonoB
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/Unix/#more" rel="contents">
+              <a class="btn" href="/2018/04/16/Unity-Manual/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -819,7 +854,7 @@ Network byte order    TPC/IP各层协议将字节序定义为Big-E
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/CSharp/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/12/Unity-Optimize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -839,7 +874,7 @@ Network byte order    TPC/IP各层协议将字节序定义为Big-E
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/CSharp/" class="post-title-link" itemprop="url">C#</a>
+                <a href="/2018/04/12/Unity-Optimize/" class="post-title-link" itemprop="url">Unity优化</a>
               
             
           </h2>
@@ -870,8 +905,8 @@ Network byte order    TPC/IP各层协议将字节序定义为Big-E
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/CSharp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/CSharp/" itemprop="commentCount"></span>
+                <a href="/2018/04/12/Unity-Optimize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/Unity-Optimize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -902,14 +937,16 @@ Network byte order    TPC/IP各层协议将字节序定义为Big-E
         
           
             <p>
-              internal、sealedinternal：本应用程序使用，其它进程无法使用
-sealed（密封）：由它修饰的类、方法、属性将不能被继承或是重写。sealed 必须和override一起使用sealed修饰符表示密封用于类时，表示该类不能被继承，不能和abstract同时使用，不能被实例化。密封
+              
+更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。
+对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。
+减少FPS，在ProjectSetting-&gt; Quality中的V
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/CSharp/#more" rel="contents">
+              <a class="btn" href="/2018/04/12/Unity-Optimize/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -969,7 +1006,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-sence-merge-render/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/12/C-Thread-Sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -989,7 +1026,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/xxsy-sence-merge-render/" class="post-title-link" itemprop="url">xxsy-sence-merge-render</a>
+                <a href="/2018/04/12/C-Thread-Sync/" class="post-title-link" itemprop="url">C# 线程同步</a>
               
             
           </h2>
@@ -1020,8 +1057,8 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/xxsy-sence-merge-render/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-sence-merge-render/" itemprop="commentCount"></span>
+                <a href="/2018/04/12/C-Thread-Sync/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/C-Thread-Sync/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1052,13 +1089,15 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
         
           
             <p>
-              
-              
+              线程同步的方式线程同步有：临界区、互斥区、事件、信号量四种方式
+
+临界区(Critical Section)：临界区：通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。在任意时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资源，那么在有一个线程进入后，其他试图访
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/xxsy-sence-merge-render/#more" rel="contents">
+              <a class="btn" href="/2018/04/12/C-Thread-Sync/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1118,7 +1157,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-skill/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/11/managed-code-unmanaged-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1138,7 +1177,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/xxsy-skill/" class="post-title-link" itemprop="url">PJ04</a>
+                <a href="/2018/04/11/managed-code-unmanaged-code/" class="post-title-link" itemprop="url">托管代码和非托管代码</a>
               
             
           </h2>
@@ -1169,8 +1208,8 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/xxsy-skill/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-skill/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/managed-code-unmanaged-code/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/managed-code-unmanaged-code/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1201,63 +1240,16 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
         
           
             <p>
-              normal_logic
+              托管代码是-Microsoft的中间语言(IL)，他主要作用是在.Net FRAMEWORK的公共语言运行库(CLR)执行代码前去编译源代码，也就是说托管代码充当着翻译的作用，源代码在运行时分为两个阶段：
 
-
-
-Index
-Type
-Data1
-Data2
-Data3
-Data4
-Data5
-
-
-
-
-1
-随机移动
-
-
-2
-固定线路
-
-
-3
-跟随逻辑
-
-
-4
-恐惧逻辑
-
-
-5
-飞行逻辑
-
-
-6
-
-
-7
-
-
-8
-怪物闲聊
-
-talk_list.id
-起始延迟时间
-
-间隔时间
-
-
-
+源代码编译为托管代码，(所以源代码可以有很多种，如VB,C#,J#)
+托管代码编译为Micr
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/xxsy-skill/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/managed-code-unmanaged-code/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1317,7 +1309,7 @@ talk_list.id
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/01/opengl/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/11/AssetBundle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1337,7 +1329,7 @@ talk_list.id
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/01/opengl/" class="post-title-link" itemprop="url">OpenGL</a>
+                <a href="/2018/04/11/AssetBundle/" class="post-title-link" itemprop="url">Unity加载和内存管理</a>
               
             
           </h2>
@@ -1368,8 +1360,8 @@ talk_list.id
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/01/opengl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/opengl/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/AssetBundle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/AssetBundle/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1400,14 +1392,14 @@ talk_list.id
         
           
             <p>
-              颜色缓冲区颜色缓冲区（COLOR_BUFFER）就是帧缓冲区（FRAME_BUFFER），你需要渲染的场景最终每一个像素都要写入该缓冲区，然后由它渲染到屏幕上显示。
-深度缓冲区深度缓冲区（DEPTH_BUFFER）与帧缓冲区对应，用于记录上面每个像素的深度值，通过深度缓冲区，我们就可以进行深度测试，
+              Unity有两种动态加载机制：Resources.Load和AssetBundle，二者本质并无区别。Resources.Load就是从一个缺省打进程程序包的AssetBundle(Resourece)里加载资源，而一般AssetBundle文件需要你自己创建，运行时加载。
+AssetBundle加
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/01/opengl/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/AssetBundle/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1467,7 +1459,7 @@ talk_list.id
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/29/Red-Black-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/11/Unity-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1487,7 +1479,7 @@ talk_list.id
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/29/Red-Black-Tree/" class="post-title-link" itemprop="url">数据结构与算法</a>
+                <a href="/2018/04/11/Unity-Note/" class="post-title-link" itemprop="url">Unity3D笔记</a>
               
             
           </h2>
@@ -1518,8 +1510,8 @@ talk_list.id
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/29/Red-Black-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/29/Red-Black-Tree/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/Unity-Note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/Unity-Note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1550,15 +1542,14 @@ talk_list.id
         
           
             <p>
-              红黑树红黑树是一种自平衡二叉查找树。
-性质1.节点是红色或黑色。2.根节点是黑色3.每个叶节点（NIL或空节点）是黑色4.每个红色节点的两个子节点都是黑色的（也就是说不存在两个连续的红色节点）；5.从任意一个节点到其叶子节点都包含相同数目的黑色节点；
-AVL树性质1.本身首先是一棵二叉搜索树2.带有
+              在Update中使用Time.deltaTime，获取到的是这一帧的时间，如果游戏卡，帧率低，那这个值就大。如果游戏流畅，帧率高，这个值就小，Time.deltaTime=1.0f/帧率
+1、MonoBehaviour.Update 更新渲染帧当MonoBehaviour启用时，其Update在每一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/29/Red-Black-Tree/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/Unity-Note/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1618,7 +1609,7 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/24/Objective-C/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/11/constraint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1638,7 +1629,7 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/24/Objective-C/" class="post-title-link" itemprop="url">Objective-C</a>
+                <a href="/2018/04/11/constraint/" class="post-title-link" itemprop="url">约束</a>
               
             
           </h2>
@@ -1669,8 +1660,8 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/24/Objective-C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/Objective-C/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/constraint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/constraint/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1701,14 +1692,34 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
         
           
             <p>
-              Objective-C: C的超集Objective-C是C语言的严格超集—任何C语言不经修改可以直接通过Objective-C编译器
-Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Objective-C和C代码.mm 源代码文件，包含Objective-C、C、C++
+              
+
+
+
+
+
+
+
+
+
+T:struct
+类型参数必须是值类型。可以指定除Nullable以外的任何值类型。
+
+
+T:class
+类型参数必须是引用类型，包括任何类、接口、委托或数组类型。
+
+
+T:new()
+类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new()约束必须最后指定。
+
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/24/Objective-C/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/constraint/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1768,7 +1779,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/Unity-ILRuntime/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/11/23-Design-Patterns/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1788,7 +1799,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/Unity-ILRuntime/" class="post-title-link" itemprop="url">Unity热更新方案-ILRuntime</a>
+                <a href="/2018/04/11/23-Design-Patterns/" class="post-title-link" itemprop="url">23种设计模式</a>
               
             
           </h2>
@@ -1819,8 +1830,8 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/Unity-ILRuntime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-ILRuntime/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/23-Design-Patterns/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/23-Design-Patterns/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1851,18 +1862,13 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
         
           
             <p>
-              ILRuntime的优势同市面上的其他热更方案相比，ILRuntime主要有以下优点：
-
-无缝访问C#工程的线程代码，无需额外抽象脚本API
-直接使用VS2015进行开发，ILRuntime的解释编译引擎支持.Net 4.6编译的DLL
-执行效率是L#的10-20倍
-选择性的CLR绑定使跨域调用更快
+              设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构性模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/Unity-ILRuntime/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/23-Design-Patterns/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1911,7 +1917,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1953,7 +1959,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2000,7 +2006,15 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2137,7 +2151,11 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2373,342 +2391,20 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2779,16 +2475,6 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

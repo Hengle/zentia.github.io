@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -134,18 +137,24 @@
 
 
 
-  <meta name="description" content="CoroutinesWaitForENdOffFrame 帧末尾执行 yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能 yield return new WaitForSeconds 协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 多线程应用程序运行过程中，开辟一个新的、独立于主线程">
+  <meta name="description" content="CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 Unity面对的问题 面向对象的编程方式（曾经的圣典，已经">
 <meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity ECS">
 <meta property="og:url" content="http://zentia.site/2018/04/16/Unity-Coroutine/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="CoroutinesWaitForENdOffFrame 帧末尾执行 yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能 yield return new WaitForSeconds 协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 多线程应用程序运行过程中，开辟一个新的、独立于主线程">
+<meta property="og:description" content="CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 Unity面对的问题 面向对象的编程方式（曾经的圣典，已经">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.579Z">
+<meta property="og:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/2.png">
+<meta property="og:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/3.jpg">
+<meta property="og:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/4.jpg">
+<meta property="og:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/5.jpg">
+<meta property="og:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/6.jpg">
+<meta property="og:updated_time" content="2019-04-07T02:38:04.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity ECS">
-<meta name="twitter:description" content="CoroutinesWaitForENdOffFrame 帧末尾执行 yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能 yield return new WaitForSeconds 协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 多线程应用程序运行过程中，开辟一个新的、独立于主线程">
+<meta name="twitter:description" content="CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源 Unity面对的问题 面向对象的编程方式（曾经的圣典，已经">
+<meta name="twitter:image" content="http://zentia.site/2018/04/16/Unity-Coroutine/2.png">
 
 
 
@@ -215,7 +224,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -317,20 +326,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -460,18 +475,38 @@
       
 
       
-        <h1 id="Coroutines"><a href="#Coroutines" class="headerlink" title="Coroutines"></a>Coroutines</h1><p>WaitForENdOffFrame 帧末尾执行</p>
-<p>yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能</p>
-<p>yield return new WaitForSeconds</p>
-<p>协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源</p>
-<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p>应用程序运行过程中，开辟一个新的、独立于主线程的运行片段；这可以推动CPU和操作系统处理事务的极限。<br>通过拥有一个线程池可以缓解线程生存期的问题。但是，即使使用线程池也有可能激活大量线程，线程数如果多余CPU核心数将会互相争夺CPU资源，导致频繁切换上下文。切换上下文要先保存当前线程状态，在处理下一个线程，然后重新构建第一个线程，以便继续处理它。上下文切换是资源密集型的，因此尽可能避免切换上下文。</p>
-<h1 id="Job-System"><a href="#Job-System" class="headerlink" title="Job System"></a>Job System</h1><p>Job System是通过创建Job而不是线程来管理多线程的。<br>Job System跨多个核心管理一组线程。它通常每个CPU有一个工作线程，以避免频繁切换上下文。</p>
+        <h1 id="Coroutines"><a href="#Coroutines" class="headerlink" title="Coroutines"></a>Coroutines</h1><p>WaitForENdOffFrame 帧末尾执行<br>yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能<br>yield return new WaitForSeconds<br>协程的真正用途是分布做一个比较耗时的事情，比如游戏里面的加载资源</p>
 <h1 id="Unity面对的问题"><a href="#Unity面对的问题" class="headerlink" title="Unity面对的问题"></a>Unity面对的问题</h1><ul>
 <li>面向对象的编程方式（曾经的圣典，已经跟不上时代，OOP最大的问题是数据和逻辑混在一起，而现在我们要数据驱动模型）</li>
 <li>由Mono编译的非最优机器码</li>
 <li>GC机制</li>
 <li>单线程开发</li>
 </ul>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><ul>
+<li>创建一个GameObject对象；</li>
+<li>在对象上添加组件：Renderer，Collider，Rigidbody physics；</li>
+<li>创建MonoBehaviour脚本并将其添加到对象中，以便在运行时控制和更改这些组件的状态属性；</li>
+</ul>
+<p>以上3个步骤执行，我们成为Unity的执行流程，作为Unity开发者来说，这个是最基本的流程。<br>但是这种做法有它自己的缺点和性能问题。比如数据和逻辑是紧密耦合的，这意味着代码重用的频率比较低，因为逻辑与特定数据相关联，无法单独分离出来。<br>例如下图所示的GameObject和Components实例中，GameObject依赖于Transform、Renderer、Rigidbody和Collder引用，这些脚本中的引用对象分散在堆内存中。</p>
+<div align="center"></div>
+
+<p>游戏对象、其行为及其组件之间的内存引用：</p>
+<div align="center"><img src="/2018/04/16/Unity-Coroutine/2.png"></div>
+
+<p>Unity GameObject场景可以让游戏在非常短的时间内完成原型构建并运行，这个也是Unity的特色可以让开发者快速入手，但它对于性能来说不太理想。我们在深层次的探讨这个问题，每个引用类型都包含可能不需要访问的许多额外数据，这些未使用的成员也占用了处理器缓存中的宝贵空间。比如我们继承的Mono就是一个典型的案例，如果只需要现有组件的极少功能接口函数或者变量，则可以将其余部分视为浪费空间，如下面的“浪费空间”图所示：</p>
+<div align="center"><img src="/2018/04/16/Unity-Coroutine/3.jpg"></div>
+
+<p>在上图中，粗体表示实际用于移动操作的成员，其余的就是浪费空间，若要移动GameObject，脚本需要从Transform组件访问位置和旋转数据成员。当硬件从内存中获取数据时，缓存航中会填充许多可能无用的数据，如果只是为所有应该移动的GameObjects设置一个只有位置和旋转成员的阵列，这将能够在很短的时间内执行，如何去掉无用的数据？ECS就是味解决此问题而设计的。</p>
+<h1 id="ECS实体组件系统"><a href="#ECS实体组件系统" class="headerlink" title="ECS实体组件系统"></a>ECS实体组件系统</h1><p>Unity的新实体组件系统可帮助消除低效的对象引用，我们考虑只包含它所需数据的实体，而不考虑自带集合的GameObjects。<br>在下面的实体组件系统中，请注意Bullet实体没有附件Transform或Rigidbody组件，Bullet实体只是显示运行更新所需的原始数据，借助这个新系统，您可以将逻辑与各个对象类型完全分离。</p>
+<div align="center"><img src="/2018/04/16/Unity-Coroutine/4.jpg"></div>
+
+<p>这个系统具有很大的优势：它不仅可以提供缓存效率，缩短访问时间；它还支持在需要使用这种数据对齐方式的现代CPU中采用先进技术（自动矢量化/SIMD）这为游戏提供了所需的默认性能。如下图所示：</p>
+<div align="center"><img src="/2018/04/16/Unity-Coroutine/5.jpg"></div>
+
+<p>上图请注意缓冲行存储中的碎片和继承Mono系统生成的空间浪费，数据对比如下所示：</p>
+<div align="center"><img src="/2018/04/16/Unity-Coroutine/6.jpg"></div>
+
+<p>上图是将与单个移动操作相关的内存空间与实现系统目标的两个操作进行对比的结果。</p>
 
       
     </div>
@@ -501,60 +536,6 @@
       
 
       
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
-        </div>
       
       
 
@@ -647,7 +628,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -694,7 +675,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -831,7 +820,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -867,7 +860,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Coroutines"><span class="nav-number">1.</span> <span class="nav-text">Coroutines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多线程"><span class="nav-number">2.</span> <span class="nav-text">多线程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Job-System"><span class="nav-number">3.</span> <span class="nav-text">Job System</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity面对的问题"><span class="nav-number">4.</span> <span class="nav-text">Unity面对的问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Coroutines"><span class="nav-number">1.</span> <span class="nav-text">Coroutines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity面对的问题"><span class="nav-number">2.</span> <span class="nav-text">Unity面对的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程"><span class="nav-number">2.1.</span> <span class="nav-text">工作流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ECS实体组件系统"><span class="nav-number">3.</span> <span class="nav-text">ECS实体组件系统</span></a></li></ol></div>
             
 
           </div>
@@ -1090,342 +1083,20 @@
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -1452,16 +1123,6 @@
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

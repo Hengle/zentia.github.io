@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -211,7 +214,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -313,20 +316,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -369,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/18/Vm/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-set/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -389,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/18/Vm/" class="post-title-link" itemprop="url">VMware12中CentOS7网络设置</a>
+                <a href="/2017/10/24/server-set/" class="post-title-link" itemprop="url">服务器搭建和日常维护</a>
               
             
           </h2>
@@ -420,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/18/Vm/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/18/Vm/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/server-set/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/server-set/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,13 +461,13 @@
         
           
             <p>
-              VMware提供了三种将虚拟网卡和物理网卡捆绑起来的方式，即桥接(Bridge）模式，网络地址转换(Network Address Transformation, NAT)模式和主机(Host Only)模式。三种模式区别，参见关于三种模式的区别，简单而言，Bridge模式直接将虚拟机添加到局域网中
+              1 概述2 系统软硬件要求软件：所有的服务器程序都可以在linux和windows系统上。推荐使用linux系统。我们一般使用的系统是suse10.1，不过按要求，我们在tlinux的服务器上实验编译并运行了我们的所有服务器成。Gcc版本：gcc(GCC)4.8.5数据库使用MYSQL。版本：5.6
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/18/Vm/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/server-set/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -518,7 +527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/16/www/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -538,7 +547,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/16/www/" class="post-title-link" itemprop="url">www</a>
+                <a href="/2017/10/24/server-install/" class="post-title-link" itemprop="url">服务器安装说明</a>
               
             
           </h2>
@@ -569,8 +578,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/16/www/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/16/www/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/server-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/server-install/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -601,13 +610,17 @@
         
           
             <p>
-              StartCoroutine开启一个协程，yield return是迭代器返回调用迭代的地方。协程至少产生十几还是多少B的GC具体是多少我忘记了，至少在5.3.8f2之前的版本是，未来如果有时间和有机会我会讲解一个可以避免掉GC的办法。CoroutineTool，本篇不再介绍范围内。一个协程的执行可
+              
+解压服务器执行文件xx_svr_binfull_XXXX.tgz到指定文件夹。
+解压配置文件xx_svr_cfgfull_XXXX.tgz到相同的文件夹。
+解压配置文件xx_svr_resfull_XXXX.tgz到相同的文件夹。
+将我们提供的key文件修改文件名为auth-info.key放在X
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/16/www/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/server-install/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -667,7 +680,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/16/Jenkins/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/uwa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -687,7 +700,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/16/Jenkins/" class="post-title-link" itemprop="url">Jenkins</a>
+                <a href="/2017/10/23/uwa/" class="post-title-link" itemprop="url">uwa</a>
               
             
           </h2>
@@ -718,8 +731,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/16/Jenkins/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/16/Jenkins/" itemprop="commentCount"></span>
+                <a href="/2017/10/23/uwa/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/23/uwa/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -750,14 +763,13 @@
         
           
             <p>
-              
-添加Jenkins的源（repository） sudo wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo sudo rpm —import http://pkg.jenkins-ci.o
+              AssetBundle lockpersistentmanager开销观察性能曲线，发现某一帧AssetBundle加载中，lockpersistentmanager耗时比较大。请问这块是否能够优化？这说明当前帧或前几帧中存在较大量的资源在通过LoadAsync来进行加载，其本质是所加载的资源过大所
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/16/Jenkins/#more" rel="contents">
+              <a class="btn" href="/2017/10/23/uwa/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -817,7 +829,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/makefile/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/gcc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -837,7 +849,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/makefile/" class="post-title-link" itemprop="url">makefile</a>
+                <a href="/2017/10/23/gcc/" class="post-title-link" itemprop="url">gcc</a>
               
             
           </h2>
@@ -868,8 +880,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/makefile/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/makefile/" itemprop="commentCount"></span>
+                <a href="/2017/10/23/gcc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/23/gcc/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -900,13 +912,14 @@
         
           
             <p>
-              make: Nothing to be done for xxxx中间文件、链接文件C、C++要把源文件编译成中间代码文件，在Windows是.obj文件，在Linux是.o文件，即Object File，这一步叫做编译。然后把这些Object File合成可执行文件，这一步叫做链接(link)。编
+              extern staticextern 指为导出到其它文件所使用的非statice变量static是当前文件的静态变量二者不能同时定义setarch i386 ./config -m32编译32位的openssh缺少 gnu/stubs-32.h
+yum install glibc-devel.i6
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/makefile/#more" rel="contents">
+              <a class="btn" href="/2017/10/23/gcc/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -966,7 +979,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/gdb/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/ShaderLab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -986,7 +999,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/gdb/" class="post-title-link" itemprop="url">gdb</a>
+                <a href="/2017/10/23/ShaderLab/" class="post-title-link" itemprop="url">Unity Shader PBR</a>
               
             
           </h2>
@@ -1017,8 +1030,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/gdb/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/gdb/" itemprop="commentCount"></span>
+                <a href="/2017/10/23/ShaderLab/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/23/ShaderLab/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1049,14 +1062,13 @@
         
           
             <p>
-              断点
-break filename:linenum 在源文件filename的linenum行处停住。d 清除所有断点|—|—||step(s)|执行下一句，如果有函数则进入函数里面执行|set follow-fork-mode parentglibc-2.17-196.el7.i686 libgc
+              观察两个空间阴影映射(Shadow Mapping)牵涉到两个空间的Z深度比较,一个是灯光空间,一个是相机空间,首先打开ShadowMapping_2下的场景,场景是默认的相机视角,单击下面的Light View按钮,可以切换到灯光视角,13.1.2 两个视角的Z深度分别单机LightView De
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/gdb/#more" rel="contents">
+              <a class="btn" href="/2017/10/23/ShaderLab/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1116,7 +1128,7 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/linux/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/23/newindex/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1136,7 +1148,7 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/linux/" class="post-title-link" itemprop="url">Linux</a>
+                <a href="/2017/10/23/newindex/" class="post-title-link" itemprop="url">Lua中元方法_newindex详解</a>
               
             
           </h2>
@@ -1167,8 +1179,8 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/linux/" itemprop="commentCount"></span>
+                <a href="/2017/10/23/newindex/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/23/newindex/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1199,21 +1211,14 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
         
           
             <p>
-              例子：将目录A重命名为B
-mv A B
-例子：将/a目录移动到/b下，并重命名为c
-mv /a /b/c
-
-yum install wget
-yum install gcc
-yum install gcc-c++
-wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
+              __index元方法用于处理调用table中不存在的字段和查询__newindex用于更新
+local smartMan = &#123;    name = "lyf",    money = 900,    sayHello = function()        print("hello,I’
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/linux/#more" rel="contents">
+              <a class="btn" href="/2017/10/23/newindex/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1273,7 +1278,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/svn/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/22/c/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1293,7 +1298,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/svn/" class="post-title-link" itemprop="url">svn</a>
+                <a href="/2017/10/22/c/" class="post-title-link" itemprop="url">c</a>
               
             
           </h2>
@@ -1324,8 +1329,8 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/svn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/svn/" itemprop="commentCount"></span>
+                <a href="/2017/10/22/c/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/22/c/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1356,14 +1361,13 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
         
           
             <p>
-              svn: E200002: line 19: Option expected错误解决这是因为修改svnserve.conf时，打开注释时，配置的前面有空格，应该顶格写。修改后即可。
-解决svn Authorization failed错误出现该问题基本都是三个配置文件的问题，下面把这个文件列出来sv
+              先被声明为‘extern’后又被声明为‘static’In file included from src/mt_mysql_connector.cpp:14:0:/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:/usr/includ
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/svn/#more" rel="contents">
+              <a class="btn" href="/2017/10/22/c/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1423,7 +1427,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/14/vi/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/20/lua-select/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1443,7 +1447,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/14/vi/" class="post-title-link" itemprop="url">Centos7下 vim</a>
+                <a href="/2017/10/20/lua-select/" class="post-title-link" itemprop="url">lua-select</a>
               
             
           </h2>
@@ -1474,8 +1478,8 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/14/vi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/vi/" itemprop="commentCount"></span>
+                <a href="/2017/10/20/lua-select/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/20/lua-select/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1506,16 +1510,13 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
         
           
             <p>
-              yum -y install vim
-环境配置
-/etc/vimrc 全局
-vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //显示行数信息set autoindent //回车对齐syntax on //语法检测set encod
-              ...
+              
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/14/vi/#more" rel="contents">
+              <a class="btn" href="/2017/10/20/lua-select/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1575,7 +1576,7 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/14/mysql/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/20/lua/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1595,7 +1596,7 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/14/mysql/" class="post-title-link" itemprop="url">Mysql</a>
+                <a href="/2017/10/20/lua/" class="post-title-link" itemprop="url">lua</a>
               
             
           </h2>
@@ -1626,8 +1627,8 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/14/mysql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/mysql/" itemprop="commentCount"></span>
+                <a href="/2017/10/20/lua/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/20/lua/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1658,15 +1659,14 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
         
           
             <p>
-              修改mysql密码mysql -uroot -puse mysql;UPDATE user SET password=password("123456") WHERE user='root'; flush privileges;exit;
-SHOW DATABASES;
-首先CentOS7 已经不支
+              让lua编译时计算由于lua的编译速度相当快，而且这种迭代编译的过程仅仅在程序加载的时候进行一次，故而可以带来性能的提高；一些在系统初始化可以决定的参数（比如从配置文件中读出来的数据直接编译为常量置入程序中。
+local select = selectlocal setmetatable = set
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/14/mysql/#more" rel="contents">
+              <a class="btn" href="/2017/10/20/lua/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1726,7 +1726,7 @@ SHOW DATABASES;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/centos/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/19/expect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1746,7 +1746,7 @@ SHOW DATABASES;
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/13/centos/" class="post-title-link" itemprop="url">云主机CentOS7.2密钥丢失重新注入密钥方法</a>
+                <a href="/2017/10/19/expect/" class="post-title-link" itemprop="url">expect</a>
               
             
           </h2>
@@ -1777,8 +1777,8 @@ SHOW DATABASES;
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/13/centos/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/centos/" itemprop="commentCount"></span>
+                <a href="/2017/10/19/expect/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/19/expect/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1809,18 +1809,14 @@ SHOW DATABASES;
         
           
             <p>
-              一、单用户模式重置ROOT密码（如有root密码，则跳过该步骤）
-登录控制台，输入VNC密码并回车
-
-点击【Send CtrlAltDel】重启linux系统；
-
-在弹出界面，按键盘‘e’；4、如图修改前/修改后，将ro修改成rw init=/sysroot/bin/sh  去除console=tt
+              
+安装 yum install -y tcl tclx tcl-develExpect是一个免费的免费的编程工具语言，用来实现自动和交互任务进行通信，而无需人的干预。expect是交互性很强的脚本语言，可以帮助运维人员实现批量管理成千上百台服务器操作，是一款很实用的批量部署工具！下载：expect-
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/13/centos/#more" rel="contents">
+              <a class="btn" href="/2017/10/19/expect/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1869,7 +1865,7 @@ SHOW DATABASES;
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1911,7 +1907,7 @@ SHOW DATABASES;
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1958,7 +1954,15 @@ SHOW DATABASES;
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2095,7 +2099,11 @@ SHOW DATABASES;
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2331,342 +2339,20 @@ SHOW DATABASES;
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2737,16 +2423,6 @@ SHOW DATABASES;
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

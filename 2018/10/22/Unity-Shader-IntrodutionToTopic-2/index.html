@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -134,18 +137,18 @@
 
 
 
-  <meta name="description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+  <meta name="description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
 <meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity Shader第三部分">
 <meta property="og:url" content="http://zentia.site/2018/10/22/Unity-Shader-IntrodutionToTopic-2/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+<meta property="og:description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-27T15:51:37.161Z">
+<meta property="og:updated_time" content="2019-04-03T05:33:03.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader第三部分">
-<meta name="twitter:description" content="透明效果为什么渲染顺序很重要Unity Shader的渲染顺序透明度测试透明度混合透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。透明度混合：这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合">
+<meta name="twitter:description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
 
 
 
@@ -215,7 +218,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -317,20 +320,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -476,7 +485,8 @@
       
 
       
-        <h2 id="透明效果"><a href="#透明效果" class="headerlink" title="透明效果"></a>透明效果</h2><h3 id="为什么渲染顺序很重要"><a href="#为什么渲染顺序很重要" class="headerlink" title="为什么渲染顺序很重要"></a>为什么渲染顺序很重要</h3><h3 id="Unity-Shader的渲染顺序"><a href="#Unity-Shader的渲染顺序" class="headerlink" title="Unity Shader的渲染顺序"></a>Unity Shader的渲染顺序</h3><h3 id="透明度测试"><a href="#透明度测试" class="headerlink" title="透明度测试"></a>透明度测试</h3><h3 id="透明度混合"><a href="#透明度混合" class="headerlink" title="透明度混合"></a>透明度混合</h3><p>透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。<br><strong>透明度混合：</strong>这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合因子，与已经存储在颜色缓冲区种的颜色进行混合，得到新的颜色。但是，<font color="red"><strong>透明度混合需要关闭深度写入</strong></font>，这使得我们要非常小心物体的渲染顺序。<br>为了进行混合，我们需要使用Unity提供的混合命令Blend。Blend是Unity提供的设置混合模式的命令。想要实现半透明的效果就需要把当前自身的颜色和已经存在于颜色缓冲区种的颜色值进行混合，混合时使用的函数就是由该指令决定的。</p>
+        <h1 id="透明效果"><a href="#透明效果" class="headerlink" title="透明效果"></a>透明效果</h1><p>透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的<strong>透明通道（Alpha Channel）</strong>。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。<br>在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用<strong>透明度测试（Alpha Test）</strong>，这种效果其实无法得到真正的半透明效果；另一种是<strong>透明度混合（Alpha Blending）</strong>。<br>在之前的学习中，我们从没有强调过渲染顺序的问题。也就是说，当场景中包含很多模型时，我们并没有考虑是先渲染A，在渲染B，最后在渲染C，还是按照其他的顺序来渲染。事实上，对于不透明（opaque）物体，不考虑它们的渲染顺序也能得到正确的排序效果，这是由于强大的深度缓冲（depth buffer，也被称为z-buffer）的存在。在实时渲染中，深度缓冲是用于解决可见性（visibility）问题的，它可以决定哪个物体的哪些部分会被渲染在前面，而哪些部分会被其他物体遮挡。它的基本思想是：根据深度缓冲中的值来判断该片元距离摄像机的距离，当渲染一个片元时，需要把它的深度值和已经存在于深度缓冲中的值进行比较（如果开启了深度测试），如果它的值距离摄像机更远，那么说明这个片元不应该被渲染到屏幕上（有物体遮挡住了它）；否则，这个片元应该覆盖掉此时颜色缓冲中的像素值，并把它的深度值更新到深度缓冲中（如果开启了深度写入）。</p>
+<h3 id="为什么渲染顺序很重要"><a href="#为什么渲染顺序很重要" class="headerlink" title="为什么渲染顺序很重要"></a>为什么渲染顺序很重要</h3><h3 id="Unity-Shader的渲染顺序"><a href="#Unity-Shader的渲染顺序" class="headerlink" title="Unity Shader的渲染顺序"></a>Unity Shader的渲染顺序</h3><h3 id="透明度测试"><a href="#透明度测试" class="headerlink" title="透明度测试"></a>透明度测试</h3><h3 id="透明度混合"><a href="#透明度混合" class="headerlink" title="透明度混合"></a>透明度混合</h3><p>透明度混合的实现要比透明度测试复杂一些，这是因为我们在处理透明度测试时，实际上跟对待普通的不透明物体几乎是一样的，只是在片元着色器中增加了对透明度判断并裁剪片元的代码。而想要实现透明度混合就没这么简单了。我们回顾之前提到的透明度混合的原理。<br><strong>透明度混合：</strong>这种方法可以得到真正的半透明效果。它会使用当前片元的透明度作为混合因子，与已经存储在颜色缓冲区种的颜色进行混合，得到新的颜色。但是，<font color="red"><strong>透明度混合需要关闭深度写入</strong></font>，这使得我们要非常小心物体的渲染顺序。<br>为了进行混合，我们需要使用Unity提供的混合命令Blend。Blend是Unity提供的设置混合模式的命令。想要实现半透明的效果就需要把当前自身的颜色和已经存在于颜色缓冲区种的颜色值进行混合，混合时使用的函数就是由该指令决定的。</p>
 <div class="table-container">
 <table>
 <thead>
@@ -576,7 +586,7 @@ $F_{Schlick}(v,n) = F_{0}+(1-F_{0})(1-v \cdot n)^5$
 <p>其中，$F_{0}$是一个反射系数，用于控制菲涅耳反射的强度， v 是视角方向， n 是表面法线。另一个应用比较广泛的等式是Empricial菲涅耳近似等式：</p>
 <p><font size="4" color="red"><br>$F_{Empricial}(v,n) = max(0,min(1,bias+scale x (1-v \cdot n)^power))$
 </font><br>其中，bias、scale和power是控制项。<br>使用上面的菲涅尔近似等式，可以在边界处模拟反射光强和折射光强/漫反射光强之间的变化。在许多车漆、水面等材质的渲染中，会经常用到菲涅尔反射来模拟更加真实的反射。</p>
-<h3 id="广告牌"><a href="#广告牌" class="headerlink" title="广告牌"></a>广告牌</h3><p>广告牌技术的本质就是构建旋转矩阵，而我们知道一个变换矩阵需要3个基向量。广告牌技术使用的基向量通常就是<strong>表面法线（normal）、指向上的方向（up）以及指向右的方向（right）</strong>。除此之外，我们还需要指定一个<strong>锚点（anchor location）</strong>，这个锚点在旋转过程中是固定不变的，以此来确定多边形在空间中的位置。<br>广告牌技术的难点在于，如何根据需求构建3个相互正交的基向量。计算过程通常是，<br>CPU写法：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Vector3 Normal;</span><br><span class="line">Quaternion direction;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    direction = Quaternion.FromToRotation(<span class="keyword">new</span> Vector3(<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>), Normal);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Update</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    transform.rotation = Camera.main.transform.rotation * direction;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="广告牌"><a href="#广告牌" class="headerlink" title="广告牌"></a>广告牌</h3><p>广告牌技术的本质就是构建旋转矩阵，而我们知道一个变换矩阵需要3个基向量。广告牌技术使用的基向量通常就是<strong>表面法线（normal）、指向上的方向（up）以及指向右的方向（right）</strong>。除此之外，我们还需要指定一个<strong>锚点（anchor location）</strong>，这个锚点在旋转过程中是固定不变的，以此来确定多边形在空间中的位置。<br>广告牌技术的难点在于，如何根据需求构建3个相互正交的基向量。计算过程通常是，<br>CPU写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public Vector3 Normal;</span><br><span class="line">Quaternion direction;</span><br><span class="line">void Start () &#123;</span><br><span class="line">    direction = Quaternion.FromToRotation(new Vector3(0, 0, 1), Normal);</span><br><span class="line">&#125;</span><br><span class="line">void Update () &#123;</span><br><span class="line">    transform.rotation = Camera.main.transform.rotation * direction;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="屏幕后处理效果"><a href="#屏幕后处理效果" class="headerlink" title="屏幕后处理效果"></a>屏幕后处理效果</h2><h3 id="建立一个基本的屏幕后处理脚本系统"><a href="#建立一个基本的屏幕后处理脚本系统" class="headerlink" title="建立一个基本的屏幕后处理脚本系统"></a>建立一个基本的屏幕后处理脚本系统</h3><pre><code>MonoBehaviour.OnRenderImage(RenderTexture src, RenderTexture dest);
 </code></pre><p>当在脚本中声明该函数后，Unity会把当前渲染得到的图像存储在第一个参数对应的源渲染纹理中，把第二参数对应的渲染纹理显示到屏幕上。</p>
 <pre><code>public static void Blit(Texture src, RenderTexture dest);
@@ -585,7 +595,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
 </code></pre><p>参数pass的默认值胃-1，表示将会依次调用Shader内的所有Pass。否则，只会调用给定索引的Pass。</p>
 <h2 id="使用深度和法线纹理"><a href="#使用深度和法线纹理" class="headerlink" title="使用深度和法线纹理"></a>使用深度和法线纹理</h2><h3 id="消融"><a href="#消融" class="headerlink" title="消融"></a>消融</h3><p>噪声纹理+透明度测试，我们使用对噪声纹理采样的结果和某个控制消融程度的阀值比较，如果小于阀值，就使用clip函数把它对应的像素裁减掉。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Test&quot;</span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _BurnAmount(&quot;Burn Amount&quot;, Range(0.0, 1.0)) = 0.0 // 控制消融程度，0为正常，1完全消融</span><br><span class="line">        _LineWith(&quot;Burn Line Width&quot;, Range(0.0, 0.2)) = 0.1 // 模拟烧焦效果的线宽，值越大，火焰边缘的蔓延范围越宽</span><br><span class="line">        _MainText (&quot;Base (RGB)&quot;, 2D) = &quot;white&quot; &#123;&#125; // 漫反射纹理</span><br><span class="line">        _BumpMap (&quot;Normal Map&quot;, 2D) = &quot;bump&quot; &#123;&#125; // 法线纹理</span><br><span class="line">        _BurnFirstColor(&quot;Burn First Color&quot;, Color) = (1,0,0,1) // 火焰边缘颜色</span><br><span class="line">        _BurnSecondColor(&quot;Burn Second Color&quot;, Color) = (1,0,0,1) // 火焰边缘颜色</span><br><span class="line">        _BurnMap(&quot;Burn Map&quot;, 2D) = &quot;white&quot; &#123;&#125; // 消融纹理</span><br><span class="line">    &#125;   </span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma vertex frag</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="水波效果"><a href="#水波效果" class="headerlink" title="水波效果"></a>水波效果</h3><p>在模拟实时水面的过程中，往往也会使用噪声纹理。此时，噪声纹理通常会用作一个高度图，以不断修改水面的法线方向。为了模拟水不断流动的效果，我们会使用和时间相关的变量来对噪声纹理进行采样，当得到法线信息后，在进行正常的反射+折射计算，得到最后的水面波动效果。<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">SubShader </span>&#123;</span><br><span class="line">    <span class="class">Tags </span>&#123;<span class="string">"Queue"</span>=<span class="string">"Transparent"</span> <span class="string">"RenderType"</span>=<span class="string">"Opaque"</span>&#125;</span><br><span class="line">    <span class="class">GrabPass </span>&#123;<span class="string">"_RefractionTex"</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="水波效果"><a href="#水波效果" class="headerlink" title="水波效果"></a>水波效果</h3><p>在模拟实时水面的过程中，往往也会使用噪声纹理。此时，噪声纹理通常会用作一个高度图，以不断修改水面的法线方向。为了模拟水不断流动的效果，我们会使用和时间相关的变量来对噪声纹理进行采样，当得到法线信息后，在进行正常的反射+折射计算，得到最后的水面波动效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SubShader &#123;</span><br><span class="line">    Tags &#123;&quot;Queue&quot;=&quot;Transparent&quot; &quot;RenderType&quot;=&quot;Opaque&quot;&#125;</span><br><span class="line">    GrabPass &#123;&quot;_RefractionTex&quot;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>首先把SubShader的标签中渲染队列设置成Transparent，并把后面的RenderType设置为Opaque。把Queue设置成Transparent可以确保该物体渲染时，其他所有不透明的物体都已经被渲染到屏幕上了，否则就可能无法正确得到“透过水面看到的图像”。而设置RenderType则是为了在使用着色器替换（Shader Replacement）时，该物体可以在需要时被正确渲染。</p>
 <h3 id="减少draw-call数目"><a href="#减少draw-call数目" class="headerlink" title="减少draw call数目"></a>减少draw call数目</h3><h4 id="动态批处理"><a href="#动态批处理" class="headerlink" title="动态批处理"></a>动态批处理</h4><p>基本原理：每一帧把可以进行批处理的模型网格进行合并，再把合并后的模型数据传递给GPU，然后使用同一个材质对其渲染。动态批处理的一个好处是实现方便，另一个好处是，经过批处理的物体仍然可以移动，这是由于在处理每帧时Unity都会重新合并一次网格。</p>
 <p>条件限制：</p>
@@ -669,60 +679,6 @@ public static void Blit(Texture src, Material mat, int pass = -1);
 
       
       
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
-        </div>
-      
       
 
       
@@ -739,8 +695,8 @@ public static void Blit(Texture src, Material mat, int pass = -1);
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/09/fiction/" rel="prev" title="序章">
-                序章 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/25/C++/" rel="prev" title="C++">
+                C++ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -814,7 +770,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -861,7 +817,15 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -998,7 +962,11 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1034,7 +1002,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#透明效果"><span class="nav-number">1.</span> <span class="nav-text">透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么渲染顺序很重要"><span class="nav-number">1.1.</span> <span class="nav-text">为什么渲染顺序很重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity-Shader的渲染顺序"><span class="nav-number">1.2.</span> <span class="nav-text">Unity Shader的渲染顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度测试"><span class="nav-number">1.3.</span> <span class="nav-text">透明度测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度混合"><span class="nav-number">1.4.</span> <span class="nav-text">透明度混合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启深度写入的半透明效果"><span class="nav-number">1.5.</span> <span class="nav-text">开启深度写入的半透明效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShaderLab的混合命令"><span class="nav-number">1.6.</span> <span class="nav-text">ShaderLab的混合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合等式和参数"><span class="nav-number">1.6.1.</span> <span class="nav-text">混合等式和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合操作"><span class="nav-number">1.6.2.</span> <span class="nav-text">混合操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见和混合类型"><span class="nav-number">1.6.3.</span> <span class="nav-text">常见和混合类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双面渲染的透明效果"><span class="nav-number">1.7.</span> <span class="nav-text">双面渲染的透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度测试的双面渲染"><span class="nav-number">1.7.1.</span> <span class="nav-text">透明度测试的双面渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度混合的双面渲染"><span class="nav-number">1.7.2.</span> <span class="nav-text">透明度混合的双面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染路径Rendering-Path"><span class="nav-number">2.</span> <span class="nav-text">渲染路径Rendering Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前向渲染路径"><span class="nav-number">2.0.1.</span> <span class="nav-text">前向渲染路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unity中的前向渲染"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">Unity中的前向渲染</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顶点照明渲染路径"><span class="nav-number">2.0.2.</span> <span class="nav-text">顶点照明渲染路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延迟渲染路径"><span class="nav-number">2.0.3.</span> <span class="nav-text">延迟渲染路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菲涅尔反射"><span class="nav-number">2.1.</span> <span class="nav-text">菲涅尔反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广告牌"><span class="nav-number">2.2.</span> <span class="nav-text">广告牌</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕后处理效果"><span class="nav-number">3.</span> <span class="nav-text">屏幕后处理效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个基本的屏幕后处理脚本系统"><span class="nav-number">3.1.</span> <span class="nav-text">建立一个基本的屏幕后处理脚本系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用深度和法线纹理"><span class="nav-number">4.</span> <span class="nav-text">使用深度和法线纹理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消融"><span class="nav-number">4.1.</span> <span class="nav-text">消融</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水波效果"><span class="nav-number">4.2.</span> <span class="nav-text">水波效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少draw-call数目"><span class="nav-number">4.3.</span> <span class="nav-text">减少draw call数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态批处理"><span class="nav-number">4.3.1.</span> <span class="nav-text">动态批处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态批处理"><span class="nav-number">4.3.2.</span> <span class="nav-text">静态批处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共享材质"><span class="nav-number">4.3.3.</span> <span class="nav-text">共享材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#批处理的注意事项"><span class="nav-number">4.3.4.</span> <span class="nav-text">批处理的注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少需要处理的顶点数目"><span class="nav-number">4.4.</span> <span class="nav-text">减少需要处理的顶点数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化几何体"><span class="nav-number">4.4.1.</span> <span class="nav-text">优化几何体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型的LOD技术"><span class="nav-number">4.4.2.</span> <span class="nav-text">模型的LOD技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遮挡剔除技术"><span class="nav-number">4.4.3.</span> <span class="nav-text">遮挡剔除技术</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少需要处理的片元数目"><span class="nav-number">4.5.</span> <span class="nav-text">减少需要处理的片元数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控制绘制顺序"><span class="nav-number">4.5.1.</span> <span class="nav-text">控制绘制顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时刻警惕透明物体"><span class="nav-number">4.5.2.</span> <span class="nav-text">时刻警惕透明物体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#减少实时光照和阴影"><span class="nav-number">4.5.3.</span> <span class="nav-text">减少实时光照和阴影</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#影响性能的因素"><span class="nav-number">4.6.</span> <span class="nav-text">影响性能的因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节省带宽"><span class="nav-number">4.7.</span> <span class="nav-text">节省带宽</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#减少纹理大小"><span class="nav-number">4.7.1.</span> <span class="nav-text">减少纹理大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用分辨率缩放"><span class="nav-number">4.7.2.</span> <span class="nav-text">利用分辨率缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少计算复杂度"><span class="nav-number">4.8.</span> <span class="nav-text">减少计算复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shader的LOD技术"><span class="nav-number">4.8.1.</span> <span class="nav-text">Shader的LOD技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方面的优化"><span class="nav-number">4.8.2.</span> <span class="nav-text">代码方面的优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据硬件进行缩放"><span class="nav-number">4.8.3.</span> <span class="nav-text">根据硬件进行缩放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于物理的渲染"><span class="nav-number">5.</span> <span class="nav-text">基于物理的渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双向反射分布函数（BRDF）"><span class="nav-number">5.1.</span> <span class="nav-text">双向反射分布函数（BRDF）</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#透明效果"><span class="nav-number">1.</span> <span class="nav-text">透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么渲染顺序很重要"><span class="nav-number">1.0.1.</span> <span class="nav-text">为什么渲染顺序很重要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity-Shader的渲染顺序"><span class="nav-number">1.0.2.</span> <span class="nav-text">Unity Shader的渲染顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度测试"><span class="nav-number">1.0.3.</span> <span class="nav-text">透明度测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明度混合"><span class="nav-number">1.0.4.</span> <span class="nav-text">透明度混合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启深度写入的半透明效果"><span class="nav-number">1.0.5.</span> <span class="nav-text">开启深度写入的半透明效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShaderLab的混合命令"><span class="nav-number">1.0.6.</span> <span class="nav-text">ShaderLab的混合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合等式和参数"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">混合等式和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合操作"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">混合操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见和混合类型"><span class="nav-number">1.0.6.3.</span> <span class="nav-text">常见和混合类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双面渲染的透明效果"><span class="nav-number">1.0.7.</span> <span class="nav-text">双面渲染的透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度测试的双面渲染"><span class="nav-number">1.0.7.1.</span> <span class="nav-text">透明度测试的双面渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度混合的双面渲染"><span class="nav-number">1.0.7.2.</span> <span class="nav-text">透明度混合的双面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染路径Rendering-Path"><span class="nav-number">1.1.</span> <span class="nav-text">渲染路径Rendering Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前向渲染路径"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">前向渲染路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unity中的前向渲染"><span class="nav-number">1.1.0.1.1.</span> <span class="nav-text">Unity中的前向渲染</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顶点照明渲染路径"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">顶点照明渲染路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延迟渲染路径"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">延迟渲染路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菲涅尔反射"><span class="nav-number">1.1.1.</span> <span class="nav-text">菲涅尔反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广告牌"><span class="nav-number">1.1.2.</span> <span class="nav-text">广告牌</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕后处理效果"><span class="nav-number">1.2.</span> <span class="nav-text">屏幕后处理效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个基本的屏幕后处理脚本系统"><span class="nav-number">1.2.1.</span> <span class="nav-text">建立一个基本的屏幕后处理脚本系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用深度和法线纹理"><span class="nav-number">1.3.</span> <span class="nav-text">使用深度和法线纹理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消融"><span class="nav-number">1.3.1.</span> <span class="nav-text">消融</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水波效果"><span class="nav-number">1.3.2.</span> <span class="nav-text">水波效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少draw-call数目"><span class="nav-number">1.3.3.</span> <span class="nav-text">减少draw call数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动态批处理"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">动态批处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#静态批处理"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">静态批处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共享材质"><span class="nav-number">1.3.3.3.</span> <span class="nav-text">共享材质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#批处理的注意事项"><span class="nav-number">1.3.3.4.</span> <span class="nav-text">批处理的注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少需要处理的顶点数目"><span class="nav-number">1.3.4.</span> <span class="nav-text">减少需要处理的顶点数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化几何体"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">优化几何体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型的LOD技术"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">模型的LOD技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遮挡剔除技术"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">遮挡剔除技术</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少需要处理的片元数目"><span class="nav-number">1.3.5.</span> <span class="nav-text">减少需要处理的片元数目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控制绘制顺序"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">控制绘制顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时刻警惕透明物体"><span class="nav-number">1.3.5.2.</span> <span class="nav-text">时刻警惕透明物体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#减少实时光照和阴影"><span class="nav-number">1.3.5.3.</span> <span class="nav-text">减少实时光照和阴影</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#影响性能的因素"><span class="nav-number">1.3.6.</span> <span class="nav-text">影响性能的因素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节省带宽"><span class="nav-number">1.3.7.</span> <span class="nav-text">节省带宽</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#减少纹理大小"><span class="nav-number">1.3.7.1.</span> <span class="nav-text">减少纹理大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用分辨率缩放"><span class="nav-number">1.3.7.2.</span> <span class="nav-text">利用分辨率缩放</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减少计算复杂度"><span class="nav-number">1.3.8.</span> <span class="nav-text">减少计算复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Shader的LOD技术"><span class="nav-number">1.3.8.1.</span> <span class="nav-text">Shader的LOD技术</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码方面的优化"><span class="nav-number">1.3.8.2.</span> <span class="nav-text">代码方面的优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#根据硬件进行缩放"><span class="nav-number">1.3.8.3.</span> <span class="nav-text">根据硬件进行缩放</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于物理的渲染"><span class="nav-number">1.4.</span> <span class="nav-text">基于物理的渲染</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#双向反射分布函数（BRDF）"><span class="nav-number">1.4.1.</span> <span class="nav-text">双向反射分布函数（BRDF）</span></a></li></ol></li></div>
             
 
           </div>
@@ -1257,342 +1225,20 @@ public static void Blit(Texture src, Material mat, int pass = -1);
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -1666,16 +1312,6 @@ public static void Blit(Texture src, Material mat, int pass = -1);
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

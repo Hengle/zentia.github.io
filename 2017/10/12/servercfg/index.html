@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -215,7 +218,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -317,20 +320,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -465,7 +474,7 @@
 <h1 id="2-各个服务器主要配置参数说明"><a href="#2-各个服务器主要配置参数说明" class="headerlink" title="2.各个服务器主要配置参数说明"></a>2.各个服务器主要配置参数说明</h1><h2 id="2-1-公共配置文件"><a href="#2-1-公共配置文件" class="headerlink" title="2.1 公共配置文件"></a>2.1 公共配置文件</h2><p>文件名：cmncfg.txt<br>该文件主要用来被所有的配置文件包含，可以定义一些全局性的信息（比如在不同的服务器配置信息不同的地方就可以放在这个文件里，这样不同的服务器只要修改这一个文件即可。）<br>它一般放在所有服务器程序目录的上层目录，命名为cmncfg.txt<br>典型内容如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 经常要变的部分</span></span><br><span class="line"><span class="comment">////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 大区的ID（这个配置很重要，如果配置错误会导致所有的角色和物品ID错误，影响合服）</span></span><br><span class="line">#defene SVRGRPID 2</span><br><span class="line"><span class="comment">// 代表版本字串</span></span><br><span class="line">#define VERMAIN 0.7100</span><br><span class="line"><span class="comment">// 各类服务器IP定义</span></span><br><span class="line"><span class="comment">// 日志服务器的地址</span></span><br><span class="line">#define LOGSVR 192.168.0.49</span><br><span class="line"><span class="comment">// GMS4Chat</span></span><br><span class="line">#define GMS4CHATINNERIP 192.168.0.49</span><br><span class="line"><span class="comment">// CAAFS4CHAT</span></span><br><span class="line">#define CAAFS4CHATOUTTERIP 192.168.0.49</span><br><span class="line"><span class="comment">// GMS4Game</span></span><br><span class="line">#define GMS4GAMEINNERIP 192.168.0.49</span><br><span class="line"><span class="comment">// DBS</span></span><br><span class="line">#define DBSINNERIP 192.168.0.49</span><br><span class="line"><span class="comment">// P2PSERVER</span></span><br><span class="line">#define P2POUTTERIP 192.168.0.49</span><br><span class="line"><span class="comment">// XGMS</span></span><br><span class="line">#define XGMSINNERIP 192.168.0.49</span><br><span class="line"><span class="comment">// TTYGZS</span></span><br><span class="line">#define TTYGZSINNERIP 192.168.0.49</span><br><span class="line"><span class="comment">// XCAAFS</span></span><br><span class="line">#define XCAAFSOUTTERIP 192.168.0.49</span><br><span class="line"><span class="comment">// XCLS</span></span><br><span class="line">#define XCLSOUTERIP 192.168.0.49</span><br><span class="line"><span class="comment">// 本组配置的端口增量（主要用于在同一台机器上启动多组服务器）</span></span><br><span class="line">#define PORTSHIEF 0</span><br><span class="line"><span class="comment">// 共享内存增量</span></span><br><span class="line">#define SHMSHIFT 0</span><br><span class="line"><span class="comment">// 日志的跟路径（注意这个配置，如果在后面加上了"/"则会导致目录创建失败，因为字串中后来形成的//会被当成注释）</span></span><br><span class="line">#define LOGPATH /ITC/LOG</span><br><span class="line"><span class="comment">// 数据库相关的定义</span></span><br><span class="line">#define DB_HOST localhost</span><br><span class="line"><span class="comment">// 如果DB_HOST是localhost则需要填写这个，默认值是/tmp/mysql.sock</span></span><br><span class="line">#define DB_SOCKET /TMP/mysql.sock</span><br><span class="line">#define DB__USER root</span><br><span class="line">#define DB_PASSWORD zentiadb2017</span><br><span class="line">#define DB_CHARSET utf8</span><br><span class="line"><span class="comment">// 用户数据库</span></span><br><span class="line">#define PLAYERDB zentia0</span><br><span class="line"><span class="comment">// 全局总控相关数据库（GMS4Game使用的）</span></span><br><span class="line">#define IMSDB ims0</span><br><span class="line"></span><br><span class="line"><span class="comment">////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 不经常变的部分</span></span><br><span class="line"><span class="comment">////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 表面这是debug版本</span></span><br><span class="line">#define DEBUG</span><br><span class="line"><span class="comment">// 表明这是内部调试用的，可以放宽一些限制（正常运营时应该注视掉）</span></span><br><span class="line"><span class="comment">// #define INNERDEBUG</span></span><br><span class="line"><span class="comment">// 表明客户端超时不要太长（在内部测试的时候可能有用，因为有时候需要长时间不断，有时候需要正常超时断）</span></span><br><span class="line"><span class="comment">// define QUICKDROP</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 日志服务定义</span></span><br><span class="line"><span class="comment">/////////////////////////////////////////////////////</span></span><br><span class="line"><span class="comment">// 日志服务的描述串（根据各个服务器需求的不同分为下面三个等级）</span></span><br><span class="line">#define LOGADDRSTR_0 	0,$(LOGSVR):2000+$(PORTSHIFT), 	1,$(LOGSVR):2001+$(PORTSHIFT),	2,$(LOGSVR):2002+$(PORTSHIFT)</span><br><span class="line">#define LOGADDRSTR_1	0,$(LOGSVR):2000+$(PORTSHIFT),	1,$(LOGSVR):2001+$(PORTSHIFT),	2,$(LOGSVR):2002+$(PORTSHIFT),	3,$(LOGSVR):2003+$(PORTSHIFT),	4,$(LOGSVR):2004+$(PORTSHIFT),	5.$(LOGSVR):2005+$(PORTSHIFT),	6,$(LOGSVR):2006+$(PORTSHIFT)</span><br><span class="line">#define LOGADDRSTR_1	0,$(LOGSVR):2000+$(PORTSHIFT),	1,$(LOGSVR):2001+$(PORTSHIFT),	2,$(LOGSVR):2002+$(PORTSHIFT),	3,$(LOGSVR):2003+$(PORTSHIFT),	4,$(LOGSVR):2004+$(PORTSHIFT),	5.$(LOGSVR):2005+$(PORTSHIFT),	6,$(LOGSVR):2006+$(PORTSHIFT),	7,$(LOGSVR):2007+$(PORTSHIFT),	8,$(LOGSVR):2008+$(PORTSHIFT),	9,$(LOGSVR):2009+$(PORTSHIFT),	10,$(LOGSVR):2010+$(PORTSHIFT),	11,$(LOGSVR):2011+$(PORTSHIFT),	12.$(LOGSVR):2012+$(PORTSHIFT),	13,$(LOGSVR):2013$(PORTSHIFT),	14,$(LOGSVR):2014$(PORTSHIFT)</span><br><span class="line"><span class="comment">// 本大区最多支持的同时在线用户数量</span></span><br><span class="line">#define MAXPLAYER 16000</span><br><span class="line"><span class="comment">// 服务器间tcp通讯的消息缓冲设置</span></span><br><span class="line">#define MSGBUFFLEN 10*1024*1024</span><br><span class="line"><span class="comment">// debug版的文件后缀</span></span><br><span class="line">#ifdef DEBUG</span><br><span class="line">#define CFGEXT</span><br><span class="line">#else</span><br><span class="line">#define CFGEXT</span><br><span class="line">#endif</span><br><span class="line"><span class="comment">// 这个只有配置caafs4chat的时候才需要，正常的配置不需要，这个一般不变的，因为CAAFS4Chat一般就起一个即可</span></span><br><span class="line">#define CAAFS4CHATID 1</span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否在GSZ宕掉之后重新拉起自动载入用户</span></span><br><span class="line">#define GZSDOWNRESTOREPLAYER true</span><br><span class="line"></span><br><span class="line"><span class="comment">// CNL网络超时（和客户端的断线超时）</span></span><br><span class="line">#ifdef INNERDEBUG</span><br><span class="line">#define DROPTIMEOUT 2000000</span><br><span class="line">#else</span><br><span class="line">#define DROPTIMEOUT 100000</span><br><span class="line">#endif</span><br><span class="line">#ifdef QUICKDROP</span><br><span class="line">#define DROPTIMEOUT 600000</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure></p>
 <h2 id="2-2-GMS4Game"><a href="#2-2-GMS4Game" class="headerlink" title="2.2 GMS4Game"></a>2.2 GMS4Game</h2><p>配置文件：gms4game_cfg.txt<br>典型内容如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include ../cmncfg.txt</span><br><span class="line"></span><br><span class="line">CMN</span><br><span class="line">&#123;</span><br><span class="line">    stream_size			= $(MSGBUFFLEN)</span><br><span class="line">    <span class="comment">// 本地监听的地址和端口（供其他服务器连接）</span></span><br><span class="line">    tcp_listen_host 	= $(MYOUTERIP):<span class="number">5000</span>+$(PORTSHIFT)</span><br><span class="line">    <span class="comment">// 和其他服务器TCP连接的超时设置</span></span><br><span class="line">    keepalive_idle		= <span class="number">60000</span></span><br><span class="line">    keepalive_interval	= <span class="number">2000</span></span><br><span class="line">    <span class="comment">// MySQL配置</span></span><br><span class="line">    db_host 			= $(DB_HOST)</span><br><span class="line">    db_user 			= $(DB_USER)</span><br><span class="line">    db_password 		= $(DB_PASSWORD)</span><br><span class="line">    db_database 		= $(IMSDB)</span><br><span class="line">    db_charset 			= $(DB_CHARSET)</span><br><span class="line">    db_socket 			= $(DB_SOCKET)</span><br><span class="line">    <span class="comment">// 日志服务（这个只需要比较少的日志种类）</span></span><br><span class="line">    logger_addr 		= $(LOGADDRSTR_0)</span><br><span class="line">    <span class="comment">// szPIDFile 		= /tmp/GMS4Game-$(SVRGRPID).pid</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="2-3-XLBA"><a href="#2-3-XLBA" class="headerlink" title="2.3 XLBA"></a>2.3 XLBA</h1><p>配置文件：lba_cfg.txt<br>典型内容如下（基于XCMNSVR的配置）:<br>gzs_cfg1.txt<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<h1 id="附录1-基于XCMNSVR的配置"><a href="#附录1-基于XCMNSVR的配置" class="headerlink" title="附录1.基于XCMNSVR的配置"></a>附录1.基于XCMNSVR的配置</h1><p>  XCMNSVR是PNGS框架中的一种标准服务器程序结构。<br>  通过该结构配置的服务器由一个主程序框架：XCMNSVR和一系列的动态连接库插件构成。<br>  其配置文件一般都是下面的样子：<br><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">CMN</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">//</span> 用于记录日志中表示程序名和在windows下显示窗口标题栏上</span><br><span class="line">    szSvrName		= 服务器名</span><br><span class="line">    <span class="string">//</span> 是否运行为后台守护进程（这个选项一般在GDB启动程序进行调试比较有用）</span><br><span class="line">    bDaemon			= <span class="literal">true</span></span><br><span class="line">    <span class="string">//</span> 日志服务地址</span><br><span class="line">    szLoggerAddr	= $<span class="params">(LOGADDRSTR)</span></span><br><span class="line">    <span class="string">//</span> 每个逻辑循环的最大时间（其大小会影响服务器在没有网络输入输出的情况下的逻辑tick精度）</span><br><span class="line">    nSelectInterval = 50</span><br><span class="line">&#125;</span><br><span class="line">PlugIn</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">//</span> 各个插件的载入和创建参数</span><br><span class="line">    <span class="string">//</span> 注意：插件的文件名必须是带路径的。即便是当前路径下也需要写<span class="string">"./"</span>前缀</span><br><span class="line">    DLL		= 0,<span class="string">/TCPReceiver</span>$<span class="params">(CFGEXT)</span><span class="string">.so</span>,TCPReceiver_Create</span><br><span class="line">    DLL		= 0,<span class="string">/TCPReceiver</span>$<span class="params">(CFGEXT)</span><span class="string">.so</span>,LBACDTest_Create</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">//</span> 后面跟着各个插件自己需要的参数配置</span><br></pre></td></tr></table></figure></p>
+<h1 id="附录1-基于XCMNSVR的配置"><a href="#附录1-基于XCMNSVR的配置" class="headerlink" title="附录1.基于XCMNSVR的配置"></a>附录1.基于XCMNSVR的配置</h1><p>  XCMNSVR是PNGS框架中的一种标准服务器程序结构。<br>  通过该结构配置的服务器由一个主程序框架：XCMNSVR和一系列的动态连接库插件构成。<br>  其配置文件一般都是下面的样子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">CMN</span><br><span class="line">&#123;</span><br><span class="line">    // 用于记录日志中表示程序名和在windows下显示窗口标题栏上</span><br><span class="line">    szSvrName		= 服务器名</span><br><span class="line">    // 是否运行为后台守护进程（这个选项一般在GDB启动程序进行调试比较有用）</span><br><span class="line">    bDaemon			= true</span><br><span class="line">    // 日志服务地址</span><br><span class="line">    szLoggerAddr	= $(LOGADDRSTR)</span><br><span class="line">    // 每个逻辑循环的最大时间（其大小会影响服务器在没有网络输入输出的情况下的逻辑tick精度）</span><br><span class="line">    nSelectInterval = 50</span><br><span class="line">&#125;</span><br><span class="line">PlugIn</span><br><span class="line">&#123;</span><br><span class="line">    // 各个插件的载入和创建参数</span><br><span class="line">    // 注意：插件的文件名必须是带路径的。即便是当前路径下也需要写&quot;./&quot;前缀</span><br><span class="line">    DLL		= 0,/TCPReceiver$(CFGEXT).so,TCPReceiver_Create</span><br><span class="line">    DLL		= 0,/TCPReceiver$(CFGEXT).so,LBACDTest_Create</span><br><span class="line">&#125;</span><br><span class="line">// 后面跟着各个插件自己需要的参数配置</span><br></pre></td></tr></table></figure></p>
 <h1 id="附录2-CNTRSVR的配置"><a href="#附录2-CNTRSVR的配置" class="headerlink" title="附录2.CNTRSVR的配置"></a>附录2.CNTRSVR的配置</h1><h1 id="附录3-GSMEM的配置"><a href="#附录3-GSMEM的配置" class="headerlink" title="附录3.GSMEM的配置"></a>附录3.GSMEM的配置</h1><h1 id="附录4-IP的允许禁止文件的配置"><a href="#附录4-IP的允许禁止文件的配置" class="headerlink" title="附录4.IP的允许禁止文件的配置"></a>附录4.IP的允许禁止文件的配置</h1>
       
     </div>
@@ -495,60 +504,6 @@
       
 
       
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
-        </div>
       
       
 
@@ -641,7 +596,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -688,7 +643,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -825,7 +788,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1084,342 +1051,20 @@
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -1446,16 +1091,6 @@
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

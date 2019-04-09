@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -211,7 +214,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -313,20 +316,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -369,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/01/Unity3D_Game_Design/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/09/18/Unity-Lua-Manual/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -389,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/01/Unity3D_Game_Design/" class="post-title-link" itemprop="url">Unity3D手游游戏</a>
+                <a href="/2018/09/18/Unity-Lua-Manual/" class="post-title-link" itemprop="url">Unity-Lua-Manual</a>
               
             
           </h2>
@@ -420,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/01/Unity3D_Game_Design/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/01/Unity3D_Game_Design/" itemprop="commentCount"></span>
+                <a href="/2018/09/18/Unity-Lua-Manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/18/Unity-Lua-Manual/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,18 +461,17 @@
         
           
             <p>
-              Unity3D美工命名
-模型命名 Max文件中角色模型命名为skin@sk_001武器模型命名为skin@wq_001
-颜色贴图skin@st_001.png 高光贴图skin@st_001_ctr.png
-
-导入导出能够从3DsMax导入Unity3D的资源
-所有节点的位移、旋转、锁方、轴心和命名
+              GameObjectGO_namegameObject.GO_name = &quot;name&quot;
+设置或者获取游戏对象的名字
+GO_selfgameObject.GO_self
+绑定到自己身上的Lua模块指针
+GO_activegameObject.GO_active = true/fa
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/01/Unity3D_Game_Design/#more" rel="contents">
+              <a class="btn" href="/2018/09/18/Unity-Lua-Manual/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -523,7 +531,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/06/30/Shadow_Mapping/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/09/10/luajit/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -543,7 +551,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/30/Shadow_Mapping/" class="post-title-link" itemprop="url">阴影映射的原理和实现</a>
+                <a href="/2018/09/10/luajit/" class="post-title-link" itemprop="url">luajit</a>
               
             
           </h2>
@@ -574,8 +582,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/30/Shadow_Mapping/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/30/Shadow_Mapping/" itemprop="commentCount"></span>
+                <a href="/2018/09/10/luajit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/luajit/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -606,14 +614,26 @@
         
           
             <p>
-              阴影贴图 (Shadwom mapping)像素与以纹理形式保存的光照深度缓冲区或者深度图像比较，通过这种方式计算像素是否处于光源照射范围之内，从而生成阴影。
-原理阴影贴图是一种使用深度纹理来为渲染阴影提供解决方法的多通道计算。它的关键是，就是用投影光源代替最终视口来观察场景。通过移动视口到光源位置
+              JIT = Just In TimeIOS中禁止使用（不让自主申请内存）
+解释执行：
+效率低
+代码暴露
+
+静态编译
+不够灵活，无法热更新
+平台兼容性差
+
+JIT：
+效率：高于解释执行，低于静态编译。
+安全性：一般都先转换成字节码
+热更新：无论源码还是字节码本质都是自愿文件。
+兼容性：虚拟机会处理平台
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/06/30/Shadow_Mapping/#more" rel="contents">
+              <a class="btn" href="/2018/09/10/luajit/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -673,7 +693,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/06/26/Unity3D-Optimize/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/Android-NDK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -693,7 +713,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/26/Unity3D-Optimize/" class="post-title-link" itemprop="url">Unity3D优化专题</a>
+                <a href="/2018/07/21/Android-NDK/" class="post-title-link" itemprop="url">Andorid NDK</a>
               
             
           </h2>
@@ -724,8 +744,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/26/Unity3D-Optimize/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/26/Unity3D-Optimize/" itemprop="commentCount"></span>
+                <a href="/2018/07/21/Android-NDK/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/Android-NDK/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -756,13 +776,13 @@
         
           
             <p>
-              一 遮挡剔除OcclusionCulling遮挡剔除(Occlusion Culling)功能可在对象因被其他物体遮挡，当前在相机中无法看到时，禁用对象渲染。该功能不会在三维计算机图形中自动开启，因为在大部分情况下，离相机最远的对象最先渲染，离相机的对象覆盖先前的物体（该步骤称之为“重复渲染(ove
+              JNIJNI的全称是Java Native Interface，Java原生接口。提供别的代码调用的一组函数。首先使用C++写出了一些函数，然后将这些函数在Java类中再声明一次（加上关键字native），这样Java类中的函数和C++中的函数就匹配到一起了，我们使用Java类中的函数，其实就是使用
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/06/26/Unity3D-Optimize/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/Android-NDK/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -822,7 +842,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/06/09/BRDF/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/AndroidManifest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -842,7 +862,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/09/BRDF/" class="post-title-link" itemprop="url">基于物理的着色：BRDF</a>
+                <a href="/2018/07/21/AndroidManifest/" class="post-title-link" itemprop="url">AndroidManifest.xml详解</a>
               
             
           </h2>
@@ -873,8 +893,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/09/BRDF/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/09/BRDF/" itemprop="commentCount"></span>
+                <a href="/2018/07/21/AndroidManifest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/AndroidManifest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -905,13 +925,16 @@
         
           
             <p>
-              在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感
+              
+为应用的JAVA软件包命名。软件包名称充当应用的唯一标识符
+描述应用的各个组件，包括构成应用的Activity、服务、广播接收器和内容提供程序。它还为实现每个组件的类命名并发布其功能，例如它们可以处理Intent消息。这些声明向Android系统告知有关组件以及可以启动这些组件的条件的信息。
+确定
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/06/09/BRDF/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/AndroidManifest/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -971,7 +994,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/06/03/TA-1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/Protocol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -991,7 +1014,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/03/TA-1/" class="post-title-link" itemprop="url">3D美术人员Technical Artist（TA技术美术）的学习之旅（1）</a>
+                <a href="/2018/07/21/Protocol/" class="post-title-link" itemprop="url">Protocol Buffer</a>
               
             
           </h2>
@@ -1022,8 +1045,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/03/TA-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/03/TA-1/" itemprop="commentCount"></span>
+                <a href="/2018/07/21/Protocol/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/Protocol/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1054,209 +1077,27 @@
         
           
             <p>
-              文章针对于有一定3D美术基础，并了解次时代游戏制作流程的开发者，需要具备以下知识基础：了解3D建模，以及拓扑流程，贴图制作。相关软件3DMAX,ZB,substancepainte,ps等。TA是美术和程序之间沟通的桥梁。美术同学需要一些更加方便，可视化更强的工具，例如拓扑的工具，各位都知道MAX里
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/03/TA-1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+              高效的二进制方式存储Varint是一种紧凑的表示数字的方法。它用一个或多个字节来表示一个数字，值越少的数字使用越少的字节数。采用这种Key-Pair结构无需使用分隔符来分割不同的Field。
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/05/19/Unity3D-ShaderLab/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/19/Unity3D-ShaderLab/" class="post-title-link" itemprop="url">Unity ShaderLab</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/19/Unity3D-ShaderLab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/19/Unity3D-ShaderLab/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              CG类型
 
 
 
 Type
-Description
+Meaning
+Used For
 
 
 
 
-float
-32位浮点数据
-
-
-half
-16位浮点数据
-
-
-int
-32位整形数据
-
-
-fixed
-12位定点数
-
-
-bool
-布尔数据
-
-
-sampler
-纹理对象的句柄，分为sampler、sampler1D、sampler2D、sam
+0
+Varint
+int32,int64,uin
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/19/Unity3D-ShaderLab/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/Protocol/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1316,7 +1157,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/05/17/How-to-systematically-optimize-performance/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/11/CameraEditor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1336,7 +1177,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/17/How-to-systematically-optimize-performance/" class="post-title-link" itemprop="url">如何系统地进行性能优化？</a>
+                <a href="/2018/07/11/CameraEditor/" class="post-title-link" itemprop="url">CameraEditor</a>
               
             
           </h2>
@@ -1367,8 +1208,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/17/How-to-systematically-optimize-performance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/How-to-systematically-optimize-performance/" itemprop="commentCount"></span>
+                <a href="/2018/07/11/CameraEditor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/11/CameraEditor/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1399,13 +1240,13 @@ sampler
         
           
             <p>
-              项目做到一定阶段之后，要开始性能优化了。目前比较没有头绪地是，如何系统地开始？比如是否先要列一份清单，逐项去检查，用什么工具？这里想请教的是一套方法，或者说是一套工作流，能够系统地定位性能问题。谢邀。这是个好问题，也是个大问题。我想UWA团队在做深度优化地时候应该算是一个系统地性能优化，所以请@xi
+              Floder:Editor\Mono\Inspector// Unity C# reference source// Copyright (c) Unity Technologies. For terms of use, see// https://unity3d.com/legal/license
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/17/How-to-systematically-optimize-performance/#more" rel="contents">
+              <a class="btn" href="/2018/07/11/CameraEditor/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1465,7 +1306,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/05/16/3d-math-base-graph-game-develop/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/09/arithmetic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1485,7 +1326,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/16/3d-math-base-graph-game-develop/" class="post-title-link" itemprop="url">3D数学基础：图形与游戏开发</a>
+                <a href="/2018/07/09/arithmetic/" class="post-title-link" itemprop="url">算法</a>
               
             
           </h2>
@@ -1516,8 +1357,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/16/3d-math-base-graph-game-develop/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/3d-math-base-graph-game-develop/" itemprop="commentCount"></span>
+                <a href="/2018/07/09/arithmetic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/09/arithmetic/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1548,13 +1389,13 @@ sampler
         
           
             <p>
-              9.4.1 4D齐次空间4.1.3节曾提到，4D向量有4个分量，前3个是标准的x,y和z分量，第四个是w，有时称作齐次坐标。    为了理解标准3D坐标是怎样扩展到4D坐标的，让我们先看一下2D中的齐次坐标，它的形式为(x,y,w)。想象在3D中w=1处的标准2D平面，实际的2D点(x,y)用齐次坐
-              ...
+              背包问题
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/16/3d-math-base-graph-game-develop/#more" rel="contents">
+              <a class="btn" href="/2018/07/09/arithmetic/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1614,7 +1455,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/05/14/PBR-Guide-Vol1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/presentandsync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1634,7 +1475,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/14/PBR-Guide-Vol1/" class="post-title-link" itemprop="url">PBR_Guide_Vol1</a>
+                <a href="/2018/07/05/presentandsync/" class="post-title-link" itemprop="url">presentandsync</a>
               
             
           </h2>
@@ -1665,8 +1506,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/14/PBR-Guide-Vol1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/PBR-Guide-Vol1/" itemprop="commentCount"></span>
+                <a href="/2018/07/05/presentandsync/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/presentandsync/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1697,13 +1538,14 @@ sampler
         
           
             <p>
-              光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们
+              WaitForTargetFPS该参数一般出现在CPU开销过低，且通过设定了目标帧率地情况下(Application.targetFrameRate)。当上一帧产生一个WaitForTargetFPS地空闲等待消耗时，以维持目标帧率。
+解析：该项在Unity引擎地主循环中其实是最早执行地，即引擎实际
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/14/PBR-Guide-Vol1/#more" rel="contents">
+              <a class="btn" href="/2018/07/05/presentandsync/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1763,7 +1605,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/05/14/d3d11/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation_memory_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1783,7 +1625,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/14/d3d11/" class="post-title-link" itemprop="url">d3d11</a>
+                <a href="/2018/07/05/optimzation_memory_2/" class="post-title-link" itemprop="url">optimzation_memory_2</a>
               
             
           </h2>
@@ -1814,8 +1656,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/14/d3d11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/d3d11/" itemprop="commentCount"></span>
+                <a href="/2018/07/05/optimzation_memory_2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation_memory_2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1846,17 +1688,163 @@ sampler
         
           
             <p>
+              内存泄漏
               
-点积(dot product)计算结果是标量值；也叫标量积(scalar product)。等于两个向量对应分量的乘积之和。
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/05/optimzation_memory_2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
 
-$\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
-4.1 准备工作4.1.4 交换链和页面翻转为了避免在动画中出现闪烁，最好的做法是
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation-memory-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/07/05/optimzation-memory-1/" class="post-title-link" itemprop="url">optimzation_memory_1</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/05/optimzation-memory-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation-memory-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              内存开销：
+资源内存占用在一个较为复杂的大中型项目中，资源的内存占用往往占据了总体内存的70%以上。因此，资源使用是否恰当直接决定了项目的内存占用情况。一般来说，一款游戏项目的资源主要可分为如下几种：纹理（Texture）、网格（Mesh）、动画片段（AnimationClip）、音频片段（Audi
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/14/d3d11/#more" rel="contents">
+              <a class="btn" href="/2018/07/05/optimzation-memory-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1905,7 +1893,7 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1947,7 +1935,7 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1994,7 +1982,15 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2131,7 +2127,11 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2367,342 +2367,20 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2773,16 +2451,6 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

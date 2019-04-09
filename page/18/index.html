@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -211,7 +214,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -313,20 +316,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -369,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/12/The-following-untracked/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/centos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -389,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/12/The-following-untracked/" class="post-title-link" itemprop="url">The following untracked working tree files would be overwritten by merge</a>
+                <a href="/2017/10/13/centos/" class="post-title-link" itemprop="url">云主机CentOS7.2密钥丢失重新注入密钥方法</a>
               
             
           </h2>
@@ -420,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/12/The-following-untracked/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/The-following-untracked/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/centos/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/centos/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -452,164 +461,18 @@
         
           
             <p>
-              git pull的时候遇到的问题。解决办法：git clean -d -fxnote:会删除没有add到仓库的文件，操作记得慎重，以免改动文件的丢失。
+              一、单用户模式重置ROOT密码（如有root密码，则跳过该步骤）
+登录控制台，输入VNC密码并回车
 
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/12/The-following-untracked/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+点击【Send CtrlAltDel】重启linux系统；
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/11/init-server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/11/init-server/" class="post-title-link" itemprop="url">初始化云服务器</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/11/init-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/11/init-server/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              注册网易云创建网易云服务器搭建git服务器yum install -y gitadduser git //创建用户gitgit clone git@10.173.32.7:/home/git/sample.git //克隆远程仓库
-clone git仓库上传代码git commit -am ““, 
+在弹出界面，按键盘‘e’；4、如图修改前/修改后，将ro修改成rw init=/sysroot/bin/sh  去除console=tt
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/11/init-server/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/centos/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -669,7 +532,7 @@ clone git仓库上传代码git commit -am ““,
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/05/2d-outline/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/git-server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -689,7 +552,7 @@ clone git仓库上传代码git commit -am ““,
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/05/2d-outline/" class="post-title-link" itemprop="url">Unity 2D描边实现介绍</a>
+                <a href="/2017/10/13/git-server/" class="post-title-link" itemprop="url">Git 服务器搭建</a>
               
             
           </h2>
@@ -720,8 +583,8 @@ clone git仓库上传代码git commit -am ““,
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/05/2d-outline/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/05/2d-outline/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/git-server/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-server/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -752,14 +615,13 @@ clone git仓库上传代码git commit -am ““,
         
           
             <p>
-              像素着色器描边：　　首先最直观的想法，就是使用fragment shader找出2D角色贴图透明像素和非透明像素的边界，然后通过边界周边Alpha值Blur的方式，给边界上描边色。
-Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
+              首先要明确现在代码的分布情况，开发者电脑上的本地仓库，git服务器上的远端仓库，web服务器上的另一个本地仓库，我们浏览器访问的就是这里的代码。其实自动部署就是要当开发者本地仓库提交代码到远端仓库的时候，自动把代码部署到web服务器的本地仓库，实现开发着本地仓库和web服务器的本地仓库同步。（即通过
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/05/2d-outline/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/git-server/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -819,7 +681,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/05/pixel-and-voxel/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/git-clone/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -839,7 +701,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/05/pixel-and-voxel/" class="post-title-link" itemprop="url">pixel-and-voxel</a>
+                <a href="/2017/10/13/git-clone/" class="post-title-link" itemprop="url">git clone 命令</a>
               
             
           </h2>
@@ -870,8 +732,8 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/05/pixel-and-voxel/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/05/pixel-and-voxel/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/git-clone/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-clone/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -902,15 +764,166 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
         
           
             <p>
-              原文地址: https://medium.com/retronator-magazine/pixels-and-voxels-the-long-answer-5889ecc18190#.8gf6zy8mc
-伪3D等轴游戏 赛达尔, Sir Carma, 2016
-像素和体素，一个详细的答案Retro
+              git clone 命令将存储库克隆到新目录中。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/13/git-clone/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/ssh-key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/13/ssh-key/" class="post-title-link" itemprop="url">ssh</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/13/ssh-key/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/ssh-key/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              ssh中，有两个钥匙：公钥、私钥，公钥主要是用于对一些敏感信息进行加密，私钥适用于解密。ssh的文件都存在于机器~/.ssh中。
+
+客户端：id_rsa(私钥)、id_rsa.pub(公钥)、known_hosts(已知远程主机)
+服务端: authorized_keys(验证过的公钥列表)、ssh
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/05/pixel-and-voxel/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/ssh-key/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -970,7 +983,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/04/assetSplit-dynamicLoad/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/site-dealy-role/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -990,7 +1003,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/04/assetSplit-dynamicLoad/" class="post-title-link" itemprop="url">大规模场景的资源拆分合动态加载</a>
+                <a href="/2017/10/13/site-dealy-role/" class="post-title-link" itemprop="url">网站部署规则</a>
               
             
           </h2>
@@ -1009,22 +1022,6 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity3D/" itemprop="url" rel="index"><span itemprop="name">Unity3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1037,8 +1034,8 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/04/assetSplit-dynamicLoad/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/04/assetSplit-dynamicLoad/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/site-dealy-role/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/site-dealy-role/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1069,29 +1066,164 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Pro
         
           
             <p>
-              概要
-资源拆分    
-地形，地表
+              网站发布只在自己笔记本电脑发布，公司电脑只能hexo s —debug,不能 hexo d -g本地内容修改完成之后记得git add . git commit -am "m"git push origin master
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/13/site-dealy-role/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-动态加载/卸载
-打包策略资源拆分
-地形资源拆分
-Unity原始地形有网格尺寸的限制（4096）
-Mesh地形有面片数限制
-降低内存占用，仅需载入部分地形数据
-降低渲染面片数，视域体剔除
-制作大规模地形
-Terrain Composer 2
-T4M
-建模软件…
+    
+      
 
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/github-remote-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/13/github-remote-error/" class="post-title-link" itemprop="url">fatal:remote error You can't push to git 的解决办法</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/13/github-remote-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/github-remote-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              branch正确的情况下，不知为什么，在push的时候出现:fatal: remote error:You can't push to git://github.com/zentia/hexo.gitUse git@github.com:zentia/hexo.git
+解决办法:git remote
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/04/assetSplit-dynamicLoad/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/github-remote-error/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1151,7 +1283,7 @@ T4M
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/03/lightmap/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/wm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1171,7 +1303,7 @@ T4M
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/03/lightmap/" class="post-title-link" itemprop="url">Unity5.x场景优化之动态设置光照贴图lightmap</a>
+                <a href="/2017/10/13/wm/" class="post-title-link" itemprop="url">wm</a>
               
             
           </h2>
@@ -1202,8 +1334,8 @@ T4M
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/03/lightmap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/03/lightmap/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/wm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/wm/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1234,13 +1366,13 @@ T4M
         
           
             <p>
-              在很多情况下，我们为了提高渲染效率，一般都会让美术同学在制作场景时，设置场景相关节点的lightmap static属性，提前给整个场景烘培出静态的光照贴图lightmap，烘培的数据保存在场景目录下的LightmapSnapshot文件中，主要包括的数据有：lightmaps：烘培出的光照贴图数组
+              第一个问题：昨天一直提示hexo command no found，然后本地的hexo/node_module下找到一个.bin目录，里面还有hexo的执行文件，天真的以为这个就是执行路径，然后搞了一天，无果。今天去program files(x86)找到全局的npm下的hexo然后修改环境变量解决
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/03/lightmap/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/wm/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1300,7 +1432,7 @@ T4M
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/02/ABTheory/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/12/shader/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1320,7 +1452,7 @@ T4M
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/02/ABTheory/" class="post-title-link" itemprop="url">AssetBundle管理机制</a>
+                <a href="/2017/10/12/shader/" class="post-title-link" itemprop="url">Unity Shader</a>
               
             
           </h2>
@@ -1339,22 +1471,6 @@ T4M
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1367,8 +1483,8 @@ T4M
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/02/ABTheory/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/02/ABTheory/" itemprop="commentCount"></span>
+                <a href="/2017/10/12/shader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/shader/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1399,14 +1515,15 @@ T4M
         
           
             <p>
-              接上期AssetBundle打包的讲解，我们今天为大家继续探秘AssetBundle,从管理机制的角度出发，谈谈其资源加载和卸载的原理。
-AssetBundle加载基础通过AssetBundle加载资源，分为两步，第一步获取AssetBundle对象，第二步是通过该对象加载需要的资源。而第一步又分为
+              CGPROGRAM和ENDCG包裹的部分就是CG\HLSL语言部分。
+
+Vertex &amp; Fragment Shader: 顶点/片元着色器。它是最基本，也是非常强大的着色器类型。一般用于2D场景、特效之类的。Unlit Shader(无光照着色器，不包含无效)在世界三维空间中，一开始传入S
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/02/ABTheory/#more" rel="contents">
+              <a class="btn" href="/2017/10/12/shader/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1466,7 +1583,7 @@ AssetBundle加载基础通过AssetBundle加载资源，分为两步，第一步�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/09/29/AI/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/12/servercfg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1486,7 +1603,7 @@ AssetBundle加载基础通过AssetBundle加载资源，分为两步，第一步�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/29/AI/" class="post-title-link" itemprop="url">AI</a>
+                <a href="/2017/10/12/servercfg/" class="post-title-link" itemprop="url">服务器配置文件说明</a>
               
             
           </h2>
@@ -1517,8 +1634,8 @@ AssetBundle加载基础通过AssetBundle加载资源，分为两步，第一步�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/29/AI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/AI/" itemprop="commentCount"></span>
+                <a href="/2017/10/12/servercfg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/servercfg/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1549,14 +1666,15 @@ AssetBundle加载基础通过AssetBundle加载资源，分为两步，第一步�
         
           
             <p>
-              Unity正朝着AI的方向潜心探索着。本文是Unity发布的首篇AI相关文章，为大家介绍AI的一些概念及术语，详细介绍机器学习相关理论与方法，并讲解在使用Unity开发游戏的过程中如何应用AI。未来我们还将为大家分享更多AI的内容。
-ML（机器学习）与AI(人工智能）首先来介绍下Machine Le
+              摘要：本文档描述手游服务器的各个配置文件的使用和配置参数说明。关键字：服务器 维护 配置
+1.概述请先参考《游戏系统架构》以了解手游的服务器架构状况。手游的所有配置文件都采用相同的格式。运维人员会经常用到的配置文件特性有：注释，文件包含include、宏定义、条件读取。
+2.各个服务器主要配置参数说
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/29/AI/#more" rel="contents">
+              <a class="btn" href="/2017/10/12/servercfg/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1616,7 +1734,7 @@ ML（机器学习）与AI(人工智能）首先来介绍下Machine Le
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/09/29/Real-Time-Rendering-3rd/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/12/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1636,7 +1754,7 @@ ML（机器学习）与AI(人工智能）首先来介绍下Machine Le
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/29/Real-Time-Rendering-3rd/" class="post-title-link" itemprop="url">Real Time Rendering 3rd</a>
+                <a href="/2017/10/12/hexo/" class="post-title-link" itemprop="url">Hexo Manual</a>
               
             
           </h2>
@@ -1667,8 +1785,8 @@ ML（机器学习）与AI(人工智能）首先来介绍下Machine Le
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/29/Real-Time-Rendering-3rd/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/Real-Time-Rendering-3rd/" itemprop="commentCount"></span>
+                <a href="/2017/10/12/hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/hexo/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1699,165 +1817,16 @@ ML（机器学习）与AI(人工智能）首先来介绍下Machine Le
         
           
             <p>
-              Overviewurl: www.realtimerendering.com
-The Graphics Rendering Pipeline
-核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生
+              关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段three_waves: false
+嵌入PDFnpm install —save hexo-pdf添加
+hexo deploy -- 发布
+编辑主题的 source/
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/29/Real-Time-Rendering-3rd/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/09/26/Unity-Weather/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/09/26/Unity-Weather/" class="post-title-link" itemprop="url">Unity-Weather</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/26/Unity-Weather/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/26/Unity-Weather/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              抄：https://zhuanlan.zhihu.com/p/29668925
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/09/26/Unity-Weather/#more" rel="contents">
+              <a class="btn" href="/2017/10/12/hexo/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1906,7 +1875,7 @@ The Graphics Rendering Pipeline
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1948,7 +1917,7 @@ The Graphics Rendering Pipeline
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1995,7 +1964,15 @@ The Graphics Rendering Pipeline
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2132,7 +2109,11 @@ The Graphics Rendering Pipeline
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2368,342 +2349,20 @@ The Graphics Rendering Pipeline
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2774,16 +2433,6 @@ The Graphics Rendering Pipeline
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

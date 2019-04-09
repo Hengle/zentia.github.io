@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -148,7 +151,7 @@
 <meta property="og:image" content="http://zentia.site/2018/10/20/Unity-Shader-IntroductionToTopic/5.jpg">
 <meta property="og:image" content="http://zentia.site/2018/10/20/Unity-Shader-IntroductionToTopic/1.jpg">
 <meta property="og:image" content="http://zentia.site/2018/10/20/Unity-Shader-IntroductionToTopic/2.jpg">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.587Z">
+<meta property="og:updated_time" content="2019-04-04T03:14:58.802Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader第一部分">
 <meta name="twitter:description" content="像素光 Pixel LightUnity中将平行光称作为像素光，第一个像素光是基础平行光，以LightMode=ForwardBase标签修饰，每多一个像素光都以LightMode=ForwardAdd标签修饰。并不是所有的光源在运行时都会反射到物体上，而是根据Project的Quality中设置的像素光数量来渲染的。默认的像素光的数量应该是2，我们有更多的平行光照在物体上，就需要在Edit-&amp;g">
@@ -222,7 +225,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -324,20 +327,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -591,7 +600,7 @@
 <h4 id="复合变换"><a href="#复合变换" class="headerlink" title="复合变换"></a>复合变换</h4><p>在绝大多数情况下，我们约定变换的顺序就是先缩放，再旋转，最后平移。<br>变换矩阵如下：(注意，矩阵是从右往左算的)<br>$<br>M_{translation}M_{rotation}M_{scale} =<br>\begin{bmatrix}<br>{1}&amp;{0}&amp;{0}&amp;{t_{x}}\\<br>{0}&amp;{1}&amp;{0}&amp;{t_{y}}\\<br>{0}&amp;{0}&amp;{1}&amp;{t_{z}}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}<br>$<br>当我们直接给出$(\theta_{x}, \theta_{y}, \theta_{z})$这样的旋转角度时，需要定义一个旋转顺序。在Unity中，这个旋转顺序是zxy。</p>
 <h3 id="顶点的坐标空间变化"><a href="#顶点的坐标空间变化" class="headerlink" title="顶点的坐标空间变化"></a>顶点的坐标空间变化</h3><p>在渲染流水线中，一个顶点要经过多个坐标空间的变换才能最终被画在屏幕上。一个顶点最开始是在模型空间中定义的，最后它将会变换到屏幕空间中，得到真正的屏幕像素坐标。</p>
 <h4 id="模型空间"><a href="#模型空间" class="headerlink" title="模型空间"></a>模型空间</h4><p><strong>模型空间（model space）</strong>，是和某个模型或者说是对象有关的。有时模型空间也被称为<strong>对象空间（object space）</strong>或<strong>局部空间（local space）</strong>。每个模型都有自己独立的坐标空间，当它移动或旋转的时候，模型空间也会跟着它移动和旋转。<br>顶点变换的第一步，就是将顶点坐标从模型空间变换到世界空间中。这个变换通常叫做模型变换（model transform）。</p>
-<h4 id="世界空间"><a href="#世界空间" class="headerlink" title="世界空间"></a>世界空间</h4><p>顶点变换的第一步，就是将顶点坐标从模型空间变换到世界空间中。这个变换通常叫做<strong>模型变换（model transform）</strong>。<br>变换矩阵如下：<br>$M_{model} = \begin{bmatrix}<br>{1}&amp;{0}&amp;{0}&amp;{t_{x}}\\<br>{0}&amp;{1}&amp;{0}&amp;{t_{y}}\\<br>{0}&amp;{0}&amp;{1}&amp;{t_{z}}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}<br>\begin{bmatrix}<br>{cos\theta}&amp;{0}&amp;{sin\theta}&amp;{0}\\<br>{0}&amp;{1}&amp;{0}&amp;{0}\\<br>{-sin\theta}&amp;{0}&amp;{cos\theta}&amp;{0}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}<br>\begin{bmatrix}<br>{k_{x}}&amp;{0}&amp;{0}&amp;{0}\\<br>{0}&amp;{k_{y}}&amp;{0}&amp;{0}\\<br>{0}&amp;{0}&amp;{k_{z}}&amp;{0}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix} =<br>\begin{bmatrix}<br>{k_{x}cos\theta}&amp;{0}&amp;{k_{z}sin\theta}&amp;{t_{x}}\\<br>{0}&amp;{k_{y}}&amp;{0}&amp;{t_{y}}\\<br>{-k_{x}sin\theta}&amp;{0}&amp;{k_{z}cos\theta}&amp;{-t_{z}}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}$<br>注意：上述变换顺序是不能互换的，即先进行缩放，在进行旋转，最后是平移。</p>
+<h4 id="世界空间"><a href="#世界空间" class="headerlink" title="世界空间"></a>世界空间</h4><p>顶点变换的第一步，就是将顶点坐标从模型空间变换到世界空间中。这个变换通常叫做<strong>模型变换（model transform）</strong>。<br>变换矩阵如下：<br>$M_{model} = \begin{bmatrix}<br>{1}&amp;{0}&amp;{0}&amp;{t_{x}}\\<br>{0}&amp;{1}&amp;{0}&amp;{t_{y}}\\<br>{0}&amp;{0}&amp;{1}&amp;{t_{z}}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}<br>\begin{bmatrix}<br>{cos\theta}&amp;{0}&amp;{sin\theta}&amp;{0}\\<br>{0}&amp;{1}&amp;{0}&amp;{0}\\<br>{-sin\theta}&amp;{0}&amp;{cos\theta}&amp;{0}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}<br>\begin{bmatrix}<br>{k_{x}}&amp;{0}&amp;{0}&amp;{0}\\<br>{0}&amp;{k_{y}}&amp;{0}&amp;{0}\\<br>{0}&amp;{0}&amp;{k_{z}}&amp;{0}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix} =<br>\begin{bmatrix}<br>{k_{x}cos\theta}&amp;{0}&amp;{k_{z}sin\theta}&amp;{t_{x}}\\<br>{0}&amp;{k_{y}}&amp;{0}&amp;{t_{y}}\\<br>{-k_{x}sin\theta}&amp;{0}&amp;{k_{z}cos\theta}&amp;{-t_{z}}\\<br>{0}&amp;{0}&amp;{0}&amp;{1}\\<br>\end{bmatrix}$<br>注意：上述变换顺序是不能互换的，即先进行缩放，在进行旋转，最后是平移。<br>因为每个Transform的平移旋转缩放都是不一样的，所以他们的矩阵也是不一样的。</p>
 <h4 id="观察空间"><a href="#观察空间" class="headerlink" title="观察空间"></a>观察空间</h4><p>观察空间（view space）也被称为摄像机空间（camera space）。顶点变换的第二步，就是将顶点坐标从世界空间变换到观察空间中。这个变换叫做观察变换（view transform）。</p>
 <h4 id="裁剪空间"><a href="#裁剪空间" class="headerlink" title="裁剪空间"></a>裁剪空间</h4><p>裁剪空间（clip space，也称齐次裁剪空间），这个用于变换的矩阵叫做裁剪矩阵（clip matrix），也称为投影矩阵（projection matrix）。<br>裁剪空间的目标是能够方便地对渲染图元进行裁剪：完全位于这块空间内部的图元将会被保留，完全位于这块空间外部的图元将会被剔除，而与这块空间边界相交的图元就会被裁剪。这块空间是由视锥体来决定的。<br>视锥体指的是空间中的一块区域，这块区域决定了摄像机可以看到的空间。视锥体由六个平面包围而成，这些平面也被称为<strong>裁剪平面（clip planes）</strong>。视锥体有两种类型，一种是<strong>正交投影（orthographic projection）</strong>，一种是<strong>透视投影（perspective projection）</strong>。<br>在视锥体的6块裁剪平面中，有两块裁剪平面比较特殊，它们分别被称为<strong>近裁剪平面（near clip plane）</strong>和<strong>远裁剪平面（far clip plane）</strong>。它们决定了摄像机可以看到的深度范围。</p>
 <h5 id="透视投影"><a href="#透视投影" class="headerlink" title="透视投影"></a>透视投影</h5><p>视锥体的意义在于定了场景中的一块三维空间。所有位于这块空间内的物体将会被渲染，否则就会被剔除或裁剪。这块区域是由6个裁剪平面组成，在Unity中，它们由Camera组件中的参数和Game视图中横纵比共同决定<br><img src="/2018/10/20/Unity-Shader-IntroductionToTopic/3.jpg"><br>Camera组件的Field of View（简称FOV）属性来改变视锥体竖直方向的张开角度，而Clipping Planes中的Near和Far参数可以控制视锥体的近裁剪面和远裁剪面距离相机的远近。<br>这样，我们可以求出视锥体近裁剪面和远裁剪面的高度</p>
@@ -610,8 +619,8 @@
 <img src="/2018/10/20/Unity-Shader-IntroductionToTopic/2.jpg" title="Unity中各个坐标空间的旋向性">
 <h3 id="一个最简单的顶点-片元着色器"><a href="#一个最简单的顶点-片元着色器" class="headerlink" title="一个最简单的顶点/片元着色器"></a>一个最简单的顶点/片元着色器</h3><h4 id="顶点-片元着色器的基本结构"><a href="#顶点-片元着色器的基本结构" class="headerlink" title="顶点/片元着色器的基本结构"></a>顶点/片元着色器的基本结构</h4><p>Unity Shader的基本结构包含了Shader、Properties、SubShader、Fallback等语义块。顶点/片元着色器的结构与之大体类似，它的结构如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;MyShaderName&quot; &#123;</span><br><span class="line">    Properties &#123;</span><br><span class="line">        // 属性</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader &#123;</span><br><span class="line">        // 针对显卡A的SubShader</span><br><span class="line">        Pass &#123;</span><br><span class="line">            // 设置渲染状态和标签</span><br><span class="line"></span><br><span class="line">            // 开始CG代码片段</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            // 该片段的编译指令，例如:</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line"></span><br><span class="line">            // CG代码写在这里</span><br><span class="line"></span><br><span class="line">            ENDCG</span><br><span class="line"></span><br><span class="line">            // 其他设置</span><br><span class="line">        &#125;</span><br><span class="line">        // 其他需要的Pass</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader &#123;</span><br><span class="line">        // 针对显卡B的SubShader</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 上述SubShader都失败后用于回调的Unity Shader</span><br><span class="line">    Fallback &quot;VertexLit&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中，最重要的部分是Pass语义块，我们绝大部分的代码都是写在这个语义块里面的。下面我们就来创建一个最简单的顶点/片元着色器。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Shader</span> <span class="string">"Shader/Simple"</span> &#123;</span><br><span class="line">    <span class="section">SubShader</span> &#123;</span><br><span class="line">        <span class="section">Pass</span> &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="comment">#pragma vertex vert</span></span><br><span class="line">            <span class="comment">#pragma fragment frag</span></span><br><span class="line"></span><br><span class="line">            <span class="attribute">float4</span> vert(float4 v : POSITION) : SV_POSITION &#123;</span><br><span class="line">                <span class="attribute">return</span> UnityObjectToClipPos(v);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="attribute">fixed4</span> frag() : SV_Target&#123;</span><br><span class="line">                <span class="attribute">return</span> fixed4(<span class="number">1</span>.<span class="number">0</span>, <span class="number">1</span>.<span class="number">0</span>, <span class="number">1</span>.<span class="number">0</span>, <span class="number">1</span>.<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">"Shader/Simple1"</span>&#123;</span><br><span class="line">    SubShader&#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#pargma fragment frag</span></span><br><span class="line">            <span class="comment">// 使用一个结构体来定义顶点着色器的输入</span></span><br><span class="line">            <span class="class"><span class="keyword">struct</span> <span class="title">a2v</span> &#123;</span></span><br><span class="line">                <span class="comment">// POSITION语义告诉Unity，用模型空间的顶点坐标填充vertex变量</span></span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中，最重要的部分是Pass语义块，我们绝大部分的代码都是写在这个语义块里面的。下面我们就来创建一个最简单的顶点/片元着色器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Shader/Simple&quot; &#123;</span><br><span class="line">    SubShader &#123;</span><br><span class="line">        Pass &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pragma fragment frag</span><br><span class="line"></span><br><span class="line">            float4 vert(float4 v : POSITION) : SV_POSITION &#123;</span><br><span class="line">                return UnityObjectToClipPos(v);</span><br><span class="line">            &#125;</span><br><span class="line">            fixed4 frag() : SV_Target&#123;</span><br><span class="line">                return fixed4(1.0, 1.0, 1.0, 1.0);</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Shader &quot;Shader/Simple1&quot;&#123;</span><br><span class="line">    SubShader&#123;</span><br><span class="line">        Pass&#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            #pragma vertex vert</span><br><span class="line">            #pargma fragment frag</span><br><span class="line">            // 使用一个结构体来定义顶点着色器的输入</span><br><span class="line">            struct a2v &#123;</span><br><span class="line">                // POSITION语义告诉Unity，用模型空间的顶点坐标填充vertex变量</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="模型数据从哪里来"><a href="#模型数据从哪里来" class="headerlink" title="模型数据从哪里来"></a>模型数据从哪里来</h4><h4 id="顶点着色器和片元着色器之间如何通信"><a href="#顶点着色器和片元着色器之间如何通信" class="headerlink" title="顶点着色器和片元着色器之间如何通信"></a>顶点着色器和片元着色器之间如何通信</h4><h4 id="如何使用属性"><a href="#如何使用属性" class="headerlink" title="如何使用属性"></a>如何使用属性</h4><h3 id="Unity提供的内置文件和变量"><a href="#Unity提供的内置文件和变量" class="headerlink" title="Unity提供的内置文件和变量"></a>Unity提供的内置文件和变量</h3><h4 id="内置的包含文件"><a href="#内置的包含文件" class="headerlink" title="内置的包含文件"></a>内置的包含文件</h4><h4 id="内置的变量"><a href="#内置的变量" class="headerlink" title="内置的变量"></a>内置的变量</h4><h3 id="Unity提供的CG-HLSL语义"><a href="#Unity提供的CG-HLSL语义" class="headerlink" title="Unity提供的CG/HLSL语义"></a>Unity提供的CG/HLSL语义</h3><h3 id="Unity支持的语义"><a href="#Unity支持的语义" class="headerlink" title="Unity支持的语义"></a>Unity支持的语义</h3><div class="table-container">
 <table>
 <thead>
@@ -699,60 +708,6 @@
       
 
       
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
-          
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
-        </div>
       
       
 
@@ -845,7 +800,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -892,7 +847,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1029,7 +992,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1288,342 +1255,20 @@
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -1697,16 +1342,6 @@
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 

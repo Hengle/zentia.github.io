@@ -28,6 +28,9 @@
 
 
 
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
 
@@ -119,9 +122,9 @@
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
+      applicationID: 'W8FJT5MTZU',
+      apiKey: 'f4ca7ae2408d2e27ffc8269ad8d34273',
+      indexName: 'hexo',
       hits: {"per_page":10},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
@@ -134,18 +137,19 @@
 
 
 
-  <meta name="description" content="项目做到一定阶段之后，要开始性能优化了。目前比较没有头绪地是，如何系统地开始？比如是否先要列一份清单，逐项去检查，用什么工具？这里想请教的是一套方法，或者说是一套工作流，能够系统地定位性能问题。谢邀。这是个好问题，也是个大问题。我想UWA团队在做深度优化地时候应该算是一个系统地性能优化，所以请@xin他们来回答可能更合适。我就仅仅从我个人的经验角度来回答一下，抛砖引玉。 1.是否需要性能优化？知乎">
+  <meta name="description" content="运行帧率低低配机器上运行帧率比较低是常见问题。a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨率如果对帧率有非常明显的提升的话，非常大的可能就是GPU Bound。c)CPU Bound,降低分">
+<meta name="keywords" content="Unity">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何系统地进行性能优化？">
 <meta property="og:url" content="http://zentia.site/2018/05/17/How-to-systematically-optimize-performance/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="项目做到一定阶段之后，要开始性能优化了。目前比较没有头绪地是，如何系统地开始？比如是否先要列一份清单，逐项去检查，用什么工具？这里想请教的是一套方法，或者说是一套工作流，能够系统地定位性能问题。谢邀。这是个好问题，也是个大问题。我想UWA团队在做深度优化地时候应该算是一个系统地性能优化，所以请@xin他们来回答可能更合适。我就仅仅从我个人的经验角度来回答一下，抛砖引玉。 1.是否需要性能优化？知乎">
+<meta property="og:description" content="运行帧率低低配机器上运行帧率比较低是常见问题。a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨率如果对帧率有非常明显的提升的话，非常大的可能就是GPU Bound。c)CPU Bound,降低分">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/How-to-systematically-optimize-performance-1.png">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.559Z">
+<meta property="og:updated_time" content="2019-04-01T01:31:01.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何系统地进行性能优化？">
-<meta name="twitter:description" content="项目做到一定阶段之后，要开始性能优化了。目前比较没有头绪地是，如何系统地开始？比如是否先要列一份清单，逐项去检查，用什么工具？这里想请教的是一套方法，或者说是一套工作流，能够系统地定位性能问题。谢邀。这是个好问题，也是个大问题。我想UWA团队在做深度优化地时候应该算是一个系统地性能优化，所以请@xin他们来回答可能更合适。我就仅仅从我个人的经验角度来回答一下，抛砖引玉。 1.是否需要性能优化？知乎">
+<meta name="twitter:description" content="运行帧率低低配机器上运行帧率比较低是常见问题。a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨率如果对帧率有非常明显的提升的话，非常大的可能就是GPU Bound。c)CPU Bound,降低分">
 <meta name="twitter:image" content="http://oxcvfpext.bkt.clouddn.com/How-to-systematically-optimize-performance-1.png">
 
 
@@ -216,7 +220,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -318,20 +322,26 @@
   
     <div class="site-search">
       
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
-    </div>
   </div>
-  <div id="local-search-result"></div>
-</div>
+
 
 
 
@@ -461,12 +471,8 @@
       
 
       
-        <p>项目做到一定阶段之后，要开始性能优化了。目前比较没有头绪地是，如何系统地开始？比如是否先要列一份清单，逐项去检查，用什么工具？这里想请教的是一套方法，或者说是一套工作流，能够系统地定位性能问题。<br>谢邀。<br>这是个好问题，也是个大问题。我想UWA团队在做深度优化地时候应该算是一个系统地性能优化，所以请@xin他们来回答可能更合适。<br>我就仅仅从我个人的经验角度来回答一下，抛砖引玉。</p>
-<h2 id="1-是否需要性能优化？"><a href="#1-是否需要性能优化？" class="headerlink" title="1.是否需要性能优化？"></a>1.是否需要性能优化？</h2><p>知乎老惯例，“先问有没有，再问为什么”。所以第一步是确定产品有没有性能问题，需不需要性能优化？<br>虽然通常来说，绝大部分项目都需要关注性能的部分，但是就像我在UWA Day上分享所说的，我个人的感觉是性能优化最终要直接或者间接的反馈到游戏体验上。如果你的游戏再高中低配置对应的设备上都很流畅，对于发热和耗电也没有特别明显的问题，那我觉得可以调低一些性能优化的优先级。<br>所以是否需要性能优化这个问题，我的回答是是否有影响游戏体验的表现，比如设备达不到目标帧率、卡顿、发热等等问题。</p>
-<h2 id="2-如何定位问题原因？"><a href="#2-如何定位问题原因？" class="headerlink" title="2.如何定位问题原因？"></a>2.如何定位问题原因？</h2><p>有问题才有优化的具体目标，那接下来就是根据问题来进行原因的排查。排查的过程根据问题不同项目不同有各自的方法和过程，我这里提供一些常规问题的排查方法。</p>
-<p>从抓大放小的角度，我们进行优化通常采用先检查常规消耗，再检查峰值消耗的思路来进行，即首先保证运行时的平均帧率，再减少卡顿，然后关注内存，最后考虑发热。这几部分其实也有很多的相关性，比如减少卡顿可能会使用缓存/预加载的策略，这时候对于内存可能会有影响，而提升了平均帧率再限制帧率设备上可以减少发热和耗电等。</p>
-<h3 id="2-1平时运行帧率低"><a href="#2-1平时运行帧率低" class="headerlink" title="2.1平时运行帧率低"></a>2.1平时运行帧率低</h3><p>低配机器上运行帧率比较低是常见问题。<br>a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。<br>b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨率如果对帧率有非常明显的提升的话，非常大的可能就是GPU Bound。<br>c)CPU Bound,降低分辨率的方式如果并不能提高帧率，那么可能是CPU Bound。CPU通常和Draw Call祥光，或者和复杂的游戏逻辑相关，通过Unity的Profiler工具可以比较明确看出是否是CPU Bound，以及这些计算时间都消耗在了哪里。<br>TimeLine可以比较明确的看到瓶颈（5.3.8没有，暂时不研究）<br>d)Bandwith Bound 在手游中也比较常见，一种比较简单的判断方式是使用NVIDIA Tegra Graphics Debugger这个工具（对于Tegra硬件更友好，但是比较难找。。。）中将所有贴图替换成2 * 2的大小，如果帧率有明显提升可能是Bandwidth瓶颈。当然也可以自己协代码所图来确认，比如使用Unity的Quality Setting里的Texture Quality。<br><img src="http://oxcvfpext.bkt.clouddn.com/How-to-systematically-optimize-performance-1.png"><br>e)内存就用Unity地Profiler来看吧，不过这个对于帧率没什么影响。</p>
-<h3 id="2-2-卡顿"><a href="#2-2-卡顿" class="headerlink" title="2.2 卡顿"></a>2.2 卡顿</h3>
+        <h3 id="运行帧率低"><a href="#运行帧率低" class="headerlink" title="运行帧率低"></a>运行帧率低</h3><p>低配机器上运行帧率比较低是常见问题。<br>a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。<br>b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨率如果对帧率有非常明显的提升的话，非常大的可能就是GPU Bound。<br>c)CPU Bound,降低分辨率的方式如果并不能提高帧率，那么可能是CPU Bound。CPU通常和Draw Call祥光，或者和复杂的游戏逻辑相关，通过Unity的Profiler工具可以比较明确看出是否是CPU Bound，以及这些计算时间都消耗在了哪里。<br>TimeLine可以比较明确的看到瓶颈（5.3.8没有，暂时不研究）<br>d)Bandwith Bound 在手游中也比较常见，一种比较简单的判断方式是使用NVIDIA Tegra Graphics Debugger这个工具（对于Tegra硬件更友好，但是比较难找。。。）中将所有贴图替换成2 * 2的大小，如果帧率有明显提升可能是Bandwidth瓶颈。当然也可以自己协代码所图来确认，比如使用Unity的Quality Setting里的Texture Quality。<br><img src="http://oxcvfpext.bkt.clouddn.com/How-to-systematically-optimize-performance-1.png"><br>e)内存就用Unity地Profiler来看吧，不过这个对于帧率没什么影响。</p>
+
       
     </div>
 
@@ -487,62 +493,14 @@
 
     <footer class="post-footer">
       
-
-      
-      
-        <div class="post-widgets">
-        
-
-        
-
-        
+        <div class="post-tags">
           
-          <div class="social_share">
-            
-              <div>
-                
-  <div class="bdsharebuttonbox">
-    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
-    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
-    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-    <a href="#" class="bds_more" data-cmd="more"></a>
-    <a class="bds_count" data-cmd="count"></a>
-  </div>
-  <script>
-    window._bd_share_config = {
-      "common": {
-        "bdText": "",
-        "bdMini": "2",
-        "bdMiniList": false,
-        "bdPic": ""
-      },
-      "share": {
-        "bdSize": "16",
-        "bdStyle": "0"
-      },
-      "image": {
-        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
-        "viewText": "分享到：",
-        "viewSize": "16"
-      }
-    }
-  </script>
-
-<script>
-  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-</script>
-
-              </div>
-            
-            
-          </div>
-        
+            <a href="/tags/Unity/" rel="tag"># Unity</a>
+          
         </div>
+      
+
+      
       
       
 
@@ -550,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/16/3d-math-base-graph-game-develop/" rel="next" title="3D数学基础：图形与游戏开发">
-                <i class="fa fa-chevron-left"></i> 3D数学基础：图形与游戏开发
+              <a href="/2018/05/16/3d-math-base-graph-game-develop/" rel="next" title="3D数学：图形与游戏开发">
+                <i class="fa fa-chevron-left"></i> 3D数学：图形与游戏开发
               </a>
             
           </div>
@@ -635,7 +593,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">185</span>
+                    <span class="site-state-item-count">196</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -682,7 +640,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">17</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -819,7 +785,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">62</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">64</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -855,7 +825,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-是否需要性能优化？"><span class="nav-number">1.</span> <span class="nav-text">1.是否需要性能优化？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-如何定位问题原因？"><span class="nav-number">2.</span> <span class="nav-text">2.如何定位问题原因？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1平时运行帧率低"><span class="nav-number">2.1.</span> <span class="nav-text">2.1平时运行帧率低</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-卡顿"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 卡顿</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行帧率低"><span class="nav-number">1.</span> <span class="nav-text">运行帧率低</span></a></li></ol></div>
             
 
           </div>
@@ -1078,342 +1048,20 @@
 
 
   
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-        // ref: https://github.com/ForbesLindesay/unescape-html
-        var unescapeHtml = function(html) {
-          return String(html)
-            .replace(/&quot;/g, '"')
-            .replace(/&#39;/g, '\'')
-            .replace(/&#x3A;/g, ':')
-            // replace all the other &#x; chars
-            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
-            .replace(/&amp;/g, '&');
-        };
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                content = unescapeHtml(content);
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -1440,16 +1088,6 @@
 
 
   
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
 
   
 
