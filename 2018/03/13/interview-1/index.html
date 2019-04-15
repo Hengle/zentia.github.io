@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-08T17:25:28.794Z">
+<meta property="og:updated_time" content="2019-04-10T08:14:54.386Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试经历">
 <meta name="twitter:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
@@ -589,6 +589,7 @@
 <li>是否使用过NGUI，NGUI如何管理Widget和组织drawcall</li>
 <li>后处理中，如何根据深度缓存还原出世界坐标？</li>
 <li>简述Shadow Map的原理，Shadow bias的作用是什么？</li>
+<li>热更新断点续传？</li>
 </ol>
 <h2 id="图形相关面试题"><a href="#图形相关面试题" class="headerlink" title="图形相关面试题"></a>图形相关面试题</h2><ol>
 <li>软蒙皮和硬蒙皮的区别，硬蒙皮的限制</li>
@@ -605,17 +606,24 @@
 <li>重点阐述自己在项目开发中承担的角色，对项目开发的共享，自己在工作中解决的问题；</li>
 <li>时刻显示出自己对工作，对技术的热情，对新技术的关注（特别关注近期新技术，新闻等）</li>
 <li>可以重点阐述自己工作之余喜爱研究的底层技术</li>
-<li>如何回答对待加班的看法：强调自己是效率性员工，自己开发所用时间段，bug少（此处可举例说明），但项目紧急会资源加班，和团队一起完成紧急任务。</li>
+<li>何回答对待加班的看法：强调自己是效率性员工，自己开发所用时间段，bug少（此处可举例说明），但项目紧急会资源加班，和团队一起完成紧急任务。</li>
 </ol>
 <h3 id="态度"><a href="#态度" class="headerlink" title="态度"></a>态度</h3><p>面带微笑，不卑不亢，无论是待会HR还是技术面试都给予足够尊重，当不懂技术的HR问到技术问题时，一定要当作对方是懂技术的人员去认真回答这个问题。<br>越是简单的问题，越考察基础，遇到简单问题要认真回答。</p>
-<h3 id="HR环节"><a href="#HR环节" class="headerlink" title="HR环节"></a>HR环节</h3><ol>
-<li>离职意愿<ul>
+<h3 id="离职意愿"><a href="#离职意愿" class="headerlink" title="离职意愿"></a>离职意愿</h3><ul>
 <li>家里和自己更喜欢深圳这个城市，也是家人强烈要求到深圳长期发展，广州深圳的游戏环境也更好</li>
 <li>从个人职业发展上来说，很向往XXX这样的平台，自己也私下了解了一下相关的信息，觉得XXX将来会发展的很好，希望能过来学习更多的东西；</li>
 <li>本身XXX是老牌的研发公司，研发实力很强，但是就现阶段来说，自己上升及发展到达了一个瓶颈期，期望出来寻求给多的技术。</li>
 </ul>
-</li>
+<h1 id="9130"><a href="#9130" class="headerlink" title="9130"></a>9130</h1><ol>
+<li>Lua的Hash是怎么实现的？</li>
+<li>Hash是怎么实现的？</li>
+<li>介绍一下项目中导航？</li>
+<li>介绍一下Mono</li>
+<li>Google的Probuffer介绍</li>
+<li>Lua的module是如何实现的？</li>
+<li>C++和Lua是如何交互的？</li>
 </ol>
+<h1 id="搜狐二面"><a href="#搜狐二面" class="headerlink" title="搜狐二面"></a>搜狐二面</h1><p>针对项目情况问一些技术问题吧，不过问了好几次有遇到什么技术问题或者技术难点之类的。<br>问了一下AssetBundle管理<br>还有资源管理<br>还有问了一下内存占用，面数，drawcall占用，drawcall如何合理分配。模型划分。<br>15.2K的三角形数，14.6k的顶点数，Batches：83，Draw Calls：85</p>
 
       
     </div>
@@ -737,7 +745,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">196</span>
+                    <span class="site-state-item-count">223</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -792,7 +800,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -969,7 +985,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#西山居"><span class="nav-number">7.</span> <span class="nav-text">西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HR环节"><span class="nav-number">11.2.3.</span> <span class="nav-text">HR环节</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#西山居"><span class="nav-number">7.</span> <span class="nav-text">西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离职意愿"><span class="nav-number">11.2.3.</span> <span class="nav-text">离职意愿</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9130"><span class="nav-number">12.</span> <span class="nav-text">9130</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜狐二面"><span class="nav-number">13.</span> <span class="nav-text">搜狐二面</span></a></li></ol></div>
             
 
           </div>

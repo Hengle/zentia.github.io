@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/ps/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/22/thread-process/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/30/ps/" class="post-title-link" itemprop="url">ps</a>
+                <a href="/2018/03/22/thread-process/" class="post-title-link" itemprop="url">简单介绍多进程和多线程服务器</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/30/ps/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/ps/" itemprop="commentCount"></span>
+                <a href="/2018/03/22/thread-process/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/thread-process/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +461,13 @@
         
           
             <p>
-              USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDroot      44936 99.1  1.4 148660 14340 ?        R    10月28 2004:47 ./XGMS_d g
+              首先贴下多进程单线程和单进程多线程的特点：多进程：有独立的地址空间，进程之间不共享内存和变量，但可以通过共享内存实现，每个进程只有一个线程，一般用于单机系统开发。多线程：在同一个进程下所有线程可以共享内存和变量。而共同点是，同开辟的进程数/线程数多余系统cpu核数时，无法继续提供应用的性能。而多线程
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/30/ps/#more" rel="contents">
+              <a class="btn" href="/2018/03/22/thread-process/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/28/poll/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/JVM-heap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +547,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/28/poll/" class="post-title-link" itemprop="url">poll</a>
+                <a href="/2018/03/21/JVM-heap/" class="post-title-link" itemprop="url">JVM的新生代、老年代、MinorGC、MajorGC</a>
               
             
           </h2>
@@ -578,8 +578,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/28/poll/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/28/poll/" itemprop="commentCount"></span>
+                <a href="/2018/03/21/JVM-heap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM-heap/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -610,15 +610,164 @@
         
           
             <p>
-              Poll就是监控文件是否可读的一种机制，作用与select一样。应用程序的调用如下：
-int poll(struct pollfd *fds, nfds_t nfds, int timeout)
-Poll机制会判断fds中的文件是否可读，如果可读则立即返回，返回的就是可读fd的数量，如果不可读，那么
+              JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/21/JVM-heap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/21/JVM/" class="post-title-link" itemprop="url">JVM初探：内存分配、GC原理与垃圾收集器</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/21/JVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              JVM内存的分配与回收大致可分为如下4个步骤：何时分配-》怎样分配-》何时回收-》怎样回收，除了在概念上可简单认为new时分配外，我们着重介绍后面三个步骤
+1.怎样分配-》JVM内存分配策略对象内存主要分配在Eden区，如果启用了本地线程分配缓存，则有限在TLAB上分配，少数情况能会直接分配在老年代
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/28/poll/#more" rel="contents">
+              <a class="btn" href="/2018/03/21/JVM/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -678,7 +827,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/game-framework/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/String-StringBuffer-StringBuilder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -698,7 +847,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/27/game-framework/" class="post-title-link" itemprop="url">XXSY服务器游戏架构</a>
+                <a href="/2018/03/21/String-StringBuffer-StringBuilder/" class="post-title-link" itemprop="url">String-StringBuffer-StringBuilder</a>
               
             
           </h2>
@@ -729,8 +878,8 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/27/game-framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/game-framework/" itemprop="commentCount"></span>
+                <a href="/2018/03/21/String-StringBuffer-StringBuilder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/String-StringBuffer-StringBuilder/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -761,165 +910,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
         
           
             <p>
-              总体架构图
-大区架构图
-逻辑服务器架构图
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/27/game-framework/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/Apache/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/27/Apache/" class="post-title-link" itemprop="url">Apache</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/27/Apache/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/Apache/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              [1] 安装 httpd.[root@linuxprobe ~]# yum -y install httpd# 删除默认欢迎页面[root@linuxprobe ~]# rm -f /etc/httpd/conf.d/welcome.conf[2] 配置httpd，将服务器名称替换为您自己的环境[r
+              JAVAString 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）String类型和StringBuffer类型的主要性能区别其实在于String是不可变的对象，因此每次对String类型进行改变的时候其实都等同于生成了一个新的Str
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/27/Apache/#more" rel="contents">
+              <a class="btn" href="/2018/03/21/String-StringBuffer-StringBuilder/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -979,7 +976,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/vs/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/Unity-Lua-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -999,7 +996,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/26/vs/" class="post-title-link" itemprop="url">vs</a>
+                <a href="/2018/03/19/Unity-Lua-2/" class="post-title-link" itemprop="url">Unity手游开发-使用Lua来开发大型游戏（下）</a>
               
             
           </h2>
@@ -1030,8 +1027,8 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/26/vs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/vs/" itemprop="commentCount"></span>
+                <a href="/2018/03/19/Unity-Lua-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1062,166 +1059,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
         
           
             <p>
-              $(TargetDir)\XGZS_d.exe../data/cfg/network/cfg_relation.txt
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/26/vs/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/netstat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/26/netstat/" class="post-title-link" itemprop="url">netstat</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/26/netstat/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/netstat/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              
-netstat -tln 查看端口占用情况\p 可以显示进程每一列含义协议类型  接受流量 发送流量 本机地址 目的地址 状态自己的IP地址就是本地地址，需要连接的地址的就是目的地址
-
-nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{“type”:0,”pid
+              基本原理Hotfix的基本原理依然是基于动态语言的Reload功能，更加准确的说是Function Reload。下图简单描述了整个Hotfix的流程：更加具体地可以描述为：1.程序发现要修复的bug，编写特殊的Hotfix代码进行修复，测试通过后上传svn服务器；2.通过发布指令，将svn上更新后
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/26/netstat/#more" rel="contents">
+              <a class="btn" href="/2018/03/19/Unity-Lua-2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1281,7 +1125,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/lang/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/markdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1301,7 +1145,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/25/lang/" class="post-title-link" itemprop="url">多语言规范</a>
+                <a href="/2018/03/19/markdown/" class="post-title-link" itemprop="url">markdown</a>
               
             
           </h2>
@@ -1332,8 +1176,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/25/lang/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/lang/" itemprop="commentCount"></span>
+                <a href="/2018/03/19/markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/markdown/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1364,14 +1208,166 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              概述部分多语言资源，客户端和服务器放在不同目录里，公用的部分使用外链。
-客户端多语言根目录：Assets\Art\lang二级目录mb：存放mb的多语言数据二级目录res: 存放界面文本，以及其它资源的多语言数据（比如图片和prefab等）三级目录：用各种语言名字来命令的目录config.txt：保
+              
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/19/markdown/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/Unity-Lua-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/19/Unity-Lua-1/" class="post-title-link" itemprop="url">Unity-Lua</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/19/Unity-Lua-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              逻辑使用脚本来做的好处：
+
+使用脚本语言的动态特性，客户端可以做Hotfix,服务器可以做Refresh，无论在运营还是开发期这一特性都很有用；
+脚本语言在虚拟机运行，有效控制崩溃率
+上手难度低缺点是运行效率低，但是之前看的LuaJit的效率只是略低于c（有待验证),动态语言容易出一些运行时错误（一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/25/lang/#more" rel="contents">
+              <a class="btn" href="/2018/03/19/Unity-Lua-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1431,7 +1427,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/fork/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/18/XCAAFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1451,7 +1447,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/25/fork/" class="post-title-link" itemprop="url">fork</a>
+                <a href="/2018/03/18/XCAAFS/" class="post-title-link" itemprop="url">XCAAFS</a>
               
             
           </h2>
@@ -1482,8 +1478,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/25/fork/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/fork/" itemprop="commentCount"></span>
+                <a href="/2018/03/18/XCAAFS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/XCAAFS/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1514,13 +1510,168 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              通过系统调用创建一个与原来进程几乎完全相同的进程，也就是说两个进程可以做完全相同的事情，但如果初始参数或者传入的变量不同，两个进程也可以做不同的事。一个进程调用fork()函数之后，系统先给新的进程分配资源，例如存储数据和代码的空间。然后吧原来的进程的所有值都复制到新的进程中，只有少数值与原来进程的
+              负载均衡服务器，应用在登录模块上，开新服的时候入口流量会增大，一段时间以后流量会递减或者趋于平缓，市面上已经有了成熟的解决方案了。一般最常用，最简单的也是基于DNS的负载均衡系统了
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/18/XCAAFS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/18/http/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/18/http/" class="post-title-link" itemprop="url">http</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/18/http/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/http/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              什么是http超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。HTTP的工作方式客户端和服务器之前的请求-应答协议
+两种HTTP请求方法：GET和POST
+GET - 从指定的资源请求数据
+POST - 向指定的资源提交要被处理的数据
+
+GET方法请注意，查询字符串（名称/值对）
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/25/fork/#more" rel="contents">
+              <a class="btn" href="/2018/03/18/http/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1580,7 +1731,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/time/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/18/openresty/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1600,7 +1751,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/24/time/" class="post-title-link" itemprop="url">time</a>
+                <a href="/2018/03/18/openresty/" class="post-title-link" itemprop="url">openresty</a>
               
             
           </h2>
@@ -1631,8 +1782,8 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/24/time/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/time/" itemprop="commentCount"></span>
+                <a href="/2018/03/18/openresty/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/openresty/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1663,163 +1814,13 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
         
           
             <p>
-              设置时间同步timedatectl set-ntp yes
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/time/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/systemctl/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/24/systemctl/" class="post-title-link" itemprop="url">systemctl</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/24/systemctl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/systemctl/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              显示防火墙状态：systemctl status firewalld.service关闭防火墙：systemctl stop firewalld.service开启防火墙：systemctl start firewalld.service上面的firewalld的，不过我后来安装了iptables换
+              /usr/local/openresty/luajit:luajit环境，luajit类似于java的jit,即即时编译，lua是一种解释语言，通过luajit可以即时编译lua代码到机器代码，得到很好的性能。/usr/local/openresty/lualib:要使用的lua库，里边提供了一些默
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/24/systemctl/#more" rel="contents">
+              <a class="btn" href="/2018/03/18/openresty/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1868,7 +1869,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/14/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/16/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1910,7 +1911,7 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">196</span>
+                    <span class="site-state-item-count">223</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1965,7 +1966,15 @@ nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{�
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
