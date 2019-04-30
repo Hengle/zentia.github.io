@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/AndroidManifest/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/09/trigonometric-function/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/21/AndroidManifest/" class="post-title-link" itemprop="url">AndroidManifest.xml详解</a>
+                <a href="/2019/03/09/trigonometric-function/" class="post-title-link" itemprop="url">Shader用到的三角函数</a>
               
             
           </h2>
@@ -417,6 +411,22 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -429,8 +439,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/21/AndroidManifest/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/AndroidManifest/" itemprop="commentCount"></span>
+                <a href="/2019/03/09/trigonometric-function/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/trigonometric-function/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -462,15 +472,15 @@
           
             <p>
               
-为应用的JAVA软件包命名。软件包名称充当应用的唯一标识符
-描述应用的各个组件，包括构成应用的Activity、服务、广播接收器和内容提供程序。它还为实现每个组件的类命名并发布其功能，例如它们可以处理Intent消息。这些声明向Android系统告知有关组件以及可以启动这些组件的条件的信息。
-确定
+正弦、余弦、正切
+正弦、余弦曲线
+正弦曲线公式可表示为$y = Asin({\omega}x+\phi)+k$A：振幅，最高和最低的距离（shader中理解为离圆心最近和最远的距离）W：角速度，用于控制周期（shader中理解为圈数）K：偏距，曲线整体上下偏移量（shader中理解为多边形整体大小
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/21/AndroidManifest/#more" rel="contents">
+              <a class="btn" href="/2019/03/09/trigonometric-function/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -530,7 +540,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/Protocol/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/09/MathJax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -550,7 +560,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/21/Protocol/" class="post-title-link" itemprop="url">Protocol Buffer</a>
+                <a href="/2019/03/09/MathJax/" class="post-title-link" itemprop="url">MathJax</a>
               
             
           </h2>
@@ -581,8 +591,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/21/Protocol/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/Protocol/" itemprop="commentCount"></span>
+                <a href="/2019/03/09/MathJax/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/MathJax/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -613,27 +623,46 @@
         
           
             <p>
-              高效的二进制方式存储Varint是一种紧凑的表示数字的方法。它用一个或多个字节来表示一个数字，值越少的数字使用越少的字节数。采用这种Key-Pair结构无需使用分隔符来分割不同的Field。
+              希腊字母
+
+
+
+显示
+命令
+显示
+命令
 
 
 
 
-Type
-Meaning
-Used For
+$\alpha$
+\alpha
+$\beta$
+\beta
 
 
+$\gamma$
+\gamma
+$\delta$
+\delta
 
 
-0
-Varint
-int32,int64,uin
+$\epsilon$
+\epsilon
+$\zeta$
+\zeta
+
+
+$\eta$
+\eta
+$\theta$
+\th
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/21/Protocol/#more" rel="contents">
+              <a class="btn" href="/2019/03/09/MathJax/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -693,7 +722,7 @@ int32,int64,uin
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/11/CameraEditor/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/09/US-Step/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -713,7 +742,7 @@ int32,int64,uin
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/11/CameraEditor/" class="post-title-link" itemprop="url">CameraEditor</a>
+                <a href="/2019/03/09/US-Step/" class="post-title-link" itemprop="url">Unity Shader:优化GPU代码，用step()代替if sele等条件语句</a>
               
             
           </h2>
@@ -732,6 +761,22 @@ int32,int64,uin
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -744,8 +789,8 @@ int32,int64,uin
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/11/CameraEditor/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/11/CameraEditor/" itemprop="commentCount"></span>
+                <a href="/2019/03/09/US-Step/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/US-Step/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -776,13 +821,330 @@ int32,int64,uin
         
           
             <p>
-              Floder:Editor\Mono\Inspector// Unity C# reference source// Copyright (c) Unity Technologies. For terms of use, see// https://unity3d.com/legal/license
+              普通的卡通着色Shader先看一个Shader，卡通着色。由于卡通着色需要对不同渲染区域进行判定，比较适合做案例。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/09/US-Step/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/08/Unity-Avatar/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/08/Unity-Avatar/" class="post-title-link" itemprop="url">Unity Avatar</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity3D/" itemprop="url" rel="index"><span itemprop="name">Unity3D</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/03/08/Unity-Avatar/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/08/Unity-Avatar/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/03/08/Unity-Avatar/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/06/Unity-Reflection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/03/06/Unity-Reflection/" class="post-title-link" itemprop="url">Unity Reflection</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/03/06/Unity-Reflection/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/06/Unity-Reflection/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              概念反射是.NET中的重要机制，通过反射，可以在运行时获得程序或者程序集中每一个类型（包括类、结构、委托、接口和枚举等）的成员和成员的信息。另外还可以直接创建对象，即使这个对象的类型在编译时还不知道。
+用途
+使用Assembly定义和加载程序集，加载在程序集清单中列出模块，从此程序集中查找类型并创建
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/11/CameraEditor/#more" rel="contents">
+              <a class="btn" href="/2019/03/06/Unity-Reflection/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -842,7 +1204,7 @@ int32,int64,uin
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/09/arithmetic/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/05/Batch/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -862,7 +1224,7 @@ int32,int64,uin
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/09/arithmetic/" class="post-title-link" itemprop="url">算法</a>
+                <a href="/2019/03/05/Batch/" class="post-title-link" itemprop="url">图形渲染及优化-Batch</a>
               
             
           </h2>
@@ -893,8 +1255,8 @@ int32,int64,uin
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/09/arithmetic/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/09/arithmetic/" itemprop="commentCount"></span>
+                <a href="/2019/03/05/Batch/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/05/Batch/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -925,13 +1287,14 @@ int32,int64,uin
         
           
             <p>
-              背包问题
+              批处理（Batch）就是对某对象进行批量的处理，本文介绍一下Batch的基本概念、
+
               
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/09/arithmetic/#more" rel="contents">
+              <a class="btn" href="/2019/03/05/Batch/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -991,7 +1354,7 @@ int32,int64,uin
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/presentandsync/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/05/CsharpJobSystem/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1011,7 +1374,7 @@ int32,int64,uin
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/05/presentandsync/" class="post-title-link" itemprop="url">presentandsync</a>
+                <a href="/2019/03/05/CsharpJobSystem/" class="post-title-link" itemprop="url">C# Jobs System</a>
               
             
           </h2>
@@ -1042,8 +1405,8 @@ int32,int64,uin
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/05/presentandsync/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/presentandsync/" itemprop="commentCount"></span>
+                <a href="/2019/03/05/CsharpJobSystem/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/05/CsharpJobSystem/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1074,14 +1437,13 @@ int32,int64,uin
         
           
             <p>
-              WaitForTargetFPS该参数一般出现在CPU开销过低，且通过设定了目标帧率地情况下(Application.targetFrameRate)。当上一帧产生一个WaitForTargetFPS地空闲等待消耗时，以维持目标帧率。
-解析：该项在Unity引擎地主循环中其实是最早执行地，即引擎实际
+              Unity C＃ Job System允许用户编写与Unity其余部分良好交互的多线程代码，并使编写正确的代码变得更加容易。编写多线程代码可以提供高性能的好处。其中包括显着提高帧速率和延长移动设备的电池寿命。C＃ Job System的一个重要方面是它与Unity内部使用的集成（Unity的nati
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/05/presentandsync/#more" rel="contents">
+              <a class="btn" href="/2019/03/05/CsharpJobSystem/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1141,7 +1503,7 @@ int32,int64,uin
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/LoadingPerformance_Texture/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/03/Unity-Hub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1161,7 +1523,7 @@ int32,int64,uin
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/05/LoadingPerformance_Texture/" class="post-title-link" itemprop="url">LoadingPerformance_Texture</a>
+                <a href="/2019/03/03/Unity-Hub/" class="post-title-link" itemprop="url">UnityHub破解</a>
               
             
           </h2>
@@ -1192,8 +1554,8 @@ int32,int64,uin
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/05/LoadingPerformance_Texture/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/LoadingPerformance_Texture/" itemprop="commentCount"></span>
+                <a href="/2019/03/03/Unity-Hub/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/03/Unity-Hub/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1224,14 +1586,19 @@ int32,int64,uin
         
           
             <p>
-              资源加载资源加载是加载模块中最为耗时的部分，其CPU开销在Unity引擎中主要体现在Loading.UpdatePreloading和Loading.ReadObject两项中。
-Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口处出现，主要负
+              退出UnityHub
+npm install -g asar
+cd C:\Program Files\Unity Hub\resources
+asar extract .\app.aser app
+rm -rf app.asar
+cd app/src/services/licenseService
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/05/LoadingPerformance_Texture/#more" rel="contents">
+              <a class="btn" href="/2019/03/03/Unity-Hub/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1291,7 +1658,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation_memory_2/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/03/02/NetSocket/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1311,7 +1678,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/05/optimzation_memory_2/" class="post-title-link" itemprop="url">optimzation_memory_2</a>
+                <a href="/2019/03/02/NetSocket/" class="post-title-link" itemprop="url">IO多路复用之select、poll、epoll详解</a>
               
             
           </h2>
@@ -1342,8 +1709,8 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/05/optimzation_memory_2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation_memory_2/" itemprop="commentCount"></span>
+                <a href="/2019/03/02/NetSocket/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/02/NetSocket/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1374,163 +1741,13 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
         
           
             <p>
-              内存泄漏
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/07/05/optimzation_memory_2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation-memory-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/07/05/optimzation-memory-1/" class="post-title-link" itemprop="url">optimzation_memory_1</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/05/optimzation-memory-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation-memory-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              内存开销：
-资源内存占用在一个较为复杂的大中型项目中，资源的内存占用往往占据了总体内存的70%以上。因此，资源使用是否恰当直接决定了项目的内存占用情况。一般来说，一款游戏项目的资源主要可分为如下几种：纹理（Texture）、网格（Mesh）、动画片段（AnimationClip）、音频片段（Audi
+              目前支持I/O多路复用的系统调用有select,pselect,poll,epoll,I/O多路复用就是通过一种机制，一个进程可以监听多个描述符，一旦某个描述符就绪（一般是读就绪或者写就绪），就能够通知程序进行相应的读写操作。但select,pselect,poll,epoll本质上都是同步I/O，
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/05/optimzation-memory-1/#more" rel="contents">
+              <a class="btn" href="/2019/03/02/NetSocket/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1590,7 +1807,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/01/Unity3D_Game_Design/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/02/25/QuickSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1610,7 +1827,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/01/Unity3D_Game_Design/" class="post-title-link" itemprop="url">Unity</a>
+                <a href="/2019/02/25/QuickSort/" class="post-title-link" itemprop="url">排序</a>
               
             
           </h2>
@@ -1641,8 +1858,8 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/01/Unity3D_Game_Design/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/01/Unity3D_Game_Design/" itemprop="commentCount"></span>
+                <a href="/2019/02/25/QuickSort/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/02/25/QuickSort/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1673,169 +1890,14 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
         
           
             <p>
-              命名
-模型命名 Max文件中角色模型命名为skin@sk_001武器模型命名为skin@wq_001
-颜色贴图skin@st_001.png 高光贴图skin@st_001_ctr.png
-
-导入导出能够从3DsMax导入Unity3D的资源
-所有节点的位移、旋转、锁方、轴心和命名都将导入
-网格模型
+              快速排序快速排序(Quick Sort)使用分治法策略。它的基本思想是：选择一个基准数，通过一趟排序将要排序的数据分割成独立的两部分；其中一部分的所有数据都比另外一部分的所有数据都要小。然后，在按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+一趟快速
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/01/Unity3D_Game_Design/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/06/30/Shadow_Mapping/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/30/Shadow_Mapping/" class="post-title-link" itemprop="url">阴影映射的原理和实现</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/30/Shadow_Mapping/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/30/Shadow_Mapping/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              阴影贴图 (Shadwom mapping)像素与以纹理形式保存的光照深度缓冲区或者深度图像比较，通过这种方式计算像素是否处于光源照射范围之内，从而生成阴影。
-原理阴影贴图是一种使用深度纹理来为渲染阴影提供解决方法的多通道计算。它的关键是，就是用投影光源代替最终视口来观察场景。通过移动视口到光源位置
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/30/Shadow_Mapping/#more" rel="contents">
+              <a class="btn" href="/2019/02/25/QuickSort/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1884,7 +1946,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1926,7 +1988,7 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1989,7 +2051,13 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2130,7 +2198,17 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2322,7 +2400,6 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
 
 
 
-
   
 
   
@@ -2366,20 +2443,342 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
@@ -2393,6 +2792,8 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
   
   
     
+      
+        
       
     
       
@@ -2415,6 +2816,53 @@ Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口�
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 

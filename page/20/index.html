@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/16/Jenkins/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/game-framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/16/Jenkins/" class="post-title-link" itemprop="url">Jenkins</a>
+                <a href="/2017/10/27/game-framework/" class="post-title-link" itemprop="url">XXSY服务器游戏架构</a>
               
             
           </h2>
@@ -429,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/16/Jenkins/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/16/Jenkins/" itemprop="commentCount"></span>
+                <a href="/2017/10/27/game-framework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/game-framework/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,14 +455,16 @@
         
           
             <p>
+              总体架构图
+大区架构图
+逻辑服务器架构图
+
               
-添加Jenkins的源（repository） sudo wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo sudo rpm —import http://pkg.jenkins-ci.o
-              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/16/Jenkins/#more" rel="contents">
+              <a class="btn" href="/2017/10/27/game-framework/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -528,7 +524,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/makefile/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/Apache/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -548,7 +544,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/makefile/" class="post-title-link" itemprop="url">makefile</a>
+                <a href="/2017/10/27/Apache/" class="post-title-link" itemprop="url">Apache</a>
               
             
           </h2>
@@ -579,8 +575,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/makefile/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/makefile/" itemprop="commentCount"></span>
+                <a href="/2017/10/27/Apache/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/Apache/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -611,13 +607,13 @@
         
           
             <p>
-              make: Nothing to be done for xxxx中间文件、链接文件C、C++要把源文件编译成中间代码文件，在Windows是.obj文件，在Linux是.o文件，即Object File，这一步叫做编译。然后把这些Object File合成可执行文件，这一步叫做链接(link)。编
+              [1] 安装 httpd.[root@linuxprobe ~]# yum -y install httpd# 删除默认欢迎页面[root@linuxprobe ~]# rm -f /etc/httpd/conf.d/welcome.conf[2] 配置httpd，将服务器名称替换为您自己的环境[r
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/makefile/#more" rel="contents">
+              <a class="btn" href="/2017/10/27/Apache/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -677,7 +673,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/gdb/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/vs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -697,7 +693,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/gdb/" class="post-title-link" itemprop="url">gdb</a>
+                <a href="/2017/10/26/vs/" class="post-title-link" itemprop="url">vs</a>
               
             
           </h2>
@@ -728,8 +724,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/gdb/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/gdb/" itemprop="commentCount"></span>
+                <a href="/2017/10/26/vs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/vs/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -760,14 +756,14 @@
         
           
             <p>
-              断点
-break filename:linenum 在源文件filename的linenum行处停住。d 清除所有断点|—|—||step(s)|执行下一句，如果有函数则进入函数里面执行|set follow-fork-mode parentglibc-2.17-196.el7.i686 libgc
-              ...
+              $(TargetDir)\XGZS_d.exe../data/cfg/network/cfg_relation.txt
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/gdb/#more" rel="contents">
+              <a class="btn" href="/2017/10/26/vs/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -827,7 +823,7 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/linux/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/26/netstat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -847,7 +843,7 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/linux/" class="post-title-link" itemprop="url">Linux</a>
+                <a href="/2017/10/26/netstat/" class="post-title-link" itemprop="url">netstat</a>
               
             
           </h2>
@@ -878,8 +874,8 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/linux/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/linux/" itemprop="commentCount"></span>
+                <a href="/2017/10/26/netstat/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/26/netstat/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -910,21 +906,16 @@ break filename:linenum 在源文件filename的linenum行处停住。d 清除所�
         
           
             <p>
-              例子：将目录A重命名为B
-mv A B
-例子：将/a目录移动到/b下，并重命名为c
-mv /a /b/c
+              
+netstat -tln 查看端口占用情况\p 可以显示进程每一列含义协议类型  接受流量 发送流量 本机地址 目的地址 状态自己的IP地址就是本地地址，需要连接的地址的就是目的地址
 
-yum install wget
-yum install gcc
-yum install gcc-c++
-wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
+nmap 127.0.0.1 查看本机开放的端口0.0.0.0 表示网络的所有主机[{“type”:0,”pid
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/linux/#more" rel="contents">
+              <a class="btn" href="/2017/10/26/netstat/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -984,7 +975,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/15/svn/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/lang/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1004,7 +995,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/15/svn/" class="post-title-link" itemprop="url">svn</a>
+                <a href="/2017/10/25/lang/" class="post-title-link" itemprop="url">多语言规范</a>
               
             
           </h2>
@@ -1035,8 +1026,8 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/15/svn/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/svn/" itemprop="commentCount"></span>
+                <a href="/2017/10/25/lang/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/lang/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1067,14 +1058,14 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
         
           
             <p>
-              svn: E200002: line 19: Option expected错误解决这是因为修改svnserve.conf时，打开注释时，配置的前面有空格，应该顶格写。修改后即可。
-解决svn Authorization failed错误出现该问题基本都是三个配置文件的问题，下面把这个文件列出来sv
+              概述部分多语言资源，客户端和服务器放在不同目录里，公用的部分使用外链。
+客户端多语言根目录：Assets\Art\lang二级目录mb：存放mb的多语言数据二级目录res: 存放界面文本，以及其它资源的多语言数据（比如图片和prefab等）三级目录：用各种语言名字来命令的目录config.txt：保
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/15/svn/#more" rel="contents">
+              <a class="btn" href="/2017/10/25/lang/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1134,7 +1125,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/14/vi/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/25/fork/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1154,7 +1145,7 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/14/vi/" class="post-title-link" itemprop="url">Centos7下 vim</a>
+                <a href="/2017/10/25/fork/" class="post-title-link" itemprop="url">fork</a>
               
             
           </h2>
@@ -1185,8 +1176,8 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/14/vi/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/vi/" itemprop="commentCount"></span>
+                <a href="/2017/10/25/fork/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/25/fork/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1217,16 +1208,13 @@ wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
         
           
             <p>
-              yum -y install vim
-环境配置
-/etc/vimrc 全局
-vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //显示行数信息set autoindent //回车对齐syntax on //语法检测set encod
+              通过系统调用创建一个与原来进程几乎完全相同的进程，也就是说两个进程可以做完全相同的事情，但如果初始参数或者传入的变量不同，两个进程也可以做不同的事。一个进程调用fork()函数之后，系统先给新的进程分配资源，例如存储数据和代码的空间。然后吧原来的进程的所有值都复制到新的进程中，只有少数值与原来进程的
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/14/vi/#more" rel="contents">
+              <a class="btn" href="/2017/10/25/fork/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1286,7 +1274,7 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/14/mysql/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/time/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1306,7 +1294,7 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/14/mysql/" class="post-title-link" itemprop="url">Mysql</a>
+                <a href="/2017/10/24/time/" class="post-title-link" itemprop="url">time</a>
               
             
           </h2>
@@ -1337,8 +1325,8 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/14/mysql/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/mysql/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/time/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/time/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1369,14 +1357,14 @@ vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //
         
           
             <p>
-              修改mysql密码mysql -uroot -puse mysql;UPDATE user SET password=password(&quot;123456&quot;) WHERE user=&apos;root&apos;; flush privileges;exit;
-SHOW DATAB
-              ...
+              设置时间同步timedatectl set-ntp yes
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/14/mysql/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/time/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1436,7 +1424,7 @@ SHOW DATAB
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/centos/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/systemctl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1456,7 +1444,7 @@ SHOW DATAB
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/13/centos/" class="post-title-link" itemprop="url">云主机CentOS7.2密钥丢失重新注入密钥方法</a>
+                <a href="/2017/10/24/systemctl/" class="post-title-link" itemprop="url">systemctl</a>
               
             
           </h2>
@@ -1487,8 +1475,8 @@ SHOW DATAB
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/13/centos/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/centos/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/systemctl/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/systemctl/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1519,18 +1507,13 @@ SHOW DATAB
         
           
             <p>
-              一、单用户模式重置ROOT密码（如有root密码，则跳过该步骤）
-登录控制台，输入VNC密码并回车
-
-点击【Send CtrlAltDel】重启linux系统；
-
-在弹出界面，按键盘‘e’；4、如图修改前/修改后，将ro修改成rw init=/sysroot/bin/sh  去除console=tt
+              显示防火墙状态：systemctl status firewalld.service关闭防火墙：systemctl stop firewalld.service开启防火墙：systemctl start firewalld.service上面的firewalld的，不过我后来安装了iptables换
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/13/centos/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/systemctl/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1590,7 +1573,7 @@ SHOW DATAB
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/git-server/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-set/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1610,7 +1593,7 @@ SHOW DATAB
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/13/git-server/" class="post-title-link" itemprop="url">Git 服务器搭建</a>
+                <a href="/2017/10/24/server-set/" class="post-title-link" itemprop="url">服务器搭建和日常维护</a>
               
             
           </h2>
@@ -1641,8 +1624,8 @@ SHOW DATAB
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/13/git-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-server/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/server-set/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/server-set/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1673,13 +1656,13 @@ SHOW DATAB
         
           
             <p>
-              首先要明确现在代码的分布情况，开发者电脑上的本地仓库，git服务器上的远端仓库，web服务器上的另一个本地仓库，我们浏览器访问的就是这里的代码。其实自动部署就是要当开发者本地仓库提交代码到远端仓库的时候，自动把代码部署到web服务器的本地仓库，实现开发着本地仓库和web服务器的本地仓库同步。（即通过
+              1 概述2 系统软硬件要求软件：所有的服务器程序都可以在linux和windows系统上。推荐使用linux系统。我们一般使用的系统是suse10.1，不过按要求，我们在tlinux的服务器上实验编译并运行了我们的所有服务器成。Gcc版本：gcc(GCC)4.8.5数据库使用MYSQL。版本：5.6
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/13/git-server/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/server-set/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1739,7 +1722,7 @@ SHOW DATAB
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/13/git-clone/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/24/server-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1759,7 +1742,7 @@ SHOW DATAB
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/13/git-clone/" class="post-title-link" itemprop="url">git clone 命令</a>
+                <a href="/2017/10/24/server-install/" class="post-title-link" itemprop="url">服务器安装说明</a>
               
             
           </h2>
@@ -1790,8 +1773,8 @@ SHOW DATAB
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/13/git-clone/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-clone/" itemprop="commentCount"></span>
+                <a href="/2017/10/24/server-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/24/server-install/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1822,14 +1805,17 @@ SHOW DATAB
         
           
             <p>
-              git clone 命令将存储库克隆到新目录中。
-
               
+解压服务器执行文件xx_svr_binfull_XXXX.tgz到指定文件夹。
+解压配置文件xx_svr_cfgfull_XXXX.tgz到相同的文件夹。
+解压配置文件xx_svr_resfull_XXXX.tgz到相同的文件夹。
+将我们提供的key文件修改文件名为auth-info.key放在X
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/13/git-clone/#more" rel="contents">
+              <a class="btn" href="/2017/10/24/server-install/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1878,7 +1864,7 @@ SHOW DATAB
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1920,7 +1906,7 @@ SHOW DATAB
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1983,7 +1969,13 @@ SHOW DATAB
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2124,7 +2116,17 @@ SHOW DATAB
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2316,7 +2318,6 @@ SHOW DATAB
 
 
 
-
   
 
   
@@ -2360,20 +2361,342 @@ SHOW DATAB
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

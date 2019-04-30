@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/10/diffuse/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/unity-render-optimize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/diffuse/" class="post-title-link" itemprop="url">diffuse</a>
+                <a href="/2019/04/11/unity-render-optimize/" class="post-title-link" itemprop="url">第十六章 Unity中的渲染优化技术</a>
               
             
           </h2>
@@ -426,7 +420,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Shader/" itemprop="url" rel="index"><span itemprop="name">Shader</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
 
                 
                 
@@ -445,8 +439,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/diffuse/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/diffuse/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/unity-render-optimize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/unity-render-optimize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -477,13 +471,13 @@
         
           
             <p>
-              基本光照模型中漫反射部分的计算公式：$c_{diffuse}=(c_{light} \cdot m_{diffuse})max(0, \vec{n} \cdot I)$从公式可以看出，要计算漫反射需要知道4个参数：入射光线的颜色和强度$c_{light}$，表面发现$\vec{n}$以及光源方向$I
+              移动平台的特点和PC平台相比，移动平台上的GPU架构有很大的不同。由于处理资源等条件的限制，移动设备上的GPU架构专注于尽可能使用更小的带宽和公共能，也由此带来许多和PC平台完全不同的现象。例如，为了尽可能移除那些隐藏的表面，减少overdraw（即一个像素被绘制多次），PowerVR芯片（通常用于
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/diffuse/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/unity-render-optimize/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -543,7 +537,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/10/new-delete-malloc-free/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/physics-base-render/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -563,7 +557,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/new-delete-malloc-free/" class="post-title-link" itemprop="url">new delete malloc free</a>
+                <a href="/2019/04/11/physics-base-render/" class="post-title-link" itemprop="url">基于物理的渲染</a>
               
             
           </h2>
@@ -591,7 +585,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
 
                 
                 
@@ -610,8 +604,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/new-delete-malloc-free/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/new-delete-malloc-free/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/physics-base-render/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/physics-base-render/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -642,16 +636,13 @@
         
           
             <p>
-              正文每个程序在执行时都会占用一块可用的内存空间，用于存放动态分配的对象，此内存空间成为自由存储区或堆。
-new和delete用法如下几行代码：
-int *pi = new int;int *pi = new int();int *pi = new int(1024);
-第一行这个new表达式在自由存
+              双向反射分布函数（BRDF）辐射率（radiance）是单位面积、单位方向上光源的辐射通量，通常用L表示，被认为是对单一光线的亮度和颜色评估。在渲染中，我们通常会基于表面的入射光线的入射辐射率 $ L_i  $ 来计算出射辐射率 $L_{0}$ ，这个过程往往也称为着色（shading）过程。而要得
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/new-delete-malloc-free/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/physics-base-render/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -711,7 +702,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/protocol-buffer/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/The-Effects-Framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -731,7 +722,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/protocol-buffer/" class="post-title-link" itemprop="url">Google Protocol Buffer</a>
+                <a href="/2019/04/11/The-Effects-Framework/" class="post-title-link" itemprop="url">第十九章 效果架构(The Effects Framework)</a>
               
             
           </h2>
@@ -750,22 +741,6 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Server/" itemprop="url" rel="index"><span itemprop="name">Server</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -778,8 +753,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/protocol-buffer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/protocol-buffer/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/The-Effects-Framework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/The-Effects-Framework/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -810,14 +785,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              定义一个消息类型message SearchRequest&#123;    required string query = 1;    optional int32 page_number = 2;    optional int32 result_per_page = 3;&#125;
-该消息定
+              概述一个渲染效果一般由以下部分组成：一个顶点和/或像素着色器，一个需要设置的设备状态列表，一个或更多的渲染通道（rendering passes）。此外，有一个能在不同级别的图形硬件上渲染效果的可靠机制通常是值得的（也就是说，有不同的可用的效果版本执行同样的效果或尽可能尝试执行同样的效果）。显然，所
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/protocol-buffer/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/The-Effects-Framework/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -877,7 +851,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/lua-hash/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Introduction-to-Pixel-Shaders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -897,7 +871,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/lua-hash/" class="post-title-link" itemprop="url">Lua hash</a>
+                <a href="/2019/04/11/Introduction-to-Pixel-Shaders/" class="post-title-link" itemprop="url">第十八章 像素着色器入门(Introduction to Pixel Shaders)</a>
               
             
           </h2>
@@ -925,7 +899,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -944,8 +918,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/lua-hash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/lua-hash/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Introduction-to-Pixel-Shaders/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Introduction-to-Pixel-Shaders/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -976,13 +950,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              一般哈希表处理冲突有两种方式，拉链法和开放地址法。拉链法就是哈希表的每个元素都是一个链表，如果有冲突的键就放在链表里面。而开放地址法是如果遇到了冲突，就在计算一个哈希值，直到没有冲突位置。拉链法的优点就是实现简单，缺点也是有的：链表会导致低的缓存命中率，并且分配链表节点本身也会对内存分配器产生压力（
+                 像素着色器是一个执行在图形卡的GPU上的程序，它运行在对每个像素进行光栅化处理时。（不像顶点着色器，Direct3D不会以软件模拟像素着色器的功能。）它实际上替换了固定功能管线的多纹理化阶段（the multitexturing stage），并赋予我们直接操纵单独的像素和访问每个像素的纹理坐
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/lua-hash/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Introduction-to-Pixel-Shaders/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1042,7 +1016,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/dictionary/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Introduction-to-Vertex-Shaders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1062,7 +1036,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/dictionary/" class="post-title-link" itemprop="url">Dictionary</a>
+                <a href="/2019/04/11/Introduction-to-Vertex-Shaders/" class="post-title-link" itemprop="url">Introduction-to-Vertex-Shaders</a>
               
             
           </h2>
@@ -1081,22 +1055,6 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSharp/" itemprop="url" rel="index"><span itemprop="name">CSharp</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1109,8 +1067,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/dictionary/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/dictionary/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Introduction-to-Vertex-Shaders/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Introduction-to-Vertex-Shaders/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1141,13 +1099,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              Entry结构体这是Dictionary存放数据的最小单位，调用Add(Key,Value)方法添加的元素都会被封装在这样的一个结构体中。private struct Entry&#123;    public int hashCode; // 除符号位以外的31位hashCode值，如果该Entr
+              第十七章 顶点着色器入门(Introduction to Vertex Shaders)概览   顶点着色器（vertex shader）是一个在图形卡的GPU上执行的程序，它替换了固定功能管线（fixed function pipeline）中的变换（transformation）和光照（ligh
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/dictionary/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Introduction-to-Vertex-Shaders/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1207,7 +1165,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/hash/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1227,7 +1185,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/hash/" class="post-title-link" itemprop="url">哈希表</a>
+                <a href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/" class="post-title-link" itemprop="url">第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language)</a>
               
             
           </h2>
@@ -1255,7 +1213,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1274,8 +1232,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/hash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/hash/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1306,13 +1264,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              散列表（Hash table，也叫哈希表），是根据关键码值（key value）而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。给定表M，存在函数f(key)，对任意给定的关键值key，代入函数后若能
+                 在这一章里我们描述高级着色器语言（High-Level Shading Language ，简称HLSL），在下三章里我们用它去编写顶点和像素着色器。简单的说，在我们写的程序里顶点和像素是很小的对象，它们由GPU来执行，是固定功能管线的一部分。用我们自己写的着色器程序替换一部分固定功能管线，在
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/hash/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1372,7 +1330,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/alpha-depth-write/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Picking/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1392,7 +1350,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/alpha-depth-write/" class="post-title-link" itemprop="url">透明物体的深度写入问题</a>
+                <a href="/2019/04/11/Picking/" class="post-title-link" itemprop="url">第十五章 选取(Picking)</a>
               
             
           </h2>
@@ -1411,22 +1369,6 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1439,8 +1381,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/alpha-depth-write/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/alpha-depth-write/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Picking/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Picking/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1471,18 +1413,15 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              通常来说，透明物体是不需要写深度的，例如：
-
-透明物体与非透明物体间的渲染不会有问题，因为所有透明物体会在所有非透明物体之后渲染。
-大多数情况下，透明物体之间的渲染也不会有问题，因为，所有透明物体按由远及近的顺序渲染，所以不会出现前面的透明物体挡住后面的透明物体，导致后面的透明物体不显示。
-
-但有些
+              概览(OVERVIEW)   如果用户点击了屏幕上的点 s = (x, y)。 从图15.1 我们能看到用户选取了茶壶。 无论如何，应用程序无法根据给定的s点就立即确定茶壶是被选取。所以，我们必须拿出计算这个动作技巧来，叫做选取技巧。
+   图15.1 用户正在选择茶壶
+   我们知道一些知识：关于
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/alpha-depth-write/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Picking/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1542,7 +1481,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/assetbundle-fundamentals/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Particle-System/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1562,7 +1501,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/assetbundle-fundamentals/" class="post-title-link" itemprop="url">Unity资源管理（三）-AssetBundle基本原理</a>
+                <a href="/2019/04/11/Particle-System/" class="post-title-link" itemprop="url">第十四章 粒子系统(Particle Systems)</a>
               
             
           </h2>
@@ -1590,7 +1529,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1609,8 +1548,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/assetbundle-fundamentals/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/assetbundle-fundamentals/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Particle-System/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Particle-System/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1641,13 +1580,17 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              概述AssetBundle系统提供了将一个或多个文件存储到Unity能够进行索引和序列化的档案格式中方法，它是Unity用来在应用程序安装之后进行分发和更新非代码内容的首选工具。通过AssetBundle，开发者可以提交更小的程序安装包、最小化运行时内存压力以及根据终端用户设备选择性地加载优化内容。
+                 许多自然现象是由很多小的小颗粒组成的，它们有相似的行为。（例如，雪花落下，闪烁的火焰，冲出枪管的“子弹”），粒子系统用来模拟这种现象。目标：
+
+学习我们给定的粒子属性，如何描述D3D中的粒子。
+设计一个灵活的粒子基系统的基类，包括一般的粒子系统都有的属性和方法。
+模拟3个具体的粒子系统，雪、爆
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/assetbundle-fundamentals/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Particle-System/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1707,7 +1650,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/fundamentals-unity-ui/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Basic-Terrain-Rendering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1727,7 +1670,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/fundamentals-unity-ui/" class="post-title-link" itemprop="url">Unity UI优化（一）-Unity UI的基本原理</a>
+                <a href="/2019/04/11/Basic-Terrain-Rendering/" class="post-title-link" itemprop="url">第十三章 地形渲染基础(Basic Terrain Rendering)</a>
               
             
           </h2>
@@ -1746,6 +1689,22 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1758,8 +1717,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/fundamentals-unity-ui/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/fundamentals-unity-ui/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Basic-Terrain-Rendering/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Basic-Terrain-Rendering/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1790,13 +1749,14 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              术语画布（Canvas）是以原生代码编写的Unity组件，它给Unity的渲染系统按层划分的几何系统，可以在其内部或其上层绘制其他几何形状。画布负责将其内部的几何形状合并到批处理、生成合适的渲染指令并发送到Unity图形系统。这些操作都是由原生C++代码完成，这杯成为重新批处理（rebatch）或批
+              实际上，地形网格不比三角形网格复杂，图13.1.(a)所示，网络的每个顶点指定了高度，格子模型用这种方式显示从山脉到河流的平滑过渡。图13.1 (b)，模拟自然地形。当然，我们可以用漂亮的纹理表现沙石地，绿色的山丘。图13.1.(c)雪山效果。
+图 13.1: (a) 三角网格. (b) 平滑高度过
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/fundamentals-unity-ui/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Basic-Terrain-Rendering/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1856,7 +1816,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/09/optimizing-graphics-rendering-unity-games/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Building-a-Flexible-Camera-Class/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1876,7 +1836,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/optimizing-graphics-rendering-unity-games/" class="post-title-link" itemprop="url">Unity性能优化-图形渲染优化</a>
+                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/" class="post-title-link" itemprop="url">第十一章 网格模型II(Building a Flexible Camera Class)</a>
               
             
           </h2>
@@ -1904,7 +1864,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/渲染优化/" itemprop="url" rel="index"><span itemprop="name">渲染优化</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1923,8 +1883,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/optimizing-graphics-rendering-unity-games/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/optimizing-graphics-rendering-unity-games/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Building-a-Flexible-Camera-Class/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1955,13 +1915,15 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              
-              
+              ID3DXBuffer　　对ID3DXBuffer接口的一些参考是在上一章，这里我们不会详细讲解。在D3DX库中到处都能看见这个接口，因此大概介绍一下该接口还是很有必要的。　　ID3DXBuffer接口是一个很普通的数据结构， D3DX用它将数据存储到邻接内存块中。它只有两个方法：
+
+LPVOID 
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/optimizing-graphics-rendering-unity-games/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Building-a-Flexible-Camera-Class/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2010,7 +1972,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2052,7 +2014,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2115,7 +2077,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2256,7 +2224,17 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2448,7 +2426,6 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
 
 
 
-
   
 
   
@@ -2492,20 +2469,342 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

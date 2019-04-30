@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -140,14 +140,14 @@
   <meta name="description" content="先被声明为‘extern’后又被声明为‘static’In file included from src/mt_mysql_connector.cpp:14:0:/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:/usr/include/mysql/my_global.h:823:35: 错误：‘double log2(double">
 <meta name="keywords" content="c">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c">
+<meta property="og:title" content="C语言高级部分总结">
 <meta property="og:url" content="http://zentia.site/2017/10/22/c/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="先被声明为‘extern’后又被声明为‘static’In file included from src/mt_mysql_connector.cpp:14:0:/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:/usr/include/mysql/my_global.h:823:35: 错误：‘double log2(double">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T03:05:50.596Z">
+<meta property="og:updated_time" content="2019-04-29T01:53:46.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="c">
+<meta name="twitter:title" content="C语言高级部分总结">
 <meta name="twitter:description" content="先被声明为‘extern’后又被声明为‘static’In file included from src/mt_mysql_connector.cpp:14:0:/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:/usr/include/mysql/my_global.h:823:35: 错误：‘double log2(double">
 
 
@@ -165,7 +165,7 @@
   };
 </script>
 
-  <title>c | </title>
+  <title>C语言高级部分总结 | </title>
   
 
 
@@ -320,26 +320,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -401,7 +395,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">c
+          <h2 class="post-title" itemprop="name headline">C语言高级部分总结
 
               
             
@@ -470,6 +464,35 @@
 
       
         <h1 id="先被声明为‘extern’后又被声明为‘static’"><a href="#先被声明为‘extern’后又被声明为‘static’" class="headerlink" title="先被声明为‘extern’后又被声明为‘static’"></a>先被声明为‘extern’后又被声明为‘static’</h1><p>In file included from src/mt_mysql_connector.cpp:14:0:<br>/usr/include/mysql/my_global.h: 在函数‘double log2(double)’中:<br>/usr/include/mysql/my_global.h:823:35: 错误：‘double log2(double)’先被声明为‘extern’后又被声明为‘static’ [-fpermissive]<br> static inline double log2(double x)<br>static 声明的全局变量只能在当前源文件中使用。<br>extern不是定义，是引入（声明）在其它源文件中定义的非static全局变量</p>
+<h1 id="内存大话题"><a href="#内存大话题" class="headerlink" title="内存大话题"></a>内存大话题</h1><h2 id="内存就是程序的立足之地，体现内存重要性。"><a href="#内存就是程序的立足之地，体现内存重要性。" class="headerlink" title="内存就是程序的立足之地，体现内存重要性。"></a>内存就是程序的立足之地，体现内存重要性。</h2><h1 id="内存理解-内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量-行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格-组织结构）。"><a href="#内存理解-内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量-行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格-组织结构）。" class="headerlink" title="内存理解:内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量=行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格/组织结构）。"></a>内存理解:内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量=行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格/组织结构）。</h1><p>M是以位宽为单位的总容量，单位是兆，W代表位宽，单位是bit。计算出来的芯片容量也是以bit为单位，但用户可以采用除以8的方法换算为字节（Byte）。比如8Mx8，这是一个8bit位宽芯片，有8M个存储单元，总容量是64Mbit（8MB）。</p>
+<ul>
+<li>c语言中其实没有bool类型:以0表示假，非0表示真，则在内存存储是以int型存放的。如果想要表示真假，可以用int/char型做替换，在c++中就有bool x=true/false。</li>
+<li>内存对齐:提高内存访问效率，编译器一般默认是4字节</li>
+<li>char/int/short/long/float/double类型<br>放在内存的长度和解析作用。(int*)0，使用0地址指向一个int行。又如0000111010101可以解析成int型也可以解析成float型。</li>
+<li><p>Linux内核是面向对象的，而c语言是面向过程的，但可以用结构体内嵌指针变成面向对象。如</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">student</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">    <span class="keyword">char</span> *name;</span><br><span class="line">    <span class="keyword">void</span> (*eat)(<span class="keyword">void</span>); <span class="comment">// 实现多态</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>栈的理解：</p>
+</li>
+</ul>
+<ol>
+<li>运行时自动分配&amp;自动回收：栈是自动管理的，代码无需干预。（表现在汇编代码，编译时，会自动编译成汇编实现函数调用完立即改变栈顶）</li>
+<li>反复使用：栈内存在程序中其实就是那一块空间，程序反复使用这一块空间（硬件上有个寄存器，用来存放栈的栈顶地址，栈是有大小的空间）</li>
+<li>脏内存：栈内存由于反复使用，每次使用后程序不会去清理，因此分配到原来保留的值。</li>
+<li>临时性：函数不能返回栈变量的指针，因为这个空间是临时的。</li>
+<li>栈会溢出：因为操作系统事先给定了栈的大小，如果在函数中无穷尽的分配栈内存总能用完。栈的操作是由具体硬件干预的，我们只要明白原理就可以了，但是要给相应的栈寄存器赋值。当调用函数时，变量会自动放在栈中（入栈）当函数调用完后，栈会自动出栈。</li>
+<li>栈的“发展”有四种情况，满增栈，满减栈，空增栈，空减栈，至于是哪种要根据编译器决定，而s5pv32是满减栈。</li>
+</ol>
+<ul>
+<li>堆的理解</li>
+</ul>
+<ol>
+<li>操作系统堆管理器管理，堆管理器是操作系统的一个模块，堆管理器内存分配灵活，按需分配。</li>
+<li>大块内存：堆内存管理者总量很大的操作系统内存块，各进程可以按需申请使用，使用完释放。</li>
+<li>脏内存：堆内存也是反复使用的，而且使用者用完释放前不会清除，因此也是脏的。</li>
+<li>临时性：堆内存只在malloc和free之间属于当前进程，可以访问，在malloc和free之后都不能在访问，否则会有不可预料的后果。</li>
+<li>程序手申请释放</li>
+</ol>
 
       
     </div>
@@ -591,7 +614,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -654,7 +677,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -795,7 +824,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -831,7 +870,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先被声明为‘extern’后又被声明为‘static’"><span class="nav-number">1.</span> <span class="nav-text">先被声明为‘extern’后又被声明为‘static’</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#先被声明为‘extern’后又被声明为‘static’"><span class="nav-number">1.</span> <span class="nav-text">先被声明为‘extern’后又被声明为‘static’</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存大话题"><span class="nav-number">2.</span> <span class="nav-text">内存大话题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内存就是程序的立足之地，体现内存重要性。"><span class="nav-number">2.1.</span> <span class="nav-text">内存就是程序的立足之地，体现内存重要性。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内存理解-内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量-行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格-组织结构）。"><span class="nav-number">3.</span> <span class="nav-text">内存理解:内存物理看是有很多个Bank（就是行列珍式的存储芯片），每一个Bank的列就是位宽，每一行就是Words，则存储单元数量=行数（words）x列数（位宽）xBank的数量；通常也用MxW的方式来表示芯片的容量（或者说是芯片的规格/组织结构）。</span></a></li></ol></div>
             
 
           </div>
@@ -1004,7 +1043,6 @@
 
 
 
-
   
   <script src="/js/src/scrollspy.js?v=7.0.1"></script>
 <script src="/js/src/post-details.js?v=7.0.1"></script>
@@ -1054,20 +1092,342 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

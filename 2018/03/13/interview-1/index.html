@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-10T08:14:54.386Z">
+<meta property="og:updated_time" content="2019-04-29T01:57:14.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试经历">
 <meta name="twitter:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
@@ -320,26 +320,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -523,6 +517,12 @@
 <li>半透明和不透明物体的渲染流程？</li>
 </ol>
 <h1 id="西山居"><a href="#西山居" class="headerlink" title="西山居"></a>西山居</h1><ol>
+<li>工作中遇到过什么困难，如何解决，获得什么成就？</li>
+<li>Array和List的区别？</li>
+<li>闭包是什么？</li>
+<li>Lua Table如何实现的，Hash是什么，如何解决Hash冲突？</li>
+<li>new Struct存放在哪里？堆和栈的区别？</li>
+<li>什么是元表？有什么应用？</li>
 <li>堆和栈在C++中的运用以及实现方式以及优缺点？</li>
 </ol>
 <h1 id="乐易网络"><a href="#乐易网络" class="headerlink" title="乐易网络"></a>乐易网络</h1><ol>
@@ -614,7 +614,7 @@
 <li>从个人职业发展上来说，很向往XXX这样的平台，自己也私下了解了一下相关的信息，觉得XXX将来会发展的很好，希望能过来学习更多的东西；</li>
 <li>本身XXX是老牌的研发公司，研发实力很强，但是就现阶段来说，自己上升及发展到达了一个瓶颈期，期望出来寻求给多的技术。</li>
 </ul>
-<h1 id="9130"><a href="#9130" class="headerlink" title="9130"></a>9130</h1><ol>
+<h1 id="9130"><a href="#9130" class="headerlink" title="9130"></a>9130</h1><h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><ol>
 <li>Lua的Hash是怎么实现的？</li>
 <li>Hash是怎么实现的？</li>
 <li>介绍一下项目中导航？</li>
@@ -623,7 +623,49 @@
 <li>Lua的module是如何实现的？</li>
 <li>C++和Lua是如何交互的？</li>
 </ol>
-<h1 id="搜狐二面"><a href="#搜狐二面" class="headerlink" title="搜狐二面"></a>搜狐二面</h1><p>针对项目情况问一些技术问题吧，不过问了好几次有遇到什么技术问题或者技术难点之类的。<br>问了一下AssetBundle管理<br>还有资源管理<br>还有问了一下内存占用，面数，drawcall占用，drawcall如何合理分配。模型划分。<br>15.2K的三角形数，14.6k的顶点数，Batches：83，Draw Calls：85</p>
+<h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><ol>
+<li>描述服务器架构？</li>
+<li>全球服中如何管理玩家连接，当有一个逻辑服宕机之后如何处理？</li>
+<li>对称加密和非对称加密？</li>
+<li>TCP/IP的滑动窗口</li>
+</ol>
+<h1 id="搜狐二面"><a href="#搜狐二面" class="headerlink" title="搜狐二面"></a>搜狐二面</h1><ol>
+<li>针对项目情况问一些技术问题吧，不过问了好几次有遇到什么技术问题或者技术难点之类的。</li>
+<li>问了一下AssetBundle管理</li>
+<li>还有资源管理</li>
+<li>还有问了一下内存占用，面数，drawcall占用，drawcall如何合理分配。模型划分。<br>15.2K的三角形数，14.6k的顶点数，Batches：83，Draw Calls：85</li>
+</ol>
+<h1 id="好游科技"><a href="#好游科技" class="headerlink" title="好游科技"></a>好游科技</h1><ol>
+<li>角色遮挡显示</li>
+<li>渲染管线</li>
+<li>Unity是左手坐标系还是右手坐标系</li>
+<li><p>屏幕坐标如何转换到世界坐标</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Camera.main.ScreenToWorldPoint(<span class="keyword">new</span> vector3(x,y,<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>播放动作到一定时间的时候如何播放粒子</p>
+</li>
+<li>如何将3DMAX的模型导入UNITY中，如何播放3DMAX动作文件</li>
+<li>2D场景，3D人物如何实现</li>
+<li>如何实现热更新</li>
+<li>如何读取StreamingAsset下面的资源</li>
+<li>GameObject.Find和transform.Find的区别<br>第一个返回GameObject类型并且未激活的对象不会被查找到，第二个返回Transform类型。</li>
+<li>结构体和Class的区别</li>
+<li>Foreach遍历类里面所有的成员</li>
+<li>什么是协程，为什么协程可以分布执行</li>
+<li>类内初始化变量和构造函数初始化变量的区别</li>
+</ol>
+<h1 id="网易TA"><a href="#网易TA" class="headerlink" title="网易TA"></a>网易TA</h1><ol>
+<li>判断点在多边形内部 </li>
+<li>不用分支语句推导三角波函数图像的函数</li>
+<li>GPU instance中，渲染大量草用什么方式存储草的颜色位置比较好</li>
+<li>双线性过滤 4倍各向异性过滤 邻近点过滤和三次插值，双三次插值，线性插值优化过后的采样次数</li>
+<li>给你场景物体的顺序和混合因子让你计算最后的颜色的rgba</li>
+<li>rgb转hsv的公式</li>
+<li>美术给模型做细分和GPU曲面细分的适用场合和优缺点</li>
+<li>正交投影下计算良好效果边缘光的方法</li>
+<li>描述一下沙漠的地貌特征和形成原因</li>
+<li>色相差的表现和实现方法</li>
+</ol>
 
       
     </div>
@@ -745,7 +787,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -808,7 +850,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -949,7 +997,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -985,7 +1043,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#西山居"><span class="nav-number">7.</span> <span class="nav-text">西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离职意愿"><span class="nav-number">11.2.3.</span> <span class="nav-text">离职意愿</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9130"><span class="nav-number">12.</span> <span class="nav-text">9130</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜狐二面"><span class="nav-number">13.</span> <span class="nav-text">搜狐二面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#西山居"><span class="nav-number">7.</span> <span class="nav-text">西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离职意愿"><span class="nav-number">11.2.3.</span> <span class="nav-text">离职意愿</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9130"><span class="nav-number">12.</span> <span class="nav-text">9130</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">12.1.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">12.2.</span> <span class="nav-text">服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜狐二面"><span class="nav-number">13.</span> <span class="nav-text">搜狐二面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#好游科技"><span class="nav-number">14.</span> <span class="nav-text">好游科技</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网易TA"><span class="nav-number">15.</span> <span class="nav-text">网易TA</span></a></li></ol></div>
             
 
           </div>
@@ -1158,7 +1216,6 @@
 
 
 
-
   
   <script src="/js/src/scrollspy.js?v=7.0.1"></script>
 <script src="/js/src/post-details.js?v=7.0.1"></script>
@@ -1208,20 +1265,342 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

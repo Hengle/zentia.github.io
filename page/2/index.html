@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Building-a-Flexible-Camera-Class/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/22/KCP-README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/" class="post-title-link" itemprop="url">第十一章 网格模型II(Building a Flexible Camera Class)</a>
+                <a href="/2019/04/22/KCP-README/" class="post-title-link" itemprop="url">KCP - A Fast and Reliable ARQ Protocol</a>
               
             
           </h2>
@@ -417,22 +411,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -445,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Building-a-Flexible-Camera-Class/" itemprop="commentCount"></span>
+                <a href="/2019/04/22/KCP-README/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/22/KCP-README/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -477,15 +455,15 @@
         
           
             <p>
-              ID3DXBuffer　　对ID3DXBuffer接口的一些参考是在上一章，这里我们不会详细讲解。在D3DX库中到处都能看见这个接口，因此大概介绍一下该接口还是很有必要的。　　ID3DXBuffer接口是一个很普通的数据结构， D3DX用它将数据存储到邻接内存块中。它只有两个方法：
-
-LPVOID 
+                 
+README in English 
+简介KCP是一个快速可靠协议，能以比 TCP浪费10%-20%的带宽的代价，换取平均延迟降低 30%-40%，且最大延迟降低三倍的传输效果。纯算法实现，并不负责底层协议（如UDP）的收发，需要使用者自己定义下层数据包的发送方式，以 callback的方式
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Building-a-Flexible-Camera-Class/#more" rel="contents">
+              <a class="btn" href="/2019/04/22/KCP-README/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -545,7 +523,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Meshes-Part-I/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/22/frame-sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -565,7 +543,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Meshes-Part-I/" class="post-title-link" itemprop="url">第十章 网格模型I(Meshes Part I)</a>
+                <a href="/2019/04/22/frame-sync/" class="post-title-link" itemprop="url">帧锁定同步(frame lock sync)按帧同步（frame sync）状态同步(state sync)</a>
               
             
           </h2>
@@ -584,22 +562,6 @@ LPVOID
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -612,8 +574,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Meshes-Part-I/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Meshes-Part-I/" itemprop="commentCount"></span>
+                <a href="/2019/04/22/frame-sync/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/22/frame-sync/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -644,13 +606,13 @@ LPVOID
         
           
             <p>
-              几何信息ID3DXBaseMesh接口包含一个用来存储网格顶点的顶点缓存和一个用来定义这些顶点怎样连接在一起组成网格三角形的索引缓存。我们能够通过使用下面的方法来得到这些缓存的指针：HRESULT ID3DXMesh::GetVertexBuffer(LPDIRECT3DVERTEXBUFFER9*
+              帧锁定同步(frame lock sync)lockstep这个概念大家的理解基本都是一致的。准确的说，应该叫frame lockstep sync。但因为lockstep sync基本都是针对帧的（至少我现在想不出其他用法），把lockstep sync和frame lock sync直接画等号也
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Meshes-Part-I/#more" rel="contents">
+              <a class="btn" href="/2019/04/22/frame-sync/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -710,7 +672,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Fonts/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/21/draw-texture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -730,7 +692,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Fonts/" class="post-title-link" itemprop="url">第九章 字体(Fonts)</a>
+                <a href="/2019/04/21/draw-texture/" class="post-title-link" itemprop="url">3dmax利用视口画布在窗口中绘制贴图</a>
               
             
           </h2>
@@ -758,7 +720,7 @@ LPVOID
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/3DMax/" itemprop="url" rel="index"><span itemprop="name">3DMax</span></a></span>
 
                 
                 
@@ -777,8 +739,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Fonts/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Fonts/" itemprop="commentCount"></span>
+                <a href="/2019/04/21/draw-texture/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/21/draw-texture/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -809,14 +771,13 @@ LPVOID
         
           
             <p>
-              ID3DXFont在D3DX库中提供了一个ID3DXFont接口，它能被用于在Direct3D应用程序中绘制文字。这个接口是使用GDI来绘制文字的，因此我们能够使用这个接口来执行这个操作。无论如何，因为ID3DXFont使用的是GUI，所以它能够联合字体句柄和格式化字体。
-创建一个ID3DXFont
+              打开场景文件场景中创建了5个球体。单机打开材质编辑器，单机一个材质球，将材质名称我们命名为黄色，然后将它的材质类型设置为VR材质单机漫反射后面的通道，添加一张黄色的贴图（选择位图可以自定义），选择贴图，单机打开添加完成，需要设置下面的参数单击转到父对象，设置一下它的反射颜色为白色，并且要勾选菲涅尔反
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Fonts/#more" rel="contents">
+              <a class="btn" href="/2019/04/21/draw-texture/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -876,7 +837,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Stenciling/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/17/flash-effect/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -896,7 +857,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Stenciling/" class="post-title-link" itemprop="url">模版(Stenciling)</a>
+                <a href="/2019/04/17/flash-effect/" class="post-title-link" itemprop="url">flash-effect</a>
               
             
           </h2>
@@ -915,22 +876,6 @@ LPVOID
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -943,8 +888,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Stenciling/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Stenciling/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/flash-effect/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/flash-effect/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -975,13 +920,13 @@ LPVOID
         
           
             <p>
-              模版缓存是一个远离屏幕的缓存，我们能够用它来完成一些特效。模版缓存与后缓存和深度缓存有相同的定义，因此在模版缓存中的ijth像素与后缓存和深度缓存中的ijth像素是相协调的。就象名字所说，模版缓存就象一个模版它允许我们印刷渲染后缓存的某个部分。举例，当要实现一个镜子时，我们只需要简单地反射一个物体细
-              ...
+              
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Stenciling/#more" rel="contents">
+              <a class="btn" href="/2019/04/17/flash-effect/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1041,7 +986,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Blending/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/17/attribute/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1061,7 +1006,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Blending/" class="post-title-link" itemprop="url">第七章 混合(Blending)</a>
+                <a href="/2019/04/17/attribute/" class="post-title-link" itemprop="url">attribute</a>
               
             
           </h2>
@@ -1080,22 +1025,6 @@ LPVOID
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1108,8 +1037,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Blending/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Blending/" itemprop="commentCount"></span>
+                <a href="/2019/04/17/attribute/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/17/attribute/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1140,13 +1069,13 @@ LPVOID
         
           
             <p>
-              混合因素　　观察图7.1，我们将一个红色的茶壶绘制在一个木质背景上。　　　　图7.1　　假设想让茶壶有一个透明度，以便我们能够透过茶壶看见背景（如图7.2）。　　　　图7.2　　我们怎样才能实现这个效果呢？我们只需要在木箱子上光栅化茶壶三角形，我们需要结合像素颜色，就象通过茶壶显示木箱那样来计算茶壶
-              ...
+              
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Blending/#more" rel="contents">
+              <a class="btn" href="/2019/04/17/attribute/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1206,7 +1135,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Texturing/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/15/note-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1226,7 +1155,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Texturing/" class="post-title-link" itemprop="url">第六章 纹理(Texturing)</a>
+                <a href="/2019/04/15/note-1/" class="post-title-link" itemprop="url">note-1</a>
               
             
           </h2>
@@ -1245,22 +1174,6 @@ LPVOID
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1273,8 +1186,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Texturing/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Texturing/" itemprop="commentCount"></span>
+                <a href="/2019/04/15/note-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/15/note-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1305,13 +1218,14 @@ LPVOID
         
           
             <p>
-              Direct3D使用一个纹理坐标系统，它是由用水平方向的u轴和竖直方向v轴构成。由u,v坐标决定纹理上的元素，它被叫做texel。注意v轴是向下的（如图6.2）。　　　　图6.2同样，注意规格化的坐标间隔，[0，1]，它被使用是因为它给Direct3D一个固定的范围用于在不同尺寸的纹理上工作。对每一
-              ...
+              难吧，确实挺难的，该怎么选择，该怎么去面对，一件事情的对错，怎么做合适，怎么做恰当。
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Texturing/#more" rel="contents">
+              <a class="btn" href="/2019/04/15/note-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1371,7 +1285,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/Lighting/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/14/houdini/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1391,7 +1305,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/Lighting/" class="post-title-link" itemprop="url">第五章 灯光(Lighting)</a>
+                <a href="/2019/04/14/houdini/" class="post-title-link" itemprop="url">houdini</a>
               
             
           </h2>
@@ -1419,7 +1333,7 @@ LPVOID
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Houdini/" itemprop="url" rel="index"><span itemprop="name">Houdini</span></a></span>
 
                 
                 
@@ -1438,8 +1352,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/Lighting/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Lighting/" itemprop="commentCount"></span>
+                <a href="/2019/04/14/houdini/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/14/houdini/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1470,15 +1384,19 @@ LPVOID
         
           
             <p>
-              灯光的组成在Direct3D灯光模型中，灯光是通过灯光资源的三个成员之一来照射的，即有三种灯光。
-
-环境光（Ambient Light）——这种类型的灯光将被其他所有表面反射且被用在照亮整个场景。例如，物体的各部分都被照亮，对于一个角度，甚至穿过不在光源直接照射的地方他们都能被照亮。环境光的使用是粗
+              
+entagma免费的教程都是教基础的
+程序化生成树
+master class全集
+https://cgpersia.com
+https://www.anastasiaopara.com/houdini-hive-siggraph-17
+http://www.tokeru.com/cgwiki/in
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/Lighting/#more" rel="contents">
+              <a class="btn" href="/2019/04/14/houdini/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1538,7 +1456,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/color/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/13/shader-xray/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1558,7 +1476,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/color/" class="post-title-link" itemprop="url">色彩(Color)</a>
+                <a href="/2019/04/13/shader-xray/" class="post-title-link" itemprop="url">遮挡显示</a>
               
             
           </h2>
@@ -1577,6 +1495,22 @@ LPVOID
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1589,8 +1523,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/color/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/color/" itemprop="commentCount"></span>
+                <a href="/2019/04/13/shader-xray/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/shader-xray/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1621,13 +1555,16 @@ LPVOID
         
           
             <p>
-              颜色表示法　　在Direct3D中，颜色是使用RGB三部分来描述的。也就是说，我们要分别指定红、绿和蓝三种颜色的值。混合这三个颜色决定最终的颜色。利用这三种颜色我们能够表现数万种颜色。　　我们使用两种不同的结构来存储RGB数据。这第一种是D3DCOLOR，它实际上一个DWORD即32位。在D3DCO
+              3D游戏中主角会经常被墙壁之内的东西挡住，此时为了达到突出主角的效果，会做一些特殊处理让主角显示出来。光栅化阶段的后期，会有一个深度测试和颜色混合的过程，此效果就是针对这个过程进行的一种特殊处理。
+
+深度就是该像素点在3D世界中距离摄像机的距离，离摄像机越近，深度值越小。
+深度测试：在屏幕上每一个点
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/color/#more" rel="contents">
+              <a class="btn" href="/2019/04/13/shader-xray/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1687,7 +1624,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/drawing-in-direct3d/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/13/static-analyze-unity-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1707,7 +1644,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/drawing-in-direct3d/" class="post-title-link" itemprop="url">Drawing in Direct3D</a>
+                <a href="/2019/04/13/static-analyze-unity-code/" class="post-title-link" itemprop="url">使用静态分析优化Unity代码</a>
               
             
           </h2>
@@ -1735,7 +1672,7 @@ LPVOID
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
 
                 
                 
@@ -1754,8 +1691,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/drawing-in-direct3d/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/drawing-in-direct3d/" itemprop="commentCount"></span>
+                <a href="/2019/04/13/static-analyze-unity-code/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/13/static-analyze-unity-code/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1786,13 +1723,13 @@ LPVOID
         
           
             <p>
-              顶点/索引缓存顶点和索引缓存有相似的接口并且共享相似的方法；一个顶点缓存是一块连续的存储了顶点数据的内存。同样的，一个索引缓存是一块连续的存储了索引数据的内存。我们使用顶点和索引缓存保存我们的数据是因为它们能被放置在显存中。渲染显存中的数据要比渲染系统内存中的数据快的多。在代码中，一个顶点缓存是通过
+              UnityEngineAnalyzerUnityEngineAnalyzer is a set of Roslyn analyzers that aim to detect common problems in Unity3D C# code. Unity3D makes it easy for u
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/drawing-in-direct3d/#more" rel="contents">
+              <a class="btn" href="/2019/04/13/static-analyze-unity-code/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1852,7 +1789,7 @@ LPVOID
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/11/graphics-learn-step/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2019/04/12/RTR-4th-Chapter2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1872,7 +1809,7 @@ LPVOID
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/11/graphics-learn-step/" class="post-title-link" itemprop="url">图形学习步骤</a>
+                <a href="/2019/04/12/RTR-4th-Chapter2/" class="post-title-link" itemprop="url">RTR 4th Chapter2 图形渲染管线</a>
               
             
           </h2>
@@ -1900,7 +1837,7 @@ LPVOID
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/图形学/" itemprop="url" rel="index"><span itemprop="name">图形学</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/RTR-4th/" itemprop="url" rel="index"><span itemprop="name">RTR-4th</span></a></span>
 
                 
                 
@@ -1919,8 +1856,8 @@ LPVOID
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/11/graphics-learn-step/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/graphics-learn-step/" itemprop="commentCount"></span>
+                <a href="/2019/04/12/RTR-4th-Chapter2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/12/RTR-4th-Chapter2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1951,14 +1888,13 @@ LPVOID
         
           
             <p>
-              
-以我现在的水平观之,3D图形学分3大块的学习内容:a.空间几何数学:    空间几何变换, 加速算法, 多边形技术, 曲线和曲面, 相交测试, 碰撞测试。b.光照着色系统:    光照, 纹理贴图, 高级象素着色光照, 艺术性渲染.c.程序技术性应用: 公告板, 精灵, 天空盒, 体绘制, 材质系
+              整个渲染流水线的目标是实时地通过一个虚拟的camera，把光源，3D物体（包括上面的纹理）等渲染到2D图像上，流水线是并行化执行的，但是会出现stall，直到流水线中最慢的一个阶段完成它的任务整条流水线的架构，主要依次分为四个阶段：Application,Geometry Processing,Ra
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/11/graphics-learn-step/#more" rel="contents">
+              <a class="btn" href="/2019/04/12/RTR-4th-Chapter2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2007,7 +1943,7 @@ LPVOID
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2049,7 +1985,7 @@ LPVOID
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2112,7 +2048,13 @@ LPVOID
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2253,7 +2195,17 @@ LPVOID
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2445,7 +2397,6 @@ LPVOID
 
 
 
-
   
 
   
@@ -2489,21 +2440,343 @@ LPVOID
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
-
 
 
   
@@ -2515,13 +2788,13 @@ LPVOID
 
   
   
+    
+      
+    
+      
     
       
         
-      
-    
-      
-    
       
     
       

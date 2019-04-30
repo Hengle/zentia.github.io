@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/13/Unity-PGK/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/Lua-5-1-refer-manual/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/13/Unity-PGK/" class="post-title-link" itemprop="url">Unity打包详细流程</a>
+                <a href="/2018/04/02/Lua-5-1-refer-manual/" class="post-title-link" itemprop="url">Lua refer manual</a>
               
             
           </h2>
@@ -429,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/13/Unity-PGK/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/Unity-PGK/" itemprop="commentCount"></span>
+                <a href="/2018/04/02/Lua-5-1-refer-manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Lua-5-1-refer-manual/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +455,13 @@
         
           
             <p>
-              打包策略：按照目录划分目录进行分类配置文件如下：&#123;    &quot;AssetBundleInfo&quot;: [        &#123;            &quot;assetBundleName&quot;: &quot;ui.bytes&quot;,          
+              Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/13/Unity-PGK/#more" rel="contents">
+              <a class="btn" href="/2018/04/02/Lua-5-1-refer-manual/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +521,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/13/Mono-1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/Unix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +541,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/13/Mono-1/" class="post-title-link" itemprop="url">Mono-1</a>
+                <a href="/2018/04/02/Unix/" class="post-title-link" itemprop="url">大端模式与小端模式</a>
               
             
           </h2>
@@ -578,8 +572,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/13/Mono-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/Mono-1/" itemprop="commentCount"></span>
+                <a href="/2018/04/02/Unix/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Unix/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -610,14 +604,16 @@
         
           
             <p>
-              Mono主要包含了C#的编译器，CLI(Common Language Infrastructure)实现和一系列相关的开发工具。
-源码结构msc:    msc: Mono实现的基于Ecma标准的C#编译器。    class:CLI的C#的实现。类似于Android中的Java蹭，应用程序看到的
+              字节序
+Little-Endian         低位字节放在内存的低地址端，高位字节放在内存的高地址端。
+Big-Endian            高位字节放在内存的高地址端，低位字节放在内存的低地址端。
+Network byte order    TPC/IP各层协议将字节序定义为Big-E
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/13/Mono-1/#more" rel="contents">
+              <a class="btn" href="/2018/04/02/Unix/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -677,7 +673,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/13/interview-1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/CSharp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -697,7 +693,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/13/interview-1/" class="post-title-link" itemprop="url">面试经历</a>
+                <a href="/2018/04/02/CSharp/" class="post-title-link" itemprop="url">CSharp</a>
               
             
           </h2>
@@ -716,6 +712,22 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSharp/" itemprop="url" rel="index"><span itemprop="name">CSharp</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -728,8 +740,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/13/interview-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/interview-1/" itemprop="commentCount"></span>
+                <a href="/2018/04/02/CSharp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/CSharp/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -760,14 +772,14 @@
         
           
             <p>
-              
-程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果
+              internal、sealedinternal：本应用程序使用，其它进程无法使用
+sealed（密封）：由它修饰的类、方法、属性将不能被继承或是重写。sealed 必须和override一起使用sealed修饰符表示密封用于类时，表示该类不能被继承，不能和abstract同时使用，不能被实例化。密封
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/13/interview-1/#more" rel="contents">
+              <a class="btn" href="/2018/04/02/CSharp/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -827,7 +839,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/13/Real-Time-Rendering-3rd-2/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-sence-merge-render/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -847,7 +859,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/13/Real-Time-Rendering-3rd-2/" class="post-title-link" itemprop="url">Real Time Rendering 3rd 第二部分</a>
+                <a href="/2018/04/02/xxsy-sence-merge-render/" class="post-title-link" itemprop="url">xxsy-sence-merge-render</a>
               
             
           </h2>
@@ -878,8 +890,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/13/Real-Time-Rendering-3rd-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/13/Real-Time-Rendering-3rd-2/" itemprop="commentCount"></span>
+                <a href="/2018/04/02/xxsy-sence-merge-render/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-sence-merge-render/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -910,13 +922,13 @@
         
           
             <p>
-              图形渲染与视觉外观渲染与视觉物理现象
+              
               
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/13/Real-Time-Rendering-3rd-2/#more" rel="contents">
+              <a class="btn" href="/2018/04/02/xxsy-sence-merge-render/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -976,7 +988,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/05/optimzation-cpu/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-skill/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -996,7 +1008,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/05/optimzation-cpu/" class="post-title-link" itemprop="url">性能优化，永无止境---CPU篇</a>
+                <a href="/2018/04/02/xxsy-skill/" class="post-title-link" itemprop="url">PJ04</a>
               
             
           </h2>
@@ -1027,8 +1039,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/05/optimzation-cpu/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/05/optimzation-cpu/" itemprop="commentCount"></span>
+                <a href="/2018/04/02/xxsy-skill/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-skill/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1059,14 +1071,63 @@
         
           
             <p>
-              性能优化是游戏项目开发工程中一个永恒的话题。玩家的需求和项目的要求永远都在不停增长，同屏人数、屏幕特效和场景复杂度永远在向着”榨干“硬件的趋势毕竟。所以，无论硬件设备发展到何种成都，无论研发团队有多么丰富的经验积累，性能优化永远是一个非常棘手而又无法绕开的问题。
-就当前游戏而言，性能优化主要是围着C
+              normal_logic
+
+
+
+Index
+Type
+Data1
+Data2
+Data3
+Data4
+Data5
+
+
+
+
+1
+随机移动
+
+
+2
+固定线路
+
+
+3
+跟随逻辑
+
+
+4
+恐惧逻辑
+
+
+5
+飞行逻辑
+
+
+6
+
+
+7
+
+
+8
+怪物闲聊
+
+talk_list.id
+起始延迟时间
+
+间隔时间
+
+
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/05/optimzation-cpu/#more" rel="contents">
+              <a class="btn" href="/2018/04/02/xxsy-skill/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1126,7 +1187,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note6/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/01/opengl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1146,7 +1207,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/03/note6/" class="post-title-link" itemprop="url">第六部分 GPU计算</a>
+                <a href="/2018/04/01/opengl/" class="post-title-link" itemprop="url">OpenGL</a>
               
             
           </h2>
@@ -1177,8 +1238,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/note6/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note6/" itemprop="commentCount"></span>
+                <a href="/2018/04/01/opengl/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/opengl/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1209,13 +1270,14 @@
         
           
             <p>
-              第六部分 GPU计算第三十五章 使用CPU进行病毒特征的快速匹配35.1 介绍35.2 模式匹配35.3 GPU实现35.4 结果35.5 结论和后续工作35.6 参考资料第三十六章 用CPU进行AES加密和解密第三十七章 使用CUDA进行高效的随机数生成及应用第三十八章 使用CUDA进行地球内部成
+              核心模式和立即渲染模式早期的OpenGL使用立即渲染模式（Immediate mode，也就是固定渲染管线），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。
+状态机OpenG
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/note6/#more" rel="contents">
+              <a class="btn" href="/2018/04/01/opengl/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1275,7 +1337,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note5/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/29/Red-Black-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1295,7 +1357,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/03/note5/" class="post-title-link" itemprop="url">第五部分 物理仿真</a>
+                <a href="/2018/03/29/Red-Black-Tree/" class="post-title-link" itemprop="url">数据结构与算法</a>
               
             
           </h2>
@@ -1326,8 +1388,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/note5/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note5/" itemprop="commentCount"></span>
+                <a href="/2018/03/29/Red-Black-Tree/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/29/Red-Black-Tree/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1358,162 +1420,15 @@
         
           
             <p>
-              第五部分 物理仿真第二十九章 CPU上实时刚体仿真第三十章 实时仿真与3D流体渲染第三十一章 使用CUDA进行快速N-body仿真第三十二章 使用CUDA进行快速宽阶段碰撞检测第三十三章 用于碰撞检测的LCP算法的CUDA实现第三十四章 使用单过程的GPU扫描和四面体转换的有向距离场
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/note5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/03/03/note4/" class="post-title-link" itemprop="url">第四部分 图像效果</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/note4/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note4/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              第四部分 图像效果第二十一章 真正的Impostor第二十二章 在GPU上处理发现贴图第二十三章 高速的离屏粒子第二十四章 保持线性的重要性第二十五章 在CPU上渲染向量图第二十六章 通过颜色进行对象探测：使用CPU 进行实时视频图像处理第二十七章 作为后置处理效果的运动模糊第二十八章 使用景深后期
+              红黑树红黑树是一种自平衡二叉查找树。
+性质1.节点是红色或黑色。2.根节点是黑色3.每个叶节点（NIL或空节点）是黑色4.每个红色节点的两个子节点都是黑色的（也就是说不存在两个连续的红色节点）；5.从任意一个节点到其叶子节点都包含相同数目的黑色节点；
+AVL树性质1.本身首先是一棵二叉搜索树2.带有
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/note4/#more" rel="contents">
+              <a class="btn" href="/2018/03/29/Red-Black-Tree/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1573,7 +1488,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note3/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/24/Objective-C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1593,7 +1508,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/03/note3/" class="post-title-link" itemprop="url">第三部分 渲染</a>
+                <a href="/2018/03/24/Objective-C/" class="post-title-link" itemprop="url">Objective-C</a>
               
             
           </h2>
@@ -1624,8 +1539,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/note3/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note3/" itemprop="commentCount"></span>
+                <a href="/2018/03/24/Objective-C/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/Objective-C/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1656,162 +1571,317 @@
         
           
             <p>
-              第三部分 渲染第十四章 用于真实感实时皮肤渲染的高级技术第十五章 可播放的全方位捕捉第十六章 Crysis 中植被的过程化动画和着色第十七章 鲁棒的多镜面反射和折射第十八章 用于浮雕映射的松散式锥形步进第十九章 Tabula Rasa中的延迟着色第二十章 基于GPU的重要性采样
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/note3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/note2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/03/03/note2/" class="post-title-link" itemprop="url">第二部分 光照和阴影</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/note2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/note2/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              第二部分 光照和阴影第八章 区域求和的差值阴影贴图8.1 介绍8.2 相关工作8.3 percentage-closer 过滤8.4 插值阴影贴图8.5 区域求和插值阴影贴图8.6 percentage-closer 软阴影8.7 结论8.8 参考资料第九章 使用全局照明实现互动的电影级重光照9.1
+              Objective-C: C的超集Objective-C是C语言的严格超集—任何C语言不经修改可以直接通过Objective-C编译器
+Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Objective-C和C代码.mm 源代码文件，包含Objective-C、C、C++
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/note2/#more" rel="contents">
+              <a class="btn" href="/2018/03/24/Objective-C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/Unity-ILRuntime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/23/Unity-ILRuntime/" class="post-title-link" itemprop="url">Unity热更新方案-ILRuntime</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/23/Unity-ILRuntime/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-ILRuntime/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              ILRuntime的优势同市面上的其他热更方案相比，ILRuntime主要有以下优点：
+
+无缝访问C#工程的线程代码，无需额外抽象脚本API
+直接使用VS2015进行开发，ILRuntime的解释编译引擎支持.Net 4.6编译的DLL
+执行效率是L#的10-20倍
+选择性的CLR绑定使跨域调用更快
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/23/Unity-ILRuntime/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/Unity-Skinned-Mesh/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/23/Unity-Skinned-Mesh/" class="post-title-link" itemprop="url">Skinned Mesh原理解析</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/23/Unity-Skinned-Mesh/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-Skinned-Mesh/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              一、3D模型动画基本原理和分类3D模型动画的基本原理是让模型中各定点的位置随时间变化。主要种类由Morph动画，关节动画和骨骼蒙皮动画(Skinned Mesh)。从动画数据的角度来说，三者一般都采用关键帧技术，即只给出关键帧的数据，其他帧的数据使用插值得到。但由于这三种技术的不同，关键帧的数据是不
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/23/Unity-Skinned-Mesh/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1860,7 +1930,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1902,7 +1972,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1965,7 +2035,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2106,7 +2182,17 @@
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2298,7 +2384,6 @@
 
 
 
-
   
 
   
@@ -2342,20 +2427,342 @@
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

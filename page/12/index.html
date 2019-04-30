@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/26/Unity-Lerp/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/AndroidManifest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/26/Unity-Lerp/" class="post-title-link" itemprop="url">Unity Lerp</a>
+                <a href="/2018/07/21/AndroidManifest/" class="post-title-link" itemprop="url">AndroidManifest.xml详解</a>
               
             
           </h2>
@@ -429,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/26/Unity-Lerp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/Unity-Lerp/" itemprop="commentCount"></span>
+                <a href="/2018/07/21/AndroidManifest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/AndroidManifest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,164 +455,16 @@
         
           
             <p>
-              有时，我们在做游戏时会发现有些跟随动作不够圆滑或者需要一个缓冲的效果，这时，一般会考虑到插值。（比如摄像机跟随主角）
-插值是数学上的一个概念，公式： from + (to - from) * t;from是起始地位置，to是目标位置，按照数字t在from到to之间插值。
-
               
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/26/Unity-Lerp/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/21/CG-Input-Output-And-Semantic-Bind/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/" class="post-title-link" itemprop="url">CG-Input-Output-And-Semantic-Bind</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/21/CG-Input-Output-And-Semantic-Bind/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              先复习一下GPU的工作流程，第三章从CPU运行原理和数据流程的角度阐述了顶点着色器程序和片段着色程序的输入输出，即，应用程序(宿主程序)将图元信息(顶点位置、法向量、纹理坐标等)传递给顶点着色程序；顶点着色程序基于图元信息进行坐标空间变换，运算得到的数据传递到片段着色程序中；片段着色程序还可以接受从
+为应用的JAVA软件包命名。软件包名称充当应用的唯一标识符
+描述应用的各个组件，包括构成应用的Activity、服务、广播接收器和内容提供程序。它还为实现每个组件的类命名并发布其功能，例如它们可以处理Intent消息。这些声明向Android系统告知有关组件以及可以启动这些组件的条件的信息。
+确定
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/AndroidManifest/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -678,7 +524,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/21/Unity-Mesh/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/21/Protocol/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -698,7 +544,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/21/Unity-Mesh/" class="post-title-link" itemprop="url">Unity Mesh</a>
+                <a href="/2018/07/21/Protocol/" class="post-title-link" itemprop="url">Protocol Buffer</a>
               
             
           </h2>
@@ -729,8 +575,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/21/Unity-Mesh/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/21/Unity-Mesh/" itemprop="commentCount"></span>
+                <a href="/2018/07/21/Protocol/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/Protocol/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -761,19 +607,27 @@
         
           
             <p>
-              Mesh是Unity内的一个组件，成为网格组件。
+              高效的二进制方式存储Varint是一种紧凑的表示数字的方法。它用一个或多个字节来表示一个数字，值越少的数字使用越少的字节数。采用这种Key-Pair结构无需使用分隔符来分割不同的Field。
 
-Mesh网格
-MeshFilter网格过滤器
-Mesh Renderer 网格渲染器
 
-Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容包括顶点坐标，法线，纹理坐标，三角形绘制序列等其他有用属性和功能。因此建网格，就是画三角形；画
+
+
+Type
+Meaning
+Used For
+
+
+
+
+0
+Varint
+int32,int64,uin
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/21/Unity-Mesh/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/Protocol/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -833,7 +687,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/20/cocos2d/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/11/CameraEditor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -853,7 +707,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/20/cocos2d/" class="post-title-link" itemprop="url">cocos2d</a>
+                <a href="/2018/07/11/CameraEditor/" class="post-title-link" itemprop="url">CameraEditor</a>
               
             
           </h2>
@@ -884,8 +738,8 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/20/cocos2d/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/20/cocos2d/" itemprop="commentCount"></span>
+                <a href="/2018/07/11/CameraEditor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/11/CameraEditor/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -916,164 +770,13 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
         
           
             <p>
-              
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/04/20/cocos2d/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/20/xxsy-client-framework/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/04/20/xxsy-client-framework/" class="post-title-link" itemprop="url">寻仙手游客户端分析</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/20/xxsy-client-framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/20/xxsy-client-framework/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              寻仙手游客户端是采用Unity5.3.8+uLua开发的一款MMORPG手游。
-流程顺序应用程序启动Handheld.PlayFullScreenMovie通过该方法播放视频文件进入更新模块SDK初始化安卓通过AndroidJavaClass访问Java实例
-资源模块UI模块更新模块网络模块这里是在
+              Floder:Editor\Mono\Inspector// Unity C# reference source// Copyright (c) Unity Technologies. For terms of use, see// https://unity3d.com/legal/license
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/20/xxsy-client-framework/#more" rel="contents">
+              <a class="btn" href="/2018/07/11/CameraEditor/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1133,7 +836,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/18/Net-Net-Framework-mono/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/09/C++11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1153,7 +856,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/18/Net-Net-Framework-mono/" class="post-title-link" itemprop="url">.Net .Net Framework mono</a>
+                <a href="/2018/07/09/C++11/" class="post-title-link" itemprop="url">C++11</a>
               
             
           </h2>
@@ -1172,6 +875,22 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1184,8 +903,8 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/18/Net-Net-Framework-mono/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/18/Net-Net-Framework-mono/" itemprop="commentCount"></span>
+                <a href="/2018/07/09/C++11/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/09/C++11/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1216,13 +935,17 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
         
           
             <p>
-              .net从一个抽象上来说其实是一个理念，使多种语言编写的程序能够通过一个通用的Runtime运行在不同的操作系统及硬件平台上。比如.net framework是在windows上实现的.net platform,mono是一个跨平台的.net platform一个.net platform想到达到.
-              ...
+              虚函数
+对于一个class，产生一堆指向virtual functions的指针，虚函数表指针通常放在对象实例的最前面的位置。
+每一个对象添加一个指针，指向相关的virtual table。这个指针被称作虚函数表指针。
+
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/18/Net-Net-Framework-mono/#more" rel="contents">
+              <a class="btn" href="/2018/07/09/C++11/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1282,7 +1005,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/17/C-0/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/09/arithmetic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1302,7 +1025,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/17/C-0/" class="post-title-link" itemprop="url">减少装箱(Boxing)和拆箱(UnBoxing)操作</a>
+                <a href="/2018/07/09/arithmetic/" class="post-title-link" itemprop="url">算法</a>
               
             
           </h2>
@@ -1333,8 +1056,8 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/17/C-0/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/17/C-0/" itemprop="commentCount"></span>
+                <a href="/2018/07/09/arithmetic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/09/arithmetic/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1365,16 +1088,13 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
         
           
             <p>
-              .Net的类型分值类型和引用类型，这两个类型的本质区别，值类型数据是分配在栈中，而引用类型数据分配在堆上，那么如果要把一个值类型数据放到堆上，就需要装箱操作；反之，把一个放在堆上的值类型数据取出来，则需要拆箱操作。减少装箱和拆箱操作的好处
-
-对于堆的操作效率比较低
-堆上分配的内存资源，需要GC来回收
-              ...
+              背包问题
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/17/C-0/#more" rel="contents">
+              <a class="btn" href="/2018/07/09/arithmetic/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1434,7 +1154,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/17/Unity-ECS-README/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/LoadingPerformance_Texture/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1454,7 +1174,7 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/17/Unity-ECS-README/" class="post-title-link" itemprop="url">Unity ECS Readme</a>
+                <a href="/2018/07/05/LoadingPerformance_Texture/" class="post-title-link" itemprop="url">LoadingPerformance_Texture</a>
               
             
           </h2>
@@ -1485,8 +1205,8 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/17/Unity-ECS-README/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/17/Unity-ECS-README/" itemprop="commentCount"></span>
+                <a href="/2018/07/05/LoadingPerformance_Texture/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/LoadingPerformance_Texture/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1517,26 +1237,14 @@ Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容�
         
           
             <p>
-              
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-
-
-Entitas - The Entity Component System Framework for C# and UnityEntitas is a 
+              资源加载资源加载是加载模块中最为耗时的部分，其CPU开销在Unity引擎中主要体现在Loading.UpdatePreloading和Loading.ReadObject两项中。
+Loading.UpdatePreloading，这一项尽在调用类似LoadLevel(Async)的接口处出现，主要负
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/17/Unity-ECS-README/#more" rel="contents">
+              <a class="btn" href="/2018/07/05/LoadingPerformance_Texture/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1596,7 +1304,7 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/16/Unity-Coroutine/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation-memory-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1616,7 +1324,7 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/16/Unity-Coroutine/" class="post-title-link" itemprop="url">Unity ECS</a>
+                <a href="/2018/07/05/optimzation-memory-1/" class="post-title-link" itemprop="url">optimzation_memory_1</a>
               
             
           </h2>
@@ -1647,8 +1355,8 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/16/Unity-Coroutine/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Coroutine/" itemprop="commentCount"></span>
+                <a href="/2018/07/05/optimzation-memory-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation-memory-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1679,13 +1387,14 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
         
           
             <p>
-              CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一
+              内存开销：
+资源内存占用在一个较为复杂的大中型项目中，资源的内存占用往往占据了总体内存的70%以上。因此，资源使用是否恰当直接决定了项目的内存占用情况。一般来说，一款游戏项目的资源主要可分为如下几种：纹理（Texture）、网格（Mesh）、动画片段（AnimationClip）、音频片段（Audi
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/16/Unity-Coroutine/#more" rel="contents">
+              <a class="btn" href="/2018/07/05/optimzation-memory-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1745,7 +1454,7 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/16/Unity-Manual/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/optimzation_memory_2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1765,7 +1474,7 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/16/Unity-Manual/" class="post-title-link" itemprop="url">Unity Manual</a>
+                <a href="/2018/07/05/optimzation_memory_2/" class="post-title-link" itemprop="url">optimzation_memory_2</a>
               
             
           </h2>
@@ -1796,8 +1505,8 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/16/Unity-Manual/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Manual/" itemprop="commentCount"></span>
+                <a href="/2018/07/05/optimzation_memory_2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/optimzation_memory_2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1828,29 +1537,318 @@ Entitas - The Entity Component System Framework for C# and UnityEntitas is a
         
           
             <p>
+              内存泄漏
               
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/05/optimzation_memory_2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
+    
+      
 
+  
 
+  
+  
+  
 
+  
 
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/05/presentandsync/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
 
-public static float Mathf.Round(float f)
-四舍五入
+    
+      <header class="post-header">
 
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/07/05/presentandsync/" class="post-title-link" itemprop="url">presentandsync</a>
+              
+            
+          </h2>
+        
 
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
-YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, WaitForFixedUpdate, Coroutine and MonoB
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/05/presentandsync/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/05/presentandsync/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              WaitForTargetFPS该参数一般出现在CPU开销过低，且通过设定了目标帧率地情况下(Application.targetFrameRate)。当上一帧产生一个WaitForTargetFPS地空闲等待消耗时，以维持目标帧率。
+解析：该项在Unity引擎地主循环中其实是最早执行地，即引擎实际
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/16/Unity-Manual/#more" rel="contents">
+              <a class="btn" href="/2018/07/05/presentandsync/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/07/01/Unity3D_Game_Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/07/01/Unity3D_Game_Design/" class="post-title-link" itemprop="url">Unity</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/01/Unity3D_Game_Design/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/01/Unity3D_Game_Design/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              命名
+模型命名 Max文件中角色模型命名为skin@sk_001武器模型命名为skin@wq_001
+颜色贴图skin@st_001.png 高光贴图skin@st_001_ctr.png
+
+导入导出能够从3DsMax导入Unity3D的资源
+所有节点的位移、旋转、锁方、轴心和命名都将导入
+网格模型
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/01/Unity3D_Game_Design/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1899,7 +1897,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/11/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/13/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1941,7 +1939,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2004,7 +2002,13 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2145,7 +2149,17 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2337,7 +2351,6 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
 
 
 
-
   
 
   
@@ -2381,20 +2394,342 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

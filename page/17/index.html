@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/03/GPU-Gems-3-note/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/actor/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/03/GPU-Gems-3-note/" class="post-title-link" itemprop="url">第一部分 几何体</a>
+                <a href="/2018/03/23/actor/" class="post-title-link" itemprop="url">Actor模型原理</a>
               
             
           </h2>
@@ -429,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/03/GPU-Gems-3-note/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/03/GPU-Gems-3-note/" itemprop="commentCount"></span>
+                <a href="/2018/03/23/actor/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/actor/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +455,13 @@
         
           
             <p>
-              第一部分 几何体尽管像素和像素着色器更加吸引人们的目光，但几何体才是一切的根源所在。没有了几何体，我们将发现光照、阴影和反射毫无意义。这是为什么呢？因为提高底层几何体的复杂度，将同时像素的质量。该书本部分描述的主题正式“复杂性”，以前需要使用CPU来增强场景复杂度的方法，现在已经能在GPU上实现。很
+              1.Actor模型在使用Java进行并发编程时需要特别的关注锁和内存原子性等一系列线程问题，而Actor模型内部的状态由它自己维护即它内部数据只能由它自己修改（通过消息传递来进行状态修改），所以使用Actors模型进行并发编程可以很好避免这些问题，Actor由状态(state),行为(Behavio
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/03/GPU-Gems-3-note/#more" rel="contents">
+              <a class="btn" href="/2018/03/23/actor/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +521,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/12/10/Study_unreal4_Rendering_1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/22/thread-process/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +541,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/12/10/Study_unreal4_Rendering_1/" class="post-title-link" itemprop="url">虚幻引擎学习之路：渲染模块之光照系统</a>
+                <a href="/2018/03/22/thread-process/" class="post-title-link" itemprop="url">简单介绍多进程和多线程服务器</a>
               
             
           </h2>
@@ -578,8 +572,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/12/10/Study_unreal4_Rendering_1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/12/10/Study_unreal4_Rendering_1/" itemprop="commentCount"></span>
+                <a href="/2018/03/22/thread-process/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/thread-process/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -610,14 +604,13 @@
         
           
             <p>
-              我们准备从三方面来介绍Unreal 4引擎的渲染模块，主要包括：光照系统，材质系统喝图像后处理。本篇文章重点讲解第一部分：光照系统。在对比Unreal 4与Unity两者引擎时，本文分别采用的版本是Unreal 4.18.1和Unity 5.3.8.f1。
-本节将介绍Unreal 4引擎的光照系统。
+              首先贴下多进程单线程和单进程多线程的特点：多进程：有独立的地址空间，进程之间不共享内存和变量，但可以通过共享内存实现，每个进程只有一个线程，一般用于单机系统开发。多线程：在同一个进程下所有线程可以共享内存和变量。而共同点是，同开辟的进程数/线程数多余系统cpu核数时，无法继续提供应用的性能。而多线程
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/12/10/Study_unreal4_Rendering_1/#more" rel="contents">
+              <a class="btn" href="/2018/03/22/thread-process/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -677,7 +670,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/11/07/word-boss/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/JVM-heap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -697,7 +690,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/11/07/word-boss/" class="post-title-link" itemprop="url">世界boss设计</a>
+                <a href="/2018/03/21/JVM-heap/" class="post-title-link" itemprop="url">JVM的新生代、老年代、MinorGC、MajorGC</a>
               
             
           </h2>
@@ -728,8 +721,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/11/07/word-boss/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/07/word-boss/" itemprop="commentCount"></span>
+                <a href="/2018/03/21/JVM-heap/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM-heap/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -760,13 +753,164 @@
         
           
             <p>
-              设计目的作为主要的金钱额外发放通道，驱动尽可能多的玩家参与。将世界boss分为大小两个类型，阶梯性的学习，鼓励低级用户参与，降低挫折感在世界boss和潜在的竞争对手的压力下，让玩家开始自发的组织，逐步形成社会关系。由于小boss需要的组织难度较低，玩家很容易形成组织。而大boss普通玩家只需要
+              JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/21/JVM-heap/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/21/JVM/" class="post-title-link" itemprop="url">JVM初探：内存分配、GC原理与垃圾收集器</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/21/JVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              JVM内存的分配与回收大致可分为如下4个步骤：何时分配-》怎样分配-》何时回收-》怎样回收，除了在概念上可简单认为new时分配外，我们着重介绍后面三个步骤
+1.怎样分配-》JVM内存分配策略对象内存主要分配在Eden区，如果启用了本地线程分配缓存，则有限在TLAB上分配，少数情况能会直接分配在老年代
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/11/07/word-boss/#more" rel="contents">
+              <a class="btn" href="/2018/03/21/JVM/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -826,7 +970,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/11/02/shell/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/21/String-StringBuffer-StringBuilder/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -846,7 +990,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/11/02/shell/" class="post-title-link" itemprop="url">Shell</a>
+                <a href="/2018/03/21/String-StringBuffer-StringBuilder/" class="post-title-link" itemprop="url">String-StringBuffer-StringBuilder</a>
               
             
           </h2>
@@ -877,8 +1021,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/11/02/shell/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/11/02/shell/" itemprop="commentCount"></span>
+                <a href="/2018/03/21/String-StringBuffer-StringBuilder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/String-StringBuffer-StringBuilder/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -909,13 +1053,13 @@
         
           
             <p>
-              ${}用来做变量替换。一般情况下，$var与${var}并没啥不一样但是用${}会比较精确的界定变量名称的范围，比方说：$ A=B$ echo $ABg++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURC
+              JAVAString 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）String类型和StringBuffer类型的主要性能区别其实在于String是不可变的对象，因此每次对String类型进行改变的时候其实都等同于生成了一个新的Str
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/11/02/shell/#more" rel="contents">
+              <a class="btn" href="/2018/03/21/String-StringBuffer-StringBuilder/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -975,7 +1119,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/zentia-note1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/Unity-Lua-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -995,7 +1139,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/30/zentia-note1/" class="post-title-link" itemprop="url">日记</a>
+                <a href="/2018/03/19/Unity-Lua-2/" class="post-title-link" itemprop="url">Unity手游开发-使用Lua来开发大型游戏（下）</a>
               
             
           </h2>
@@ -1026,8 +1170,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/30/zentia-note1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/zentia-note1/" itemprop="commentCount"></span>
+                <a href="/2018/03/19/Unity-Lua-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1058,13 +1202,13 @@
         
           
             <p>
-              SetUseAuth由于个人喜欢sublime也在使用，遇到不支持ANSI编码，特标注：ConvertToUtf8    import urllib.request,os; pf = ‘Package Control.sublime-package’; ipp = sublime.installed
+              基本原理Hotfix的基本原理依然是基于动态语言的Reload功能，更加准确的说是Function Reload。下图简单描述了整个Hotfix的流程：更加具体地可以描述为：1.程序发现要修复的bug，编写特殊的Hotfix代码进行修复，测试通过后上传svn服务器；2.通过发布指令，将svn上更新后
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/30/zentia-note1/#more" rel="contents">
+              <a class="btn" href="/2018/03/19/Unity-Lua-2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1124,7 +1268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security-1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/markdown/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1144,7 +1288,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/30/port-security-1/" class="post-title-link" itemprop="url">port-security</a>
+                <a href="/2018/03/19/markdown/" class="post-title-link" itemprop="url">markdown</a>
               
             
           </h2>
@@ -1175,8 +1319,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/30/port-security-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/port-security-1/" itemprop="commentCount"></span>
+                <a href="/2018/03/19/markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/markdown/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1213,7 +1357,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/30/port-security-1/#more" rel="contents">
+              <a class="btn" href="/2018/03/19/markdown/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1273,7 +1417,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/port-security/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/19/Unity-Lua-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1293,7 +1437,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/30/port-security/" class="post-title-link" itemprop="url">端口映射</a>
+                <a href="/2018/03/19/Unity-Lua-1/" class="post-title-link" itemprop="url">Unity-Lua</a>
               
             
           </h2>
@@ -1324,8 +1468,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/30/port-security/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/port-security/" itemprop="commentCount"></span>
+                <a href="/2018/03/19/Unity-Lua-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1356,13 +1500,17 @@
         
           
             <p>
-              端口安全（Port Security），从基本原理上讲，Port Security特性会通过MAC地址表记录连接到交换机端口的以太网MAC地址（即网卡号），并只允许某个MAC地址通过本端口通信。其它MAC地址发送的数据包通过此端口是，端口安全特性会组织它。使用端口安全特性可以防止未经允许的设备访问网
+              逻辑使用脚本来做的好处：
+
+使用脚本语言的动态特性，客户端可以做Hotfix,服务器可以做Refresh，无论在运营还是开发期这一特性都很有用；
+脚本语言在虚拟机运行，有效控制崩溃率
+上手难度低缺点是运行效率低，但是之前看的LuaJit的效率只是略低于c（有待验证),动态语言容易出一些运行时错误（一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/30/port-security/#more" rel="contents">
+              <a class="btn" href="/2018/03/19/Unity-Lua-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1422,7 +1570,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/30/ps/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/18/XCAAFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1442,7 +1590,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/30/ps/" class="post-title-link" itemprop="url">ps</a>
+                <a href="/2018/03/18/XCAAFS/" class="post-title-link" itemprop="url">XCAAFS</a>
               
             
           </h2>
@@ -1473,8 +1621,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/30/ps/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/30/ps/" itemprop="commentCount"></span>
+                <a href="/2018/03/18/XCAAFS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/XCAAFS/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1505,316 +1653,168 @@
         
           
             <p>
-              USER        PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDroot      44936 99.1  1.4 148660 14340 ?        R    10月28 2004:47 ./XGMS_d g
+              负载均衡服务器，应用在登录模块上，开新服的时候入口流量会增大，一段时间以后流量会递减或者趋于平缓，市面上已经有了成熟的解决方案了。一般最常用，最简单的也是基于DNS的负载均衡系统了
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/03/18/XCAAFS/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/18/http/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/03/18/http/" class="post-title-link" itemprop="url">http</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/03/18/http/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/http/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              什么是http超文本传输协议（HTTP）的设计目的是保证客户机与服务器之间的通信。HTTP的工作方式客户端和服务器之前的请求-应答协议
+两种HTTP请求方法：GET和POST
+GET - 从指定的资源请求数据
+POST - 向指定的资源提交要被处理的数据
+
+GET方法请注意，查询字符串（名称/值对）
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/30/ps/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/28/poll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/28/poll/" class="post-title-link" itemprop="url">poll</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/28/poll/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/28/poll/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              Poll就是监控文件是否可读的一种机制，作用与select一样。应用程序的调用如下：
-int poll(struct pollfd *fds, nfds_t nfds, int timeout)
-Poll机制会判断fds中的文件是否可读，如果可读则立即返回，返回的就是可读fd的数量，如果不可读，那么
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/28/poll/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2017/10/27/game-framework/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/27/game-framework/" class="post-title-link" itemprop="url">XXSY服务器游戏架构</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/27/game-framework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/27/game-framework/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              总体架构图
-大区架构图
-逻辑服务器架构图
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/27/game-framework/#more" rel="contents">
+              <a class="btn" href="/2018/03/18/http/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1863,7 +1863,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1905,7 +1905,7 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1968,7 +1968,13 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2109,7 +2115,17 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2301,7 +2317,6 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
 
 
 
-
   
 
   
@@ -2345,20 +2360,342 @@ Poll机制会判断fds中的文件是否可读，如果可读则立即返回，�
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 

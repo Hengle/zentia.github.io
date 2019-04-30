@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html class="theme-next muse use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -113,7 +113,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
@@ -316,26 +316,20 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -378,7 +372,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/Lua-5-1-refer-manual/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +392,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/Lua-5-1-refer-manual/" class="post-title-link" itemprop="url">Lua refer manual</a>
+                <a href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/" class="post-title-link" itemprop="url">Shader模板缓冲和模板测试</a>
               
             
           </h2>
@@ -429,8 +423,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/Lua-5-1-refer-manual/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Lua-5-1-refer-manual/" itemprop="commentCount"></span>
+                <a href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +455,17 @@
         
           
             <p>
-              Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C 
+              在图形学种一个像素会有如下缓存：
+
+颜色缓存color buffer/pixel buffer : 存储该点即将显示地颜色，RGBA值
+深度缓存depth buffer/z buffer:存储该点地深度，z
+模板缓存stencil buffer： 通常用作限制渲染区域。更高级用法需结合深度缓冲，例如
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/Lua-5-1-refer-manual/#more" rel="contents">
+              <a class="btn" href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +525,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/CSharp/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/26/Unity-Lerp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +545,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/CSharp/" class="post-title-link" itemprop="url">CSharp</a>
+                <a href="/2018/04/26/Unity-Lerp/" class="post-title-link" itemprop="url">Unity Lerp</a>
               
             
           </h2>
@@ -566,22 +564,6 @@
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSharp/" itemprop="url" rel="index"><span itemprop="name">CSharp</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -594,8 +576,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/CSharp/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/CSharp/" itemprop="commentCount"></span>
+                <a href="/2018/04/26/Unity-Lerp/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/Unity-Lerp/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -626,14 +608,15 @@
         
           
             <p>
-              internal、sealedinternal：本应用程序使用，其它进程无法使用
-sealed（密封）：由它修饰的类、方法、属性将不能被继承或是重写。sealed 必须和override一起使用sealed修饰符表示密封用于类时，表示该类不能被继承，不能和abstract同时使用，不能被实例化。密封
-              ...
+              有时，我们在做游戏时会发现有些跟随动作不够圆滑或者需要一个缓冲的效果，这时，一般会考虑到插值。（比如摄像机跟随主角）
+插值是数学上的一个概念，公式： from + (to - from) * t;from是起始地位置，to是目标位置，按照数字t在from到to之间插值。
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/CSharp/#more" rel="contents">
+              <a class="btn" href="/2018/04/26/Unity-Lerp/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -693,7 +676,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-sence-merge-render/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/21/CG-Input-Output-And-Semantic-Bind/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -713,7 +696,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/xxsy-sence-merge-render/" class="post-title-link" itemprop="url">xxsy-sence-merge-render</a>
+                <a href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/" class="post-title-link" itemprop="url">CG-Input-Output-And-Semantic-Bind</a>
               
             
           </h2>
@@ -744,8 +727,8 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/xxsy-sence-merge-render/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-sence-merge-render/" itemprop="commentCount"></span>
+                <a href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/21/CG-Input-Output-And-Semantic-Bind/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -776,13 +759,13 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
         
           
             <p>
-              
-              
+              先复习一下GPU的工作流程，第三章从CPU运行原理和数据流程的角度阐述了顶点着色器程序和片段着色程序的输入输出，即，应用程序(宿主程序)将图元信息(顶点位置、法向量、纹理坐标等)传递给顶点着色程序；顶点着色程序基于图元信息进行坐标空间变换，运算得到的数据传递到片段着色程序中；片段着色程序还可以接受从
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/xxsy-sence-merge-render/#more" rel="contents">
+              <a class="btn" href="/2018/04/21/CG-Input-Output-And-Semantic-Bind/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -842,7 +825,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/02/xxsy-skill/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/21/Unity-Mesh/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -862,7 +845,7 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/02/xxsy-skill/" class="post-title-link" itemprop="url">PJ04</a>
+                <a href="/2018/04/21/Unity-Mesh/" class="post-title-link" itemprop="url">Unity Mesh</a>
               
             
           </h2>
@@ -893,8 +876,8 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/02/xxsy-skill/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/xxsy-skill/" itemprop="commentCount"></span>
+                <a href="/2018/04/21/Unity-Mesh/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/21/Unity-Mesh/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -925,63 +908,19 @@ sealed（密封）：由它修饰的类、方法、属性将不能被继承或�
         
           
             <p>
-              normal_logic
+              Mesh是Unity内的一个组件，成为网格组件。
 
+Mesh网格
+MeshFilter网格过滤器
+Mesh Renderer 网格渲染器
 
-
-Index
-Type
-Data1
-Data2
-Data3
-Data4
-Data5
-
-
-
-
-1
-随机移动
-
-
-2
-固定线路
-
-
-3
-跟随逻辑
-
-
-4
-恐惧逻辑
-
-
-5
-飞行逻辑
-
-
-6
-
-
-7
-
-
-8
-怪物闲聊
-
-talk_list.id
-起始延迟时间
-
-间隔时间
-
-
-
+Mesh: 是指模型的网格，建模就是建网格。Mesh的主要属性内容包括顶点坐标，法线，纹理坐标，三角形绘制序列等其他有用属性和功能。因此建网格，就是画三角形；画
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/02/xxsy-skill/#more" rel="contents">
+              <a class="btn" href="/2018/04/21/Unity-Mesh/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1041,7 +980,7 @@ talk_list.id
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/01/opengl/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/20/cocos2d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1061,7 +1000,7 @@ talk_list.id
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/01/opengl/" class="post-title-link" itemprop="url">OpenGL</a>
+                <a href="/2018/04/20/cocos2d/" class="post-title-link" itemprop="url">cocos2d</a>
               
             
           </h2>
@@ -1092,8 +1031,8 @@ talk_list.id
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/01/opengl/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/01/opengl/" itemprop="commentCount"></span>
+                <a href="/2018/04/20/cocos2d/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/20/cocos2d/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1124,14 +1063,13 @@ talk_list.id
         
           
             <p>
-              颜色缓冲区颜色缓冲区（COLOR_BUFFER）就是帧缓冲区（FRAME_BUFFER），你需要渲染的场景最终每一个像素都要写入该缓冲区，然后由它渲染到屏幕上显示。
-深度缓冲区深度缓冲区（DEPTH_BUFFER）与帧缓冲区对应，用于记录上面每个像素的深度值，通过深度缓冲区，我们就可以进行深度测试，
-              ...
+              
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/01/opengl/#more" rel="contents">
+              <a class="btn" href="/2018/04/20/cocos2d/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1191,7 +1129,7 @@ talk_list.id
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/29/Red-Black-Tree/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/20/xxsy-client-framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1211,7 +1149,7 @@ talk_list.id
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/29/Red-Black-Tree/" class="post-title-link" itemprop="url">数据结构与算法</a>
+                <a href="/2018/04/20/xxsy-client-framework/" class="post-title-link" itemprop="url">寻仙手游客户端分析</a>
               
             
           </h2>
@@ -1242,8 +1180,8 @@ talk_list.id
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/29/Red-Black-Tree/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/29/Red-Black-Tree/" itemprop="commentCount"></span>
+                <a href="/2018/04/20/xxsy-client-framework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/20/xxsy-client-framework/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1274,15 +1212,15 @@ talk_list.id
         
           
             <p>
-              红黑树红黑树是一种自平衡二叉查找树。
-性质1.节点是红色或黑色。2.根节点是黑色3.每个叶节点（NIL或空节点）是黑色4.每个红色节点的两个子节点都是黑色的（也就是说不存在两个连续的红色节点）；5.从任意一个节点到其叶子节点都包含相同数目的黑色节点；
-AVL树性质1.本身首先是一棵二叉搜索树2.带有
+              寻仙手游客户端是采用Unity5.3.8+uLua开发的一款MMORPG手游。
+流程顺序应用程序启动Handheld.PlayFullScreenMovie通过该方法播放视频文件进入更新模块SDK初始化安卓通过AndroidJavaClass访问Java实例
+资源模块UI模块更新模块网络模块这里是在
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/29/Red-Black-Tree/#more" rel="contents">
+              <a class="btn" href="/2018/04/20/xxsy-client-framework/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1342,7 +1280,7 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/24/Objective-C/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/18/Net-Net-Framework-mono/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1362,7 +1300,7 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/24/Objective-C/" class="post-title-link" itemprop="url">Objective-C</a>
+                <a href="/2018/04/18/Net-Net-Framework-mono/" class="post-title-link" itemprop="url">.Net .Net Framework mono</a>
               
             
           </h2>
@@ -1393,8 +1331,8 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/24/Objective-C/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/24/Objective-C/" itemprop="commentCount"></span>
+                <a href="/2018/04/18/Net-Net-Framework-mono/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/18/Net-Net-Framework-mono/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1425,14 +1363,13 @@ AVL树性质1.本身首先是一棵二叉搜索树2.带有
         
           
             <p>
-              Objective-C: C的超集Objective-C是C语言的严格超集—任何C语言不经修改可以直接通过Objective-C编译器
-Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Objective-C和C代码.mm 源代码文件，包含Objective-C、C、C++
+              .net从一个抽象上来说其实是一个理念，使多种语言编写的程序能够通过一个通用的Runtime运行在不同的操作系统及硬件平台上。比如.net framework是在windows上实现的.net platform,mono是一个跨平台的.net platform一个.net platform想到达到.
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/24/Objective-C/#more" rel="contents">
+              <a class="btn" href="/2018/04/18/Net-Net-Framework-mono/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1492,7 +1429,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/Unity-ILRuntime/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/17/C-0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1512,7 +1449,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/Unity-ILRuntime/" class="post-title-link" itemprop="url">Unity热更新方案-ILRuntime</a>
+                <a href="/2018/04/17/C-0/" class="post-title-link" itemprop="url">减少装箱(Boxing)和拆箱(UnBoxing)操作</a>
               
             
           </h2>
@@ -1543,8 +1480,8 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/Unity-ILRuntime/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-ILRuntime/" itemprop="commentCount"></span>
+                <a href="/2018/04/17/C-0/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/17/C-0/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1575,18 +1512,16 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
         
           
             <p>
-              ILRuntime的优势同市面上的其他热更方案相比，ILRuntime主要有以下优点：
+              .Net的类型分值类型和引用类型，这两个类型的本质区别，值类型数据是分配在栈中，而引用类型数据分配在堆上，那么如果要把一个值类型数据放到堆上，就需要装箱操作；反之，把一个放在堆上的值类型数据取出来，则需要拆箱操作。减少装箱和拆箱操作的好处
 
-无缝访问C#工程的线程代码，无需额外抽象脚本API
-直接使用VS2015进行开发，ILRuntime的解释编译引擎支持.Net 4.6编译的DLL
-执行效率是L#的10-20倍
-选择性的CLR绑定使跨域调用更快
+对于堆的操作效率比较低
+堆上分配的内存资源，需要GC来回收
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/Unity-ILRuntime/#more" rel="contents">
+              <a class="btn" href="/2018/04/17/C-0/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1646,7 +1581,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/Unity-Skinned-Mesh/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/17/Unity-ECS-README/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1666,7 +1601,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/Unity-Skinned-Mesh/" class="post-title-link" itemprop="url">Skinned Mesh原理解析</a>
+                <a href="/2018/04/17/Unity-ECS-README/" class="post-title-link" itemprop="url">Unity ECS Readme</a>
               
             
           </h2>
@@ -1697,8 +1632,8 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/Unity-Skinned-Mesh/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-Skinned-Mesh/" itemprop="commentCount"></span>
+                <a href="/2018/04/17/Unity-ECS-README/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/17/Unity-ECS-README/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1729,13 +1664,26 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
         
           
             <p>
-              一、3D模型动画基本原理和分类3D模型动画的基本原理是让模型中各定点的位置随时间变化。主要种类由Morph动画，关节动画和骨骼蒙皮动画(Skinned Mesh)。从动画数据的角度来说，三者一般都采用关键帧技术，即只给出关键帧的数据，其他帧的数据使用插值得到。但由于这三种技术的不同，关键帧的数据是不
+              
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+
+
+Entitas - The Entity Component System Framework for C# and UnityEntitas is a 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/Unity-Skinned-Mesh/#more" rel="contents">
+              <a class="btn" href="/2018/04/17/Unity-ECS-README/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1795,7 +1743,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/03/23/actor/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.site/2018/04/16/Unity-Coroutine/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1815,7 +1763,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/actor/" class="post-title-link" itemprop="url">Actor模型原理</a>
+                <a href="/2018/04/16/Unity-Coroutine/" class="post-title-link" itemprop="url">Unity ECS</a>
               
             
           </h2>
@@ -1846,8 +1794,8 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/actor/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/actor/" itemprop="commentCount"></span>
+                <a href="/2018/04/16/Unity-Coroutine/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Coroutine/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1878,13 +1826,13 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
         
           
             <p>
-              1.Actor模型在使用Java进行并发编程时需要特别的关注锁和内存原子性等一系列线程问题，而Actor模型内部的状态由它自己维护即它内部数据只能由它自己修改（通过消息传递来进行状态修改），所以使用Actors模型进行并发编程可以很好避免这些问题，Actor由状态(state),行为(Behavio
+              CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/actor/#more" rel="contents">
+              <a class="btn" href="/2018/04/16/Unity-Coroutine/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1933,7 +1881,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1975,7 +1923,7 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">223</span>
+                    <span class="site-state-item-count">244</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2038,7 +1986,13 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                     
                       
                     
-                    <span class="site-state-item-count">25</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2179,7 +2133,17 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
                     
                       
                     
-                    <span class="site-state-item-count">64</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">69</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2371,7 +2335,6 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
 
 
-
   
 
   
@@ -2415,20 +2378,342 @@ Objective-C代码文件的扩展名.h  头文件.m  源代码文件，包含Obje
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+        // ref: https://github.com/ForbesLindesay/unescape-html
+        var unescapeHtml = function(html) {
+          return String(html)
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, '\'')
+            .replace(/&#x3A;/g, ':')
+            // replace all the other &#x; chars
+            .replace(/&#(\d+);/g, function (m, p) { return String.fromCharCode(p); })
+            .replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&');
+        };
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                content = unescapeHtml(content);
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=7.0.1"></script>
 
 
 
