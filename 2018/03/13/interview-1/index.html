@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T01:57:14.583Z">
+<meta property="og:updated_time" content="2019-04-30T02:09:55.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试经历">
 <meta name="twitter:description" content="程序的优化处理，这个是面试考察的重点，内存的管理也是Unity开发的重中之重。内存管理无非就是对内存的使用，针对UI的内存管理使用的图集方式，Unity自身的图集功能浪费内存，比如2048 * 2048的图集大小，它占的内存是4M，也就是说不管图集是否填满，它都需要在内存中开辟4M的空间，但是如果使用Texture Packer工具就可以节省没有填满的空间，针对大量UI的加载可以采用分类打包图集">
@@ -516,7 +516,7 @@
 <li>Overdraw的优化？</li>
 <li>半透明和不透明物体的渲染流程？</li>
 </ol>
-<h1 id="西山居"><a href="#西山居" class="headerlink" title="西山居"></a>西山居</h1><ol>
+<h1 id="珠海西山居"><a href="#珠海西山居" class="headerlink" title="珠海西山居"></a>珠海西山居</h1><ol>
 <li>工作中遇到过什么困难，如何解决，获得什么成就？</li>
 <li>Array和List的区别？</li>
 <li>闭包是什么？</li>
@@ -524,6 +524,9 @@
 <li>new Struct存放在哪里？堆和栈的区别？</li>
 <li>什么是元表？有什么应用？</li>
 <li>堆和栈在C++中的运用以及实现方式以及优缺点？</li>
+<li>UI的overdraw如何解决，异步加载造成数据不同步如何解决？</li>
+<li>剧情编辑器如何不根据地形制作剧情？</li>
+<li>协程的原理？</li>
 </ol>
 <h1 id="乐易网络"><a href="#乐易网络" class="headerlink" title="乐易网络"></a>乐易网络</h1><ol>
 <li>NGUI如何优化？</li>
@@ -787,7 +790,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">244</span>
+                    <span class="site-state-item-count">242</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1043,7 +1046,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#西山居"><span class="nav-number">7.</span> <span class="nav-text">西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离职意愿"><span class="nav-number">11.2.3.</span> <span class="nav-text">离职意愿</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9130"><span class="nav-number">12.</span> <span class="nav-text">9130</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">12.1.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">12.2.</span> <span class="nav-text">服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜狐二面"><span class="nav-number">13.</span> <span class="nav-text">搜狐二面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#好游科技"><span class="nav-number">14.</span> <span class="nav-text">好游科技</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网易TA"><span class="nav-number">15.</span> <span class="nav-text">网易TA</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenGL中要用到哪几种buffer"><span class="nav-number">1.</span> <span class="nav-text">OpenGL中要用到哪几种buffer</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#冰川网络"><span class="nav-number">2.</span> <span class="nav-text">冰川网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳易凡互动"><span class="nav-number">3.</span> <span class="nav-text">深圳易凡互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深圳奇妙能力"><span class="nav-number">4.</span> <span class="nav-text">深圳奇妙能力</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#牛蛙互动"><span class="nav-number">5.</span> <span class="nav-text">牛蛙互动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IGG"><span class="nav-number">6.</span> <span class="nav-text">IGG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#珠海西山居"><span class="nav-number">7.</span> <span class="nav-text">珠海西山居</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐易网络"><span class="nav-number">8.</span> <span class="nav-text">乐易网络</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四维时代"><span class="nav-number">9.</span> <span class="nav-text">四维时代</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#乐逗"><span class="nav-number">10.</span> <span class="nav-text">乐逗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#广州百田"><span class="nav-number">11.</span> <span class="nav-text">广州百田</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图形相关面试题"><span class="nav-number">11.1.</span> <span class="nav-text">图形相关面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#终面技巧"><span class="nav-number">11.2.</span> <span class="nav-text">终面技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#技术终面"><span class="nav-number">11.2.1.</span> <span class="nav-text">技术终面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#态度"><span class="nav-number">11.2.2.</span> <span class="nav-text">态度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#离职意愿"><span class="nav-number">11.2.3.</span> <span class="nav-text">离职意愿</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9130"><span class="nav-number">12.</span> <span class="nav-text">9130</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">12.1.</span> <span class="nav-text">客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">12.2.</span> <span class="nav-text">服务器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜狐二面"><span class="nav-number">13.</span> <span class="nav-text">搜狐二面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#好游科技"><span class="nav-number">14.</span> <span class="nav-text">好游科技</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网易TA"><span class="nav-number">15.</span> <span class="nav-text">网易TA</span></a></li></ol></div>
             
 
           </div>
