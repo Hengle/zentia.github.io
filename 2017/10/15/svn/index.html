@@ -482,7 +482,7 @@
 <p>post-commit.tmpl<br>它在事务外城后运行，创建一个新的修订版本。大多数人用这个钩子来发送关于提交的描述性邮件，或者作为版本库的备份。版本库传给程序两个参数：到版本库的路径和被创建的新的修订版本号。退出程序时被忽略。</p>
 <p>关闭防火墙<br>重启后生效<br>开启: chkconfig iptables on<br>关闭: chkconfig iptables off<br>即时生效，重启后失效<br>开启：service iptables start<br>关闭：service iptables stop</p>
 <p>查看磁盘空间<br>df -h</p>
-<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/svn</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入svn目录</span></span><br><span class="line">cd /var/svn  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 用svn管理员创建bigsvr</span></span><br><span class="line">svnadmin create /var/svn/bigsvr</span><br><span class="line"><span class="meta">#</span><span class="bash"> 进入库</span></span><br><span class="line">cd bigsvr</span><br></pre></td></tr></table></figure>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/svn</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 进入svn目录</span><br><span class="line">cd /var/svn  </span><br><span class="line"><span class="meta">#</span> 用svn管理员创建bigsvr</span><br><span class="line">svnadmin create /var/svn/bigsvr</span><br><span class="line"><span class="meta">#</span> 进入库</span><br><span class="line">cd bigsvr</span><br></pre></td></tr></table></figure>
 <p>subversion目录说明<br>db        所有版本控制的数据存放目录<br>hooks    放置hook脚本<br>locks     用户操作的锁文件<br>format    记录当前文件库的版本号<br>conf    配置文件</p>
 <h1 id="Svn命令行总结"><a href="#Svn命令行总结" class="headerlink" title="Svn命令行总结"></a>Svn命令行总结</h1><ol>
 <li><p>上传项目到SVN服务器上</p>
@@ -695,8 +695,6 @@
                     
                       
                     
-                      
-                    
                     <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -709,12 +707,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
-                    
-                      
-                    
-                      
                     
                       
                     
