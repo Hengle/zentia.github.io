@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="接口(Interface)是一种规划，为你定义了一系列的规则和任务，但不去实现它类和结构体可以继承多个接口抽象类表示该类中可能已经有一些的具体定义生成的库在这里： Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so 符号表在这里，需要把扩展名弄成.so，才能被bugly的符号工具转换。 Temp\StagingArea\libs\armeabi-v7a\l">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T01:53:16.986Z">
+<meta property="og:updated_time" content="2019-04-30T05:22:24.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面试">
 <meta name="twitter:description" content="接口(Interface)是一种规划，为你定义了一系列的规则和任务，但不去实现它类和结构体可以继承多个接口抽象类表示该类中可能已经有一些的具体定义生成的库在这里： Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so 符号表在这里，需要把扩展名弄成.so，才能被bugly的符号工具转换。 Temp\StagingArea\libs\armeabi-v7a\l">
@@ -531,19 +531,7 @@ B(C)=alpha*B(B)+(1-alpha)G(A)
 <li>请简述关键字Sealed用在类声明和函数声明时的作用<br>答:类声明时可防止其他类继承此类,在方法中声明则可防止派生类重写此方法</li>
 <li>简述四元数的作用,四元数对欧拉角的优点?<br>答:四元数用于表示旋转<br>相对于欧拉角的优点:<br>(1).能进行增量旋转<br>(2).避免方向锁<br>(3)给定方位的表达方式有两种,互为负(欧拉角有无数种表达方式)<br>12.如何安全的在不用工程间安全的迁移asset数据,三种方法<br>答<br>(1).将Assets目录和Library目录一起迁移<br>(2)导出包<br>(3)用unity自带的assert server功能<br>13.当一个细小的高速物体碰撞另一个较大的物体时,会出现什么情况?如何避免?<br>穿透(碰撞检测失败)<br>14.MipMap是什么?作用?<br>在三维计算机图形的贴图渲染中有一个常用的技术被成为Mipmapping,为了加快渲染速度和减少图像锯齿,贴图被处理成为</li>
 </ol>
-<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>实现原理：在运行时根据程序集和其中的类型得到元数据<br>实现步骤:</p>
-<ol>
-<li>导入 using System.Reflection</li>
-<li>Assembly.Load(“程序集”)加载一个程序集，返回类型是一个Assembly</li>
-<li><p>得到程序集中所有类的名称</p>
-<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">foreach</span>(Type type <span class="keyword">in</span> assembly.GetType())</span><br><span class="line">&#123;</span><br><span class="line">    stromh t = type.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Type type = assembly.GetType(“程序集.类名”); //获取当前类的类型</p>
-</li>
-<li>Activator.CreateInstance(type); // 创建此类型实例</li>
-<li>MethodInfo mInfo = type.GetMethod(“方法名”);//获取当前方法</li>
-<li>m.Info.Invok(null, 方法参数);</li>
-</ol>
+<h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>实现原理：在运行时根据程序集和其中的类型得到元数据<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line">Assembly.Load(<span class="string">"程序集"</span>);<span class="comment">//加载一个程序集，返回类型是一个Assembly</span></span><br><span class="line"><span class="keyword">foreach</span>(Type type <span class="keyword">in</span> assembly.GetType())</span><br><span class="line">&#123;</span><br><span class="line">    stromh t = type.name;</span><br><span class="line">&#125;</span><br><span class="line">Type type = assembly.GetType(<span class="string">"程序集.类名"</span>); <span class="comment">//获取当前类的类型</span></span><br><span class="line"><span class="keyword">var</span> activator = System.Activator.CreateInstance(type); <span class="comment">// 创建此类型实例</span></span><br><span class="line">MethodInfo mInfo = type.GetMethod(<span class="string">"方法名"</span>);<span class="comment">//获取当前方法</span></span><br><span class="line">mInfo.Invok(<span class="literal">null</span>, 方法参数);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -734,7 +722,7 @@ B(C)=alpha*B(B)+(1-alpha)G(A)
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -746,6 +734,12 @@ B(C)=alpha*B(B)+(1-alpha)G(A)
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
+                    
+                      
+                    
+                      
+                    
+                      
                     
                       
                     
