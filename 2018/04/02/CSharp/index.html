@@ -147,7 +147,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.github.io/2018/04/02/CSharp/1.png">
 <meta property="og:image" content="http://zentia.github.io/2018/04/02/CSharp/2.png">
-<meta property="og:updated_time" content="2019-05-09T06:03:45.557Z">
+<meta property="og:updated_time" content="2019-05-09T12:40:05.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSharp">
 <meta name="twitter:description" content="internal、sealedinternal：本应用程序使用，其它进程无法使用 sealed（密封）：由它修饰的类、方法、属性将不能被继承或是重写。sealed 必须和override一起使用sealed修饰符表示密封用于类时，表示该类不能被继承，不能和abstract同时使用，不能被实例化。密封类不能用作基类、也不能继承，而抽象类总是希望被继承的。 fixedfixed 语句可防止垃圾回收器重">
@@ -545,13 +545,7 @@
 <p>为什么这里会有一个this关键字，做什么用？其实这就是扩展方法！这个扩展方法在静态类中声明，定义一个静态方法，其中第一个参数定义可它的扩展类型，PG_GetComponent方法扩展了List类，因为它的第一个参数定义了List类型，为了区分扩展方法和一般的静态方法，扩展方法还需要给第一个参数使用this关键字。</p>
 <p>现在就可以使用带List类型的PG_GetComponent方法了：</p>
 <pre><code>var mf = cacheComponents.PG_GetComponent&lt;MeshFilter&gt;();
-</code></pre><h1 id="GC"><a href="#GC" class="headerlink" title="GC"></a>GC</h1><ol>
-<li>GC不能自动释放非托管资源。</li>
-<li>GC并不是实时性的。</li>
-</ol>
-<h1 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h1><p>volatile关键字指示一个字段可以由多个同时执行的线程修改。声明volatile的字段不受编译器优化的限制。这样可以确保该字段在任何时间呈现的都是最新的值。</p>
-<p>volatile修饰符通常用于由多个线程访问但不使用lock语句对访问进行序列化的字段。</p>
-<p>volatile关键字可应用于以下类型的字段：</p>
+</code></pre><h1 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h1><p>volatile关键字指示一个字段可以由多个同时执行的线程修改。声明volatile的字段不受编译器优化的限制。这样可以确保该字段在任何时间呈现的都是最新的值。<br>volatile修饰符通常用于由多个线程访问但不使用lock语句对访问进行序列化的字段。<br>volatile关键字可应用于以下类型的字段：</p>
 <ul>
 <li>引用类型</li>
 <li>指针类型（在不安全的上下文中）。请注意，虽然指针本身可以是可变的，但是它指向的对象不能是可变的。换句话说，无法声明“指向可变对象的指针”。</li>
@@ -638,8 +632,8 @@ cus = new Customer();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/02/Unix/" rel="prev" title="大端模式与小端模式">
-                大端模式与小端模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/02/Lua-5-1-refer-manual/" rel="prev" title="Lua refer manual">
+                Lua refer manual <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -713,7 +707,7 @@ cus = new Customer();
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">249</span>
+                    <span class="site-state-item-count">255</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -971,7 +965,7 @@ cus = new Customer();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#internal、sealed"><span class="nav-number">1.</span> <span class="nav-text">internal、sealed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fixed"><span class="nav-number">2.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引器"><span class="nav-number">3.</span> <span class="nav-text">索引器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引器和属性的不同点"><span class="nav-number">3.1.</span> <span class="nav-text">索引器和属性的不同点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface、abstract"><span class="nav-number">4.</span> <span class="nav-text">interface、abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类和接口的区别："><span class="nav-number">4.1.</span> <span class="nav-text">抽象类和接口的区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类和接口的使用"><span class="nav-number">4.2.</span> <span class="nav-text">抽象类和接口的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Marshal"><span class="nav-number">5.</span> <span class="nav-text">Marshal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">6.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GC"><span class="nav-number">7.</span> <span class="nav-text">GC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile"><span class="nav-number">8.</span> <span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件和委托"><span class="nav-number">9.</span> <span class="nav-text">事件和委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆栈和堆-Heap-amp-Stack"><span class="nav-number">10.</span> <span class="nav-text">堆栈和堆 Heap &amp; Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈stack"><span class="nav-number">10.1.</span> <span class="nav-text">堆栈stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆（托管堆）heap"><span class="nav-number">10.2.</span> <span class="nav-text">堆（托管堆）heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#托管堆"><span class="nav-number">10.3.</span> <span class="nav-text">托管堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#托管堆优化"><span class="nav-number">10.4.</span> <span class="nav-text">托管堆优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于外部资源（External-Resources）的问题"><span class="nav-number">10.5.</span> <span class="nav-text">关于外部资源（External Resources）的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配和垃圾回收的细节"><span class="nav-number">10.6.</span> <span class="nav-text">内存分配和垃圾回收的细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和托管堆"><span class="nav-number">10.7.</span> <span class="nav-text">栈和托管堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型层次结构"><span class="nav-number">10.8.</span> <span class="nav-text">类型层次结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举"><span class="nav-number">11.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readonly"><span class="nav-number">12.</span> <span class="nav-text">readonly</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#internal、sealed"><span class="nav-number">1.</span> <span class="nav-text">internal、sealed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#fixed"><span class="nav-number">2.</span> <span class="nav-text">fixed</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#索引器"><span class="nav-number">3.</span> <span class="nav-text">索引器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引器和属性的不同点"><span class="nav-number">3.1.</span> <span class="nav-text">索引器和属性的不同点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#interface、abstract"><span class="nav-number">4.</span> <span class="nav-text">interface、abstract</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类和接口的区别："><span class="nav-number">4.1.</span> <span class="nav-text">抽象类和接口的区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抽象类和接口的使用"><span class="nav-number">4.2.</span> <span class="nav-text">抽象类和接口的使用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Marshal"><span class="nav-number">5.</span> <span class="nav-text">Marshal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#this"><span class="nav-number">6.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#volatile"><span class="nav-number">7.</span> <span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#事件和委托"><span class="nav-number">8.</span> <span class="nav-text">事件和委托</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆栈和堆-Heap-amp-Stack"><span class="nav-number">9.</span> <span class="nav-text">堆栈和堆 Heap &amp; Stack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈stack"><span class="nav-number">9.1.</span> <span class="nav-text">堆栈stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆（托管堆）heap"><span class="nav-number">9.2.</span> <span class="nav-text">堆（托管堆）heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#托管堆"><span class="nav-number">9.3.</span> <span class="nav-text">托管堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#托管堆优化"><span class="nav-number">9.4.</span> <span class="nav-text">托管堆优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于外部资源（External-Resources）的问题"><span class="nav-number">9.5.</span> <span class="nav-text">关于外部资源（External Resources）的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配和垃圾回收的细节"><span class="nav-number">9.6.</span> <span class="nav-text">内存分配和垃圾回收的细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈和托管堆"><span class="nav-number">9.7.</span> <span class="nav-text">栈和托管堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型层次结构"><span class="nav-number">9.8.</span> <span class="nav-text">类型层次结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#枚举"><span class="nav-number">10.</span> <span class="nav-text">枚举</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#readonly"><span class="nav-number">11.</span> <span class="nav-text">readonly</span></a></li></ol></div>
             
 
           </div>

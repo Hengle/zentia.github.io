@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zentia.github.io/2019/05/10/loadfromfileasyncandyield/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/loadfromfileasyncandyield/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/edgedetection/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/24/Photon-TrueSync/</loc>
+    <lastmod>2019-05-09</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/interlocked/</loc>
+    <lastmod>2019-05-09</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/04/02/CSharp/</loc>
+    <lastmod>2019-05-09</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/autoresetevent/</loc>
+    <lastmod>2019-05-09</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/manualresetevent/</loc>
+    <lastmod>2019-05-09</lastmod>
+  </url>  <url>
     <loc>http://zentia.github.io/2019/05/09/understanding-garbage-colllection/</loc>
     <lastmod>2019-05-09</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/03/HideFlags/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2018/04/02/CSharp/</loc>
     <lastmod>2019-05-09</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/05/09/recttransform/</loc>
@@ -28,19 +49,19 @@
     <loc>http://zentia.github.io/2019/03/09/MathJax/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2019/04/30/Unity-Shadow/</loc>
-    <lastmod>2019-05-08</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/04/21/draw-texture/</loc>
-    <lastmod>2019-05-08</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2019/04/10/diffuse/</loc>
+    <lastmod>2019-05-08</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/27/commandbuffer/</loc>
+    <lastmod>2019-05-08</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/30/Unity-Shadow/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/11/unity-render-optimize/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2019/04/27/commandbuffer/</loc>
+    <loc>http://zentia.github.io/2019/04/21/draw-texture/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/28/Non-photorealistic-rendering/</loc>
@@ -213,9 +234,6 @@
   </url>  <url>
     <loc>http://zentia.github.io/2017/10/13/wm/</loc>
     <lastmod>2019-04-29</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/04/24/Photon-TrueSync/</loc>
-    <lastmod>2019-04-25</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/22/frame-sync/</loc>
     <lastmod>2019-04-24</lastmod>
