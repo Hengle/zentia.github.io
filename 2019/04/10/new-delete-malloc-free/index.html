@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="正文每个程序在执行时都会占用一块可用的内存空间，用于存放动态分配的对象，此内存空间成为自由存储区或堆。 new和delete用法如下几行代码： 123int *pi = new int;int *pi = new int();int *pi = new int(1024); 第一行这个new表达式在自由存储区中分配创建了一个整型对象，并返回一个指向该对象的地址来初始化指针pi。第二行将指针pi指向">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-10T05:20:38.280Z">
+<meta property="og:updated_time" content="2019-05-10T04:28:59.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="new delete malloc free">
 <meta name="twitter:description" content="正文每个程序在执行时都会占用一块可用的内存空间，用于存放动态分配的对象，此内存空间成为自由存储区或堆。 new和delete用法如下几行代码： 123int *pi = new int;int *pi = new int();int *pi = new int(1024); 第一行这个new表达式在自由存储区中分配创建了一个整型对象，并返回一个指向该对象的地址来初始化指针pi。第二行将指针pi指向">
@@ -506,7 +506,7 @@
 <h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>C++允许重载new/delete操作符，malloc不允许重载。</p>
 <h2 id="内存区域"><a href="#内存区域" class="headerlink" title="内存区域"></a>内存区域</h2><p>new操作符从自由存储区（free store）上为对象动态分配内存空间，而malloc函数从堆上动态分配内存。自由存储区是C++基于new操作符的一个抽象概念，凡是通过new操作符进行内存申请，该内存即为自由存储区。而堆是操作系统中的术语，是操作系统锁维护的一块特殊内存，用于程序的内存动态分配，C语言使用malloc从堆上分配内存，使用free释放已分配的对应内存。自由存储区不等于堆，如上所述，布局new就可以不位于堆中。</p>
 <hr>
-<p>在C++中，内存区分为5个区，分别是堆、栈、自由存储区、全局/静态存储区、常量存储区；<br>在C中，内存区分为堆、栈、全局/静态存储区、常量存储区；</p>
+<p>在C++/C#中，内存区分为5个区，分别是堆、栈、自由存储区、全局/静态存储区、常量存储区；<br>在C中，内存区分为堆、栈、全局/静态存储区、常量存储区；</p>
 
       
     </div>
@@ -628,7 +628,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -695,7 +695,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -850,7 +862,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

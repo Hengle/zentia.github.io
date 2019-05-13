@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/The-following-untracked/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/16/Jenkins/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/12/The-following-untracked/" class="post-title-link" itemprop="url">The following untracked working tree files would be overwritten by merge</a>
+                <a href="/2017/10/16/Jenkins/" class="post-title-link" itemprop="url">Jenkins</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/12/The-following-untracked/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/The-following-untracked/" itemprop="commentCount"></span>
+                <a href="/2017/10/16/Jenkins/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/16/Jenkins/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,164 +461,14 @@
         
           
             <p>
-              git pull的时候遇到的问题。解决办法：git clean -d -fxnote:会删除没有add到仓库的文件，操作记得慎重，以免改动文件的丢失。
-
               
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/10/12/The-following-untracked/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/11/init-server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/10/11/init-server/" class="post-title-link" itemprop="url">初始化云服务器</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/11/init-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/11/init-server/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              搭建git服务器yum install -y gitadduser git //创建用户gitgit clone git@10.173.32.7:/home/git/sample.git //克隆远程仓库
-clone git仓库上传代码git commit -am ““, 将所有修改，但未进stag
+添加Jenkins的源（repository） sudo wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo sudo rpm —import http://pkg.jenkins-ci.o
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/11/init-server/#more" rel="contents">
+              <a class="btn" href="/2017/10/16/Jenkins/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -678,7 +528,7 @@ clone git仓库上传代码git commit -am ““, 将所有修改，但未进sta
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/05/2d-outline/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/15/makefile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -698,7 +548,7 @@ clone git仓库上传代码git commit -am ““, 将所有修改，但未进sta
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/05/2d-outline/" class="post-title-link" itemprop="url">Unity 2D描边实现介绍</a>
+                <a href="/2017/10/15/makefile/" class="post-title-link" itemprop="url">makefile</a>
               
             
           </h2>
@@ -729,8 +579,8 @@ clone git仓库上传代码git commit -am ““, 将所有修改，但未进sta
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/05/2d-outline/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/05/2d-outline/" itemprop="commentCount"></span>
+                <a href="/2017/10/15/makefile/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/makefile/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -761,14 +611,13 @@ clone git仓库上传代码git commit -am ““, 将所有修改，但未进sta
         
           
             <p>
-              像素着色器描边：首先最直观的想法，就是使用fragment shader找出2D角色贴图透明像素和非透明像素的边界，然后通过边界周边Alpha值Blur的方式，给边界上描边色。
-Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
+              make: Nothing to be done for xxxx中间文件、链接文件C、C++要把源文件编译成中间代码文件，在Windows是.obj文件，在Linux是.o文件，即Object File，这一步叫做编译。然后把这些Object File合成可执行文件，这一步叫做链接(link)。编
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/05/2d-outline/#more" rel="contents">
+              <a class="btn" href="/2017/10/15/makefile/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -828,7 +677,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/05/pixel-and-voxel/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/15/gdb/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -848,7 +697,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/05/pixel-and-voxel/" class="post-title-link" itemprop="url">pixel-and-voxel</a>
+                <a href="/2017/10/15/gdb/" class="post-title-link" itemprop="url">gdb</a>
               
             
           </h2>
@@ -879,8 +728,8 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/05/pixel-and-voxel/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/05/pixel-and-voxel/" itemprop="commentCount"></span>
+                <a href="/2017/10/15/gdb/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/gdb/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -911,15 +760,14 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
         
           
             <p>
-              原文地址: https://medium.com/retronator-magazine/pixels-and-voxels-the-long-answer-5889ecc18190#.8gf6zy8mc
-伪3D等轴游戏 赛达尔, Sir Carma, 2016
-像素和体素，一个详细的答案Retro
+              断点
+break filename:linenum 在源文件filename的linenum行处停住。d 清除所有断点|—|—||step(s)|执行下一句，如果有函数则进入函数里面执行|set follow-fork-mode parentglibc-2.17-196.el7.i686 libgc
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/05/pixel-and-voxel/#more" rel="contents">
+              <a class="btn" href="/2017/10/15/gdb/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -979,7 +827,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/04/assetSplit-dynamicLoad/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/15/linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -999,7 +847,7 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/04/assetSplit-dynamicLoad/" class="post-title-link" itemprop="url">大规模场景的资源拆分合动态加载</a>
+                <a href="/2017/10/15/linux/" class="post-title-link" itemprop="url">Linux</a>
               
             
           </h2>
@@ -1018,22 +866,6 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1046,8 +878,8 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/04/assetSplit-dynamicLoad/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/04/assetSplit-dynamicLoad/" itemprop="commentCount"></span>
+                <a href="/2017/10/15/linux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/linux/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1078,29 +910,21 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
         
           
             <p>
-              概要
-资源拆分    
-地形，地表
+              例子：将目录A重命名为B
+mv A B
+例子：将/a目录移动到/b下，并重命名为c
+mv /a /b/c
 
-
-动态加载/卸载
-打包策略资源拆分
-地形资源拆分
-Unity原始地形有网格尺寸的限制（4096）
-Mesh地形有面片数限制
-降低内存占用，仅需载入部分地形数据
-降低渲染面片数，视域体剔除
-制作大规模地形
-Terrain Composer 2
-T4M
-建模软件…
-
+yum install wget
+yum install gcc
+yum install gcc-c++
+wget http://ftp.gnu.org/pub/gnu/ncurses/ncu
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/04/assetSplit-dynamicLoad/#more" rel="contents">
+              <a class="btn" href="/2017/10/15/linux/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1160,7 +984,7 @@ T4M
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/03/lightmap/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/15/svn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1180,7 +1004,7 @@ T4M
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/03/lightmap/" class="post-title-link" itemprop="url">Unity5.x场景优化之动态设置光照贴图lightmap</a>
+                <a href="/2017/10/15/svn/" class="post-title-link" itemprop="url">svn</a>
               
             
           </h2>
@@ -1211,8 +1035,8 @@ T4M
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/03/lightmap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/03/lightmap/" itemprop="commentCount"></span>
+                <a href="/2017/10/15/svn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/15/svn/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1243,13 +1067,14 @@ T4M
         
           
             <p>
-              在很多情况下，我们为了提高渲染效率，一般都会让美术同学在制作场景时，设置场景相关节点的lightmap static属性，提前给整个场景烘培出静态的光照贴图lightmap，烘培的数据保存在场景目录下的LightmapSnapshot文件中，主要包括的数据有：lightmaps：烘培出的光照贴图数组
+              svn: E200002: line 19: Option expected错误解决这是因为修改svnserve.conf时，打开注释时，配置的前面有空格，应该顶格写。修改后即可。
+解决svn Authorization failed错误出现该问题基本都是三个配置文件的问题，下面把这个文件列出来sv
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/03/lightmap/#more" rel="contents">
+              <a class="btn" href="/2017/10/15/svn/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1309,7 +1134,7 @@ T4M
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/02/ABTheory/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/14/vi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1329,7 +1154,7 @@ T4M
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/10/02/ABTheory/" class="post-title-link" itemprop="url">AssetBundle管理机制</a>
+                <a href="/2017/10/14/vi/" class="post-title-link" itemprop="url">Centos7下 vim</a>
               
             
           </h2>
@@ -1348,22 +1173,6 @@ T4M
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -1376,8 +1185,8 @@ T4M
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/10/02/ABTheory/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/02/ABTheory/" itemprop="commentCount"></span>
+                <a href="/2017/10/14/vi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/vi/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1408,14 +1217,16 @@ T4M
         
           
             <p>
-              什么是AssetBundleAssetBundle就像一个Zip压缩文件，里面存放着一些数据对象。它包含一些平台相关的运行时序列化对象。
-Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩，LZMA，LZ4。默认的就是LZMA，而BuildAssetBundleOption
+              yum -y install vim
+环境配置
+/etc/vimrc 全局
+vim ~/.vimrc 新建set nu // 行号set showmode //显示当前模式set ruler //显示行数信息set autoindent //回车对齐syntax on //语法检测set encod
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/10/02/ABTheory/#more" rel="contents">
+              <a class="btn" href="/2017/10/14/vi/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1475,7 +1286,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/29/AI/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/14/mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1495,7 +1306,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/29/AI/" class="post-title-link" itemprop="url">AI</a>
+                <a href="/2017/10/14/mysql/" class="post-title-link" itemprop="url">Mysql</a>
               
             
           </h2>
@@ -1526,8 +1337,8 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/29/AI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/AI/" itemprop="commentCount"></span>
+                <a href="/2017/10/14/mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/14/mysql/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1558,13 +1369,14 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
         
           
             <p>
-              ML（机器学习）与AI(人工智能）首先来介绍下Machine Learning(机器学习，下文简称ML）和游戏Artificial Intelligence(人工智能，下文简称AI）间的关系。现存的大部分游戏AI都是手工源码，由大量决策树组成，有时会包含多达数千条规则。而且必须由手工维护和测试。而M
+              修改mysql密码mysql -uroot -puse mysql;UPDATE user SET password=password(&quot;123456&quot;) WHERE user=&apos;root&apos;; flush privileges;exit;
+SHOW DATAB
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/29/AI/#more" rel="contents">
+              <a class="btn" href="/2017/10/14/mysql/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1624,7 +1436,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/29/Real-Time-Rendering-3rd/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/centos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1644,7 +1456,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/29/Real-Time-Rendering-3rd/" class="post-title-link" itemprop="url">Real Time Rendering 3rd</a>
+                <a href="/2017/10/13/centos/" class="post-title-link" itemprop="url">云主机CentOS7.2密钥丢失重新注入密钥方法</a>
               
             
           </h2>
@@ -1675,8 +1487,8 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/29/Real-Time-Rendering-3rd/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/Real-Time-Rendering-3rd/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/centos/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/centos/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1707,15 +1519,18 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
         
           
             <p>
-              Overviewurl: www.realtimerendering.com
-The Graphics Rendering Pipeline
-核心内容分节提炼图像渲染管线架构概述 Architecture渲染管线的主要功能就是决定在给虚拟相机，三维物体，光源，照明模式，以及纹理等诸多条件的情况下，生
+              一、单用户模式重置ROOT密码（如有root密码，则跳过该步骤）
+登录控制台，输入VNC密码并回车
+
+点击【Send CtrlAltDel】重启linux系统；
+
+在弹出界面，按键盘‘e’；4、如图修改前/修改后，将ro修改成rw init=/sysroot/bin/sh  去除console=tt
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/29/Real-Time-Rendering-3rd/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/centos/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1775,7 +1590,7 @@ The Graphics Rendering Pipeline
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/26/Unity-Weather/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/git-server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1795,7 +1610,7 @@ The Graphics Rendering Pipeline
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/26/Unity-Weather/" class="post-title-link" itemprop="url">Unity-Weather</a>
+                <a href="/2017/10/13/git-server/" class="post-title-link" itemprop="url">Git 服务器搭建</a>
               
             
           </h2>
@@ -1826,8 +1641,8 @@ The Graphics Rendering Pipeline
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/26/Unity-Weather/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/26/Unity-Weather/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/git-server/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-server/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1858,14 +1673,163 @@ The Graphics Rendering Pipeline
         
           
             <p>
-              抄：https://zhuanlan.zhihu.com/p/29668925
+              首先要明确现在代码的分布情况，开发者电脑上的本地仓库，git服务器上的远端仓库，web服务器上的另一个本地仓库，我们浏览器访问的就是这里的代码。其实自动部署就是要当开发者本地仓库提交代码到远端仓库的时候，自动把代码部署到web服务器的本地仓库，实现开发着本地仓库和web服务器的本地仓库同步。（即通过
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/13/git-server/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/git-clone/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/13/git-clone/" class="post-title-link" itemprop="url">git clone 命令</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/13/git-clone/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/git-clone/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              git clone 命令将存储库克隆到新目录中。
 
               
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/26/Unity-Weather/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/git-clone/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1914,7 +1878,7 @@ The Graphics Rendering Pipeline
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1956,7 +1920,7 @@ The Graphics Rendering Pipeline
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2023,7 +1987,19 @@ The Graphics Rendering Pipeline
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2178,7 +2154,23 @@ The Graphics Rendering Pipeline
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/10/diffuse/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/physics-base-render/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/diffuse/" class="post-title-link" itemprop="url">标准光照模型</a>
+                <a href="/2019/04/11/physics-base-render/" class="post-title-link" itemprop="url">基于物理的渲染</a>
               
             
           </h2>
@@ -445,8 +445,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/diffuse/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/diffuse/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/physics-base-render/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/physics-base-render/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -477,13 +477,13 @@
         
           
             <p>
-              基本光照模型中漫反射部分的计算公式：$c_{diffuse}=(c_{light} \cdot m_{diffuse})max(0, \vec{n} \cdot I)$从公式可以看出，要计算漫反射需要知道4个参数：入射光线的颜色和强度$c_{light}$，表面发现$\vec{n}$以及光源方向$I
+              双向反射分布函数（BRDF）辐射率（radiance）是单位面积、单位方向上光源的辐射通量，通常用L表示，被认为是对单一光线的亮度和颜色评估。在渲染中，我们通常会基于表面的入射光线的入射辐射率 $ L_i  $ 来计算出射辐射率 $L_{0}$ ，这个过程往往也称为着色（shading）过程。而要得
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/diffuse/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/physics-base-render/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -543,7 +543,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/10/new-delete-malloc-free/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/The-Effects-Framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -563,7 +563,156 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/10/new-delete-malloc-free/" class="post-title-link" itemprop="url">new delete malloc free</a>
+                <a href="/2019/04/11/The-Effects-Framework/" class="post-title-link" itemprop="url">第十九章 效果架构(The Effects Framework)</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/11/The-Effects-Framework/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/The-Effects-Framework/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              概述一个渲染效果一般由以下部分组成：一个顶点和/或像素着色器，一个需要设置的设备状态列表，一个或更多的渲染通道（rendering passes）。此外，有一个能在不同级别的图形硬件上渲染效果的可靠机制通常是值得的（也就是说，有不同的可用的效果版本执行同样的效果或尽可能尝试执行同样的效果）。显然，所
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/11/The-Effects-Framework/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Introduction-to-Pixel-Shaders/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/11/Introduction-to-Pixel-Shaders/" class="post-title-link" itemprop="url">第十八章 像素着色器入门(Introduction to Pixel Shaders)</a>
               
             
           </h2>
@@ -591,7 +740,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -610,8 +759,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/10/new-delete-malloc-free/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/10/new-delete-malloc-free/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Introduction-to-Pixel-Shaders/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Introduction-to-Pixel-Shaders/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -642,16 +791,13 @@
         
           
             <p>
-              正文每个程序在执行时都会占用一块可用的内存空间，用于存放动态分配的对象，此内存空间成为自由存储区或堆。
-new和delete用法如下几行代码：
-int *pi = new int;int *pi = new int();int *pi = new int(1024);
-第一行这个new表达式在自由存
+                 像素着色器是一个执行在图形卡的GPU上的程序，它运行在对每个像素进行光栅化处理时。（不像顶点着色器，Direct3D不会以软件模拟像素着色器的功能。）它实际上替换了固定功能管线的多纹理化阶段（the multitexturing stage），并赋予我们直接操纵单独的像素和访问每个像素的纹理坐
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/10/new-delete-malloc-free/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Introduction-to-Pixel-Shaders/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -711,7 +857,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/protocol-buffer/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Introduction-to-Vertex-Shaders/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -731,7 +877,156 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/protocol-buffer/" class="post-title-link" itemprop="url">Google Protocol Buffer</a>
+                <a href="/2019/04/11/Introduction-to-Vertex-Shaders/" class="post-title-link" itemprop="url">Introduction-to-Vertex-Shaders</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/11/Introduction-to-Vertex-Shaders/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Introduction-to-Vertex-Shaders/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              第十七章 顶点着色器入门(Introduction to Vertex Shaders)概览   顶点着色器（vertex shader）是一个在图形卡的GPU上执行的程序，它替换了固定功能管线（fixed function pipeline）中的变换（transformation）和光照（ligh
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/11/Introduction-to-Vertex-Shaders/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/" class="post-title-link" itemprop="url">第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language)</a>
               
             
           </h2>
@@ -759,7 +1054,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Server/" itemprop="url" rel="index"><span itemprop="name">Server</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -778,8 +1073,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/protocol-buffer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/protocol-buffer/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -810,14 +1105,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              定义一个消息类型message SearchRequest&#123;    required string query = 1;    optional int32 page_number = 2;    optional int32 result_per_page = 3;&#125;
-该消息定
+                 在这一章里我们描述高级着色器语言（High-Level Shading Language ，简称HLSL），在下三章里我们用它去编写顶点和像素着色器。简单的说，在我们写的程序里顶点和像素是很小的对象，它们由GPU来执行，是固定功能管线的一部分。用我们自己写的着色器程序替换一部分固定功能管线，在
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/protocol-buffer/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -877,7 +1171,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/lua-hash/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Picking/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -897,7 +1191,158 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/lua-hash/" class="post-title-link" itemprop="url">Lua hash</a>
+                <a href="/2019/04/11/Picking/" class="post-title-link" itemprop="url">第十五章 选取(Picking)</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/04/11/Picking/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Picking/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              概览(OVERVIEW)   如果用户点击了屏幕上的点 s = (x, y)。 从图15.1 我们能看到用户选取了茶壶。 无论如何，应用程序无法根据给定的s点就立即确定茶壶是被选取。所以，我们必须拿出计算这个动作技巧来，叫做选取技巧。
+   图15.1 用户正在选择茶壶
+   我们知道一些知识：关于
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/04/11/Picking/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Particle-System/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/11/Particle-System/" class="post-title-link" itemprop="url">第十四章 粒子系统(Particle Systems)</a>
               
             
           </h2>
@@ -925,7 +1370,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Lua/" itemprop="url" rel="index"><span itemprop="name">Lua</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -944,8 +1389,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/lua-hash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/lua-hash/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Particle-System/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Particle-System/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -976,13 +1421,17 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              一般哈希表处理冲突有两种方式，拉链法和开放地址法。拉链法就是哈希表的每个元素都是一个链表，如果有冲突的键就放在链表里面。而开放地址法是如果遇到了冲突，就在计算一个哈希值，直到没有冲突位置。拉链法的优点就是实现简单，缺点也是有的：链表会导致低的缓存命中率，并且分配链表节点本身也会对内存分配器产生压力（
+                 许多自然现象是由很多小的小颗粒组成的，它们有相似的行为。（例如，雪花落下，闪烁的火焰，冲出枪管的“子弹”），粒子系统用来模拟这种现象。目标：
+
+学习我们给定的粒子属性，如何描述D3D中的粒子。
+设计一个灵活的粒子基系统的基类，包括一般的粒子系统都有的属性和方法。
+模拟3个具体的粒子系统，雪、爆
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/lua-hash/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Particle-System/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1042,7 +1491,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/dictionary/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Basic-Terrain-Rendering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1062,7 +1511,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/dictionary/" class="post-title-link" itemprop="url">Dictionary</a>
+                <a href="/2019/04/11/Basic-Terrain-Rendering/" class="post-title-link" itemprop="url">第十三章 地形渲染基础(Basic Terrain Rendering)</a>
               
             
           </h2>
@@ -1090,7 +1539,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CSharp/" itemprop="url" rel="index"><span itemprop="name">CSharp</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1109,8 +1558,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/dictionary/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/dictionary/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Basic-Terrain-Rendering/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Basic-Terrain-Rendering/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1141,13 +1590,14 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              Entry结构体这是Dictionary存放数据的最小单位，调用Add(Key,Value)方法添加的元素都会被封装在这样的一个结构体中。private struct Entry&#123;    public int hashCode; // 除符号位以外的31位hashCode值，如果该Entr
+              实际上，地形网格不比三角形网格复杂，图13.1.(a)所示，网络的每个顶点指定了高度，格子模型用这种方式显示从山脉到河流的平滑过渡。图13.1 (b)，模拟自然地形。当然，我们可以用漂亮的纹理表现沙石地，绿色的山丘。图13.1.(c)雪山效果。
+图 13.1: (a) 三角网格. (b) 平滑高度过
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/dictionary/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Basic-Terrain-Rendering/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1207,7 +1657,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/hash/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Building-a-Flexible-Camera-Class/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1227,7 +1677,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/hash/" class="post-title-link" itemprop="url">哈希表</a>
+                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/" class="post-title-link" itemprop="url">第十一章 网格模型II(Building a Flexible Camera Class)</a>
               
             
           </h2>
@@ -1255,7 +1705,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据结构/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1274,8 +1724,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/hash/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/hash/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Building-a-Flexible-Camera-Class/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Building-a-Flexible-Camera-Class/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1306,13 +1756,15 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              散列表（Hash table，也叫哈希表），是根据关键码值（key value）而直接进行访问的数据结构。也就是说，它通过把关键码值映射到表中一个位置来访问，以加快查找的速度。这个映射函数叫做散列函数，存放记录的数组叫做散列表。给定表M，存在函数f(key)，对任意给定的关键值key，代入函数后若能
+              ID3DXBuffer　　对ID3DXBuffer接口的一些参考是在上一章，这里我们不会详细讲解。在D3DX库中到处都能看见这个接口，因此大概介绍一下该接口还是很有必要的。　　ID3DXBuffer接口是一个很普通的数据结构， D3DX用它将数据存储到邻接内存块中。它只有两个方法：
+
+LPVOID 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/hash/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Building-a-Flexible-Camera-Class/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1372,7 +1824,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/alpha-depth-write/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Meshes-Part-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1392,7 +1844,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/04/09/alpha-depth-write/" class="post-title-link" itemprop="url">透明物体的深度写入问题</a>
+                <a href="/2019/04/11/Meshes-Part-I/" class="post-title-link" itemprop="url">第十章 网格模型I(Meshes Part I)</a>
               
             
           </h2>
@@ -1420,7 +1872,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Direct3D/" itemprop="url" rel="index"><span itemprop="name">Direct3D</span></a></span>
 
                 
                 
@@ -1439,8 +1891,8 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/alpha-depth-write/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/alpha-depth-write/" itemprop="commentCount"></span>
+                <a href="/2019/04/11/Meshes-Part-I/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/11/Meshes-Part-I/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1471,497 +1923,13 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
         
           
             <p>
-              通常来说，透明物体是不需要写深度的，例如：
-
-透明物体与非透明物体间的渲染不会有问题，因为所有透明物体会在所有非透明物体之后渲染。
-大多数情况下，透明物体之间的渲染也不会有问题，因为，所有透明物体按由远及近的顺序渲染，所以不会出现前面的透明物体挡住后面的透明物体，导致后面的透明物体不显示。
-
-但有些
+              几何信息ID3DXBaseMesh接口包含一个用来存储网格顶点的顶点缓存和一个用来定义这些顶点怎样连接在一起组成网格三角形的索引缓存。我们能够通过使用下面的方法来得到这些缓存的指针：HRESULT ID3DXMesh::GetVertexBuffer(LPDIRECT3DVERTEXBUFFER9*
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/alpha-depth-write/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/assetbundle-fundamentals/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/assetbundle-fundamentals/" class="post-title-link" itemprop="url">Unity资源管理（三）-AssetBundle基本原理</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity/" itemprop="url" rel="index"><span itemprop="name">Unity</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/assetbundle-fundamentals/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/assetbundle-fundamentals/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              概述AssetBundle系统提供了将一个或多个文件存储到Unity能够进行索引和序列化的档案格式中方法，它是Unity用来在应用程序安装之后进行分发和更新非代码内容的首选工具。通过AssetBundle，开发者可以提交更小的程序安装包、最小化运行时内存压力以及根据终端用户设备选择性地加载优化内容。
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/assetbundle-fundamentals/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/fundamentals-unity-ui/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/fundamentals-unity-ui/" class="post-title-link" itemprop="url">Unity UI优化（一）-Unity UI的基本原理</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/fundamentals-unity-ui/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/fundamentals-unity-ui/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              术语画布（Canvas）是以原生代码编写的Unity组件，它给Unity的渲染系统按层划分的几何系统，可以在其内部或其上层绘制其他几何形状。画布负责将其内部的几何形状合并到批处理、生成合适的渲染指令并发送到Unity图形系统。这些操作都是由原生C++代码完成，这杯成为重新批处理（rebatch）或批
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/fundamentals-unity-ui/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/09/optimizing-graphics-rendering-unity-games/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/09/optimizing-graphics-rendering-unity-games/" class="post-title-link" itemprop="url">Unity性能优化-图形渲染优化</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/渲染优化/" itemprop="url" rel="index"><span itemprop="name">渲染优化</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/04/09/optimizing-graphics-rendering-unity-games/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/09/optimizing-graphics-rendering-unity-games/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/04/09/optimizing-graphics-rendering-unity-games/#more" rel="contents">
+              <a class="btn" href="/2019/04/11/Meshes-Part-I/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2010,7 +1978,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2052,7 +2020,7 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2119,7 +2087,19 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2274,7 +2254,23 @@ int *pi = new int;int *pi = new int();int *pi = new int(1024);
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

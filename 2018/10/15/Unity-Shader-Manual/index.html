@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="Properties123456789101112Shader &amp;quot;ShaderLab Tutorials/TestShader&amp;quot;&amp;#123;    Properties &amp;#123;        _Range (&amp;quot;My Range&amp;quot;, Range(0.02, 0.15)) = 0.07 // sliders        _Color (&amp;quot;My">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T01:57:14.297Z">
+<meta property="og:updated_time" content="2019-05-11T03:00:45.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader Manual">
 <meta name="twitter:description" content="Properties123456789101112Shader &amp;quot;ShaderLab Tutorials/TestShader&amp;quot;&amp;#123;    Properties &amp;#123;        _Range (&amp;quot;My Range&amp;quot;, Range(0.02, 0.15)) = 0.07 // sliders        _Color (&amp;quot;My">
@@ -670,9 +670,20 @@
 <td>reflect(I,N)</td>
 <td>根据入射光方向向量I，和顶点法向量N，计算反射光方向向量。其中I和N必须被归一化，需要非常注意的是，这个I是指向顶点的；函数只对三元向量有效</td>
 </tr>
+<tr>
+<td>Tex2DProj(sampler2D tex, float3 sq)</td>
+<td>二维投影纹理查询</td>
+</tr>
+<tr>
+<td>Tex2DProj(sampler2D tex, float4 szq)</td>
+<td>二维投影纹理查询，并进行深度值比较</td>
+</tr>
 </tbody>
 </table>
 </div>
+<h1 id="pragma-fragementoption-ARB-precision-hint-fastest"><a href="#pragma-fragementoption-ARB-precision-hint-fastest" class="headerlink" title="#pragma fragementoption ARB_precision_hint_fastest"></a>#pragma fragementoption ARB_precision_hint_fastest</h1><p>ARB_precision_hint_fastest 是用最快的方式，以最低的精度运行，提升片段着色器的运行速度，减少时间。（通常是指FP16,16bit，半精度）牺牲表现换取运行速度。</p>
+<h1 id="UnpackNormal"><a href="#UnpackNormal" class="headerlink" title="UnpackNormal"></a>UnpackNormal</h1><pre><code>half3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
+</code></pre><p>UnpackNormal是定义在UnityCG.cginc文件中的方法，UnpackNormal接受一个fixed4的输入，并将其转换为所对应的法线值(fixed3)。</p>
 
       
     </div>
@@ -794,7 +805,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -861,7 +872,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1016,7 +1039,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1052,7 +1091,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Semantics"><span class="nav-number">2.</span> <span class="nav-text">Semantics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SubShader"><span class="nav-number">3.</span> <span class="nav-text">SubShader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tags-“TagName1”-”Value1”-“TagName2”-”Value2”"><span class="nav-number">3.1.</span> <span class="nav-text">Tags{“TagName1”=”Value1” “TagName2”=”Value2”}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue"><span class="nav-number">3.2.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RenderType"><span class="nav-number">3.3.</span> <span class="nav-text">RenderType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DisableBatching"><span class="nav-number">3.4.</span> <span class="nav-text">DisableBatching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">4.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot-a-b"><span class="nav-number">4.1.</span> <span class="nav-text">dot(a,b)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">5.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置函数"><span class="nav-number">6.</span> <span class="nav-text">内置函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Semantics"><span class="nav-number">2.</span> <span class="nav-text">Semantics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SubShader"><span class="nav-number">3.</span> <span class="nav-text">SubShader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tags-“TagName1”-”Value1”-“TagName2”-”Value2”"><span class="nav-number">3.1.</span> <span class="nav-text">Tags{“TagName1”=”Value1” “TagName2”=”Value2”}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue"><span class="nav-number">3.2.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RenderType"><span class="nav-number">3.3.</span> <span class="nav-text">RenderType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DisableBatching"><span class="nav-number">3.4.</span> <span class="nav-text">DisableBatching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">4.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot-a-b"><span class="nav-number">4.1.</span> <span class="nav-text">dot(a,b)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">5.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置函数"><span class="nav-number">6.</span> <span class="nav-text">内置函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pragma-fragementoption-ARB-precision-hint-fastest"><span class="nav-number">7.</span> <span class="nav-text">#pragma fragementoption ARB_precision_hint_fastest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UnpackNormal"><span class="nav-number">8.</span> <span class="nav-text">UnpackNormal</span></a></li></ol></div>
             
 
           </div>

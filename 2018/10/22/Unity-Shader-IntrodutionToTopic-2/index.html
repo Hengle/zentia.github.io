@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -138,14 +138,14 @@
 
 
   <meta name="description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
-<meta name="keywords" content="图形">
+<meta name="keywords" content="Shader">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity Shader第三部分">
 <meta property="og:url" content="http://zentia.github.io/2018/10/22/Unity-Shader-IntrodutionToTopic-2/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T01:55:11.098Z">
+<meta property="og:updated_time" content="2019-05-13T01:32:01.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader第三部分">
 <meta name="twitter:description" content="透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全不会显示。在Unity中，我们通常使用两种方法来实现透明效果：第一种是使用透明度测试（Alpha T">
@@ -579,14 +579,6 @@
 <li>多遍渲染多光源</li>
 <li>延迟渲染</li>
 </ol>
-<h3 id="菲涅尔反射"><a href="#菲涅尔反射" class="headerlink" title="菲涅尔反射"></a>菲涅尔反射</h3><p>在实时渲染中，经常会使用<strong>菲涅耳反射（Fresnelreflection）</strong>来根据视角方向控制反射程度。菲涅耳反射描述了一种光学现象，即当光线照射到物体表面上时，一部分发生反射，一部分进入物体内部，发生折射或散射。被反射的光和入射光之间存在一定的比率关系，这个比率关系可以通过菲涅耳等式进行计算。一个经常使用的例子是，当你站在湖边，直接低头看脚边的水面时，你会发现水几乎是透明的，你可以直接看到水底的小鱼和石子；但是，当你抬头看远处的水面时，会发现几乎看不到水下的情景，而只能看到水面反射的环境。这就是所谓的菲涅耳效果。事实上，不仅仅是水、玻璃这样的反光物体具有菲涅耳效果，几乎任何物体都或多或少包含了菲涅耳效果，这是基于物理的渲染中非常重要的一项高光反射计算因子。<br>那么，如何计算菲涅耳反射呢？这就需要使用菲涅耳等式。真实世界的菲涅耳等式是非常复杂的，但在实时渲染中，通常会使用一些近似公式来计算。其中一个著名的近似公式就是Schlick 菲涅耳近似等式：</p>
-<font size="4" color="red">
-$F_{Schlick}(v,n) = F_{0}+(1-F_{0})(1-v \cdot n)^5$
-</font>
-
-<p>其中，$F_{0}$是一个反射系数，用于控制菲涅耳反射的强度， v 是视角方向， n 是表面法线。另一个应用比较广泛的等式是Empricial菲涅耳近似等式：</p>
-<p><font size="4" color="red"><br>$F_{Empricial}(v,n) = max(0,min(1,bias+scale x (1-v \cdot n)^power))$
-</font><br>其中，bias、scale和power是控制项。<br>使用上面的菲涅尔近似等式，可以在边界处模拟反射光强和折射光强/漫反射光强之间的变化。在许多车漆、水面等材质的渲染中，会经常用到菲涅尔反射来模拟更加真实的反射。</p>
 <h3 id="广告牌"><a href="#广告牌" class="headerlink" title="广告牌"></a>广告牌</h3><p>广告牌技术的本质就是构建旋转矩阵，而我们知道一个变换矩阵需要3个基向量。广告牌技术使用的基向量通常就是<strong>表面法线（normal）、指向上的方向（up）以及指向右的方向（right）</strong>。除此之外，我们还需要指定一个<strong>锚点（anchor location）</strong>，这个锚点在旋转过程中是固定不变的，以此来确定多边形在空间中的位置。<br>广告牌技术的难点在于，如何根据需求构建3个相互正交的基向量。计算过程通常是，<br>CPU写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public Vector3 Normal;</span><br><span class="line">Quaternion direction;</span><br><span class="line">void Start () &#123;</span><br><span class="line">    direction = Quaternion.FromToRotation(new Vector3(0, 0, 1), Normal);</span><br><span class="line">&#125;</span><br><span class="line">void Update () &#123;</span><br><span class="line">    transform.rotation = Camera.main.transform.rotation * direction;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h2 id="屏幕后处理效果"><a href="#屏幕后处理效果" class="headerlink" title="屏幕后处理效果"></a>屏幕后处理效果</h2><h3 id="建立一个基本的屏幕后处理脚本系统"><a href="#建立一个基本的屏幕后处理脚本系统" class="headerlink" title="建立一个基本的屏幕后处理脚本系统"></a>建立一个基本的屏幕后处理脚本系统</h3><pre><code>MonoBehaviour.OnRenderImage(RenderTexture src, RenderTexture dest);
 </code></pre><p>当在脚本中声明该函数后，Unity会把当前渲染得到的图像存储在第一个参数对应的源渲染纹理中，把第二参数对应的渲染纹理显示到屏幕上。</p>
@@ -621,7 +613,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
       
         <div class="post-tags">
           
-            <a href="/tags/图形/" rel="tag"># 图形</a>
+            <a href="/tags/Shader/" rel="tag"># Shader</a>
           
         </div>
       
@@ -719,7 +711,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -786,7 +778,19 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -941,7 +945,23 @@ public static void Blit(Texture src, Material mat, int pass = -1);
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -977,7 +997,7 @@ public static void Blit(Texture src, Material mat, int pass = -1);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#透明效果"><span class="nav-number">1.</span> <span class="nav-text">透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#透明度混合"><span class="nav-number">1.1.</span> <span class="nav-text">透明度混合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启深度写入的半透明效果"><span class="nav-number">1.1.1.</span> <span class="nav-text">开启深度写入的半透明效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShaderLab的混合命令"><span class="nav-number">1.1.2.</span> <span class="nav-text">ShaderLab的混合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合等式和参数"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">混合等式和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合操作"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">混合操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见和混合类型"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">常见和混合类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双面渲染的透明效果"><span class="nav-number">1.1.3.</span> <span class="nav-text">双面渲染的透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度测试的双面渲染"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">透明度测试的双面渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度混合的双面渲染"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">透明度混合的双面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染路径Rendering-Path"><span class="nav-number">1.2.</span> <span class="nav-text">渲染路径Rendering Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前向渲染路径"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">前向渲染路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unity中的前向渲染"><span class="nav-number">1.2.0.1.1.</span> <span class="nav-text">Unity中的前向渲染</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顶点照明渲染路径"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">顶点照明渲染路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延迟渲染路径"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">延迟渲染路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#菲涅尔反射"><span class="nav-number">1.2.1.</span> <span class="nav-text">菲涅尔反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广告牌"><span class="nav-number">1.2.2.</span> <span class="nav-text">广告牌</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕后处理效果"><span class="nav-number">1.3.</span> <span class="nav-text">屏幕后处理效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个基本的屏幕后处理脚本系统"><span class="nav-number">1.3.1.</span> <span class="nav-text">建立一个基本的屏幕后处理脚本系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用深度和法线纹理"><span class="nav-number">1.4.</span> <span class="nav-text">使用深度和法线纹理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消融"><span class="nav-number">1.4.1.</span> <span class="nav-text">消融</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水波效果"><span class="nav-number">1.4.2.</span> <span class="nav-text">水波效果</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#透明效果"><span class="nav-number">1.</span> <span class="nav-text">透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#透明度混合"><span class="nav-number">1.1.</span> <span class="nav-text">透明度混合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启深度写入的半透明效果"><span class="nav-number">1.1.1.</span> <span class="nav-text">开启深度写入的半透明效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ShaderLab的混合命令"><span class="nav-number">1.1.2.</span> <span class="nav-text">ShaderLab的混合命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#混合等式和参数"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">混合等式和参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合操作"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">混合操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见和混合类型"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">常见和混合类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双面渲染的透明效果"><span class="nav-number">1.1.3.</span> <span class="nav-text">双面渲染的透明效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度测试的双面渲染"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">透明度测试的双面渲染</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#透明度混合的双面渲染"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">透明度混合的双面渲染</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染路径Rendering-Path"><span class="nav-number">1.2.</span> <span class="nav-text">渲染路径Rendering Path</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前向渲染路径"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">前向渲染路径</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Unity中的前向渲染"><span class="nav-number">1.2.0.1.1.</span> <span class="nav-text">Unity中的前向渲染</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顶点照明渲染路径"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">顶点照明渲染路径</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#延迟渲染路径"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">延迟渲染路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广告牌"><span class="nav-number">1.2.1.</span> <span class="nav-text">广告牌</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕后处理效果"><span class="nav-number">1.3.</span> <span class="nav-text">屏幕后处理效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立一个基本的屏幕后处理脚本系统"><span class="nav-number">1.3.1.</span> <span class="nav-text">建立一个基本的屏幕后处理脚本系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用深度和法线纹理"><span class="nav-number">1.4.</span> <span class="nav-text">使用深度和法线纹理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消融"><span class="nav-number">1.4.1.</span> <span class="nav-text">消融</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水波效果"><span class="nav-number">1.4.2.</span> <span class="nav-text">水波效果</span></a></li></ol></li></ol></div>
             
 
           </div>

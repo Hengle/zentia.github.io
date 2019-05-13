@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -149,7 +149,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/05/09/understanding-garbage-colllection/2.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/09/understanding-garbage-colllection/3.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/09/understanding-garbage-colllection/4.jpg">
-<meta property="og:updated_time" content="2019-05-09T10:25:36.844Z">
+<meta property="og:updated_time" content="2019-05-10T09:12:02.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="了解.NET中的GC(译文)">
 <meta name="twitter:description" content="原文链接: https://www.red-gate.com/simple-talk/dotnet/.net-framework/understanding-garbage-collection-in-.net/  一旦你理解了.NET的垃圾收集器是如何工作的，那么一些复杂的.NET应用程序问题的原因就会变得更加清晰。.NET已承诺结束显式内存管理，但如果您希望避免与内存相关的错误和一些性能问题，">
@@ -521,17 +521,18 @@
 <p>很难查找对象的引用关系。</p>
 <h1 id="垃圾收集器的限制"><a href="#垃圾收集器的限制" class="headerlink" title="垃圾收集器的限制"></a>垃圾收集器的限制</h1><h2 id="Unused-objects"><a href="#Unused-objects" class="headerlink" title="Unused objects"></a>Unused objects</h2><p>.NET中垃圾收集器的最大限制：虽然它找到了未引用的对象，但是它仍然可能无法删除。而这个对象永远不会被程序再次引用; 虽然它有一些路径导致可能仍然使用的对象，但它永远不会从内存中释放出来。这会导致内存泄漏; 在.NET中，当不再使用的对象仍然被引用时会发生这种情况。</p>
 <p>虽然内存使用量上升的症状很明显，但这些泄漏的来源很难被发现。有必要确定哪些未使用的对象保留在内存中，然后跟踪引用以找出它们未被收集的原因。内存分析器对于此任务至关重要：通过在发生泄漏时比较内存状态，可以找到麻烦的未使用对象，但是无法向后跟踪对象引用。</p>
-<p>垃圾收集器旨在处理丰富的资源，也就是说，何时释放对象无关紧要。在现代系统中，内存属于该类别（只要它及时完成以防止新分配失败，它就会被回收。仍然存在不属于此类别的资源：例如，需要快速关闭文件句柄以避免导致应用程序之间的共享冲突。这些资源不能由垃圾收集器完全管理，因此.NET为管理这些资源的对象提供了Dispose（）方法和using（）构造。在这些情况下，对象使用的稀缺资源通过实现快速释放Dispose 方法，这比垃圾收集器稍后释放的关键内存要少得多。</p>
+<p>垃圾收集器旨在处理丰富的资源，也就是说，何时释放对象无关紧要。在现代系统中，内存属于该类别（只要它及时完成以防止新分配失败，它就会被回收。仍然存在不属于此类别的资源：例如，需要快速关闭文件句柄以避免导致应用程序之间的共享冲突。这些资源不能由垃圾收集器完全管理，因此.NET为管理这些资源的对象提供了Dispose()方法和using()构造。在这些情况下，对象使用的稀缺资源通过实现快速释放Dispose 方法，这比垃圾收集器稍后释放的关键内存要少得多。</p>
 <p>Dispose对.NET来说没有什么特别之处，因此必须仍然取消引用已处理的对象。这使得已经处理但尚未被回收的对象成为内存泄漏源的良好候选者。</p>
-<h2 id="堆的碎片"><a href="#堆的碎片" class="headerlink" title="堆的碎片"></a>堆的碎片</h2><p>.NET中还有一个限制是大对象堆。成为此堆的一部分的对象永远不会被运行时移动，这可能导致程序过早地耗尽内存。当某些对象比其他对象生命周期更长时，这会导致堆在以前对象所在的位置生成碎片。当程序申请大块内存但堆已经因为碎片以至于没有足够大的单个内存区域来容纳它时，就会出现问题。内存分析器可以估计程序可以分配的最大对象，如果分配失败，那么这很可能是因为碎片导致的。一个OutOfMemoryException当程序显然拥有大量可用内存时，通常会发生碎片导致 - 在32位系统上，进程应该能够使用至少1.5Gb，但由于碎片导致的故障通常会在使用之前开始发生很多记忆。</p>
+<h2 id="堆的碎片"><a href="#堆的碎片" class="headerlink" title="堆的碎片"></a>堆的碎片</h2><h3 id="GC堆"><a href="#GC堆" class="headerlink" title="GC堆"></a>GC堆</h3><p>GC堆用来分配小对象实例，他是由GC完全控制内存的分配和回收。</p>
+<h3 id="LOH堆"><a href="#LOH堆" class="headerlink" title="LOH堆"></a>LOH堆</h3><p>LOH堆是为大对象实例准备的，它不会被压缩且只在GC完全回收时才会被回收。成为LOH堆的一部分的对象永远不会被运行时移动，这可能导致程序过早地耗尽内存。当某些对象比其他对象生命周期更长时，这会导致堆在以前对象所在的位置生成碎片。当程序申请大块内存但堆已经因为碎片以至于没有足够大的单个内存区域来容纳它时，就会出现问题。内存分析器可以估计程序可以分配的最大对象，如果分配失败，那么这很可能是因为碎片导致的。一个OutOfMemoryException当程序显然拥有大量可用内存时，通常会发生碎片导致在32位系统上，进程应该能够使用至少1.5Gb，但由于碎片导致的故障通常会在使用之前开始发生很多记忆。<br>在IL中可以看到newobj、ldstr(创建string对象)、newarr(用于分配新的数组对象)、box(装箱)等常见的创建对象的指令。当然在堆上也存在值类型，比如值类型作为类的字段时，他将存储在堆的实例对象空间，还有装箱时也会让堆上存在值类型。</p>
 <p>碎片的另一个症状是.NET通常必须保留分配给应用程序的空洞所使用的内存。这使得它显然使用比在任务管理器中查看时所需的内存更多的内存。这种效果通常相对无害：Windows非常擅长于意识到漏洞所占用的内存未被使用并将其分页，如果碎片没有恶化，那么程序将不会耗尽内存。但是，对用户而言，这看起来并不好，他们可能认为该应用程序是浪费和“臃肿”。这通常是当分析器显示程序分配的对象仅使用少量内存但任务管理器显示该进程占用大量空间时发生的情况。</p>
 <h1 id="垃圾收集器的性能"><a href="#垃圾收集器的性能" class="headerlink" title="垃圾收集器的性能"></a>垃圾收集器的性能</h1><p>在性能方面，垃圾收集系统最重要的特征是垃圾收集器可以随时开始执行。这使得它们不适合于时序非常关键的情况，因为任何操作的时序都可以通过收集器的操作而被抛弃。</p>
 <p>.NET收集器有两种主要的操作模式：并发和同步（有时称为工作站和服务器）。并发垃圾收集在桌面应用程序中使用，并且默认情况下在ASP.NET等服务器应用程序中使用同步。</p>
 <p>在并发模式下，.NET将尝试避免在集合正在进行时停止正在运行的程序。这意味着应用程序在给定时间内完成的总量较少，但应用程序不会暂停。对于交互式应用程序而言，这对于向用户提供应用程序立即响应的印象非常重要。</p>
 <p>在同步模式下，.NET将在垃圾收集器运行时挂起正在运行的应用程序。这实际上比并发模式更有效 - 垃圾收集花费相同的时间，但它不必与继续运行的程序竞争 - 但意味着当必须完成完整集合时可能会有明显的暂停。</p>
 <p>如果默认值不合适，可以在应用程序的配置文件中设置垃圾收集器的类型。当应用程序具有高吞吐量而不是显示响应更重要时，选择同步收集器会很有用。</p>
-<p>在大型应用程序中，垃圾收集器需要处理的对象数量会变得非常大，这意味着访问和重新排列所有这些对象可能需要很长时间。为了解决这个问题，.NET使用“世代”垃圾收集器，它试图优先考虑较小的一组对象。我们的想法是，最近创建的对象更有可能快速发布，因此当尝试释放内存时，分代垃圾收集器会优先考虑它们，因此.NET首先查看自上次垃圾收集以来已分配的对象，并且仅启动考虑较旧的对象，如果它不能以这种方式释放足够的空间。</p>
-<p>如果.NET可以选择收集时间本身，并且if GC.Collect（）被调用会中断，这个系统效果最好，因为这通常会导致新对象过早老化，这增加了在不久的将来另一个昂贵的完整收集的可能性。</p>
+<h2 id="分代机制"><a href="#分代机制" class="headerlink" title="分代机制"></a>分代机制</h2><p>在大型应用程序中，垃圾收集器需要处理的对象数量会变得非常大，这意味着访问和重新排列所有这些对象可能需要很长时间。为了解决这个问题，.NET使用“世代”垃圾收集器，它试图优先考虑较小的一组对象。我们的想法是，最近创建的对象更有可能被弃用，因此当尝试释放内存时，分代垃圾收集器会优先考虑它们，因此所有新创建的对象都会放在第0代堆上，直到回收器进行了一次清理动作后仍存在的对象会被移动到另一片连续的地址空间中，即第1代堆上。而之前第1代上剩余的对象会被移动到第2代堆上，此时第0代堆空闲，等待新创建的对象。每一次回收动作都重复此过程。新的对象被回收的几率更大，将这些对象分阶段存放，回收过程速度加快。<br>注：在创建新对象时，如果所需空间超出了第0代对应的空闲区域，回收器会进行垃圾回收，将第0代区域空闲出来。</p>
+<p>如果.NET可以选择收集时间本身，并且if GC.Collect()被调用会中断，这个系统效果最好，因为这通常会导致新对象过早老化，这增加了在不久的将来另一个昂贵的完整收集的可能性。</p>
 <p>具有终结器的类也可以破坏垃圾收集器的平稳操作。这些类的对象不能立即删除：它们转到终结器队列，并在终结器运行后从内存中删除。这意味着它们引用的任何对象（以及那些引用的任何对象，等等）必须至少保留在内存中，直到此时为止，并且在内存再次可用之前需要两次垃圾收集。如果图形包含许多带有终结器的对象，这可能意味着垃圾收集器需要多次传递才能完全释放所有未引用的对象。</p>
 <p>有一种简单的方法可以避免这个问题：IDisposable在可finalizable的类上实现，将最终化对象所需的操作移动到Dispose()方法中并GC.SuppressFinalize()在最后调用。然后可以修改终结器以调用该Dispose()方法。GC.SuppressFinalize()告诉垃圾收集器该对象不再需要最终确定，并且可以立即进行垃圾收集，这可以更快地回收内存。</p>
 <h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><p>如果您花时间了解垃圾收集器的工作原理，那么理解应用程序中的内存和性能问题会变得更容易。它揭示了，虽然.NET使内存管理的负担更轻，但并不能完全消除跟踪和管理资源的需要。但是，使用内存分析器来诊断和修复.NET中的问题会更容易。考虑到.NET在开发早期管理内存的方式可以帮助减少问题，但即使这样，由于框架或第三方库的复杂性，仍然可能出现这样的问题。</p>
@@ -656,7 +657,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -723,7 +724,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -878,7 +891,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -914,7 +943,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GC的工作原理"><span class="nav-number">1.</span> <span class="nav-text">GC的工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Object-Graph"><span class="nav-number">2.</span> <span class="nav-text">The Object Graph</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集器的限制"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集器的限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unused-objects"><span class="nav-number">3.1.</span> <span class="nav-text">Unused objects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆的碎片"><span class="nav-number">3.2.</span> <span class="nav-text">堆的碎片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集器的性能"><span class="nav-number">4.</span> <span class="nav-text">垃圾收集器的性能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">5.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GC的工作原理"><span class="nav-number">1.</span> <span class="nav-text">GC的工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#The-Object-Graph"><span class="nav-number">2.</span> <span class="nav-text">The Object Graph</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集器的限制"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集器的限制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unused-objects"><span class="nav-number">3.1.</span> <span class="nav-text">Unused objects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆的碎片"><span class="nav-number">3.2.</span> <span class="nav-text">堆的碎片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GC堆"><span class="nav-number">3.2.1.</span> <span class="nav-text">GC堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LOH堆"><span class="nav-number">3.2.2.</span> <span class="nav-text">LOH堆</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集器的性能"><span class="nav-number">4.</span> <span class="nav-text">垃圾收集器的性能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分代机制"><span class="nav-number">4.1.</span> <span class="nav-text">分代机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结论"><span class="nav-number">5.</span> <span class="nav-text">结论</span></a></li></ol></div>
             
 
           </div>

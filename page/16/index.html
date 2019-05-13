@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/16/Unity-Coroutine/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/26/Unity3D-Optimize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/16/Unity-Coroutine/" class="post-title-link" itemprop="url">Unity ECS</a>
+                <a href="/2018/06/26/Unity3D-Optimize/" class="post-title-link" itemprop="url">Unity3D优化专题</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/16/Unity-Coroutine/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Coroutine/" itemprop="commentCount"></span>
+                <a href="/2018/06/26/Unity3D-Optimize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/26/Unity3D-Optimize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +461,13 @@
         
           
             <p>
-              CoroutinesWaitForENdOffFrame 帧末尾执行yield return null 表示暂缓一帧，在下一帧接着往下处理，于yield return 0 或 yield return 1一样的功能yield return new WaitForSeconds协程的真正用途是分布做一
+              一 遮挡剔除OcclusionCulling遮挡剔除(Occlusion Culling)功能可在对象因被其他物体遮挡，当前在相机中无法看到时，禁用对象渲染。该功能不会在三维计算机图形中自动开启，因为在大部分情况下，离相机最远的对象最先渲染，离相机的对象覆盖先前的物体（该步骤称之为“重复渲染(ove
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/16/Unity-Coroutine/#more" rel="contents">
+              <a class="btn" href="/2018/06/26/Unity3D-Optimize/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/16/Unity-Manual/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/09/BRDF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +547,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/16/Unity-Manual/" class="post-title-link" itemprop="url">Unity Manual</a>
+                <a href="/2018/06/09/BRDF/" class="post-title-link" itemprop="url">BRDF(双向反射分布函数)</a>
               
             
           </h2>
@@ -578,8 +578,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/16/Unity-Manual/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/16/Unity-Manual/" itemprop="commentCount"></span>
+                <a href="/2018/06/09/BRDF/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/09/BRDF/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -610,29 +610,13 @@
         
           
             <p>
-              
-
-
-
-
-
-
-
-
-
-public static float Mathf.Round(float f)
-四舍五入
-
-
-
-
-YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, WaitForFixedUpdate, Coroutine and MonoB
+              在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/16/Unity-Manual/#more" rel="contents">
+              <a class="btn" href="/2018/06/09/BRDF/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -692,7 +676,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/12/Unity-Optimize/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/03/TA-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -712,7 +696,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/12/Unity-Optimize/" class="post-title-link" itemprop="url">Unity优化</a>
+                <a href="/2018/06/03/TA-1/" class="post-title-link" itemprop="url">3D美术人员Technical Artist（TA技术美术）的学习之旅（1）</a>
               
             
           </h2>
@@ -743,8 +727,8 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/12/Unity-Optimize/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/Unity-Optimize/" itemprop="commentCount"></span>
+                <a href="/2018/06/03/TA-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/03/TA-1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -775,16 +759,13 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
         
           
             <p>
-              
-更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。
-对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。
-减少FPS，在ProjectSetting-&gt; Quality中的V
+              文章针对于有一定3D美术基础，并了解次时代游戏制作流程的开发者，需要具备以下知识基础：了解3D建模，以及拓扑流程，贴图制作。相关软件3DMAX,ZB,substancepainte,ps等。TA是美术和程序之间沟通的桥梁。美术同学需要一些更加方便，可视化更强的工具，例如拓扑的工具，各位都知道MAX里
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/12/Unity-Optimize/#more" rel="contents">
+              <a class="btn" href="/2018/06/03/TA-1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -844,7 +825,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/12/C-Thread-Sync/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/19/Unity3D-ShaderLab/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -864,7 +845,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/12/C-Thread-Sync/" class="post-title-link" itemprop="url">C# 线程同步</a>
+                <a href="/2018/05/19/Unity3D-ShaderLab/" class="post-title-link" itemprop="url">Unity ShaderLab</a>
               
             
           </h2>
@@ -883,6 +864,22 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -895,8 +892,8 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/12/C-Thread-Sync/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/C-Thread-Sync/" itemprop="commentCount"></span>
+                <a href="/2018/05/19/Unity3D-ShaderLab/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/19/Unity3D-ShaderLab/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -927,15 +924,44 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
         
           
             <p>
-              线程同步的方式线程同步有：临界区、互斥区、事件、信号量四种方式
+              CG类型
 
-临界区(Critical Section)：临界区：通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。在任意时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资源，那么在有一个线程进入后，其他试图访
+
+
+Type
+Description
+
+
+
+
+float
+32位浮点数据
+
+
+half
+16位浮点数据
+
+
+int
+32位整形数据
+
+
+fixed
+12位定点数
+
+
+bool
+布尔数据
+
+
+sampler
+纹理对象的句柄，分为sampler、sampler1D、sampler2D、sam
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/12/C-Thread-Sync/#more" rel="contents">
+              <a class="btn" href="/2018/05/19/Unity3D-ShaderLab/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -995,7 +1021,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/managed-code-unmanaged-code/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/17/How-to-systematically-optimize-performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1015,7 +1041,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/managed-code-unmanaged-code/" class="post-title-link" itemprop="url">托管代码和非托管代码</a>
+                <a href="/2018/05/17/How-to-systematically-optimize-performance/" class="post-title-link" itemprop="url">如何系统地进行性能优化？</a>
               
             
           </h2>
@@ -1046,8 +1072,8 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/managed-code-unmanaged-code/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/managed-code-unmanaged-code/" itemprop="commentCount"></span>
+                <a href="/2018/05/17/How-to-systematically-optimize-performance/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/How-to-systematically-optimize-performance/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1078,16 +1104,13 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
         
           
             <p>
-              托管代码是-Microsoft的中间语言(IL)，他主要作用是在.Net FRAMEWORK的公共语言运行库(CLR)执行代码前去编译源代码，也就是说托管代码充当着翻译的作用，源代码在运行时分为两个阶段：
-
-源代码编译为托管代码，(所以源代码可以有很多种，如VB,C#,J#)
-托管代码编译为Micr
+              运行帧率低低配机器上运行帧率比较低是常见问题。a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/managed-code-unmanaged-code/#more" rel="contents">
+              <a class="btn" href="/2018/05/17/How-to-systematically-optimize-performance/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1147,7 +1170,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/AssetBundle/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/16/3d-math-base-graph-game-develop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1167,7 +1190,7 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/AssetBundle/" class="post-title-link" itemprop="url">Unity加载和内存管理</a>
+                <a href="/2018/05/16/3d-math-base-graph-game-develop/" class="post-title-link" itemprop="url">3D数学：图形与游戏开发</a>
               
             
           </h2>
@@ -1198,8 +1221,8 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/AssetBundle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/AssetBundle/" itemprop="commentCount"></span>
+                <a href="/2018/05/16/3d-math-base-graph-game-develop/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/3d-math-base-graph-game-develop/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1230,14 +1253,13 @@ YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, Wai
         
           
             <p>
-              Unity有两种动态加载机制：Resources.Load和AssetBundle，二者本质并无区别。Resources.Load就是从一个缺省打进程程序包的AssetBundle(Resourece)里加载资源，而一般AssetBundle文件需要你自己创建，运行时加载。
-AssetBundle加
+              9.4.1 4D齐次空间4.1.3节曾提到，4D向量有4个分量，前3个是标准的x,y和z分量，第四个是w，有时称作齐次坐标。    为了理解标准3D坐标是怎样扩展到4D坐标的，让我们先看一下2D中的齐次坐标，它的形式为(x,y,w)。想象在3D中w=1处的标准2D平面，实际的2D点(x,y)用齐次坐
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/AssetBundle/#more" rel="contents">
+              <a class="btn" href="/2018/05/16/3d-math-base-graph-game-develop/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1297,7 +1319,7 @@ AssetBundle加
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/Unity-Note/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1317,7 +1339,7 @@ AssetBundle加
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/Unity-Note/" class="post-title-link" itemprop="url">Unity3D笔记</a>
+                <a href="/2018/05/14/PBR-Guide-Vol1/" class="post-title-link" itemprop="url">PBR_Guide_Vol1</a>
               
             
           </h2>
@@ -1348,8 +1370,8 @@ AssetBundle加
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/Unity-Note/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/Unity-Note/" itemprop="commentCount"></span>
+                <a href="/2018/05/14/PBR-Guide-Vol1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/PBR-Guide-Vol1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1380,14 +1402,13 @@ AssetBundle加
         
           
             <p>
-              在Update中使用Time.deltaTime，获取到的是这一帧的时间，如果游戏卡，帧率低，那这个值就大。如果游戏流畅，帧率高，这个值就小，Time.deltaTime=1.0f/帧率
-1、MonoBehaviour.Update 更新渲染帧当MonoBehaviour启用时，其Update在每一
+              光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/Unity-Note/#more" rel="contents">
+              <a class="btn" href="/2018/05/14/PBR-Guide-Vol1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1447,7 +1468,7 @@ AssetBundle加
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/constraint/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/14/d3d11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1467,7 +1488,7 @@ AssetBundle加
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/constraint/" class="post-title-link" itemprop="url">约束</a>
+                <a href="/2018/05/14/d3d11/" class="post-title-link" itemprop="url">d3d11</a>
               
             
           </h2>
@@ -1498,8 +1519,8 @@ AssetBundle加
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/constraint/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/constraint/" itemprop="commentCount"></span>
+                <a href="/2018/05/14/d3d11/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/d3d11/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1531,33 +1552,16 @@ AssetBundle加
           
             <p>
               
+点积(dot product)计算结果是标量值；也叫标量积(scalar product)。等于两个向量对应分量的乘积之和。
 
-
-
-
-
-
-
-
-
-T:struct
-类型参数必须是值类型。可以指定除Nullable以外的任何值类型。
-
-
-T:class
-类型参数必须是引用类型，包括任何类、接口、委托或数组类型。
-
-
-T:new()
-类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new()约束必须最后指定。
-
-
+$\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
+4.1 准备工作4.1.4 交换链和页面翻转为了避免在动画中出现闪烁，最好的做法是
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/constraint/#more" rel="contents">
+              <a class="btn" href="/2018/05/14/d3d11/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1617,7 +1621,7 @@ T:new()
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/23-Design-Patterns/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/26/Liyanfeng-Notes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1637,7 +1641,7 @@ T:new()
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/23-Design-Patterns/" class="post-title-link" itemprop="url">23种设计模式</a>
+                <a href="/2018/04/26/Liyanfeng-Notes/" class="post-title-link" itemprop="url">Liyanfeng-Notes</a>
               
             
           </h2>
@@ -1668,8 +1672,8 @@ T:new()
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/23-Design-Patterns/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/23-Design-Patterns/" itemprop="commentCount"></span>
+                <a href="/2018/04/26/Liyanfeng-Notes/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/Liyanfeng-Notes/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1700,13 +1704,31 @@ T:new()
         
           
             <p>
-              设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构性模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状
-              ...
+              
+
+
+
+
+
+
+
+
+
+
+跑酷项目的 url: http://10.72.12.28/D2/JBR
+zentia.li
+P2psg99qvX5sqAWE
+
+
+
+
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/23-Design-Patterns/#more" rel="contents">
+              <a class="btn" href="/2018/04/26/Liyanfeng-Notes/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1766,7 +1788,7 @@ T:new()
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/Interface/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1786,7 +1808,7 @@ T:new()
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/Interface/" class="post-title-link" itemprop="url">面试</a>
+                <a href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/" class="post-title-link" itemprop="url">Shader模板缓冲和模板测试</a>
               
             
           </h2>
@@ -1817,8 +1839,8 @@ T:new()
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/04/11/Interface/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/Interface/" itemprop="commentCount"></span>
+                <a href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1849,15 +1871,17 @@ T:new()
         
           
             <p>
-              接口(Interface)是一种规划，为你定义了一系列的规则和任务，但不去实现它类和结构体可以继承多个接口抽象类表示该类中可能已经有一些的具体定义生成的库在这里：
-Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
-符号表在这里，需要把扩展名弄成.so，才能
+              在图形学种一个像素会有如下缓存：
+
+颜色缓存color buffer/pixel buffer : 存储该点即将显示地颜色，RGBA值
+深度缓存depth buffer/z buffer:存储该点地深度，z
+模板缓存stencil buffer： 通常用作限制渲染区域。更高级用法需结合深度缓冲，例如
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/04/11/Interface/#more" rel="contents">
+              <a class="btn" href="/2018/04/26/Unity-Stencil-Buffer-Stencil-Test/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1906,7 +1930,7 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1948,7 +1972,7 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2015,7 +2039,19 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2170,7 +2206,23 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2436,6 +2488,8 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
       
     
       
+        
+      
     
       
     
@@ -2455,6 +2509,53 @@ Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 

@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="托管堆垃圾回收器每隔一段时间.net就会检查托管堆，当检查到需要清理堆时，.net就调用垃圾回收器。垃圾回收器会扫描堆上的对象的引用，不再有引用的对象就被删除。垃圾回收器调用的时间是不确定的，除非代码中有调用垃圾回收器（System.GC.Collect()）。 内存碎片的处理由于堆的释放时刻是由堆上对象的生存周期决定的，这就决定了堆的释放顺序是不定的，必然产生内存碎片。就像操作系统的磁盘分配机制">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-04T04:30:17.792Z">
+<meta property="og:updated_time" content="2019-05-10T09:18:09.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="托管堆与非托管堆的释放">
 <meta name="twitter:description" content="托管堆垃圾回收器每隔一段时间.net就会检查托管堆，当检查到需要清理堆时，.net就调用垃圾回收器。垃圾回收器会扫描堆上的对象的引用，不再有引用的对象就被删除。垃圾回收器调用的时间是不确定的，除非代码中有调用垃圾回收器（System.GC.Collect()）。 内存碎片的处理由于堆的释放时刻是由堆上对象的生存周期决定的，这就决定了堆的释放顺序是不定的，必然产生内存碎片。就像操作系统的磁盘分配机制">
@@ -487,7 +487,22 @@
       
         <h1 id="托管堆"><a href="#托管堆" class="headerlink" title="托管堆"></a>托管堆</h1><h2 id="垃圾回收器"><a href="#垃圾回收器" class="headerlink" title="垃圾回收器"></a>垃圾回收器</h2><p>每隔一段时间.net就会检查托管堆，当检查到需要清理堆时，.net就调用垃圾回收器。垃圾回收器会扫描堆上的对象的引用，不再有引用的对象就被删除。<br>垃圾回收器调用的时间是不确定的，除非代码中有调用垃圾回收器（System.GC.Collect()）。</p>
 <h2 id="内存碎片的处理"><a href="#内存碎片的处理" class="headerlink" title="内存碎片的处理"></a>内存碎片的处理</h2><p>由于堆的释放时刻是由堆上对象的生存周期决定的，这就决定了堆的释放顺序是不定的，必然产生内存碎片。就像操作系统的磁盘分配机制一样，若需要给一个新的对象分配空间，CLR需要搜索堆，直到找到足够大的空间来存储新对象。实际上垃圾回收器会避免堆出现碎片的现象。<br>回收器在一次释放动作结束会将堆上剩余的对象在堆顶移动，回收器会更新被移动对象的存储地址。这就又形成了整块的未分配的空间。<br>虽然移动对象并更新地址会消耗一定的性能，但是由于分配速度和访问速度会快很多，足以弥补消耗。</p>
-<h1 id="非托管堆"><a href="#非托管堆" class="headerlink" title="非托管堆"></a>非托管堆</h1>
+<h1 id="非托管堆"><a href="#非托管堆" class="headerlink" title="非托管堆"></a>非托管堆</h1><p>回收器不知道如何释放非托管资源，如文件句柄，网络连接、数据库连接等。当非托管对象被托管对象引用时，托管对象被释放时应确保其相关的非托管对象被释放。<br>以下两种方法可解决释放非托管资源的问题：</p>
+<ol>
+<li>在定义类时，声明一个析构函数</li>
+<li>在类中实现System.IDisposable接口<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">MyClass</span>:<span class="title">IDispose</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Dispose</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="comment">// 释放非托管资源</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>两种调用方式</p>
+<ul>
+<li><p>using关键字方式，对象声明周期结束时会自动调用Dispose函数。此using与命名空间无关</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> (MyClass classA = <span class="keyword">new</span> MyClass())</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;<span class="comment">// 对象的声明周期结束</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>主动调用</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    MyClass classA = <span class="keyword">new</span> MyClass();</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">&#123;</span><br><span class="line">    classA.Dispose();<span class="comment">//显示调用</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
 
@@ -608,7 +623,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -675,7 +690,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -830,7 +857,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -138,6 +138,7 @@
 
 
   <meta name="description" content="首先贴下多进程单线程和单进程多线程的特点：多进程：有独立的地址空间，进程之间不共享内存和变量，但可以通过共享内存实现，每个进程只有一个线程，一般用于单机系统开发。多线程：在同一个进程下所有线程可以共享内存和变量。而共同点是，同开辟的进程数/线程数多余系统cpu核数时，无法继续提供应用的性能。而多线程架构的服务器，只要适当将一些任务分出来用新的进程启动，就可以扩展成分布式架构，使用tcp通信即可。当">
+<meta name="keywords" content="Server">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单介绍多进程和多线程服务器">
 <meta property="og:url" content="http://zentia.github.io/2018/03/22/thread-process/index.html">
@@ -146,7 +147,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/thread-process-1.png">
 <meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/thread-process-2.png">
-<meta property="og:updated_time" content="2019-04-17T01:42:46.543Z">
+<meta property="og:updated_time" content="2019-05-10T03:17:04.614Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单介绍多进程和多线程服务器">
 <meta name="twitter:description" content="首先贴下多进程单线程和单进程多线程的特点：多进程：有独立的地址空间，进程之间不共享内存和变量，但可以通过共享内存实现，每个进程只有一个线程，一般用于单机系统开发。多线程：在同一个进程下所有线程可以共享内存和变量。而共同点是，同开辟的进程数/线程数多余系统cpu核数时，无法继续提供应用的性能。而多线程架构的服务器，只要适当将一些任务分出来用新的进程启动，就可以扩展成分布式架构，使用tcp通信即可。当">
@@ -505,6 +506,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Server/" rel="tag"># Server</a>
+          
+        </div>
+      
 
       
       
@@ -599,7 +606,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -666,7 +673,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -821,7 +840,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

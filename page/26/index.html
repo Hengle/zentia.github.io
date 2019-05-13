@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/24/UGUIvsNGUI/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/ssh-key/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/24/UGUIvsNGUI/" class="post-title-link" itemprop="url">UGUI vs NGUI</a>
+                <a href="/2017/10/13/ssh-key/" class="post-title-link" itemprop="url">ssh</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/24/UGUIvsNGUI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/24/UGUIvsNGUI/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/ssh-key/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/ssh-key/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,50 +461,16 @@
         
           
             <p>
-              
+              ssh中，有两个钥匙：公钥、私钥，公钥主要是用于对一些敏感信息进行加密，私钥适用于解密。ssh的文件都存在于机器~/.ssh中。
 
-
-
-Tables
-NGUI
-UGUI
-
-
-
-
-锚点
-Anchor
-RectTransform Anchor
-
-
-图片
-Sprite
-Image
-
-
-文字
-Label
-Text
-
-
-根节点
-UIRoot
-Canvas
-
-
-UI面板
-Panel
-Canvas
-
-
-UI容器
-Lets you esse
+客户端：id_rsa(私钥)、id_rsa.pub(公钥)、known_hosts(已知远程主机)
+服务端: authorized_keys(验证过的公钥列表)、ssh
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/24/UGUIvsNGUI/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/ssh-key/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -564,7 +530,7 @@ Lets you esse
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/24/3的3D流水线处理流程/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/site-dealy-role/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -584,7 +550,7 @@ Lets you esse
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/24/3的3D流水线处理流程/" class="post-title-link" itemprop="url">UE3的3D渲染流水线处理流程</a>
+                <a href="/2017/10/13/site-dealy-role/" class="post-title-link" itemprop="url">网站部署规则</a>
               
             
           </h2>
@@ -603,22 +569,6 @@ Lets you esse
           </span>
 
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/UE/" itemprop="url" rel="index"><span itemprop="name">UE</span></a></span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -631,8 +581,8 @@ Lets you esse
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/24/3的3D流水线处理流程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/24/3的3D流水线处理流程/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/site-dealy-role/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/site-dealy-role/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -663,13 +613,14 @@ Lets you esse
         
           
             <p>
-              流水线3D渲染流水线也类似一个工厂的流水线，它的原材料是一系列的3D网格数据，最终产品就是显示在2D屏幕的3D场景。3D渲染流水线的处理和照相机的原理很像，它们都同样是通过将3D世界的内容放置到2D平面上，通过2D的方式来展示3D世界，顶点管线中有这么几个坐标空间：局部空间-&gt;世界空间-&gt
-              ...
+              网站发布只在自己笔记本电脑发布，公司电脑只能hexo s —debug,不能 hexo d -g本地内容修改完成之后记得git add . git commit -am "m"git push origin master
+
+              
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/24/3的3D流水线处理流程/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/site-dealy-role/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -729,7 +680,7 @@ Lets you esse
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/20/游戏对象和脚本/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/github-remote-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -749,7 +700,7 @@ Lets you esse
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/20/游戏对象和脚本/" class="post-title-link" itemprop="url">游戏对象和脚本</a>
+                <a href="/2017/10/13/github-remote-error/" class="post-title-link" itemprop="url">fatal:remote error You can't push to git 的解决办法</a>
               
             
           </h2>
@@ -780,8 +731,8 @@ Lets you esse
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/20/游戏对象和脚本/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/20/游戏对象和脚本/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/github-remote-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/github-remote-error/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -812,20 +763,14 @@ Lets you esse
         
           
             <p>
-              原文：http://catlikecoding.com/unity/tutorials/basics/game-objects-and-scripts/
-
-用简单的脚本构建一个时钟
-用C#写脚本
-让时钟转动起来
-完成
-
-这边文章通过创建简单的组件脚本来实现一个时钟。您仅需几分钟来熟悉Unity编辑器
+              branch正确的情况下，不知为什么，在push的时候出现:fatal: remote error:You can't push to git://github.com/zentia/hexo.gitUse git@github.com:zentia/hexo.git
+解决办法:git remote
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/20/游戏对象和脚本/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/github-remote-error/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -885,7 +830,7 @@ Lets you esse
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/20/Unity渲染1-材质/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/wm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -905,7 +850,7 @@ Lets you esse
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/20/Unity渲染1-材质/" class="post-title-link" itemprop="url">Unity渲染1 材质</a>
+                <a href="/2017/10/13/wm/" class="post-title-link" itemprop="url">wm</a>
               
             
           </h2>
@@ -936,8 +881,8 @@ Lets you esse
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/20/Unity渲染1-材质/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/20/Unity渲染1-材质/" itemprop="commentCount"></span>
+                <a href="/2017/10/13/wm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/13/wm/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -968,20 +913,13 @@ Lets you esse
         
           
             <p>
-              PS：翻译Catlike的文章
-
-创建一个立方体格子
-支持缩放，位移，旋转
-创建简单的相机投影
-
-这是关于渲染的第一篇文章，
-
-              
+              第一个问题：昨天一直提示hexo command no found，然后本地的hexo/node_module下找到一个.bin目录，里面还有hexo的执行文件，天真的以为这个就是执行路径，然后搞了一天，无果。今天去program files(x86)找到全局的npm下的hexo然后修改环境变量解决
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/20/Unity渲染1-材质/#more" rel="contents">
+              <a class="btn" href="/2017/10/13/wm/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1041,7 +979,7 @@ Lets you esse
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/17/article-title/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/shader/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1061,7 +999,7 @@ Lets you esse
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2017/09/17/article-title/" class="post-title-link" itemprop="url">scene和prefab的区别</a>
+                <a href="/2017/10/12/shader/" class="post-title-link" itemprop="url">Unity Shader</a>
               
             
           </h2>
@@ -1092,8 +1030,8 @@ Lets you esse
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/17/article-title/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/17/article-title/" itemprop="commentCount"></span>
+                <a href="/2017/10/12/shader/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/shader/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1124,13 +1062,767 @@ Lets you esse
         
           
             <p>
-              如果一个场景有多个相同的pfb(指引用相同的pfb，具体每个pfb可能有参数不同），那么Scene里每个pfb都是独立的对象，加载时每个对象都要走全套的流程: 文件I/O -&gt;反序列化 (解析，new obj + ctor) -&gt; awake -&gt; shader\texture\v
+              CGPROGRAM和ENDCG包裹的部分就是CG\HLSL语言部分。
+
+Vertex &amp; Fragment Shader: 顶点/片元着色器。它是最基本，也是非常强大的着色器类型。一般用于2D场景、特效之类的。Unlit Shader(无光照着色器，不包含无效)在世界三维空间中，一开始传入S
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2017/09/17/article-title/#more" rel="contents">
+              <a class="btn" href="/2017/10/12/shader/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/servercfg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/12/servercfg/" class="post-title-link" itemprop="url">服务器配置文件说明</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/12/servercfg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/servercfg/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              摘要：本文档描述手游服务器的各个配置文件的使用和配置参数说明。关键字：服务器 维护 配置
+1.概述请先参考《游戏系统架构》以了解手游的服务器架构状况。手游的所有配置文件都采用相同的格式。运维人员会经常用到的配置文件特性有：注释，文件包含include、宏定义、条件读取。
+2.各个服务器主要配置参数说
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/12/servercfg/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/12/hexo/" class="post-title-link" itemprop="url">Hexo Manual</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/12/hexo/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/hexo/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段three_waves: false
+嵌入PDFnpm install —save hexo-pdf添加
+hexo deploy -- 发布
+编辑主题的 source/
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/12/hexo/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/git-question/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/12/git-question/" class="post-title-link" itemprop="url">git笔记</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/12/git-question/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/git-question/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              warning:LF will be replaced by CRLF问题解决方法CRLF — Carriage-Return Line-Feed回车(ASCLL 13, \r)换行(LF, ASCLL 10, \n)。解决方法git config --global core.autocrlf fa
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/12/git-question/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/The-following-untracked/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/12/The-following-untracked/" class="post-title-link" itemprop="url">The following untracked working tree files would be overwritten by merge</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/12/The-following-untracked/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/The-following-untracked/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              git pull的时候遇到的问题。解决办法：git clean -d -fxnote:会删除没有add到仓库的文件，操作记得慎重，以免改动文件的丢失。
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/12/The-following-untracked/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/11/init-server/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/11/init-server/" class="post-title-link" itemprop="url">初始化云服务器</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/11/init-server/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/11/init-server/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              搭建git服务器yum install -y gitadduser git //创建用户gitgit clone git@10.173.32.7:/home/git/sample.git //克隆远程仓库
+clone git仓库上传代码git commit -am ““, 将所有修改，但未进stag
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/11/init-server/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1179,7 +1871,7 @@ Lets you esse
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/25/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span>
+    <a class="extend prev" rel="prev" href="/page/25/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/27/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1221,7 +1913,7 @@ Lets you esse
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1288,7 +1980,19 @@ Lets you esse
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1443,7 +2147,23 @@ Lets you esse
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1716,6 +2436,16 @@ Lets you esse
     
       
     
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
 
   
@@ -1726,6 +2456,16 @@ Lets you esse
 
   
   
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     

@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -138,18 +138,20 @@
 
 
   <meta name="description" content="在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感的CG电影或游戏则可以使用基于物理建模的着色算法。本文关注基于物理着色的BRDF模型，希望能将BRD">
+<meta name="keywords" content="PBR">
 <meta property="og:type" content="article">
-<meta property="og:title" content="基于物理的着色：BRDF">
+<meta property="og:title" content="BRDF(双向反射分布函数)">
 <meta property="og:url" content="http://zentia.github.io/2018/06/09/BRDF/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感的CG电影或游戏则可以使用基于物理建模的着色算法。本文关注基于物理着色的BRDF模型，希望能将BRD">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oxcvfpext.bkt.clouddn.com/BRDF-1.jpg">
-<meta property="og:updated_time" content="2019-04-17T01:42:43.350Z">
+<meta property="og:image" content="http://zentia.github.io/2018/06/09/BRDF/1.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/06/09/BRDF/2.jpg">
+<meta property="og:updated_time" content="2019-05-13T01:32:01.161Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="基于物理的着色：BRDF">
+<meta name="twitter:title" content="BRDF(双向反射分布函数)">
 <meta name="twitter:description" content="在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感的CG电影或游戏则可以使用基于物理建模的着色算法。本文关注基于物理着色的BRDF模型，希望能将BRD">
-<meta name="twitter:image" content="http://oxcvfpext.bkt.clouddn.com/BRDF-1.jpg">
+<meta name="twitter:image" content="http://zentia.github.io/2018/06/09/BRDF/1.jpg">
 
 
 
@@ -166,7 +168,7 @@
   };
 </script>
 
-  <title>基于物理的着色：BRDF | </title>
+  <title>BRDF(双向反射分布函数) | </title>
   
 
 
@@ -402,7 +404,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">基于物理的着色：BRDF
+          <h2 class="post-title" itemprop="name headline">BRDF(双向反射分布函数)
 
               
             
@@ -471,7 +473,21 @@
 
       
         <p>在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感的CG电影或游戏则可以使用基于物理建模的着色算法。<br>本文关注基于物理着色的BRDF模型，希望能将BRDF的来龙去脉将清楚，并分析Cook-TorranceBRDF公式的推倒过程。<br>要模拟真实光照，我们先要弄清楚光照的现象。</p>
-<h2 id="光照现象"><a href="#光照现象" class="headerlink" title="光照现象"></a>光照现象</h2><p>光由光子组成，光子即具有粒子的特性，又表现出波的特性。从波的角度看，光是电磁波的一种，不同频率（波长）的光波能量不同，频率越高（波长越短），能量越高，频率越低（波长越长），能量越低，其中波长在380nm-780nm范围内的光波能被认类的视网膜感知到，这个范围的光波成为可见光，不同频率的可见光被人感知为不同的颜色，频率越高的光偏蓝，频率较低的光则偏红。<br><img src="http://oxcvfpext.bkt.clouddn.com/BRDF-1.jpg"></p>
+<h2 id="光照现象"><a href="#光照现象" class="headerlink" title="光照现象"></a>光照现象</h2><p>光由光子组成，光子即具有粒子的特性，又表现出波的特性。从波的角度看，光是电磁波的一种，不同频率（波长）的光波能量不同，频率越高（波长越短），能量越高，频率越低（波长越长），能量越低，其中波长在380nm-780nm范围内的光波能被认类的视网膜感知到，这个范围的光波成为可见光，不同频率的可见光被人感知为不同的颜色，频率越高的光偏蓝，频率较低的光则偏红。</p>
+<img src="/2018/06/09/BRDF/1.jpg">
+<p>光学根据研究的尺度可以分为波动光学（Wave Optics）和几何光学（Geometric Optics），波动光学比几何光学复杂，而由于图形学领域光柱的尺度远大于可见光的波长（380nm - 780nm），也很少涉及光的偏振、干涉和衍射等波动光学才能解释的现象，所以我们一般用几何光学建立光照的模型。</p>
+<h2 id="光学平面边界上的散射"><a href="#光学平面边界上的散射" class="headerlink" title="光学平面边界上的散射"></a>光学平面边界上的散射</h2><img src="/2018/06/09/BRDF/2.jpg">
+<p>平面边界两边物质的折射率（Refractive Index）不同，当一束光线从一种物质照射到平面边界上时，其中一部分在平面边界被反射回这种物质，反射方向为入射方向关于平面法线的对称向量：</p>
+<font size="4">$r_i = 2(n \cdot l)n - l$ </font> 
+
+<blockquote>
+<p>其中$r_i$是反射向量，l是光线入射向量，n是平面发现<br>向量间的$\cdot$表示向量的点积，两个单位向量的点积等于它们夹角的余弦。</p>
+</blockquote>
+<p>另一部分光穿过平面边界折射进入另一种物质，折射方向可由Snell法则（<a href="https://zentia.github.io/2019/05/12/snell/">Snell’s Law</a>）计算得出：</p>
+<p><font size="5"> ${sin\theta_i \over sin\theta_t}={v_i\over v_t}={\lambda_i\over \lambda_t}={n_t\over n_i}$ </font></p>
+<blockquote>
+<p>其中下标i表示入射介质，下标t表示折射介质，$\theta$表示光线相对于边界法线的角度，v表示介质中的光速，$\lambda$表示介质中的波长，n表示介质的折射率。<br>反射和折射的比例由菲涅尔方程(Fresnel Equations)给出，菲涅尔方程比较复杂，图形学里一般使用近似公式计算。</p>
+</blockquote>
 
       
     </div>
@@ -492,6 +508,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PBR/" rel="tag"># PBR</a>
+          
+        </div>
       
 
       
@@ -587,7 +609,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -654,7 +676,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -809,7 +843,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -845,7 +895,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#光照现象"><span class="nav-number">1.</span> <span class="nav-text">光照现象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#光照现象"><span class="nav-number">1.</span> <span class="nav-text">光照现象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#光学平面边界上的散射"><span class="nav-number">2.</span> <span class="nav-text">光学平面边界上的散射</span></a></li></ol></div>
             
 
           </div>
@@ -1095,6 +1145,53 @@
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 

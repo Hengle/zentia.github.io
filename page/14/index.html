@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/07/01/Unity3D_Game_Design/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/12/09/fiction/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/07/01/Unity3D_Game_Design/" class="post-title-link" itemprop="url">Unity</a>
+                <a href="/2018/12/09/fiction/" class="post-title-link" itemprop="url">序章</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/07/01/Unity3D_Game_Design/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/01/Unity3D_Game_Design/" itemprop="commentCount"></span>
+                <a href="/2018/12/09/fiction/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/09/fiction/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,19 +461,13 @@
         
           
             <p>
-              命名
-模型命名 Max文件中角色模型命名为skin@sk_001武器模型命名为skin@wq_001
-颜色贴图skin@st_001.png 高光贴图skin@st_001_ctr.png
-
-导入导出能够从3DsMax导入Unity3D的资源
-所有节点的位移、旋转、锁方、轴心和命名都将导入
-网格模型
+              芩也不是一开始就知道这个世界是黑白的，是他的父亲告诉他的。父亲说，芩，你长大了，父亲要走了。芩问，父亲你去哪里？父亲说，我也不知道，我总觉得有人在召唤我，我该上路了。我们每个人都会上路的，包括你，芩。芩说，父亲，我可以陪你一起上路吗？父亲回答，我们每个人的路都是不一样的，你以后会有你自己的路走的，或
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/07/01/Unity3D_Game_Design/#more" rel="contents">
+              <a class="btn" href="/2018/12/09/fiction/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -533,7 +527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/30/Shadow_Mapping/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/10/22/Unity-Shader-IntrodutionToTopic-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -553,604 +547,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/06/30/Shadow_Mapping/" class="post-title-link" itemprop="url">阴影映射的原理和实现</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/30/Shadow_Mapping/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/30/Shadow_Mapping/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              阴影贴图 (Shadwom mapping)像素与以纹理形式保存的光照深度缓冲区或者深度图像比较，通过这种方式计算像素是否处于光源照射范围之内，从而生成阴影。
-原理阴影贴图是一种使用深度纹理来为渲染阴影提供解决方法的多通道计算。它的关键是，就是用投影光源代替最终视口来观察场景。通过移动视口到光源位置
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/30/Shadow_Mapping/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/26/Unity3D-Optimize/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/26/Unity3D-Optimize/" class="post-title-link" itemprop="url">Unity3D优化专题</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/26/Unity3D-Optimize/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/26/Unity3D-Optimize/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              一 遮挡剔除OcclusionCulling遮挡剔除(Occlusion Culling)功能可在对象因被其他物体遮挡，当前在相机中无法看到时，禁用对象渲染。该功能不会在三维计算机图形中自动开启，因为在大部分情况下，离相机最远的对象最先渲染，离相机的对象覆盖先前的物体（该步骤称之为“重复渲染(ove
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/26/Unity3D-Optimize/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/09/BRDF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/09/BRDF/" class="post-title-link" itemprop="url">基于物理的着色：BRDF</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/09/BRDF/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/09/BRDF/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              在计算机图形学领域，着色（Shading）是指根据表面或者多边形相对光源和相机的角度和距离来计算它的颜色的过程。不同的用户可以使用不同的着色算法，CAD等追求相应速度的交互式图形领域可以使用简单快速的着色算法，卡通油画等艺术效果使用非真实感（Nonphotorealistic）着色算法，而追求真实感
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/09/BRDF/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/06/03/TA-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/06/03/TA-1/" class="post-title-link" itemprop="url">3D美术人员Technical Artist（TA技术美术）的学习之旅（1）</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/06/03/TA-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/03/TA-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              文章针对于有一定3D美术基础，并了解次时代游戏制作流程的开发者，需要具备以下知识基础：了解3D建模，以及拓扑流程，贴图制作。相关软件3DMAX,ZB,substancepainte,ps等。TA是美术和程序之间沟通的桥梁。美术同学需要一些更加方便，可视化更强的工具，例如拓扑的工具，各位都知道MAX里
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/06/03/TA-1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/19/Unity3D-ShaderLab/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/05/19/Unity3D-ShaderLab/" class="post-title-link" itemprop="url">Unity ShaderLab</a>
+                <a href="/2018/10/22/Unity-Shader-IntrodutionToTopic-2/" class="post-title-link" itemprop="url">Unity Shader第三部分</a>
               
             
           </h2>
@@ -1197,8 +594,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/19/Unity3D-ShaderLab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/19/Unity3D-ShaderLab/" itemprop="commentCount"></span>
+                <a href="/2018/10/22/Unity-Shader-IntrodutionToTopic-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/22/Unity-Shader-IntrodutionToTopic-2/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1229,44 +626,13 @@
         
           
             <p>
-              CG类型
-
-
-
-Type
-Description
-
-
-
-
-float
-32位浮点数据
-
-
-half
-16位浮点数据
-
-
-int
-32位整形数据
-
-
-fixed
-12位定点数
-
-
-bool
-布尔数据
-
-
-sampler
-纹理对象的句柄，分为sampler、sampler1D、sampler2D、sam
+              透明效果透明是游戏中经常要使用的一种效果。在实时渲染中要实现透明效果，通常会在渲染模型时控制它的透明通道（Alpha Channel）。当开启透明混合后，当一个物体被渲染到屏幕上时，每个片元除了颜色值和深度值之外，它还有透明度。当透明度为1时，表示该像素是完全不透明的，而当其为0时，则表示该像素完全
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/19/Unity3D-ShaderLab/#more" rel="contents">
+              <a class="btn" href="/2018/10/22/Unity-Shader-IntrodutionToTopic-2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1326,7 +692,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/17/How-to-systematically-optimize-performance/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/10/21/Unity-Shader-IntroductionToTopic1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1346,7 +712,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/17/How-to-systematically-optimize-performance/" class="post-title-link" itemprop="url">如何系统地进行性能优化？</a>
+                <a href="/2018/10/21/Unity-Shader-IntroductionToTopic1/" class="post-title-link" itemprop="url">Unity Shader第二部分</a>
               
             
           </h2>
@@ -1365,6 +731,22 @@ sampler
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1377,8 +759,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/17/How-to-systematically-optimize-performance/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/17/How-to-systematically-optimize-performance/" itemprop="commentCount"></span>
+                <a href="/2018/10/21/Unity-Shader-IntroductionToTopic1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/21/Unity-Shader-IntroductionToTopic1/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1409,13 +791,14 @@ sampler
         
           
             <p>
-              运行帧率低低配机器上运行帧率比较低是常见问题。a)首先是做分类，把通常的问题归类到几种瓶颈下来做讨论：GPU Bound、CPU Bound、Bandwidth Bound，还有Memory。这种分类方式基本是按照硬件资源的方式来进行的。b)GPU Bound是一种目前手游中比较常见的瓶颈，降低分辨
+              光源在光学里，我们使用辐照度（irradiance）来量化光。对于平行光来说，它的辐照度可通过计算在垂直于l的单位平面上的单位时间内穿过的能量来得到。
+吸收和散射光线由光源发射出来后，就会与一些物体相交。通常，相交的结构有两个：散射（scattering）和吸收（absorption）。散射只改变光
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/17/How-to-systematically-optimize-performance/#more" rel="contents">
+              <a class="btn" href="/2018/10/21/Unity-Shader-IntroductionToTopic1/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1475,7 +858,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/16/3d-math-base-graph-game-develop/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/10/20/Unity-Shader-IntroductionToTopic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1495,7 +878,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/16/3d-math-base-graph-game-develop/" class="post-title-link" itemprop="url">3D数学：图形与游戏开发</a>
+                <a href="/2018/10/20/Unity-Shader-IntroductionToTopic/" class="post-title-link" itemprop="url">Unity Shader第一部分</a>
               
             
           </h2>
@@ -1514,6 +897,22 @@ sampler
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1526,8 +925,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/16/3d-math-base-graph-game-develop/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/16/3d-math-base-graph-game-develop/" itemprop="commentCount"></span>
+                <a href="/2018/10/20/Unity-Shader-IntroductionToTopic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/20/Unity-Shader-IntroductionToTopic/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1558,13 +957,13 @@ sampler
         
           
             <p>
-              9.4.1 4D齐次空间4.1.3节曾提到，4D向量有4个分量，前3个是标准的x,y和z分量，第四个是w，有时称作齐次坐标。    为了理解标准3D坐标是怎样扩展到4D坐标的，让我们先看一下2D中的齐次坐标，它的形式为(x,y,w)。想象在3D中w=1处的标准2D平面，实际的2D点(x,y)用齐次坐
+              像素光 Pixel LightUnity中将平行光称作为像素光，第一个像素光是基础平行光，以LightMode=ForwardBase标签修饰，每多一个像素光都以LightMode=ForwardAdd标签修饰。并不是所有的光源在运行时都会反射到物体上，而是根据Project的Quality中设置的
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/16/3d-math-base-graph-game-develop/#more" rel="contents">
+              <a class="btn" href="/2018/10/20/Unity-Shader-IntroductionToTopic/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1624,7 +1023,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/10/15/Unity-Shader-Manual/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1644,7 +1043,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/14/PBR-Guide-Vol1/" class="post-title-link" itemprop="url">PBR_Guide_Vol1</a>
+                <a href="/2018/10/15/Unity-Shader-Manual/" class="post-title-link" itemprop="url">Unity Shader Manual</a>
               
             
           </h2>
@@ -1663,6 +1062,22 @@ sampler
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Unity-Shader/" itemprop="url" rel="index"><span itemprop="name">Unity Shader</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -1675,8 +1090,8 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/14/PBR-Guide-Vol1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/PBR-Guide-Vol1/" itemprop="commentCount"></span>
+                <a href="/2018/10/15/Unity-Shader-Manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/10/15/Unity-Shader-Manual/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1707,13 +1122,13 @@ sampler
         
           
             <p>
-              光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们
+              PropertiesShader &quot;ShaderLab Tutorials/TestShader&quot;&#123;    Properties &#123;        _Range (&quot;My Range&quot;, Range(0.02, 0.15)) = 0.07 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/14/PBR-Guide-Vol1/#more" rel="contents">
+              <a class="btn" href="/2018/10/15/Unity-Shader-Manual/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1773,7 +1188,7 @@ sampler
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/05/14/d3d11/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/09/21/TSF4G/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1793,7 +1208,7 @@ sampler
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/05/14/d3d11/" class="post-title-link" itemprop="url">d3d11</a>
+                <a href="/2018/09/21/TSF4G/" class="post-title-link" itemprop="url">TSF4G</a>
               
             
           </h2>
@@ -1824,8 +1239,622 @@ sampler
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/05/14/d3d11/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/14/d3d11/" itemprop="commentCount"></span>
+                <a href="/2018/09/21/TSF4G/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/21/TSF4G/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              https://github.com/johnnyluo586/TSF4G.git
+Tbus简介Tbus是tsf4g(Tencent ServiceFramework for Game,腾讯游戏服务框架)中的基础组件之一，主要的目的是为上层业务提供统一的线程或进程间通信接口，屏蔽本地进程间通信以及远
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/21/TSF4G/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/09/18/Unity-Lua-Manual/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/09/18/Unity-Lua-Manual/" class="post-title-link" itemprop="url">Unity-Lua-Manual</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/09/18/Unity-Lua-Manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/18/Unity-Lua-Manual/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              GameObjectGO_namegameObject.GO_name = &quot;name&quot;
+设置或者获取游戏对象的名字
+GO_selfgameObject.GO_self
+绑定到自己身上的Lua模块指针
+GO_activegameObject.GO_active = true/fa
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/18/Unity-Lua-Manual/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/09/10/luajit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/09/10/luajit/" class="post-title-link" itemprop="url">luajit</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/09/10/luajit/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/10/luajit/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              JIT = Just In TimeIOS中禁止使用（不让自主申请内存）
+解释执行：
+效率低
+代码暴露
+
+静态编译
+不够灵活，无法热更新
+平台兼容性差
+
+JIT：
+效率：高于解释执行，低于静态编译。
+安全性：一般都先转换成字节码
+热更新：无论源码还是字节码本质都是自愿文件。
+兼容性：虚拟机会处理平台
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/09/10/luajit/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/07/21/Android-NDK/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/07/21/Android-NDK/" class="post-title-link" itemprop="url">Andorid NDK</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/21/Android-NDK/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/Android-NDK/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              JNIJNI的全称是Java Native Interface，Java原生接口。提供别的代码调用的一组函数。首先使用C++写出了一些函数，然后将这些函数在Java类中再声明一次（加上关键字native），这样Java类中的函数和C++中的函数就匹配到一起了，我们使用Java类中的函数，其实就是使用
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/07/21/Android-NDK/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/07/21/AndroidManifest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/07/21/AndroidManifest/" class="post-title-link" itemprop="url">AndroidManifest.xml详解</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/07/21/AndroidManifest/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/21/AndroidManifest/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1857,16 +1886,15 @@ sampler
           
             <p>
               
-点积(dot product)计算结果是标量值；也叫标量积(scalar product)。等于两个向量对应分量的乘积之和。
-
-$\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
-4.1 准备工作4.1.4 交换链和页面翻转为了避免在动画中出现闪烁，最好的做法是
+为应用的JAVA软件包命名。软件包名称充当应用的唯一标识符
+描述应用的各个组件，包括构成应用的Activity、服务、广播接收器和内容提供程序。它还为实现每个组件的类命名并发布其功能，例如它们可以处理Intent消息。这些声明向Android系统告知有关组件以及可以启动这些组件的条件的信息。
+确定
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/05/14/d3d11/#more" rel="contents">
+              <a class="btn" href="/2018/07/21/AndroidManifest/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1915,7 +1943,7 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1957,7 +1985,7 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2024,7 +2052,19 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2179,7 +2219,23 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2445,6 +2501,8 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
       
     
       
+        
+      
     
       
     
@@ -2464,6 +2522,53 @@ $\mathbf{u \cdot v} = u_xv_x+u_yv_y+u_zv_z$
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+</style>
+
+    
   
 
 

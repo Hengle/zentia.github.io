@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/23/Unity-Skinned-Mesh/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/12/Unity-Optimize/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -398,7 +398,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/Unity-Skinned-Mesh/" class="post-title-link" itemprop="url">Skinned Mesh原理解析</a>
+                <a href="/2018/04/12/Unity-Optimize/" class="post-title-link" itemprop="url">Unity优化</a>
               
             
           </h2>
@@ -429,8 +429,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/Unity-Skinned-Mesh/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/Unity-Skinned-Mesh/" itemprop="commentCount"></span>
+                <a href="/2018/04/12/Unity-Optimize/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/Unity-Optimize/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -461,13 +461,16 @@
         
           
             <p>
-              一、3D模型动画基本原理和分类3D模型动画的基本原理是让模型中各定点的位置随时间变化。主要种类由Morph动画，关节动画和骨骼蒙皮动画(Skinned Mesh)。从动画数据的角度来说，三者一般都采用关键帧技术，即只给出关键帧的数据，其他帧的数据使用插值得到。但由于这三种技术的不同，关键帧的数据是不
+              
+更新不透明贴图的压缩格式为ETC 4bit，因为android市场的手机中的GPU有多种，每家的GPU支持不同的压缩格式，但他们都兼容ETC格式。
+对于透明贴图，我们只能选择RGBA 16bit 或者RGBA 32bit。
+减少FPS，在ProjectSetting-&gt; Quality中的V
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/Unity-Skinned-Mesh/#more" rel="contents">
+              <a class="btn" href="/2018/04/12/Unity-Optimize/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -527,7 +530,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/23/actor/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/12/C-Thread-Sync/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -547,7 +550,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/23/actor/" class="post-title-link" itemprop="url">Actor模型原理</a>
+                <a href="/2018/04/12/C-Thread-Sync/" class="post-title-link" itemprop="url">C# 线程同步</a>
               
             
           </h2>
@@ -578,8 +581,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/23/actor/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/23/actor/" itemprop="commentCount"></span>
+                <a href="/2018/04/12/C-Thread-Sync/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/12/C-Thread-Sync/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -610,13 +613,15 @@
         
           
             <p>
-              1.Actor模型在使用Java进行并发编程时需要特别的关注锁和内存原子性等一系列线程问题，而Actor模型内部的状态由它自己维护即它内部数据只能由它自己修改（通过消息传递来进行状态修改），所以使用Actors模型进行并发编程可以很好避免这些问题，Actor由状态(state),行为(Behavio
+              线程同步的方式线程同步有：临界区、互斥区、事件、信号量四种方式
+
+临界区(Critical Section)：临界区：通过对多线程的串行化来访问公共资源或一段代码，速度快，适合控制数据访问。在任意时刻只允许一个线程对共享资源进行访问，如果有多个线程试图访问公共资源，那么在有一个线程进入后，其他试图访
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/23/actor/#more" rel="contents">
+              <a class="btn" href="/2018/04/12/C-Thread-Sync/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -676,7 +681,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/22/thread-process/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/managed-code-unmanaged-code/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -696,7 +701,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/22/thread-process/" class="post-title-link" itemprop="url">简单介绍多进程和多线程服务器</a>
+                <a href="/2018/04/11/managed-code-unmanaged-code/" class="post-title-link" itemprop="url">托管代码和非托管代码</a>
               
             
           </h2>
@@ -727,8 +732,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/22/thread-process/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/22/thread-process/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/managed-code-unmanaged-code/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/managed-code-unmanaged-code/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -759,13 +764,16 @@
         
           
             <p>
-              首先贴下多进程单线程和单进程多线程的特点：多进程：有独立的地址空间，进程之间不共享内存和变量，但可以通过共享内存实现，每个进程只有一个线程，一般用于单机系统开发。多线程：在同一个进程下所有线程可以共享内存和变量。而共同点是，同开辟的进程数/线程数多余系统cpu核数时，无法继续提供应用的性能。而多线程
+              托管代码是-Microsoft的中间语言(IL)，他主要作用是在.Net FRAMEWORK的公共语言运行库(CLR)执行代码前去编译源代码，也就是说托管代码充当着翻译的作用，源代码在运行时分为两个阶段：
+
+源代码编译为托管代码，(所以源代码可以有很多种，如VB,C#,J#)
+托管代码编译为Micr
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/22/thread-process/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/managed-code-unmanaged-code/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -825,7 +833,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/21/JVM-heap/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/AssetBundle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -845,7 +853,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/21/JVM-heap/" class="post-title-link" itemprop="url">JVM的新生代、老年代、MinorGC、MajorGC</a>
+                <a href="/2018/04/11/AssetBundle/" class="post-title-link" itemprop="url">Unity加载和内存管理</a>
               
             
           </h2>
@@ -876,8 +884,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/21/JVM-heap/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM-heap/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/AssetBundle/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/AssetBundle/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -908,164 +916,14 @@
         
           
             <p>
-              JVM中的堆，一般分为三大部分：新生代、老年代、永久代：一、新生代主要时用来存放新生的对象。一般占据堆的1/3空间。由于频繁创建对象，所以新生代会频繁发MinorGC进行垃圾回收。新生代又分为Eden区、ServivorFrom、ServivorTo三个区。
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/03/21/JVM-heap/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/21/JVM/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/03/21/JVM/" class="post-title-link" itemprop="url">JVM初探：内存分配、GC原理与垃圾收集器</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/21/JVM/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/JVM/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              JVM内存的分配与回收大致可分为如下4个步骤：何时分配-》怎样分配-》何时回收-》怎样回收，除了在概念上可简单认为new时分配外，我们着重介绍后面三个步骤
-1.怎样分配-》JVM内存分配策略对象内存主要分配在Eden区，如果启用了本地线程分配缓存，则有限在TLAB上分配，少数情况能会直接分配在老年代
+              Unity有两种动态加载机制：Resources.Load和AssetBundle，二者本质并无区别。Resources.Load就是从一个缺省打进程程序包的AssetBundle(Resourece)里加载资源，而一般AssetBundle文件需要你自己创建，运行时加载。
+AssetBundle加
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/21/JVM/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/AssetBundle/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1125,7 +983,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/21/String-StringBuffer-StringBuilder/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/Unity-Note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1145,7 +1003,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/21/String-StringBuffer-StringBuilder/" class="post-title-link" itemprop="url">String-StringBuffer-StringBuilder</a>
+                <a href="/2018/04/11/Unity-Note/" class="post-title-link" itemprop="url">Unity3D笔记</a>
               
             
           </h2>
@@ -1176,8 +1034,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/21/String-StringBuffer-StringBuilder/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/21/String-StringBuffer-StringBuilder/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/Unity-Note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/Unity-Note/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1208,13 +1066,14 @@
         
           
             <p>
-              JAVAString 字符串常量StringBuffer 字符串变量（线程安全）StringBuilder 字符串变量（非线程安全）String类型和StringBuffer类型的主要性能区别其实在于String是不可变的对象，因此每次对String类型进行改变的时候其实都等同于生成了一个新的Str
+              在Update中使用Time.deltaTime，获取到的是这一帧的时间，如果游戏卡，帧率低，那这个值就大。如果游戏流畅，帧率高，这个值就小，Time.deltaTime=1.0f/帧率
+1、MonoBehaviour.Update 更新渲染帧当MonoBehaviour启用时，其Update在每一
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/21/String-StringBuffer-StringBuilder/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/Unity-Note/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1274,7 +1133,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/19/Unity-Lua-2/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/constraint/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1294,7 +1153,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/19/Unity-Lua-2/" class="post-title-link" itemprop="url">Unity手游开发-使用Lua来开发大型游戏（下）</a>
+                <a href="/2018/04/11/constraint/" class="post-title-link" itemprop="url">约束</a>
               
             
           </h2>
@@ -1325,8 +1184,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/19/Unity-Lua-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-2/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/constraint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/constraint/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1357,13 +1216,34 @@
         
           
             <p>
-              基本原理Hotfix的基本原理依然是基于动态语言的Reload功能，更加准确的说是Function Reload。下图简单描述了整个Hotfix的流程：更加具体地可以描述为：1.程序发现要修复的bug，编写特殊的Hotfix代码进行修复，测试通过后上传svn服务器；2.通过发布指令，将svn上更新后
+              
+
+
+
+
+
+
+
+
+
+T:struct
+类型参数必须是值类型。可以指定除Nullable以外的任何值类型。
+
+
+T:class
+类型参数必须是引用类型，包括任何类、接口、委托或数组类型。
+
+
+T:new()
+类型参数必须具有无参数的公共构造函数。当与其他约束一起使用时，new()约束必须最后指定。
+
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/19/Unity-Lua-2/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/constraint/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1423,7 +1303,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/19/markdown/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/23-Design-Patterns/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1443,7 +1323,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/19/markdown/" class="post-title-link" itemprop="url">markdown</a>
+                <a href="/2018/04/11/23-Design-Patterns/" class="post-title-link" itemprop="url">23种设计模式</a>
               
             
           </h2>
@@ -1474,8 +1354,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/19/markdown/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/markdown/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/23-Design-Patterns/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/23-Design-Patterns/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1506,166 +1386,13 @@
         
           
             <p>
-              
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/03/19/markdown/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/19/Unity-Lua-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/03/19/Unity-Lua-1/" class="post-title-link" itemprop="url">Unity-Lua</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/19/Unity-Lua-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/19/Unity-Lua-1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              逻辑使用脚本来做的好处：
-
-使用脚本语言的动态特性，客户端可以做Hotfix,服务器可以做Refresh，无论在运营还是开发期这一特性都很有用；
-脚本语言在虚拟机运行，有效控制崩溃率
-上手难度低缺点是运行效率低，但是之前看的LuaJit的效率只是略低于c（有待验证),动态语言容易出一些运行时错误（一
+              设计模式分为三大类：创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。结构性模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/19/Unity-Lua-1/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/23-Design-Patterns/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1725,7 +1452,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/03/18/XCAAFS/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/11/Interface/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content>
@@ -1745,7 +1472,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/03/18/XCAAFS/" class="post-title-link" itemprop="url">XCAAFS</a>
+                <a href="/2018/04/11/Interface/" class="post-title-link" itemprop="url">面试</a>
               
             
           </h2>
@@ -1776,8 +1503,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2018/03/18/XCAAFS/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/03/18/XCAAFS/" itemprop="commentCount"></span>
+                <a href="/2018/04/11/Interface/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/11/Interface/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1808,14 +1535,313 @@
         
           
             <p>
-              负载均衡服务器，应用在登录模块上，开新服的时候入口流量会增大，一段时间以后流量会递减或者趋于平缓，市面上已经有了成熟的解决方案了。一般最常用，最简单的也是基于DNS的负载均衡系统了
-
-              
+              接口(Interface)是一种规划，为你定义了一系列的规则和任务，但不去实现它类和结构体可以继承多个接口抽象类表示该类中可能已经有一些的具体定义生成的库在这里：
+Temp\StagingArea\libs\armeabi-v7a\libil2cpp.so
+符号表在这里，需要把扩展名弄成.so，才能
+              ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2018/03/18/XCAAFS/#more" rel="contents">
+              <a class="btn" href="/2018/04/11/Interface/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/10/unity-nature-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/04/10/unity-nature-review/" class="post-title-link" itemprop="url">unity-nature-review</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/04/10/unity-nature-review/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/10/unity-nature-review/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              是否有多维子材质：多维子材质材质测试，三个子材质，50个物体，使用多维子材质12帧，330个dc，343面。拆开之后20帧，154dc，134面。多维子材质Unity无法动态合并。叠加模式贴图，可以不用Alpha通道特效粒子贴图是否合并是否有些粒子能使用序列帧，不过和视角有关，去掉alpha贴图合并
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/10/unity-nature-review/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2018/04/02/Lua-5-1-refer-manual/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content>
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content>
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/04/02/Lua-5-1-refer-manual/" class="post-title-link" itemprop="url">Lua refer manual</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/04/02/Lua-5-1-refer-manual/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/04/02/Lua-5-1-refer-manual/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C 
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/04/02/Lua-5-1-refer-manual/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1864,7 +1890,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/28/">28</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1906,7 +1932,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1973,7 +1999,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2128,7 +2166,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

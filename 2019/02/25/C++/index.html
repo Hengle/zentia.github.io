@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="虚函数 对于一个class，产生一堆指向virtual functions的指针，虚函数表指针通常放在对象实例的最前面的位置。编译报错的时候没有vtable，表示该纯虚函数没有实现。 每一个对象添加一个指针，指向相关的virtual table。这个指针被称作虚函数表指针。  C/C++中static关键字作用总结先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-29T01:57:14.921Z">
+<meta property="og:updated_time" content="2019-05-11T03:16:42.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++">
 <meta name="twitter:description" content="虚函数 对于一个class，产生一堆指向virtual functions的指针，虚函数表指针通常放在对象实例的最前面的位置。编译报错的时候没有vtable，表示该纯虚函数没有实现。 每一个对象添加一个指针，指向相关的virtual table。这个指针被称作虚函数表指针。  C/C++中static关键字作用总结先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）">
@@ -571,6 +571,14 @@
 </ul>
 </li>
 </ul>
+<h1 id="头文件搜索目录"><a href="#头文件搜索目录" class="headerlink" title="头文件搜索目录"></a>头文件搜索目录</h1><pre><code>#include &quot;headfile.h&quot;
+</code></pre><p>搜索顺序为：</p>
+<ol>
+<li>当前目录</li>
+<li>-I指定目录</li>
+<li>gcc的环境变量CPLUS_INCLUDE_PATH（C程序使用的是C_INCLUDE_PATH）</li>
+<li>gcc内定目录<br>/usr/include<br>/usr/local/include<br>/usr/lib/gcc/x86_64-redhat-linux/4.1.1/include</li>
+</ol>
 
       
     </div>
@@ -692,7 +700,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">255</span>
+                    <span class="site-state-item-count">273</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -759,7 +767,19 @@
                     
                       
                     
-                    <span class="site-state-item-count">27</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -914,7 +934,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">71</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">78</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -950,7 +986,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚函数"><span class="nav-number">1.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-C-中static关键字作用总结"><span class="nav-number">2.</span> <span class="nav-text">C/C++中static关键字作用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）"><span class="nav-number">2.1.</span> <span class="nav-text">先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第二个作用是保持内容的持久。（static变量中的记忆功能和全局生存期）"><span class="nav-number">2.2.</span> <span class="nav-text">static的第二个作用是保持内容的持久。（static变量中的记忆功能和全局生存期）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第三个作用是默认初始化为0（static变量）"><span class="nav-number">2.3.</span> <span class="nav-text">static的第三个作用是默认初始化为0（static变量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第四个作用：C-中的类成员声明static（有些地方与以上作用重叠）"><span class="nav-number">2.4.</span> <span class="nav-text">static的第四个作用：C++中的类成员声明static（有些地方与以上作用重叠）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-智能指针"><span class="nav-number">3.</span> <span class="nav-text">C++智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shared-ptr"><span class="nav-number">3.1.</span> <span class="nav-text">shared_ptr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-ptr"><span class="nav-number">3.2.</span> <span class="nav-text">weak_ptr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unique-ptr"><span class="nav-number">3.3.</span> <span class="nav-text">unique_ptr</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚函数-1"><span class="nav-number">4.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-C-内存对齐"><span class="nav-number">5.</span> <span class="nav-text">C/C++内存对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内存对齐"><span class="nav-number">5.1.</span> <span class="nav-text">什么是内存对齐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#inline"><span class="nav-number">6.</span> <span class="nav-text">inline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内联函数？"><span class="nav-number">6.1.</span> <span class="nav-text">什么是内联函数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联函数的优缺点："><span class="nav-number">6.2.</span> <span class="nav-text">内联函数的优缺点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">6.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口（抽象类）"><span class="nav-number">7.</span> <span class="nav-text">接口（抽象类）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视C-为一个语言联邦"><span class="nav-number">8.</span> <span class="nav-text">视C++为一个语言联邦</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尽量用const，enum，inline替换-define"><span class="nav-number">9.</span> <span class="nav-text">尽量用const，enum，inline替换#define</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尽可能使用const"><span class="nav-number">10.</span> <span class="nav-text">尽可能使用const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#确定对象使用前被初始化"><span class="nav-number">11.</span> <span class="nav-text">确定对象使用前被初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造、析构、赋值运算"><span class="nav-number">12.</span> <span class="nav-text">构造、析构、赋值运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#若不想使用编译器自动生成的函数，就该明确拒绝"><span class="nav-number">13.</span> <span class="nav-text">若不想使用编译器自动生成的函数，就该明确拒绝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态类型"><span class="nav-number">14.</span> <span class="nav-text">静态类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态类型"><span class="nav-number">15.</span> <span class="nav-text">动态类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态绑定与静态绑定"><span class="nav-number">16.</span> <span class="nav-text">动态绑定与静态绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为多态基类声明virtual析构函数"><span class="nav-number">17.</span> <span class="nav-text">为多态基类声明virtual析构函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制对象时勿忘其每个成分"><span class="nav-number">18.</span> <span class="nav-text">复制对象时勿忘其每个成分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源管理"><span class="nav-number">19.</span> <span class="nav-text">资源管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以对象管理资源"><span class="nav-number">19.1.</span> <span class="nav-text">以对象管理资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在资源管理类小心copy行为"><span class="nav-number">19.2.</span> <span class="nav-text">在资源管理类小心copy行为</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#虚函数"><span class="nav-number">1.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-C-中static关键字作用总结"><span class="nav-number">2.</span> <span class="nav-text">C/C++中static关键字作用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）"><span class="nav-number">2.1.</span> <span class="nav-text">先来介绍它的第一条也是最重要的一条：隐藏。（static函数，static变量均可）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第二个作用是保持内容的持久。（static变量中的记忆功能和全局生存期）"><span class="nav-number">2.2.</span> <span class="nav-text">static的第二个作用是保持内容的持久。（static变量中的记忆功能和全局生存期）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第三个作用是默认初始化为0（static变量）"><span class="nav-number">2.3.</span> <span class="nav-text">static的第三个作用是默认初始化为0（static变量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static的第四个作用：C-中的类成员声明static（有些地方与以上作用重叠）"><span class="nav-number">2.4.</span> <span class="nav-text">static的第四个作用：C++中的类成员声明static（有些地方与以上作用重叠）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-智能指针"><span class="nav-number">3.</span> <span class="nav-text">C++智能指针</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#shared-ptr"><span class="nav-number">3.1.</span> <span class="nav-text">shared_ptr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-ptr"><span class="nav-number">3.2.</span> <span class="nav-text">weak_ptr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unique-ptr"><span class="nav-number">3.3.</span> <span class="nav-text">unique_ptr</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚函数-1"><span class="nav-number">4.</span> <span class="nav-text">虚函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#C-C-内存对齐"><span class="nav-number">5.</span> <span class="nav-text">C/C++内存对齐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内存对齐"><span class="nav-number">5.1.</span> <span class="nav-text">什么是内存对齐</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#inline"><span class="nav-number">6.</span> <span class="nav-text">inline</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内联函数？"><span class="nav-number">6.1.</span> <span class="nav-text">什么是内联函数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内联函数的优缺点："><span class="nav-number">6.2.</span> <span class="nav-text">内联函数的优缺点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">6.3.</span> <span class="nav-text">注意事项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接口（抽象类）"><span class="nav-number">7.</span> <span class="nav-text">接口（抽象类）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#视C-为一个语言联邦"><span class="nav-number">8.</span> <span class="nav-text">视C++为一个语言联邦</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尽量用const，enum，inline替换-define"><span class="nav-number">9.</span> <span class="nav-text">尽量用const，enum，inline替换#define</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#尽可能使用const"><span class="nav-number">10.</span> <span class="nav-text">尽可能使用const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#确定对象使用前被初始化"><span class="nav-number">11.</span> <span class="nav-text">确定对象使用前被初始化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#构造、析构、赋值运算"><span class="nav-number">12.</span> <span class="nav-text">构造、析构、赋值运算</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#若不想使用编译器自动生成的函数，就该明确拒绝"><span class="nav-number">13.</span> <span class="nav-text">若不想使用编译器自动生成的函数，就该明确拒绝</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态类型"><span class="nav-number">14.</span> <span class="nav-text">静态类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态类型"><span class="nav-number">15.</span> <span class="nav-text">动态类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态绑定与静态绑定"><span class="nav-number">16.</span> <span class="nav-text">动态绑定与静态绑定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为多态基类声明virtual析构函数"><span class="nav-number">17.</span> <span class="nav-text">为多态基类声明virtual析构函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复制对象时勿忘其每个成分"><span class="nav-number">18.</span> <span class="nav-text">复制对象时勿忘其每个成分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#资源管理"><span class="nav-number">19.</span> <span class="nav-text">资源管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以对象管理资源"><span class="nav-number">19.1.</span> <span class="nav-text">以对象管理资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在资源管理类小心copy行为"><span class="nav-number">19.2.</span> <span class="nav-text">在资源管理类小心copy行为</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#头文件搜索目录"><span class="nav-number">20.</span> <span class="nav-text">头文件搜索目录</span></a></li></ol></div>
             
 
           </div>

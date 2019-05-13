@@ -1,6 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zentia.github.io/2017/10/12/hexo/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/13/artist-3-face-5-major/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/13/artist/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/13/unity-computeshader/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/03/30/resume/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/11/fouriertransform/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/13/fiction-2/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/12/snell/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/12/fresnelreflection/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/10/22/Unity-Shader-IntrodutionToTopic-2/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/12/opengles/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/03/09/MathJax/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/12/fiction-1/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/06/09/BRDF/</loc>
+    <lastmod>2019-05-13</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/02/25/C++/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/10/15/Unity-Shader-Manual/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/11/zbrush/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/11/3dmax/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/11/vspathmacro/</loc>
+    <lastmod>2019-05-11</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/marshal/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/csharpstructbytealignment/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/04/02/CSharp/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/quaternion/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/interlocked/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/04/memory-release/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/understanding-garbage-colllection/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/jobsystemnativecontainer/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/EventSource/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/24/Photon-TrueSync/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/10/csharp-thread/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/05/09/autoresetevent/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/10/new-delete-malloc-free/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/04/12/C-Thread-Sync/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2018/03/22/thread-process/</loc>
+    <lastmod>2019-05-10</lastmod>
+  </url>  <url>
     <loc>http://zentia.github.io/2019/05/10/loadfromfileasyncandyield/</loc>
     <lastmod>2019-05-10</lastmod>
   </url>  <url>
@@ -10,22 +112,7 @@
     <loc>http://zentia.github.io/2019/05/09/edgedetection/</loc>
     <lastmod>2019-05-10</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2019/04/24/Photon-TrueSync/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/05/09/interlocked/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2018/04/02/CSharp/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/05/09/autoresetevent/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2019/05/09/manualresetevent/</loc>
-    <lastmod>2019-05-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/05/09/understanding-garbage-colllection/</loc>
     <lastmod>2019-05-09</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/03/HideFlags/</loc>
@@ -46,22 +133,19 @@
     <loc>http://zentia.github.io/2019/05/08/decompiler/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2019/03/09/MathJax/</loc>
+    <loc>http://zentia.github.io/2019/04/30/Unity-Shadow/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/10/diffuse/</loc>
-    <lastmod>2019-05-08</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/04/27/commandbuffer/</loc>
-    <lastmod>2019-05-08</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/04/30/Unity-Shadow/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/11/unity-render-optimize/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/21/draw-texture/</loc>
+    <lastmod>2019-05-08</lastmod>
+  </url>  <url>
+    <loc>http://zentia.github.io/2019/04/27/commandbuffer/</loc>
     <lastmod>2019-05-08</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/28/Non-photorealistic-rendering/</loc>
@@ -91,9 +175,6 @@
     <loc>http://zentia.github.io/2019/04/30/spine-IK/</loc>
     <lastmod>2019-04-30</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2017/10/12/hexo/</loc>
-    <lastmod>2019-04-29</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2017/10/05/2d-outline/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
@@ -104,9 +185,6 @@
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2018/07/09/arithmetic/</loc>
-    <lastmod>2019-04-29</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/02/25/C++/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2017/10/13/git-clone/</loc>
@@ -145,9 +223,6 @@
     <loc>http://zentia.github.io/2018/04/11/Unity-Note/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2018/10/15/Unity-Shader-Manual/</loc>
-    <lastmod>2019-04-29</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2018/07/01/Unity3D_Game_Design/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
@@ -179,9 +254,6 @@
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2018/10/20/Unity-Shader-IntroductionToTopic/</loc>
-    <lastmod>2019-04-29</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2018/10/22/Unity-Shader-IntrodutionToTopic-2/</loc>
     <lastmod>2019-04-29</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2018/03/21/JVM-heap/</loc>
@@ -287,9 +359,6 @@
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2017/10/24/time/</loc>
-    <lastmod>2019-04-17</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2018/03/22/thread-process/</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2017/10/24/systemctl/</loc>
@@ -556,9 +625,6 @@
     <loc>http://zentia.github.io/2018/04/21/CG-Input-Output-And-Semantic-Bind/</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2018/04/12/C-Thread-Sync/</loc>
-    <lastmod>2019-04-17</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2018/04/17/C-0/</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
@@ -566,9 +632,6 @@
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/03/05/Batch/</loc>
-    <lastmod>2019-04-17</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2018/06/09/BRDF/</loc>
     <lastmod>2019-04-17</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2018/04/11/AssetBundle/</loc>
@@ -646,9 +709,6 @@
     <loc>http://zentia.github.io/2019/04/02/cplusplus-stack-heap/</loc>
     <lastmod>2019-04-10</lastmod>
   </url>  <url>
-    <loc>http://zentia.github.io/2019/04/10/new-delete-malloc-free/</loc>
-    <lastmod>2019-04-10</lastmod>
-  </url>  <url>
     <loc>http://zentia.github.io/2019/04/09/lua-hash/</loc>
     <lastmod>2019-04-10</lastmod>
   </url>  <url>
@@ -659,9 +719,6 @@
     <lastmod>2019-04-09</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/04/09/hash/</loc>
-    <lastmod>2019-04-09</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/03/30/resume/</loc>
     <lastmod>2019-04-09</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/03/29/point-polygon/</loc>
@@ -690,9 +747,6 @@
   </url>  <url>
     <loc>http://zentia.github.io/2019/03/22/Unity-Path/</loc>
     <lastmod>2019-04-07</lastmod>
-  </url>  <url>
-    <loc>http://zentia.github.io/2019/04/04/memory-release/</loc>
-    <lastmod>2019-04-04</lastmod>
   </url>  <url>
     <loc>http://zentia.github.io/2019/03/28/NGUI/</loc>
     <lastmod>2019-04-03</lastmod>
