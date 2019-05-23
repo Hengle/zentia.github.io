@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="Unity有两种动态加载机制：Resources.Load和AssetBundle，二者本质并无区别。Resources.Load就是从一个缺省打进程程序包的AssetBundle(Resourece)里加载资源，而一般AssetBundle文件需要你自己创建，运行时加载。 AssetBundle加载基础通过AssetBunlde加载资源，分为两步，第一步是获取AssetBundle对象，第二步是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-17T01:42:43.341Z">
+<meta property="og:updated_time" content="2019-05-22T05:18:52.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity加载和内存管理">
 <meta name="twitter:description" content="Unity有两种动态加载机制：Resources.Load和AssetBundle，二者本质并无区别。Resources.Load就是从一个缺省打进程程序包的AssetBundle(Resourece)里加载资源，而一般AssetBundle文件需要你自己创建，运行时加载。 AssetBundle加载基础通过AssetBunlde加载资源，分为两步，第一步是获取AssetBundle对象，第二步是">
@@ -492,14 +492,18 @@ public static AssetBundle LoadFromFileAsync(string path);
 public AssetBundleRequest LoadAllAssetsAsync();
 </code></pre><p>一次性加载Bundle中给定资源类型的所有资源</p>
 <pre><code>public AssetBundleRequest LoadAsync(string name, Type type)
-</code></pre><h3 id="2-3-AssetBundle的压缩类型"><a href="#2-3-AssetBundle的压缩类型" class="headerlink" title="2.3 AssetBundle的压缩类型"></a>2.3 AssetBundle的压缩类型</h3><p>Unity3D引擎为我们提供了三种压缩策略来处理AssetBundle的压缩，即：</p>
+</code></pre><h3 id="AssetBundle的压缩类型"><a href="#AssetBundle的压缩类型" class="headerlink" title="AssetBundle的压缩类型"></a>AssetBundle的压缩类型</h3><p>Unity3D引擎为我们提供了三种压缩策略来处理AssetBundle的压缩，即：</p>
 <ul>
 <li>LZMA格式</li>
 <li>LZ4格式</li>
 <li>不压缩</li>
 </ul>
-<h4 id="LAMZ格式"><a href="#LAMZ格式" class="headerlink" title="LAMZ格式"></a>LAMZ格式</h4><p>在默认情况下，打包生成的AssetBundle都会被压缩。在U3D中，AssetBundle的标准压缩格式便是LZMA（LZMA是一种序列化流文件），因此在默认情况下，打出的AssetBundle包处于LZMA格式的压缩状态，</p>
-<h4 id="LZ4格式"><a href="#LZ4格式" class="headerlink" title="LZ4格式"></a>LZ4格式</h4><p>Unity 5.3之后的版本增加了LZ4格式压缩，由于LZ4的压缩比一般，因此经过压缩之后的AssetBundle包体的体积较大（该算法基于chunk）。但是，使用LZ4格式的好处在于解压缩的时间相对要短。</p>
+<blockquote>
+<p>LZ4是块压缩(chunk-based)，LZMA是流压缩(stream-based)。流压缩(LZMA)在处理整个数据块时使用同一个字典，它提供了最大可能的压缩率但只支持顺序读取。块压缩(LZ4)指的是原始数据被分成大小相同的子块并单端压缩。如果你想要实时解压/随机读取开销小，则应该使用这种。</p>
+<p>LZMA压缩方式的优点在于使用同一个字典压缩率较高，但只能顺序读取意味着加载任意一个资源时，都需要将整个AssetBundle解压，造成卡顿和额外内存占用。LZ4基于快压缩率较低（测试LZMA换LZ4：86.9M-&gt;108M），但只需解压需要块即可，不会有大的卡顿和额外内存占用。</p>
+</blockquote>
+<h4 id="LZMA-stream-based"><a href="#LZMA-stream-based" class="headerlink" title="LZMA(stream-based)"></a>LZMA(stream-based)</h4><p>在默认情况下，打包生成的AssetBundle都会被压缩。在U3D中，AssetBundle的标准压缩格式便是LZMA（LZMA是一种序列化流文件），因此在默认情况下，打出的AssetBundle包处于LZMA格式的压缩状态。</p>
+<h4 id="LZ4-chunk-based"><a href="#LZ4-chunk-based" class="headerlink" title="LZ4(chunk-based)"></a>LZ4(chunk-based)</h4><p>Unity 5.3之后的版本增加了LZ4格式压缩，是一种块压缩方式，由于LZ4的压缩比一般，因此经过压缩之后的AssetBundle包体的体积较大（该算法基于chunk）。但是，使用LZ4格式的好处在于解压缩的时间相对要短。</p>
 <p>使用LZ4格式压缩，需要打包设置</p>
 <pre><code>BuildPipeline.BuildAssetBundles(Application.streamingAssetPath, BuildAssetBundleOptions.ChunkBasedCompression);
 </code></pre><h4 id="不压缩"><a href="#不压缩" class="headerlink" title="不压缩"></a>不压缩</h4><p>当然，我们也可以不对AssetBundle进行压缩。没有经过压缩的胞体系最大，但是访问速度最快。</p>
@@ -517,10 +521,9 @@ public AssetBundleRequest LoadAllAssetsAsync();
 </ol>
 <p>对于WWW对象，可以使用www=null或www.dispose。<br>这两者是由区别的，www=null不会立即释放内存，而是系统自动回收机制启动时回收。www.dispose则会立即调用系统的回收机制来释放内存。当WWW对象被释放后，其对于Web Stream数据的引用计数也会相应减1。</p>
 <p>对于Web Stream数据，它所占用的内存会在其引用计数为0时，被系统自动回收。例如：当上图中的AssetBundle对象和WWW对象被释放后，Web Stream数据所占内存也会被系统自动回收。</p>
-<h1 id="六-AssetBundle依赖加载"><a href="#六-AssetBundle依赖加载" class="headerlink" title="六 AssetBundle依赖加载"></a>六 AssetBundle依赖加载</h1><p>如果一个或者多个UnityEngine.Objects引用了其他AssetBundle中的UnityEngine.Object，那么AssetBundle之间就产生了依赖关系了。如果UnityEngine.ObjectA所引用的UnityEngine.ObjectB不是其他的AssetBundle中的，那么依赖就不会产生。<br>如果产生依赖，被依赖对象(UnityEngine.ObjectB)将被拷贝进你创建的AssetBundle(指包含UnityEngine.ObjectA的AssetBundle)</p>
-<p>更进一步，如果有多个对象(UnityEngine.ObjectA1、UnityEngine.ObjectA2、UnityEngine.ObjectA3…)引用了同一个被依赖对象(UnityEngine.ObjectB)，那么被依赖对象将被拷贝多份，打包进各个对象各自的AssetBundle。</p>
+<h1 id="AssetBundle依赖加载"><a href="#AssetBundle依赖加载" class="headerlink" title="AssetBundle依赖加载"></a>AssetBundle依赖加载</h1><p>如果一个或者多个UnityEngine.Objects引用了其他AssetBundle中的UnityEngine.Object，那么AssetBundle之间就产生了依赖关系了。如果UnityEngine.ObjectA所引用的UnityEngine.ObjectB不是其他的AssetBundle中的，那么依赖就不会产生。<br>如果产生依赖，被依赖对象(UnityEngine.ObjectB)将被拷贝进你创建的AssetBundle(指包含UnityEngine.ObjectA的AssetBundle)</p>
+<p>更近一步，如果有多个对象(UnityEngine.ObjectA1、UnityEngine.ObjectA2、UnityEngine.ObjectA3…)引用了同一个被依赖对象(UnityEngine.ObjectB)，那么被依赖对象将被拷贝多份，打包进各个对象各自的AssetBundle。</p>
 <p>如果一个AssetBundle存在依赖性，那么要注意的是，那些包含了被依赖对象的AssetBundles，需要在你想要实例化的对象的加载之前加载。Unity不会自动帮你加载这些依赖。</p>
-<p>想想看下面的例子，Bundle1中的一个材质(Material)引用了Bundle2中的一个纹理(Texture)<br>在这个例子中，在从Bundle1中加载材质前，你需要先将Bundle2加载到内存中。你按照声明顺序加载Bundle1和Bundle2并不重要，重要的是，想从Bundle1中加载材质前，你需要先加载Bundle2。</p>
 
       
     </div>
@@ -642,7 +645,7 @@ public AssetBundleRequest LoadAllAssetsAsync();
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">273</span>
+                    <span class="site-state-item-count">278</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -721,7 +724,13 @@ public AssetBundleRequest LoadAllAssetsAsync();
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -892,7 +901,15 @@ public AssetBundleRequest LoadAllAssetsAsync();
                     
                       
                     
-                    <span class="site-state-item-count">78</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">82</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -928,7 +945,7 @@ public AssetBundleRequest LoadAllAssetsAsync();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AssetBundle加载基础"><span class="nav-number">1.</span> <span class="nav-text">AssetBundle加载基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步，获取AssetBundle对象常用地API"><span class="nav-number">1.1.</span> <span class="nav-text">第一步，获取AssetBundle对象常用地API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一，先获取WWW对象，再通过WWW-assetBundle获取AssetBundle对象："><span class="nav-number">1.1.1.</span> <span class="nav-text">方式一，先获取WWW对象，再通过WWW.assetBundle获取AssetBundle对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二，直接获取AssetBundle"><span class="nav-number">1.1.2.</span> <span class="nav-text">方式二，直接获取AssetBundle:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步，从AssetBundle加载资源的常用API"><span class="nav-number">1.2.</span> <span class="nav-text">第二步，从AssetBundle加载资源的常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-AssetBundle的压缩类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.3 AssetBundle的压缩类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LAMZ格式"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">LAMZ格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LZ4格式"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">LZ4格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不压缩"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">不压缩</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-AssetBundle原理分析"><span class="nav-number">2.</span> <span class="nav-text">五 AssetBundle原理分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-AssetBundle及Assets的卸载"><span class="nav-number">2.1.</span> <span class="nav-text">5.2 AssetBundle及Assets的卸载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六-AssetBundle依赖加载"><span class="nav-number">3.</span> <span class="nav-text">六 AssetBundle依赖加载</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AssetBundle加载基础"><span class="nav-number">1.</span> <span class="nav-text">AssetBundle加载基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步，获取AssetBundle对象常用地API"><span class="nav-number">1.1.</span> <span class="nav-text">第一步，获取AssetBundle对象常用地API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方式一，先获取WWW对象，再通过WWW-assetBundle获取AssetBundle对象："><span class="nav-number">1.1.1.</span> <span class="nav-text">方式一，先获取WWW对象，再通过WWW.assetBundle获取AssetBundle对象：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方式二，直接获取AssetBundle"><span class="nav-number">1.1.2.</span> <span class="nav-text">方式二，直接获取AssetBundle:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步，从AssetBundle加载资源的常用API"><span class="nav-number">1.2.</span> <span class="nav-text">第二步，从AssetBundle加载资源的常用API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AssetBundle的压缩类型"><span class="nav-number">1.2.1.</span> <span class="nav-text">AssetBundle的压缩类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LZMA-stream-based"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">LZMA(stream-based)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LZ4-chunk-based"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">LZ4(chunk-based)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不压缩"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">不压缩</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五-AssetBundle原理分析"><span class="nav-number">2.</span> <span class="nav-text">五 AssetBundle原理分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-AssetBundle及Assets的卸载"><span class="nav-number">2.1.</span> <span class="nav-text">5.2 AssetBundle及Assets的卸载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AssetBundle依赖加载"><span class="nav-number">3.</span> <span class="nav-text">AssetBundle依赖加载</span></a></li></ol></div>
             
 
           </div>
