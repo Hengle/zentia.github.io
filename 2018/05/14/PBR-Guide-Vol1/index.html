@@ -115,7 +115,7 @@
     root: '/',
     scheme: 'Mist',
     version: '7.0.1',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -168,7 +168,7 @@
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/21.jpg">
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/22.jpg">
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/23.jpg">
-<meta property="og:updated_time" content="2019-05-22T14:11:47.993Z">
+<meta property="og:updated_time" content="2019-05-23T06:40:38.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【基于物理的渲染（PBR）白皮书】（一）开篇：PBR核心知识体系总结与概览">
 <meta name="twitter:description" content="光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们的工作是创作描述物体表面的材质。我们创作出的纹理与材质再虚拟世界中与光交互，对光线表现特效理解的越多">
@@ -624,7 +624,20 @@
 <p>关于Cook-Torrance BRDF，需要强调的两点注意事项：</p>
 <ul>
 <li>对于分母中的点击，仅仅避免负值时不够的，也必须避免零值。通常通过在常规的clamp或绝对值操作之后添加非常小的正值来完成。</li>
+<li><strong>Microfacet Cook-Torrance BRDF是实践中使用最广泛的模型，实际上也是人们可以想到的最简单的微平面模型。它仅对几何光学系统中的单层为表面上的单个散射进行建模，没有考虑多次散射，分层材质，以及衍射。Microfacet模型，实际上还有很长的路要走。</strong></li>
 </ul>
+<p>下面对Microfacet Cook-Torrance BRDF中的D、F、G项分别进行简单说明。</p>
+<h2 id="5-2-Specular-D"><a href="#5-2-Specular-D" class="headerlink" title="5.2 Specular D"></a>5.2 Specular D</h2><p>法线分布函数（Normal Distribution Function, NDF）D的常见模型可以总结如下：</p>
+<ul>
+<li>Beckmann[1963]</li>
+<li>Blinn-Phong[1977]</li>
+<li>GGX[2007]/Trowbridge-Reitz[1975]</li>
+<li>Generalized-Trowbridge-Reitz(GTR)[2012]</li>
+<li>Anisotropic Beckmann[2012]</li>
+<li>Anisotropic GGX[20115]</li>
+</ul>
+<p>其中，业界较为主流的法线分布函数是GGX（Trowbridge-Reitz），因为具有更好的高光长尾：</p>
+<p>$D_{GGX}$</p>
 
       
     </div>
@@ -746,7 +759,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">278</span>
+                    <span class="site-state-item-count">276</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1046,7 +1059,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#光与物质"><span class="nav-number">1.</span> <span class="nav-text">光与物质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线"><span class="nav-number">2.</span> <span class="nav-text">光线</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#系列文章前言"><span class="nav-number"></span> <span class="nav-text">系列文章前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR知识体系概览"><span class="nav-number"></span> <span class="nav-text">PBR知识体系概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR核心理论与渲染原理"><span class="nav-number"></span> <span class="nav-text">PBR核心理论与渲染原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光与非光学平坦表面的交互原理"><span class="nav-number"></span> <span class="nav-text">光与非光学平坦表面的交互原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漫反射和次表面散射本质相同"><span class="nav-number"></span> <span class="nav-text">漫反射和次表面散射本质相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、PBR的范畴（Scope-of-PBR）"><span class="nav-number"></span> <span class="nav-text">一、PBR的范畴（Scope of PBR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、渲染方程与BxDF"><span class="nav-number"></span> <span class="nav-text">二、渲染方程与BxDF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1渲染方程与反射方程"><span class="nav-number">1.</span> <span class="nav-text">2.1渲染方程与反射方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BxDF"><span class="nav-number"></span> <span class="nav-text">2.2 BxDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-BRDF的分类"><span class="nav-number"></span> <span class="nav-text">2.3 BRDF的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、迪士尼原则的BxDF（Disney-Principled-BxDF）"><span class="nav-number"></span> <span class="nav-text">三、迪士尼原则的BxDF（Disney Principled BxDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-迪士尼原则的BRDF（Disney-Principled-BRDF）"><span class="nav-number"></span> <span class="nav-text">3.1 迪士尼原则的BRDF（Disney Principled BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Disney-Principled-BRDF核心理念"><span class="nav-number">1.</span> <span class="nav-text">3.1.1 Disney Principled BRDF核心理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-Disney-Principled-BRDF参数"><span class="nav-number">2.</span> <span class="nav-text">3.1.2 Disney Principled BRDF参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-迪士尼原则的BSDF（Disney-Principled-BSDF）"><span class="nav-number"></span> <span class="nav-text">3.2 迪士尼原则的BSDF（Disney Principled BSDF）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、漫反射BRDF模型（Diffuse-BRDF）"><span class="nav-number"></span> <span class="nav-text">四、漫反射BRDF模型（Diffuse BRDF）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、镜面反射BRDF模型（Specular-BRDF）"><span class="nav-number"></span> <span class="nav-text">五、镜面反射BRDF模型（Specular BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-从物理现象到BRDF"><span class="nav-number"></span> <span class="nav-text">5.1 从物理现象到BRDF</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#光与物质"><span class="nav-number">1.</span> <span class="nav-text">光与物质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线"><span class="nav-number">2.</span> <span class="nav-text">光线</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#系列文章前言"><span class="nav-number"></span> <span class="nav-text">系列文章前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR知识体系概览"><span class="nav-number"></span> <span class="nav-text">PBR知识体系概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR核心理论与渲染原理"><span class="nav-number"></span> <span class="nav-text">PBR核心理论与渲染原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光与非光学平坦表面的交互原理"><span class="nav-number"></span> <span class="nav-text">光与非光学平坦表面的交互原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漫反射和次表面散射本质相同"><span class="nav-number"></span> <span class="nav-text">漫反射和次表面散射本质相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、PBR的范畴（Scope-of-PBR）"><span class="nav-number"></span> <span class="nav-text">一、PBR的范畴（Scope of PBR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、渲染方程与BxDF"><span class="nav-number"></span> <span class="nav-text">二、渲染方程与BxDF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1渲染方程与反射方程"><span class="nav-number">1.</span> <span class="nav-text">2.1渲染方程与反射方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BxDF"><span class="nav-number"></span> <span class="nav-text">2.2 BxDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-BRDF的分类"><span class="nav-number"></span> <span class="nav-text">2.3 BRDF的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、迪士尼原则的BxDF（Disney-Principled-BxDF）"><span class="nav-number"></span> <span class="nav-text">三、迪士尼原则的BxDF（Disney Principled BxDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-迪士尼原则的BRDF（Disney-Principled-BRDF）"><span class="nav-number"></span> <span class="nav-text">3.1 迪士尼原则的BRDF（Disney Principled BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Disney-Principled-BRDF核心理念"><span class="nav-number">1.</span> <span class="nav-text">3.1.1 Disney Principled BRDF核心理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-Disney-Principled-BRDF参数"><span class="nav-number">2.</span> <span class="nav-text">3.1.2 Disney Principled BRDF参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-迪士尼原则的BSDF（Disney-Principled-BSDF）"><span class="nav-number"></span> <span class="nav-text">3.2 迪士尼原则的BSDF（Disney Principled BSDF）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、漫反射BRDF模型（Diffuse-BRDF）"><span class="nav-number"></span> <span class="nav-text">四、漫反射BRDF模型（Diffuse BRDF）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、镜面反射BRDF模型（Specular-BRDF）"><span class="nav-number"></span> <span class="nav-text">五、镜面反射BRDF模型（Specular BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-从物理现象到BRDF"><span class="nav-number"></span> <span class="nav-text">5.1 从物理现象到BRDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Specular-D"><span class="nav-number"></span> <span class="nav-text">5.2 Specular D</span></a></li></ol></li></div>
             
 
           </div>
