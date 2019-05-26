@@ -138,7 +138,7 @@
 
 
   <meta name="description" content="光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们的工作是创作描述物体表面的材质。我们创作出的纹理与材质再虚拟世界中与光交互，对光线表现特效理解的越多">
-<meta name="keywords" content="PBR">
+<meta name="keywords" content="计算机图形学,游戏引擎,游戏开发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【基于物理的渲染（PBR）白皮书】（一）开篇：PBR核心知识体系总结与概览">
 <meta property="og:url" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/index.html">
@@ -168,7 +168,13 @@
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/21.jpg">
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/22.jpg">
 <meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/23.jpg">
-<meta property="og:updated_time" content="2019-05-23T06:40:38.557Z">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/24.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/25.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/26.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/26.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/27.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/05/14/PBR-Guide-Vol1/28.jpg">
+<meta property="og:updated_time" content="2019-05-26T12:13:03.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【基于物理的渲染（PBR）白皮书】（一）开篇：PBR核心知识体系总结与概览">
 <meta name="twitter:description" content="光与物质光与物质：基于物理的渲染与着色理论光是一种复杂的现象，它同时展现出波与粒子两种特性。于是，为了描述光的表现特性，人们建立了各种模型。作为材质艺术家，我们感兴趣的是光线模型（Light Ray Model）因为它描述了光与物质的交互作用。对我们来说，理解光线如何与物质表面交互非常重要，因为我们的工作是创作描述物体表面的材质。我们创作出的纹理与材质再虚拟世界中与光交互，对光线表现特效理解的越多">
@@ -637,7 +643,106 @@
 <li>Anisotropic GGX[20115]</li>
 </ul>
 <p>其中，业界较为主流的法线分布函数是GGX（Trowbridge-Reitz），因为具有更好的高光长尾：</p>
-<p>$D_{GGX}$</p>
+<font size="5">$D_{GGX} = {\alpha \over (\pi(n \cdot m)^2(\alpha^2 - 1) + 1)^2}$</font>
+
+<img src="/2018/05/14/PBR-Guide-Vol1/24.jpg">
+<p>另外，需要强调一点。<strong>Normal Distribution Function</strong>正确的翻译是法线分布函数，而不是正太分布函数。google翻译等翻译软件会将Normal Distribution Function翻译成正态分布函数，而不少中文资料就跟着翻译成正态分布函数，这是错误的。</p>
+<p>其实，一些参考文献会使用术语“法线分布（distribution of normals）”来避免与高斯正太分布(Gaussian normal distribution)混淆。</p>
+<h2 id="5-3-Specular-F"><a href="#5-3-Specular-F" class="headerlink" title="5.3 Specular F"></a>5.3 Specular F</h2><p>对于菲涅尔（Fresnel）项，业界方案一般都采用Schlick的Fresnel近似，因为计算成本低廉，而且精度足够：</p>
+<p>$F_{Schlick}(v,h)=F_0 + (1 - F_0)(1 - (v \cdot h))^5$</p>
+<p>菲涅尔项的常见模型可以总结如下：</p>
+<ul>
+<li>Cook-Torrance[1982]</li>
+<li>Schlick[1994]</li>
+<li>Gotanta[2014]</li>
+</ul>
+<h2 id="5-4-Specular-G"><a href="#5-4-Specular-G" class="headerlink" title="5.4 Specular G"></a>5.4 Specular G</h2><p>几何项G的常见模型可以总结如下：</p>
+<ul>
+<li>Smith[1967]</li>
+<li>Cook-Torrance[1982]</li>
+<li>Neumann[1999]</li>
+<li>Kelemen[2001]</li>
+<li>Implicit[2013]</li>
+</ul>
+<p>另外，Eric Heitz在[Heitz14]中展示了Smith几何阴影函数是正确且更准确的G项，并将其扩展为Smith联合遮蔽函数(Smith Joint Masking-Shadowing Function)，该函数具有四种形式：</p>
+<ul>
+<li>分离遮蔽阴影型（Separable Masking and Shadowing）</li>
+<li>高度相关遮蔽阴影型（Height-Correlated Masking and Shadowing）</li>
+<li>方向相关遮蔽阴影型（Direction-Correlated Masking and Shadowing）</li>
+<li>高度-方向相关遮蔽阴影型（Height-Direction-Correlated Masking and Shadowing）</li>
+</ul>
+<p>目前较为常用的是最为简单的形式，分离遮蔽阴影（Separable Masking and Shadowing Function）。</p>
+<p>该形式将几何项G分为两个独立的部分：光线方向（light）和视线方向（view），并对两者用相同的分布函数描述。根据这种思想，结合法线分布函数（NDF）与Smith几何阴影函数，于是有了以下新的Smith几何项：</p>
+<ul>
+<li>Smith-GGX</li>
+<li>Smith-Beckmann</li>
+<li>Smith-Schlick</li>
+<li>Schlick-Beckmann</li>
+<li>Schlick-GGx</li>
+</ul>
+<p>其中UE4的方案是上面列举中的”Schlick-GGX”，即基于Schlick近似，将K映射为$k = {\alpha \over 2}$，去匹配GGX Smith方程：</p>
+<p>$k = {\alpha \over 2}$<br>$\alpha = roughness^2$<br>$G_1(v)={(n\cdot v)\over {(n\cdot v)(1-k)+k}}$<br>$G(l,v,h)=G_1(l)G_1(v)$</p>
+<h1 id="六、基于物理的环境光照（Physically-Based-Environment-Lighting）"><a href="#六、基于物理的环境光照（Physically-Based-Environment-Lighting）" class="headerlink" title="六、基于物理的环境光照（Physically Based Environment Lighting）"></a>六、基于物理的环境光照（Physically Based Environment Lighting）</h1><p>有了直接光部分，我们也需要环境光。所以PBR核心知识体系的第六部分是基于物理的环境光照，一般大家也直接默认环境光照的技术方案是基于图像的光照（Image Based Lighting, IBL)。这也是真正让基于物理的渲染画质提升的主要贡献者。<br><img src="/2018/05/14/PBR-Guide-Vol1/25.jpg"><br>漫反射环境光照部分一般采用传统IBL中辉度环境映射（Irradiance Environment Mapping）技术，并不是基于物理的特有方案，这里暂不讨论。</p>
+<p>而基于物理的镜面反射（Specular）环境光照，业界中一般会采用基于图像的光照（IBL）的方案。要将基于物理的BRDF模型与基于图像的光照（IBL）一起使用，需要求解光照亮度积分（Radiance Integral），而求解光亮度积分通常会使用重要性采样（Importance Sample）。</p>
+<p>重要性采样（Importance Sample）即通过现有的一些已知条件（分布函数），想办法集中于被积函数分布可能性较高的区域（重要的区域）进行采样，进而可高效和准确的计算。</p>
+<h2 id="6-1-分解求和近似（Split-Sum-Approximation）"><a href="#6-1-分解求和近似（Split-Sum-Approximation）" class="headerlink" title="6.1 分解求和近似（Split Sum Approximation）"></a>6.1 分解求和近似（Split Sum Approximation）</h2><p>基于重要性采样的思路，将蒙特卡洛积分公式代入渲染方程可得：<br><img src="/2018/05/14/PBR-Guide-Vol1/26.jpg"></p>
+<p>$$</p>
+<h3 id="6-3-1-流派1：2D-LUT"><a href="#6-3-1-流派1：2D-LUT" class="headerlink" title="6.3.1 流派1：2D LUT"></a>6.3.1 流派1：2D LUT</h3><p>UE4在[Real Shading in Unreal Engine 4,2013]中提出，第二个求和项，使用Schlick近似后，$F_0$可以从积分中分出来：<br>$\int_\Omega{L_i(l)f(l,v)cos\theta_l\cdot dl} = F_0\int_\Omega{f(l,v)\over F(v,h)}(1-(1-v\cdot h)^5)cos\theta_ldl+\int_\Omega{f(l,v)\over F(v,h)}(1-v\cdot h)^5cos\theta_ldl$<br>上式留下了两个输入(Roughness和$cos\theta$v)和两个输出(缩放和向$F_0$的偏差(a scale and bias to $F_0$))，即把上述方程看成是$F_0 \cdot Scale + Offset$的形式。我们预先计算此函数的结果并将其存储在2D查找纹理(LUT,look-up texture)中。<br><img src="/2018/05/14/PBR-Guide-Vol1/26.jpg"><br>这张红绿色的贴图，输入roughtness、$cos\theta$，输出环境BRDF镜面反射的强度。是关于roughness、$cos\theta$与环境BRDF镜面反射强度的固有映射关系。可以离线预计算。<br>具体的取出方式为：</p>
+<p><font size="5">${1\over N}\sum_{k=1}^N {f(l_k,v)cos\theta_{l_k}\over p(l_k,v)}=LUT.r * F_0 + LUT.g$</font><br>即UE4是通过把Fresnel公式的F0提出来，组成F0*Scale+Offset的方式，再将Scale和Offset的索引存到一张2D LUT上。靠roughness和NdotV进行查找。</p>
+<h3 id="6-3-2-流派2：解析拟合"><a href="#6-3-2-流派2：解析拟合" class="headerlink" title="6.3.2 流派2：解析拟合"></a>6.3.2 流派2：解析拟合</h3><p>COD: Black Ops 2的做法，是通过数学工具Mathematica(<a href="http://www.wolfram.com/mathematica/)中的数值积分拟合出曲线，即将UE4离线计算的这张2D" target="_blank" rel="noopener">http://www.wolfram.com/mathematica/)中的数值积分拟合出曲线，即将UE4离线计算的这张2D</a> LUT用如下函数进行了拟合：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">float3 <span class="title">EnvironmentBRDF</span><span class="params">(<span class="keyword">float</span> g, <span class="keyword">float</span> NoV, float3 rf0)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   float4 t = float4(<span class="number">1</span>/<span class="number">0.96</span>, <span class="number">0.475</span>, (<span class="number">0.0275</span> - <span class="number">0.25</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="七、离线渲染相关（Offline-Rendering-Related）"><a href="#七、离线渲染相关（Offline-Rendering-Related）" class="headerlink" title="七、离线渲染相关（Offline Rendering Related）"></a>七、离线渲染相关（Offline Rendering Related）</h1><p>虽然我们目前主要关注的是实时渲染（实时光栅图形学相关，暂时不关注实时光线追踪）领域，但很多时候，实时渲染也需要涉及到预计算，尤其是IBL相关的预计算，所以或多或少会用到离线渲染相关的知识。所以PBR核心知识体系的第七部分是离线渲染相关的主题。<br><img src="/2018/05/14/PBR-Guide-Vol1/27.jpg"><br>以下是与实时渲染结合相对紧密的离线渲染的核心主题以及概括总结（主要是统计学与概览相关）：</p>
+<ul>
+<li>重要性采样（Importance Sample）：蒙特卡洛积分的一种采样策略。思路是基于分布函数，尽量对被积函数分布可能性较高的区域进行采样。</li>
+<li>多重要性采样（Muti Importance Sampling，MIS）：估算某一积分时，基于多个分布函数获取采样，并期望至少某一分布与被积函数形状适配。即根据各种技术对采样进行加权计算，进而消除近似于它的概览。即偶然中包含着某种必然。</li>
+<li>蒙特卡洛方法（Monte Carlo Methods）：一种以概率统计理论为指导的数值计算方法。是指使用随机数（或更常见的伪随机数）来解决很多计算问题的方法。</li>
+<li>低偏差序列（Low-discrepancy sequence）：一种确定生成的超均匀分布列，也成为随机列、次随机列，常见低偏差序列有Hammersley，Halton等。</li>
+<li>拟蒙特卡罗方法（Quasi-Monte Carlo Method）：使用低差异来进行数值积分和研究其它一些数值问题的方法。</li>
+</ul>
+<h1 id="八、进阶渲染主题（Advanced-Rendering-Topics）"><a href="#八、进阶渲染主题（Advanced-Rendering-Topics）" class="headerlink" title="八、进阶渲染主题（Advanced Rendering Topics）"></a>八、进阶渲染主题（Advanced Rendering Topics）</h1><p>前面的核心PBR主题都讨论完以后，会有更多进阶的内容浮出水面，它们共同组成了PBR核心知识体系的第八部分。<br><img src="/2018/05/14/PBR-Guide-Vol1/28.jpg"><br>以下是一个列举：</p>
+<ul>
+<li>进阶着色模型<ul>
+<li>布料BRDF(Cloth BRDF)</li>
+<li>清漆着色模型(Clear Coat Model)</li>
+<li>次表面散射BRDF模型(Subsurface Scattering BRDF Model)</li>
+</ul>
+</li>
+<li>进阶材质功能<ul>
+<li>全能材质(Uber Shader)</li>
+<li>分层材质(Layered Materials)</li>
+<li>分层全能材质(Layered Uber Shader)</li>
+<li>混合材质(Blending Material)</li>
+<li>过滤材质(Filtering Materials)</li>
+</ul>
+</li>
+<li>进阶理论<ul>
+<li>物理光学(Physics of Light)</li>
+<li>波动光学(Wave Optics)</li>
+<li>基于物理的摄像机(Physical Based Camera)</li>
+<li>基于物理的光源(Physical Based Light)</li>
+<li>白炉测试(White Furnace Test)</li>
+</ul>
+</li>
+<li>进阶BxDF<ul>
+<li>BSDF</li>
+<li>BTDF</li>
+<li>BSSRDF</li>
+</ul>
+</li>
+<li>进阶材质渲染<ul>
+<li>皮肤渲染(Skin Rendering)</li>
+<li>布料渲染(Cloth Rendering)</li>
+<li>半透明表面渲染(Translucent Surfaces Rendering)</li>
+<li>头发渲染(Hair Rendering)</li>
+<li>毛发渲染(Fur Rendering)</li>
+<li>车漆渲染(Car Paint Rendering)</li>
+<li>水体渲染(Water Rendering)</li>
+<li>湿润表面渲染(Wet Surface Rendering)</li>
+<li>天空与大气渲染(Sky and Atmosphere Rendering)</li>
+<li>薄表面材质渲染(Thin Surface Rendering)</li>
+<li>体积渲染(Volumetric Rendering)</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -661,7 +766,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/PBR/" rel="tag"># PBR</a>
+            <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
+          
+            <a href="/tags/游戏引擎/" rel="tag"># 游戏引擎</a>
+          
+            <a href="/tags/游戏开发/" rel="tag"># 游戏开发</a>
           
         </div>
       
@@ -759,7 +868,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">276</span>
+                    <span class="site-state-item-count">280</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -844,7 +953,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1023,7 +1136,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">82</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1059,7 +1176,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#光与物质"><span class="nav-number">1.</span> <span class="nav-text">光与物质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线"><span class="nav-number">2.</span> <span class="nav-text">光线</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#系列文章前言"><span class="nav-number"></span> <span class="nav-text">系列文章前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR知识体系概览"><span class="nav-number"></span> <span class="nav-text">PBR知识体系概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR核心理论与渲染原理"><span class="nav-number"></span> <span class="nav-text">PBR核心理论与渲染原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光与非光学平坦表面的交互原理"><span class="nav-number"></span> <span class="nav-text">光与非光学平坦表面的交互原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漫反射和次表面散射本质相同"><span class="nav-number"></span> <span class="nav-text">漫反射和次表面散射本质相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、PBR的范畴（Scope-of-PBR）"><span class="nav-number"></span> <span class="nav-text">一、PBR的范畴（Scope of PBR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、渲染方程与BxDF"><span class="nav-number"></span> <span class="nav-text">二、渲染方程与BxDF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1渲染方程与反射方程"><span class="nav-number">1.</span> <span class="nav-text">2.1渲染方程与反射方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BxDF"><span class="nav-number"></span> <span class="nav-text">2.2 BxDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-BRDF的分类"><span class="nav-number"></span> <span class="nav-text">2.3 BRDF的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、迪士尼原则的BxDF（Disney-Principled-BxDF）"><span class="nav-number"></span> <span class="nav-text">三、迪士尼原则的BxDF（Disney Principled BxDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-迪士尼原则的BRDF（Disney-Principled-BRDF）"><span class="nav-number"></span> <span class="nav-text">3.1 迪士尼原则的BRDF（Disney Principled BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Disney-Principled-BRDF核心理念"><span class="nav-number">1.</span> <span class="nav-text">3.1.1 Disney Principled BRDF核心理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-Disney-Principled-BRDF参数"><span class="nav-number">2.</span> <span class="nav-text">3.1.2 Disney Principled BRDF参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-迪士尼原则的BSDF（Disney-Principled-BSDF）"><span class="nav-number"></span> <span class="nav-text">3.2 迪士尼原则的BSDF（Disney Principled BSDF）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、漫反射BRDF模型（Diffuse-BRDF）"><span class="nav-number"></span> <span class="nav-text">四、漫反射BRDF模型（Diffuse BRDF）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、镜面反射BRDF模型（Specular-BRDF）"><span class="nav-number"></span> <span class="nav-text">五、镜面反射BRDF模型（Specular BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-从物理现象到BRDF"><span class="nav-number"></span> <span class="nav-text">5.1 从物理现象到BRDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Specular-D"><span class="nav-number"></span> <span class="nav-text">5.2 Specular D</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#光与物质"><span class="nav-number">1.</span> <span class="nav-text">光与物质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光线"><span class="nav-number">2.</span> <span class="nav-text">光线</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#系列文章前言"><span class="nav-number"></span> <span class="nav-text">系列文章前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR知识体系概览"><span class="nav-number"></span> <span class="nav-text">PBR知识体系概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PBR核心理论与渲染原理"><span class="nav-number"></span> <span class="nav-text">PBR核心理论与渲染原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#光与非光学平坦表面的交互原理"><span class="nav-number"></span> <span class="nav-text">光与非光学平坦表面的交互原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#漫反射和次表面散射本质相同"><span class="nav-number"></span> <span class="nav-text">漫反射和次表面散射本质相同</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、PBR的范畴（Scope-of-PBR）"><span class="nav-number"></span> <span class="nav-text">一、PBR的范畴（Scope of PBR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、渲染方程与BxDF"><span class="nav-number"></span> <span class="nav-text">二、渲染方程与BxDF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1渲染方程与反射方程"><span class="nav-number">1.</span> <span class="nav-text">2.1渲染方程与反射方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-BxDF"><span class="nav-number"></span> <span class="nav-text">2.2 BxDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-BRDF的分类"><span class="nav-number"></span> <span class="nav-text">2.3 BRDF的分类</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、迪士尼原则的BxDF（Disney-Principled-BxDF）"><span class="nav-number"></span> <span class="nav-text">三、迪士尼原则的BxDF（Disney Principled BxDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-迪士尼原则的BRDF（Disney-Principled-BRDF）"><span class="nav-number"></span> <span class="nav-text">3.1 迪士尼原则的BRDF（Disney Principled BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-Disney-Principled-BRDF核心理念"><span class="nav-number">1.</span> <span class="nav-text">3.1.1 Disney Principled BRDF核心理念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-Disney-Principled-BRDF参数"><span class="nav-number">2.</span> <span class="nav-text">3.1.2 Disney Principled BRDF参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-迪士尼原则的BSDF（Disney-Principled-BSDF）"><span class="nav-number"></span> <span class="nav-text">3.2 迪士尼原则的BSDF（Disney Principled BSDF）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、漫反射BRDF模型（Diffuse-BRDF）"><span class="nav-number"></span> <span class="nav-text">四、漫反射BRDF模型（Diffuse BRDF）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、镜面反射BRDF模型（Specular-BRDF）"><span class="nav-number"></span> <span class="nav-text">五、镜面反射BRDF模型（Specular BRDF）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-从物理现象到BRDF"><span class="nav-number"></span> <span class="nav-text">5.1 从物理现象到BRDF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-Specular-D"><span class="nav-number"></span> <span class="nav-text">5.2 Specular D</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-Specular-F"><span class="nav-number"></span> <span class="nav-text">5.3 Specular F</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-Specular-G"><span class="nav-number"></span> <span class="nav-text">5.4 Specular G</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#六、基于物理的环境光照（Physically-Based-Environment-Lighting）"><span class="nav-number"></span> <span class="nav-text">六、基于物理的环境光照（Physically Based Environment Lighting）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-分解求和近似（Split-Sum-Approximation）"><span class="nav-number"></span> <span class="nav-text">6.1 分解求和近似（Split Sum Approximation）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-1-流派1：2D-LUT"><span class="nav-number">1.</span> <span class="nav-text">6.3.1 流派1：2D LUT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-2-流派2：解析拟合"><span class="nav-number">2.</span> <span class="nav-text">6.3.2 流派2：解析拟合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七、离线渲染相关（Offline-Rendering-Related）"><span class="nav-number"></span> <span class="nav-text">七、离线渲染相关（Offline Rendering Related）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#八、进阶渲染主题（Advanced-Rendering-Topics）"><span class="nav-number"></span> <span class="nav-text">八、进阶渲染主题（Advanced Rendering Topics）</span></a></li></div>
             
 
           </div>

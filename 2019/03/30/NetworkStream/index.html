@@ -137,18 +137,18 @@
 
 
 
-  <meta name="description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。 注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和普通流方式几乎一模一样，但具有特殊性  TC">
+  <meta name="description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。命名空间：System.Net.Sockets注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和">
 <meta name="keywords" content="CSharp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NetworkStream">
 <meta property="og:url" content="http://zentia.github.io/2019/03/30/NetworkStream/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。 注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和普通流方式几乎一模一样，但具有特殊性  TC">
+<meta property="og:description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。命名空间：System.Net.Sockets注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:39.960Z">
+<meta property="og:updated_time" content="2019-05-26T09:30:34.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NetworkStream">
-<meta name="twitter:description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。 注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和普通流方式几乎一模一样，但具有特殊性  TC">
+<meta name="twitter:description" content="作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。命名空间：System.Net.Sockets注意事项：  NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常 NetworkStream是面向连接的 在网络中利用流的形式传递信息 必须借助Socket（也称为流失Socket），或使用一些返回的返回值 用法和">
 
 
 
@@ -485,8 +485,7 @@
       
 
       
-        <p>作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。</p>
-<p>注意事项：</p>
+        <p>作用：如果服务器和客户端之间基于TCP连接的，他们之间能够依靠一个稳定的字节流进行相互传输信息。<br>命名空间：System.Net.Sockets<br>注意事项：</p>
 <ol>
 <li>NetworkSteam只能用在具有TCP/IP协议之中，如果用在UDP中编译不抱错，会有异常</li>
 <li>NetworkStream是面向连接的</li>
@@ -495,6 +494,7 @@
 <li>用法和普通流方式几乎一模一样，但具有特殊性</li>
 </ol>
 <p>TCP/IP（Transmission Control Protocol/Internet Protocol）（传输控制协议/因特网互联协议）</p>
+<h1 id="IPAddress"><a href="#IPAddress" class="headerlink" title="IPAddress"></a>IPAddress</h1><p>命名空间:System.Net<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IPAddress ip = IPAddress.Parse(<span class="string">"192.168.1.1"</span>);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -591,8 +591,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -607,7 +616,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">276</span>
+                    <span class="site-state-item-count">280</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -692,7 +701,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -871,7 +884,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">82</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -896,6 +913,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#IPAddress"><span class="nav-number">1.</span> <span class="nav-text">IPAddress</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

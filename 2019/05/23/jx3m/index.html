@@ -137,21 +137,21 @@
 
 
 
-  <meta name="description" content="Unity版本2018.3以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.InvokeStart(this, HelperUtil.Steper(30, Initialize(), Sleep));封">
+  <meta name="description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
 <meta name="keywords" content="剑网3口袋版">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑网3口袋版笔记">
 <meta property="og:url" content="http://zentia.github.io/2019/05/23/jx3m/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="Unity版本2018.3以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.InvokeStart(this, HelperUtil.Steper(30, Initialize(), Sleep));封">
+<meta property="og:description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/2.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/1.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/LockOpen.png">
-<meta property="og:updated_time" content="2019-05-24T05:33:59.151Z">
+<meta property="og:updated_time" content="2019-05-24T13:12:52.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑网3口袋版笔记">
-<meta name="twitter:description" content="Unity版本2018.3以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.InvokeStart(this, HelperUtil.Steper(30, Initialize(), Sleep));封">
+<meta name="twitter:description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
 <meta name="twitter:image" content="http://zentia.github.io/2019/05/23/jx3m/2.jpg">
 
 
@@ -489,7 +489,8 @@
       
 
       
-        <p>Unity版本2018.3<br>以下基本是静态分析结果。</p>
+        <p>Unity版本2018.3<br>2D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。</p>
+<p>以下基本是静态分析结果。</p>
 <h1 id="启动流程"><a href="#启动流程" class="headerlink" title="启动流程"></a>启动流程</h1><p>start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。<br>GameStart在Start函数调用RuntimeCoroutineTracker.InvokeStart(this, HelperUtil.Steper(30, Initialize(), Sleep));封装协程的目的是抓帧用的。HelperUtil.Steper间隔执行。<br>在Initialize中初始化逻辑，其中yield return Lifecycle.GameModuleMgr.InitCoroutine(0, RefreshProgress);加载游戏模块。<br>在到GameModule的InitCoroutine中执行Init。说实在的OOP这一套看代码看的确实很烦。然后看一下GameMoudle有哪些</p>
 <ul>
 <li>AccountModule</li>
@@ -515,7 +516,8 @@
 <p>其他注册方式类似。</p>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>这里的模块是自定义的，而不是根据配置读取的，其实也无可厚非，只不过会增加了一些代码量，这里的代码量仅仅指模块名称。比如UILoadHelper.SpawdPrefabFromPool，在这里UILoadHelper被我们习惯称为模块。</p>
 <h1 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</h1><p>好吧，这块真的是异常痛苦的，以至于我F12了好半天，才看到一个UnityEngine.AssetBundle.LoadFromFile(path);在ResourcesHook.cs中有两个接口<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> UnityEngine.<span class="function">AssetBundle <span class="title">LoadFromFile</span>(<span class="params"><span class="keyword">string</span> path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ResourceLoadProfiler.Begin();</span><br><span class="line">    UnityEngine.AssetBundle ret = UnityEngine.AssetBundle.LoadFromFile(path);</span><br><span class="line">    ResourceLoadProfiler.End(<span class="string">"AssetBundle.LoadFromFile"</span>, path, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AssetBundleCreateRequest <span class="title">LoadFromFileAsync</span>(<span class="params"><span class="keyword">string</span> path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    AssetBundleCreateRequest ret = UnityEngine.AssetBundle.LoadFromFileAsync(path);</span><br><span class="line">    ResourceLoadProfiler.AddAsyncRequest(ret, <span class="string">"AssetBundle.LoadFromAsync"</span>, path, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h1><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>NGUI + slua<br>UI脚本目录 Assets/StreamingAssets/Lua</p>
+<h1 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h1><p>开发模式属于MV模式。</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>NGUI + slua<br>UI脚本目录 Assets/StreamingAssets/Lua<br>数据控制逻辑在LogicData目录下</p>
 <h3 id="Common"><a href="#Common" class="headerlink" title="Common"></a>Common</h3><h4 id="Timer-lua"><a href="#Timer-lua" class="headerlink" title="Timer.lua"></a>Timer.lua</h4><h3 id="Helper"><a href="#Helper" class="headerlink" title="Helper"></a>Helper</h3><h4 id="UIHelper-lua"><a href="#UIHelper-lua" class="headerlink" title="UIHelper.lua"></a>UIHelper.lua</h4><h5 id="AddTimer"><a href="#AddTimer" class="headerlink" title="AddTimer"></a>AddTimer</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UIHelper.AddTimer</span><span class="params">(script, nTime, func)</span></span></span><br><span class="line">    <span class="keyword">local</span> nid = Timer:Add(nTime, func)</span><br><span class="line">    script._tbUnscaledTime = script._tbUnscaledTimer <span class="keyword">or</span> &#123;&#125;</span><br><span class="line">    script._tbUnscaledTime[nId] = func</span><br><span class="line">    <span class="keyword">return</span> nId</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 按钮注册事件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UIHelper.BindUIEvent</span><span class="params">(go, szEvent, func, tbParam, nIntervals)</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> go <span class="keyword">or</span> <span class="keyword">not</span> szEvent <span class="keyword">or</span> <span class="keyword">not</span> func <span class="keyword">then</span> <span class="keyword">return</span> <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">local</span> listenter = UIEventLister.Get(go.gameObject)</span><br><span class="line">    <span class="keyword">if</span> tbParam ~= <span class="literal">nil</span> <span class="keyword">and</span> <span class="built_in">type</span>(tbParam) == <span class="string">"table"</span> <span class="keyword">then</span></span><br><span class="line">        listener.paramter = tbParam</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span> nInterval ~= <span class="literal">nil</span> <span class="keyword">then</span></span><br><span class="line">        UIClickIntervalsController.Instance:RegisterInterval(go.gameObject, nIntervals)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">if</span> szEvent == UI_EVENT.onClick <span class="keyword">then</span></span><br><span class="line">        listener.onClick = func</span><br><span class="line">    <span class="keyword">elseif</span> <span class="keyword">then</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">elseif</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">elseif</span> <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        LOG.ERROR(<span class="string">"未知的按钮事件类型&#123;0&#125;"</span>, szEvent)</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h4 id="UILoadHelper-lua"><a href="#UILoadHelper-lua" class="headerlink" title="UILoadHelper.lua"></a>UILoadHelper.lua</h4><h5 id="LoadPrefabHandleAsync"><a href="#LoadPrefabHandleAsync" class="headerlink" title="LoadPrefabHandleAsync"></a>LoadPrefabHandleAsync</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 异步加载预制体接口</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">UILoadHelper.LoadPrefabHandleAsync</span><span class="params">(script, nID, parent, szRename, nPostNameID, ...)</span></span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> script <span class="keyword">or</span> <span class="keyword">not</span> nID <span class="keyword">or</span> <span class="keyword">not</span> parent <span class="keyword">then</span></span><br><span class="line">        LOG.ERROR(<span class="string">"UILoadHelper.LoadPrefabHandleAsync param exception"</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    nPostNameID = nPostNameID <span class="keyword">or</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">local</span> handle = Lua2CS.LoadPrefabHandleAsync(nID, parent, transform, szRename, nPostNameID, ...)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> handle <span class="keyword">then</span></span><br><span class="line">        LOG.ERROR(<span class="string">"UILoadHelper.LoadPrefabHandleAsync Don't Get handle"</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> script.tbPrefabHandle <span class="keyword">then</span></span><br><span class="line">        script.tbPrefabHandle = &#123;&#125;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">    script.tbPrefabHandle[handle.nHandleId] = handle</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> handle</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
@@ -580,6 +582,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/luarefermanual/" rel="prev" title="Lua参考手册下半部分">
+                Lua参考手册下半部分 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -652,7 +658,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">276</span>
+                    <span class="site-state-item-count">280</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -737,7 +743,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">36</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -916,7 +926,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">82</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">85</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
