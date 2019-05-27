@@ -138,17 +138,20 @@
 
 
   <meta name="description" content="项目来自https://github.com/ssloy/tinyrenderer，作者尝试用500行代码来写一个tiny render，让我们明白OpenGL是怎样工作的。 从画点开始TGAImage生成图像我们使用TGAImage，这个使用起来很简单：12345678910111213#include &quot;tgaimage.h&quot;const TGAColor white = TGAColor(25">
-<meta name="keywords" content="OpenGL,光栅,计算机图形学">
+<meta name="keywords" content="光栅,计算机图形学,OpenGL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="500行代码学懂OpenGL之一画点">
 <meta property="og:url" content="http://zentia.github.io/2019/05/26/opengldrawpoint/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="项目来自https://github.com/ssloy/tinyrenderer，作者尝试用500行代码来写一个tiny render，让我们明白OpenGL是怎样工作的。 从画点开始TGAImage生成图像我们使用TGAImage，这个使用起来很简单：12345678910111213#include &quot;tgaimage.h&quot;const TGAColor white = TGAColor(25">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-26T12:47:27.392Z">
+<meta property="og:image" content="http://zentia.github.io/2019/05/26/opengldrawpoint/1.jpg">
+<meta property="og:image" content="http://zentia.github.io/2019/05/26/opengldrawpoint/2.jpg">
+<meta property="og:updated_time" content="2019-05-27T05:04:18.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="500行代码学懂OpenGL之一画点">
 <meta name="twitter:description" content="项目来自https://github.com/ssloy/tinyrenderer，作者尝试用500行代码来写一个tiny render，让我们明白OpenGL是怎样工作的。 从画点开始TGAImage生成图像我们使用TGAImage，这个使用起来很简单：12345678910111213#include &quot;tgaimage.h&quot;const TGAColor white = TGAColor(25">
+<meta name="twitter:image" content="http://zentia.github.io/2019/05/26/opengldrawpoint/1.jpg">
 
 
 
@@ -487,7 +490,11 @@
       
         <p>项目来自<a href="https://github.com/ssloy/tinyrenderer，作者尝试用500行代码来写一个tiny" target="_blank" rel="noopener">https://github.com/ssloy/tinyrenderer，作者尝试用500行代码来写一个tiny</a> render，让我们明白OpenGL是怎样工作的。</p>
 <h1 id="从画点开始"><a href="#从画点开始" class="headerlink" title="从画点开始"></a>从画点开始</h1><h2 id="TGAImage"><a href="#TGAImage" class="headerlink" title="TGAImage"></a>TGAImage</h2><p>生成图像我们使用TGAImage，这个使用起来很简单：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tgaimage.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> TGAColor white = TGAColor(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>);</span><br><span class="line"><span class="keyword">const</span> TGAColor red = TGAColor(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> ** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">TGAImage <span class="title">image</span><span class="params">(<span class="number">100</span>,<span class="number">100</span>,TGAImage::RGB)</span></span>;</span><br><span class="line">    image.<span class="built_in">set</span>(<span class="number">52</span>,<span class="number">41</span>,red);</span><br><span class="line">    image.filp_vertically();</span><br><span class="line">    image.write_tga_file(<span class="string">"output.tga"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
+<img src="/2019/05/26/opengldrawpoint/1.jpg">
+<p>项目:<a href="https://github.com/zentia/tinyrender.git" target="_blank" rel="noopener">https://github.com/zentia/tinyrender.git</a></p>
+<h1 id="wavefront-obj"><a href="#wavefront-obj" class="headerlink" title="wavefront obj"></a>wavefront obj</h1><p>然后我们来学习一种3d格式文件，wavefront obj file:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"># List of geometric vertices, with (x, y, z [,w]) coordinates, w is optional and defaults to 1.0.</span><br><span class="line">  v 0.123 0.234 0.345 1.0</span><br><span class="line">  v ...</span><br><span class="line">  ...</span><br><span class="line">  # List of texture coordinates, in (u, [v ,w]) coordinates, these will vary between 0 and 1, v and w are optional and default to 0.</span><br><span class="line">  vt 0.500 1 [0]</span><br><span class="line">  vt ...</span><br><span class="line">  ...</span><br><span class="line">  # List of vertex normals in (x,y,z) form; normals might not be unit vectors.</span><br><span class="line">  vn 0.707 0.000 0.707</span><br><span class="line">  vn ...</span><br><span class="line">  ...</span><br><span class="line">  # Parameter space vertices in ( u [,v] [,w] ) form; free form geometry statement ( see below )</span><br><span class="line">  vp 0.310000 3.210000 2.100000</span><br><span class="line">  vp ...</span><br><span class="line">  ...</span><br><span class="line">  # Polygonal face element (see below)</span><br><span class="line">  f 1 2 3</span><br><span class="line">  f 3/1 4/2 5/3</span><br><span class="line">  f 6/4/1 3/5/3 7/6/5</span><br><span class="line">  f 7//1 8//2 9//3</span><br><span class="line">  f ...</span><br><span class="line">  ...</span><br><span class="line">  # Line element (see below)</span><br><span class="line">  l 5 8 1 2 4 9</span><br></pre></td></tr></table></figure></p>
+<p>我们现在只需要知道顶点是v，现在我们想把一个文件中的3d模型的顶点v(x,y,z)给画出来，(因为我们已经知道怎么在图上相应的位置放像素)这个文件所有的x,y,z∈[-1,1]，所以我们需要把它们映射到合适范围，然后注意我们画的点 <code>image.set(52,41,red);</code> ，这里的是52和41是int，映射之后需要转成int，因为我们总是画在一个一个像素点上。<br>写一个简单的parser读入文件建立模型。<br>核心部分长这样：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != model-&gt;nverts();i++)</span><br><span class="line">&#123;</span><br><span class="line">    Vec3f v = model-&gt;vert(i);</span><br><span class="line">    Vec2i p = world2screen(v);</span><br><span class="line">    image.<span class="built_in">set</span>(p.x,p.y,white);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<img src="/2019/05/26/opengldrawpoint/2.jpg">
       
     </div>
 
@@ -510,11 +517,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
-          
             <a href="/tags/光栅/" rel="tag"># 光栅</a>
           
             <a href="/tags/计算机图形学/" rel="tag"># 计算机图形学</a>
+          
+            <a href="/tags/OpenGL/" rel="tag"># OpenGL</a>
           
         </div>
       
@@ -612,7 +619,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">280</span>
+                    <span class="site-state-item-count">284</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -701,7 +708,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">38</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">40</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -884,7 +895,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">85</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -920,7 +935,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从画点开始"><span class="nav-number">1.</span> <span class="nav-text">从画点开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TGAImage"><span class="nav-number">1.1.</span> <span class="nav-text">TGAImage</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#从画点开始"><span class="nav-number">1.</span> <span class="nav-text">从画点开始</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TGAImage"><span class="nav-number">1.1.</span> <span class="nav-text">TGAImage</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#wavefront-obj"><span class="nav-number">2.</span> <span class="nav-text">wavefront obj</span></a></li></ol></div>
             
 
           </div>
