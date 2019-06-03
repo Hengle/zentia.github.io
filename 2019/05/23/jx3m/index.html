@@ -79,7 +79,7 @@
   
     
     
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Courier New:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext">
   
 
 
@@ -148,7 +148,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/2.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/1.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/LockOpen.png">
-<meta property="og:updated_time" content="2019-05-24T13:12:52.788Z">
+<meta property="og:updated_time" content="2019-05-31T15:01:08.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑网3口袋版笔记">
 <meta name="twitter:description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
@@ -513,7 +513,7 @@
 </ul>
 <p>好了由于太多了就不一一列举了。虽然都是Module但是会涵盖具体玩法和一些公共组件。让人看起来很迷，甚至认为有的代码真的会用到的感觉吗。这里我们重点分析Lua。<br>在Lua.OnInit中，调用luasvr = new LuaSvr();这里面会生成一个LuaSvrProxy这个GameObject，然后在它的Update中处理time等的tick事件。加载了一个调用DoFile(UIDef.LuaScriptPath);其中UIDef.LuaScriptPath = “Lua/PreLoadList.lua”;这块进行了预加载Lua脚本。</p>
 <h1 id="Lua"><a href="#Lua" class="headerlink" title="Lua"></a>Lua</h1><p>lua使用的slua。首先我不是引战，我只是想大家有自己清晰的认识slua到底好不好。好了，这里是ulua的官网，大家可以去看一下。<a href="http://www.ulua.org/cstolua.html" target="_blank" rel="noopener">http://www.ulua.org/cstolua.html</a><br>我们看一个addMember函数<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addMember</span>(<span class="params">IntPtr l, <span class="keyword">string</span> name, LuaCSFunction <span class="keyword">get</span>, LuaCSFunction <span class="keyword">set</span>, <span class="keyword">bool</span> instance</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    checkMethodValid(<span class="keyword">get</span>);</span><br><span class="line">    checkMethodValid(<span class="keyword">set</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> t = instance ? <span class="number">-2</span> : <span class="number">-3</span>;</span><br><span class="line"></span><br><span class="line">    LuaDll.lua_createtable(l, <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">get</span> == <span class="literal">null</span>)</span><br><span class="line">        LuaDLL.lua_pushnil(l);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        pushValue(l, <span class="keyword">get</span>);</span><br><span class="line">    LuaDll.lua_rawseti(l, <span class="number">-2</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">set</span> == <span class="literal">null</span>)</span><br><span class="line">        LuaDLL.lua_pushnil(l);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        pushValue(l, <span class="keyword">set</span>);</span><br><span class="line">    LuaDLL.lua_rawseti(l, <span class="number">-2</span>, <span class="number">2</span>); <span class="comment">// t[n]=v,n是2，v是-2出的值，lua是栈存储结构，栈索引值越小，说明越早压栈</span></span><br><span class="line"></span><br><span class="line">    LuaDll.lua_setfield(l, t, name); <span class="comment">// t[name]=v</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其他注册方式类似。</p>
+<p>其他注册方式类似。<br>然后slua对于用户感觉是透明的，然后每个注册之后都要返回两个参数，大部分来说。生成的cs文件完全是调用另一个文件的函数。<br>这种加一层的包装真好的好吗，难道用户不需要知道里面的东西吗？<br>（PS：个人感受，slua这种warp的方式真的好难受），好吧，自动化的注册确实跟不要钱一样。</p>
 <h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>这里的模块是自定义的，而不是根据配置读取的，其实也无可厚非，只不过会增加了一些代码量，这里的代码量仅仅指模块名称。比如UILoadHelper.SpawdPrefabFromPool，在这里UILoadHelper被我们习惯称为模块。</p>
 <h1 id="AssetBundle"><a href="#AssetBundle" class="headerlink" title="AssetBundle"></a>AssetBundle</h1><p>好吧，这块真的是异常痛苦的，以至于我F12了好半天，才看到一个UnityEngine.AssetBundle.LoadFromFile(path);在ResourcesHook.cs中有两个接口<br><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> UnityEngine.<span class="function">AssetBundle <span class="title">LoadFromFile</span>(<span class="params"><span class="keyword">string</span> path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ResourceLoadProfiler.Begin();</span><br><span class="line">    UnityEngine.AssetBundle ret = UnityEngine.AssetBundle.LoadFromFile(path);</span><br><span class="line">    ResourceLoadProfiler.End(<span class="string">"AssetBundle.LoadFromFile"</span>, path, <span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> AssetBundleCreateRequest <span class="title">LoadFromFileAsync</span>(<span class="params"><span class="keyword">string</span> path</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    AssetBundleCreateRequest ret = UnityEngine.AssetBundle.LoadFromFileAsync(path);</span><br><span class="line">    ResourceLoadProfiler.AddAsyncRequest(ret, <span class="string">"AssetBundle.LoadFromAsync"</span>, path, <span class="literal">null</span>);</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h1 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h1><p>开发模式属于MV模式。</p>
@@ -658,7 +658,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">286</span>
+                    <span class="site-state-item-count">289</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -753,7 +753,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">41</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -942,7 +946,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">88</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">91</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
