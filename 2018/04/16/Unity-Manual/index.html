@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="public static float Mathf.Round(float f) 四舍五入     YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, WaitForFixedUpdate, Coroutine and MonoBehaviour,StartCoroutine WaitForSeconds 等待几秒Namespa">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:39.990Z">
+<meta property="og:updated_time" content="2019-06-04T06:36:58.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Manual">
 <meta name="twitter:description" content="public static float Mathf.Round(float f) 四舍五入     YieldInstruction 中断指令所有yield指令的基类参考WaitForSeconds, WaitForFixedUpdate, Coroutine and MonoBehaviour,StartCoroutine WaitForSeconds 等待几秒Namespa">
@@ -502,7 +502,7 @@
 <li>边界截取(CLAMP_TO_BORDER_ARB)</li>
 <li>边缘截取(CLAMP_TO_EDGE)</li>
 </ol>
-<h3 id="CameraClearFlag"><a href="#CameraClearFlag" class="headerlink" title="CameraClearFlag"></a>CameraClearFlag</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CameraClearFlags</span><br><span class="line">&#123;</span><br><span class="line">    Skybox = <span class="number">1</span>,			<span class="comment">// 这是默认设置，在屏幕上空的部分显示当前相机的天空盒。如果当前相机没有设置天空盒，它会默认使用Edit-&gt;Render Settings里)中选择天空盒。然后它将退回使用背景颜色，另外天空盒组件可以添加到相机上。</span></span><br><span class="line">    SolidColor = <span class="number">2</span>, 	<span class="comment">// 屏幕上的任何空的部分显示当前相机的背景颜色</span></span><br><span class="line">    Color = <span class="number">2</span>,</span><br><span class="line">    Depth = <span class="number">3</span>,			<span class="comment">// 该深度的东西永远都不会被裁剪</span></span><br><span class="line">    Nothing = <span class="number">4</span>,		<span class="comment">// 什么事情都不做</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CameraClearFlag"><a href="#CameraClearFlag" class="headerlink" title="CameraClearFlag"></a>CameraClearFlag</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> CameraClearFlags</span><br><span class="line">&#123;</span><br><span class="line">    Skybox = <span class="number">1</span>,			<span class="comment">// 这是默认设置，在屏幕上空的部分显示当前相机的天空盒。如果当前相机没有设置天空盒，它会默认使用Edit-&gt;Render Settings里)中选择天空盒。然后它将退回使用背景颜色，另外天空盒组件可以添加到相机上。</span></span><br><span class="line">    SolidColor = <span class="number">2</span>, <span class="comment">// 屏幕上的任何空的部分显示当前相机的背景颜色</span></span><br><span class="line">    Color = <span class="number">2</span>,</span><br><span class="line">    Depth = <span class="number">3</span>,			<span class="comment">// 该深度的东西永远都不会被裁剪</span></span><br><span class="line">    Nothing = <span class="number">4</span>,		<span class="comment">// 什么事情都不做</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Projector"><a href="#Projector" class="headerlink" title="Projector"></a>Projector</h3><pre><code>nearClipPlane       近裁剪面的距离
 farClipPlane        远裁剪面的距离
 fieldOfView         该投影的视野，以度为单位
@@ -515,7 +515,7 @@ material            要投射到每个物体的材质
 <h3 id="Mesh-RecalculateNormals"><a href="#Mesh-RecalculateNormals" class="headerlink" title="Mesh.RecalculateNormals"></a>Mesh.RecalculateNormals</h3><p>重新计算网格的法线<br>在修改完定点后，通常会更新发现来反映新的变化。发现是根据共享的顶点计算出来的。导入到网格有时不共享所有顶点。例如：一个顶点在一个纹理坐标的接缝处将会被分为两个顶点。因此这个RecalculateNormals函数将会在纹理坐标接缝处创建一个不光滑的法线。RecalculateNormals不会自动产生切线，因此bumpmap着色器在调用RecalculateNormals之后不会工作。然而你可以提取你自己的切线。</p>
 <h2 id="惯性坐标系"><a href="#惯性坐标系" class="headerlink" title="惯性坐标系"></a>惯性坐标系</h2><p>因为在进行物体到世界坐标系的转换时候，即需要平移同时也需要进行旋转，为了简化这种变化，在其中假如惯性坐标系，其中惯性坐标系的原点与本地坐标系的原点重合其轴和世界坐标系平英。那么本地坐标系到惯性坐标系只需要旋转操作（之前也得缩放）再到世界坐标系只需要进行平移。</p>
 <h1 id="构建AssetBundles"><a href="#构建AssetBundles" class="headerlink" title="构建AssetBundles"></a>构建AssetBundles</h1><p>在<a href="https://docs.unity3d.com/Manual/AssetBundles-Workflow.html" target="_blank" rel="noopener">AssetBundle工作流</a>的文档中，我们有一个代码示例，它将三个参数传递给BuildPipeline.BuildAssetBundles函数。让我们更深入实际的了解。<br>Assets/AssetBundles:这是AssetBundles输出的目录。您可以将其更改为您想要的任何输出目录，只需确保在尝试构建之前文件夹实际存在。</p>
-<h2 id="BuildAssetBundleOptions"><a href="#BuildAssetBundleOptions" class="headerlink" title="BuildAssetBundleOptions"></a>BuildAssetBundleOptions</h2><p>BuildAssetBundleOptions您可以指定几种具有各种效果的不同。有关所有选项的表，请参阅</p>
+<h2 id="BuildAssetBundleOptions"><a href="#BuildAssetBundleOptions" class="headerlink" title="BuildAssetBundleOptions"></a>BuildAssetBundleOptions</h2><p>BuildAssetBundleOptions您可以指定几种具有各种效果的不同。</p>
 
       
     </div>
@@ -637,7 +637,7 @@ material            要投射到每个物体的材质
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">289</span>
+                    <span class="site-state-item-count">291</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -736,7 +736,7 @@ material            要投射到每个物体的材质
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -933,7 +933,7 @@ material            要投射到每个物体的材质
                     
                       
                     
-                    <span class="site-state-item-count">91</span>
+                    <span class="site-state-item-count">92</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

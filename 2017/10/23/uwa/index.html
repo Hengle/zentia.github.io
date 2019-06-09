@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="AssetBundle lockpersistentmanager开销观察性能曲线，发现某一帧AssetBundle加载中，lockpersistentmanager耗时比较大。请问这块是否能够优化？这说明当前帧或前几帧中存在较大量的资源在通过LoadAsync来进行加载，其本质是所加载的资源过大所致，对自身资源进行合理优化可降低Loading.LockPersistentManager的开销。另">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:40.131Z">
+<meta property="og:updated_time" content="2019-06-04T07:03:56.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="uwa">
 <meta name="twitter:description" content="AssetBundle lockpersistentmanager开销观察性能曲线，发现某一帧AssetBundle加载中，lockpersistentmanager耗时比较大。请问这块是否能够优化？这说明当前帧或前几帧中存在较大量的资源在通过LoadAsync来进行加载，其本质是所加载的资源过大所致，对自身资源进行合理优化可降低Loading.LockPersistentManager的开销。另">
@@ -490,6 +490,7 @@ g++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -ma
 <li>Uesd Total                     - Unity引擎再内存方面的总体使用量。</li>
 <li>Reserved Unity &amp; Used Unity     - Unity引擎自身各个模块内部的内存分配，宝库偶各个Manager的内存占用、序列化信息的内存站哟个，WebStream/SerializedFile内存占用和部分资源的内存暂用等等。 </li>
 </ul>
+<p>看知乎的时候发现一个好玩的东西，<a href="https://lab.uwa4d.com/lab/5bc42d5404617c5805d4d685" target="_blank" rel="noopener">https://lab.uwa4d.com/lab/5bc42d5404617c5805d4d685</a> UGUI绘制图表工具，一直想做一个性能分析工具。<br>GDC2018中描述了Northlight引擎的内部实现和渲染相关的一些最新进展。<br>前育碧的两位资深老员工成立Second Order公司后，开发了第一款游戏《Claybook》，其中包括了许多创新技术，比如基于GPU渲染的粘土与流体模拟、完全可变性的世界与角色、光线追踪的视觉效果。</p>
 
       
     </div>
@@ -611,7 +612,7 @@ g++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -ma
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">289</span>
+                    <span class="site-state-item-count">291</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -710,7 +711,7 @@ g++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -ma
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -907,7 +908,7 @@ g++ -DLINUX -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_LARGEFILE_SOURCE -ma
                     
                       
                     
-                    <span class="site-state-item-count">91</span>
+                    <span class="site-state-item-count">92</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
