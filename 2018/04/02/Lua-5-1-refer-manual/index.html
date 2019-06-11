@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C ，指的 ANSI C 和 C++ 中共通的一个子集）作为一个扩展式语言，Lua 没有 “main”">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-01T02:43:37.993Z">
+<meta property="og:updated_time" content="2019-06-10T13:52:39.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua参考手册上半部分">
 <meta name="twitter:description" content="Lua 是一个扩展式程序设计语言，它被设计成支持通用的过程式编程，并有相关数据描述的设施。 Lua 也能对面向对象编程，函数式编程，数据驱动式编程提供很好的支持。 它可以作为一个强大、轻量的脚本语言，供任何需要的程序使用。 Lua 以一个用 clean C 写成的库形式提供。（所谓 Clean C ，指的 ANSI C 和 C++ 中共通的一个子集）作为一个扩展式语言，Lua 没有 “main”">
@@ -976,7 +976,7 @@ end
 </code></pre><p>注意，0 永远都不是一个可接受的索引。（译注：下文中凡提到的索引，没有特别注明的话，都指可接受的索引。）</p>
 <h3 id="LUA-GLOBALSINDEX"><a href="#LUA-GLOBALSINDEX" class="headerlink" title="LUA_GLOBALSINDEX"></a>LUA_GLOBALSINDEX</h3><p>除了特别声明外，任何一个函数都可以接受另一种有效的索引，它们被称作“伪索引”。 这个可以帮助 C 代码访问一些并不在栈上的 Lua 值。 伪索引被用来访问线程的环境，函数的环境，注册表，还有 C 函数的 upvalue。<br>线程的环境（也就是全局变量放的地方）通常在伪索引 LUA_GLOBALSINDEX 处。 正在运行的 C 函数的环境则放在伪索引 LUA_ENVIRONINDEX 之处。<br>可以用常规的 table 操作来访问和改变全局变量的值，只需要指定环境表的位置。 举例而言，要访问全局变量的值，这样做：</p>
 <pre><code>lua_getfield(L, LUA_GLOBALSINDEX, varname);
-</code></pre><h3 id="C-Closure"><a href="#C-Closure" class="headerlink" title="C Closure"></a>C Closure</h3><p>当 C 函数被创建出来，我们有可能会把一些值关联在一起， 也就是创建一个 C closure ； 这些被关联起来的值被叫做 upvalue ，它们可以在函数被调用的时候访问的到。 （参见 lua_pushcclosure ）。<br>无论何时去调用 C 函数，函数的 upvalue 都被放在指定的伪索引处。 我们可以用 lua_upvalueindex 这个宏来生成这些伪索引。 第一个关联到函数的值放在 lua_upvalueindex(1) 位置处，依次类推。 任何情况下都可以用 lua_upvalueindex(n) 产生一个 upvalue 的索引， 即使 n 大于实际的 upvalue 数量也可以。它都可以产生一个可接受但不一定有效的索引。</p>
+</code></pre><h3 id="C-Closure"><a href="#C-Closure" class="headerlink" title="C Closure"></a>C Closure</h3><p>当C函数被创建出来，我们有可能会把一些值关联在一起， 也就是创建一个Cclosure； 这些被关联起来的值被叫做upvalue ，它们可以在函数被调用的时候访问的到。（参见lua_pushcclosure）。<br>无论何时去调用C函数，函数的upvalue都被放在指定的伪索引处。我们可以用<code>lua_upvalueindex</code>这个宏来生成这些伪索引。第一个关联到函数的值放在<code>lua_upvalueindex(1)</code>位置处，依次类推。任何情况下都可以用<code>lua_upvalueindex(n)</code>产生一个upvalue的索引，即使n大于实际的upvalue数量也可以。它都可以产生一个可接受但不一定有效的索引。</p>
 <h3 id="LUA-REGISTRYINDEX"><a href="#LUA-REGISTRYINDEX" class="headerlink" title="LUA_REGISTRYINDEX"></a>LUA_REGISTRYINDEX</h3><p>Lua提供了一个注册表，这是一个预定义出来的表，可以用来保存任何C代码想保存的Lua值。这个表可以用伪索引<code>LUA_REGISTRYINDEX</code>来定位。 任何C库都可以在这张表里保存数据，为了防止冲突，你需要特别小心的选择键名。 一般的用法是，你可以用一个包含你的库名的字符串做为键名，或者可以取你自己C代码中的一个地址，以 light userdata 的形式做键。<br>注册表里的整数健被用于补充库中实现的引用系统的工作，一般说来不要把它们用于别的用途。</p>
 <h3 id="C-中的错误处理"><a href="#C-中的错误处理" class="headerlink" title="C 中的错误处理"></a>C 中的错误处理</h3><p>在内部实现中，Lua 使用了 C 的 longjmp 机制来处理错误。 （如果你使用 C++ 的话，也可以选择换用异常；参见 luaconf.h 文件。） 当 Lua 碰到任何错误（比如内存分配错误、类型错误、语法错误、还有一些运行时错误） 它都会产生一个错误出去； 也就是调用一个 long jump 。 在保护环境下，Lua 使用 setjmp 来设置一个恢复点； 任何发生的错误都会激活最近的一个恢复点。<br>几乎所有的 API 函数都可能产生错误，例如内存分配错误。 但下面的一些函数运行在保护环境中（也就是说它们创建了一个保护环境再在其中运行）， 因此它们不会产生错误出来： lua_newstate, lua_close, lua_load, lua_pcall, and lua_cpcall。</p>
 <p>在 C 函数里，你也可以通过调用 lua_error 产生一个错误。</p>
@@ -998,9 +998,8 @@ end
 </code></pre><p>这段代码假设 free(NULL) 啥也不影响，而且 realloc(NULL, size) 等价于 malloc(size)。 这两点是 ANSI C 保证的行为。</p>
 <h3 id="lua-atpanic"><a href="#lua-atpanic" class="headerlink" title="lua_atpanic"></a>lua_atpanic</h3><pre><code>lua_CFunction lua_atpanic (lua_State *L, lua_CFunction panicf);
 </code></pre><p>设置一个新的 panic （恐慌） 函数，并返回前一个。<br>如果在保护环境之外发生了任何错误， Lua 就会调用一个 panic 函数，接着调用 exit(EXIT_FAILURE)， 这样就开始退出宿主程序。 你的 panic 函数可以永远不返回（例如作一次长跳转）来避免程序退出。<br>panic 函数可以从栈顶取到出错信息。</p>
-<h3 id="lua-call"><a href="#lua-call" class="headerlink" title="lua_call"></a>lua_call</h3><pre><code>void lua_call (lua_State *L, int nargs, int nresults);
-</code></pre><p>调用一个函数。<br>要调用一个函数请遵循以下协议： 首先，要调用的函数应该被压入堆栈； 接着，把需要传递给这个函数的参数按正序压栈； 这是指第一个参数首先压栈。 最后调用一下 lua_call； nargs 是你压入堆栈的参数个数。 当函数调用完毕后，所有的参数以及函数本身都会出栈。 而函数的返回值这时则被压入堆栈。 返回值的个数将被调整为 nresults 个， 除非 nresults 被设置成 LUA_MULTRET。 在这种情况下，所有的返回值都被压入堆栈中。 Lua 会保证返回值都放入栈空间中。 函数返回值将按正序压栈（第一个返回值首先压栈）， 因此在调用结束后，最后一个返回值将被放在栈顶。</p>
-<p>被调用函数内发生的错误将（通过 longjmp）一直上抛。<br>下面的例子中，这行 Lua 代码等价于在宿主程序用 C 代码做一些工作：</p>
+<h3 id="lua-call"><a href="#lua-call" class="headerlink" title="lua_call"></a>lua_call</h3><pre><code>void lua_call(lua_State *L, int nargs, int nresults);
+</code></pre><p>调用一个函数。要调用一个函数请遵循以下协议：首先，要调用的函数应该被压入堆栈；接着，把需要传递给这个函数的参数按正序压栈；这是指第一个参数首先压栈。 最后调用一下<code>lua_call</code>；nargs是你压入堆栈的参数个数。当函数调用完毕后，所有的参数以及函数本身都会出栈。而函数的返回值这时则被压入堆栈。返回值的个数将被调整为nresults个， 除非 nresults 被设置成 LUA_MULTRET。 在这种情况下，所有的返回值都被压入堆栈中。 Lua 会保证返回值都放入栈空间中。 函数返回值将按正序压栈（第一个返回值首先压栈）， 因此在调用结束后，最后一个返回值将被放在栈顶。<br>被调用函数内发生的错误将（通过 longjmp）一直上抛。<br>下面的例子中，这行 Lua 代码等价于在宿主程序用 C 代码做一些工作：</p>
 <pre><code> a = f(&quot;how&quot;, t.x, 14)
 </code></pre><p>这里是 C 里的代码：</p>
 <pre><code> lua_getfield(L, LUA_GLOBALSINDEX, &quot;f&quot;);          /* 将调用的函数 */
@@ -1054,8 +1053,8 @@ end
 </code></pre><p>返回给定状态机的内存分配器函数。 如果 ud 不是 NULL ，Lua 把调用 lua_newstate 时传入的那个指针放入 *ud 。</p>
 <h3 id="lua-getfenv"><a href="#lua-getfenv" class="headerlink" title="lua_getfenv"></a>lua_getfenv</h3><pre><code>void lua_getfenv (lua_State *L, int index);
 </code></pre><p>把索引处值的环境表压入堆栈。</p>
-<h3 id="lua-getfield"><a href="#lua-getfield" class="headerlink" title="lua_getfield"></a>lua_getfield</h3><pre><code>void lua_getfield (lua_State *L, int index, const char *k);
-</code></pre><p>把 t[k] 值压入堆栈， 这里的 t 是指有效索引 index 指向的值。 在 Lua 中，这个函数可能触发对应 “index” 事件的元方法 （参见 §2.8）。</p>
+<h3 id="lua-getfield"><a href="#lua-getfield" class="headerlink" title="lua_getfield"></a>lua_getfield</h3><pre><code>void lua_getfield(lua_State *L, int index, const char *k);
+</code></pre><p>把 t[k] 值压入堆栈， 这里的 t 是指有效索引 index 指向的值。 在 Lua 中，这个函数可能触发对应 “index” 事件的元方法。</p>
 <h3 id="lua-getglobal"><a href="#lua-getglobal" class="headerlink" title="lua_getglobal"></a>lua_getglobal</h3><pre><code>void lua_getglobal(lua_State *L, const char *name);
 </code></pre><p>把全局变量name里的值压入堆栈。 这个是用一个宏定义出来的：</p>
 <pre><code> #define lua_getglobal(L,s)  lua_getfield(L, LUA_GLOBALSINDEX, s)
@@ -1066,7 +1065,7 @@ end
 <h3 id="lua-gettop"><a href="#lua-gettop" class="headerlink" title="lua_gettop"></a>lua_gettop</h3><pre><code>int lua_gettop(lua_State *L);
 </code></pre><p>返回栈顶元素的索引。 因为索引是从 1 开始编号的， 所以这个结果等于堆栈上的元素个数（因此返回 0 表示堆栈为空）。</p>
 <h3 id="lua-insert"><a href="#lua-insert" class="headerlink" title="lua_insert"></a>lua_insert</h3><pre><code>void lua_insert (lua_State *L, int index);
-</code></pre><p>把栈顶元素插入指定的有效索引处， 并依次移动这个索引之上的元素。 不要用伪索引来调用这个函数， 因为伪索引不是真正指向堆栈上的位置。</p>
+</code></pre><p>把栈顶元素插入指定的有效索引处， 并依次移动这个索引之上的元素。 不要用伪索引来调用这个函数，因为伪索引不是真正指向堆栈上的位置。</p>
 <h3 id="lua-Integer"><a href="#lua-Integer" class="headerlink" title="lua_Integer"></a>lua_Integer</h3><pre><code>typedef ptrdiff_t lua_Integer;
 </code></pre><p>这个类型被用于 Lua API 接收整数值。<br>缺省时这个被定义为 ptrdiff_t ， 这个东西通常是机器能处理的最大整数类型。</p>
 <h3 id="lua-isboolean"><a href="#lua-isboolean" class="headerlink" title="lua_isboolean"></a>lua_isboolean</h3><pre><code>int lua_isboolean (lua_State *L, int index);
@@ -1132,7 +1131,7 @@ size_t lua_rawlen (lua_State *L, int index); -- 5.3
 <h3 id="lua-pushboolean"><a href="#lua-pushboolean" class="headerlink" title="lua_pushboolean"></a>lua_pushboolean</h3><pre><code>void lua_pushboolean (lua_State *L, int b);
 </code></pre><p>把 b 作为一个 boolean 值压入堆栈。</p>
 <h3 id="lua-pushcclosure"><a href="#lua-pushcclosure" class="headerlink" title="lua_pushcclosure"></a>lua_pushcclosure</h3><pre><code>void lua_pushcclosure (lua_State *L, lua_CFunction fn, int n);
-</code></pre><p>把一个新的 C closure 压入堆栈。<br>当创建了一个 C 函数后，你可以给它关联一些值，这样就是在创建一个 C closure ； 接下来无论函数何时被调用，这些值都可以被这个函数访问到。 为了将一些值关联到一个 C 函数上， 首先这些值需要先被压入堆栈（如果有多个值，第一个先压）。 接下来调用 lua_pushcclosure 来创建出 closure 并把这个 C 函数压到堆栈上。 参数 n 告之函数有多少个值需要关联到函数上。 lua_pushcclosure 也会把这些值从栈上弹出。</p>
+</code></pre><p>把一个新的<code>C closure</code>压入堆栈。当创建了一个C函数后，你可以给它关联一些值，这样就是在创建一个<code>C closure</code>；接下来无论函数何时被调用，这些值都可以被这个函数访问到。为了将一些值关联到一个C函数上，首先这些值需要先被压入堆栈（如果有多个值，第一个先压）。接下来调用<code>lua_pushcclosure</code>来创建出closure并把这个C函数压到堆栈上。参数n告之函数有多少个值需要关联到函数上。<code>lua_pushcclosure</code>也会把这些值从栈上弹出。</p>
 <h3 id="lua-pushcfunction"><a href="#lua-pushcfunction" class="headerlink" title="lua_pushcfunction"></a>lua_pushcfunction</h3><pre><code>void lua_pushcfunction (lua_State *L, lua_CFunction f);
 </code></pre><p>将一个 C 函数压入堆栈。 这个函数接收一个 C 函数指针，并将一个类型为 function 的 Lua 值 压入堆栈。当这个栈顶的值被调用时，将触发对应的 C 函数。<br>注册到 Lua 中的任何函数都必须遵循正确的协议来接收参数和返回值 （参见 lua_CFunction）。</p>
 <p>lua_pushcfunction 是作为一个宏定义出现的：</p>
@@ -1166,7 +1165,7 @@ size_t lua_rawlen (lua_State *L, int index); -- 5.3
 <h3 id="lua-rawset"><a href="#lua-rawset" class="headerlink" title="lua_rawset"></a>lua_rawset</h3><pre><code>void lua_rawset (lua_State *L, int index);
 </code></pre><p>类似于 lua_settable ，但是是作一个直接赋值（不触发元方法）。</p>
 <h3 id="lua-rawseti"><a href="#lua-rawseti" class="headerlink" title="lua_rawseti"></a>lua_rawseti</h3><pre><code>void lua_rawseti (lua_State *L, int index, int n);
-</code></pre><p>等价于 t[n] = v， 这里的 t 是指给定索引 index 处的一个值， 而 v 是栈顶的值。函数将把这个值弹出栈。 赋值操作是直接的；就是说，不会触发元方法。</p>
+</code></pre><p>等价于<code>t[n] = v</code>，这里的 t 是指给定索引index 处的一个值， 而 v 是栈顶的值。函数将把这个值弹出栈。 赋值操作是直接的；就是说，不会触发元方法。</p>
 
       
     </div>
@@ -1288,7 +1287,7 @@ size_t lua_rawlen (lua_State *L, int index); -- 5.3
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">291</span>
+                    <span class="site-state-item-count">294</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1387,7 +1386,9 @@ size_t lua_rawlen (lua_State *L, int index); -- 5.3
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1584,7 +1585,9 @@ size_t lua_rawlen (lua_State *L, int index); -- 5.3
                     
                       
                     
-                    <span class="site-state-item-count">92</span>
+                      
+                    
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

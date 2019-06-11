@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="当前大部分来源是5.1的标准 lua_Readertypedef const char * (*lua_Reader) (lua_State *L, void *data, size_t *size); lua_load 用到的读取器函数， 每次它需要一块新的 chunk 的时候， lua_load 就调用读取器， 每次都会传入一个参数 data 。 读取器需要返回含有新的 chunk 的一块内存">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-31T15:20:51.905Z">
+<meta property="og:updated_time" content="2019-06-10T12:57:19.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Lua参考手册下半部分">
 <meta name="twitter:description" content="当前大部分来源是5.1的标准 lua_Readertypedef const char * (*lua_Reader) (lua_State *L, void *data, size_t *size); lua_load 用到的读取器函数， 每次它需要一块新的 chunk 的时候， lua_load 就调用读取器， 每次都会传入一个参数 data 。 读取器需要返回含有新的 chunk 的一块内存">
@@ -507,8 +507,8 @@
 <h3 id="lua-setglobal"><a href="#lua-setglobal" class="headerlink" title="lua_setglobal"></a>lua_setglobal</h3><pre><code>void lua_setglobal (lua_State *L, const char *name);
 </code></pre><p>从堆栈上弹出一个值，并将其设到全局变量 name 中。 它由一个宏定义出来：</p>
 <pre><code>#define lua_setglobal(L,s)   lua_setfield(L, LUA_GLOBALSINDEX, s)
-</code></pre><h3 id="lua-setmetatable"><a href="#lua-setmetatable" class="headerlink" title="lua_setmetatable"></a>lua_setmetatable</h3><pre><code>int lua_setmetatable (lua_State *L, int index);
-</code></pre><p>把一个 table 弹出堆栈，并将其设为给定索引处的值的 metatable 。</p>
+</code></pre><h3 id="lua-setmetatable"><a href="#lua-setmetatable" class="headerlink" title="lua_setmetatable"></a>lua_setmetatable</h3><pre><code>int lua_setmetatable(lua_State *L, int index);
+</code></pre><p>把一个table 弹出堆栈，并将其设为给定索引处的值的 metatable 。</p>
 <h3 id="lua-settable"><a href="#lua-settable" class="headerlink" title="lua_settable"></a>lua_settable</h3><pre><code>void lua_settable(lua_State *L, int index);
 </code></pre><p>作一个等价于 t[k] = v的操作，这里t是一个给定有效索引 index 处的值， v 指栈顶的值， 而 k 是栈顶之下的那个值。这个函数会把键和值都从堆栈中弹出。 和在 Lua 中一样，这个函数可能触发 “newindex” 事件的元方法。</p>
 <h3 id="lua-settop"><a href="#lua-settop" class="headerlink" title="lua_settop"></a>lua_settop</h3><pre><code>void lua_settop(lua_State *L, int index);
@@ -1149,7 +1149,7 @@ unop ::= `-´ | not | `#´
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">291</span>
+                    <span class="site-state-item-count">294</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1248,7 +1248,9 @@ unop ::= `-´ | not | `#´
                     
                       
                     
-                    <span class="site-state-item-count">43</span>
+                      
+                    
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1445,7 +1447,9 @@ unop ::= `-´ | not | `#´
                     
                       
                     
-                    <span class="site-state-item-count">92</span>
+                      
+                    
+                    <span class="site-state-item-count">93</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

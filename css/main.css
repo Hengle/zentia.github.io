@@ -610,14 +610,14 @@ pre,
   overflow: auto;
   margin: 20px 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 11px;
   color: #4d4d4c;
   background: #f7f7f7;
   line-height: 1.6;
 }
 pre,
 code {
-  font-family: 'Verdana', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+  font-family: 'Courier New', consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
 }
 code {
   overflow-wrap: break-word;
@@ -626,7 +626,7 @@ code {
   color: #555;
   background: #eee;
   border-radius: 3px;
-  font-size: 10px;
+  font-size: 11px;
 }
 pre {
   padding: 10px;
@@ -2067,7 +2067,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff44a;
+  background: #261679;
 }
 .links-of-blogroll {
   font-size: 13px;
