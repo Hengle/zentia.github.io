@@ -1168,7 +1168,7 @@ AssetBundle加
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2018/04/11/Unity-Note/" class="post-title-link" itemprop="url">Unity3D笔记</a>
+                <a href="/2018/04/11/Unity-Note/" class="post-title-link" itemprop="url">Unity3D中自带事件函数的执行顺序</a>
               
             
           </h2>
@@ -1231,8 +1231,9 @@ AssetBundle加
         
           
             <p>
-              在Update中使用Time.deltaTime，获取到的是这一帧的时间，如果游戏卡，帧率低，那这个值就大。如果游戏流畅，帧率高，这个值就小，Time.deltaTime=1.0f/帧率
-1、MonoBehaviour.Update 更新渲染帧当MonoBehaviour启用时，其Update在每一
+              在Unity3D继承自MonoBehavior的脚本中，有几个Unity3D自带的事件函数按照预定的顺序作为脚本执行。其执行顺序如下：
+编辑器（Editor）
+Reset：Reset函数被调用来初始化脚本属性当脚本第一次被附到对象上，并且在Reset命令被使用时也会调用。Reset是在用户点击Ins
               ...
             </p>
           <!--noindex-->
