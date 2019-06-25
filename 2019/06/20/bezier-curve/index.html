@@ -155,7 +155,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/06/20/bezier-curve/8.webp">
 <meta property="og:image" content="http://zentia.github.io/2019/06/20/bezier-curve/9.webp">
 <meta property="og:image" content="http://zentia.github.io/2019/06/20/bezier-curve/10.webp">
-<meta property="og:updated_time" content="2019-06-20T13:18:52.781Z">
+<meta property="og:updated_time" content="2019-06-20T13:35:46.918Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="贝塞尔曲线">
 <meta name="twitter:description" content="二阶贝塞尔曲线在平面内选3个不同线的点并且依次用线段连接。在AB和BC线段上找出点D和点E，使得AD/AB=BE/BC连接DE，在DE上寻找点F，F点需要满足：DF/DE=AD/AB=BE/BC根据DE线段和计算公式找出所有的F点，然后将这些点连起来。$B(t)=(1-t)^2P_0+2t(1-t)P_1+t^2P_2,t\in[0,1]$ 三阶贝塞尔与N阶贝塞尔曲线在平面内选4个不同线的点并且依">
@@ -497,7 +497,8 @@
 
       
         <h1 id="二阶贝塞尔曲线"><a href="#二阶贝塞尔曲线" class="headerlink" title="二阶贝塞尔曲线"></a>二阶贝塞尔曲线</h1><p>在平面内选3个不同线的点并且依次用线段连接。<br><img src="/2019/06/20/bezier-curve/1.webp"><br>在AB和BC线段上找出点D和点E，使得AD/AB=BE/BC<br><img src="/2019/06/20/bezier-curve/2.webp"><br>连接DE，在DE上寻找点F，F点需要满足：DF/DE=AD/AB=BE/BC<br><img src="/2019/06/20/bezier-curve/3.webp"><br>根据DE线段和计算公式找出所有的F点，然后将这些点连起来。<br><img src="/2019/06/20/bezier-curve/4.webp"><br>$B(t)=(1-t)^2P_0+2t(1-t)P_1+t^2P_2,t\in[0,1]$</p>
-<h1 id="三阶贝塞尔与N阶贝塞尔曲线"><a href="#三阶贝塞尔与N阶贝塞尔曲线" class="headerlink" title="三阶贝塞尔与N阶贝塞尔曲线"></a>三阶贝塞尔与N阶贝塞尔曲线</h1><p>在平面内选4个不同线的点并且依次用线段连接。<br><img src="/2019/06/20/bezier-curve/5.webp"><br>在线段上找对应的点(E,F,G)，对应的点符合AE/AB=BF/BC=CG/CD；找到对应的点以后接着连接EF,FG；接着在EF、FG线段上继续找点H、I，对应的点依旧符合等比计算规则，也就是EH/EF=FI/FG；最后连接H、I线段，在HI线段上继续找J，点J符合：EH/EF=FI/FG=HJ/HI<br><img src="/2019/06/20/bezier-curve/6.webp"><br>重复步骤二的动作，找到所有的J点，依次将J点连接起来<br><img src="/2019/06/20/bezier-curve/7.webp"><br><img src="/2019/06/20/bezier-curve/8.webp"><br>四阶贝塞尔如下：<br><img src="/2019/06/20/bezier-curve/9.webp"><br>一阶贝塞尔(线性插值)：<br><img src="/2019/06/20/bezier-curve/10.webp"><br>$B(t)=P_0+(P_1-P_0)t=(1-t)P_0+tP_1,t\in[0,1]$</p>
+<h1 id="三阶贝塞尔与N阶贝塞尔曲线"><a href="#三阶贝塞尔与N阶贝塞尔曲线" class="headerlink" title="三阶贝塞尔与N阶贝塞尔曲线"></a>三阶贝塞尔与N阶贝塞尔曲线</h1><p>在平面内选4个不同线的点并且依次用线段连接。<br><img src="/2019/06/20/bezier-curve/5.webp"><br>在线段上找对应的点(E,F,G)，对应的点符合AE/AB=BF/BC=CG/CD；找到对应的点以后接着连接EF,FG；接着在EF、FG线段上继续找点H、I，对应的点依旧符合等比计算规则，也就是EH/EF=FI/FG；最后连接H、I线段，在HI线段上继续找J，点J符合：EH/EF=FI/FG=HJ/HI<br><img src="/2019/06/20/bezier-curve/6.webp"><br>重复步骤二的动作，找到所有的J点，依次将J点连接起来<br><img src="/2019/06/20/bezier-curve/7.webp"><br><img src="/2019/06/20/bezier-curve/8.webp"><br>$B(t)=(1-t)^3P_0+3t(1-t)^2P_1+3t^2(1-t)P_2+t^3P_3,t\in[0,1]$<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">inline</span> <span class="title">void</span> <span class="title">EvaluateCache</span> (<span class="title">const</span> <span class="title">typename</span> <span class="title">AnimationCurveTpl</span>&lt;T&gt;:</span>:Cache&amp; cache, <span class="keyword">float</span> curveT, T&amp; output)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//  DebugAssertIf (curveT &lt; cache.time - kCurveTimeEpsilon || curveT &gt; cache.timeEnd + kCurveTimeEpsilon);</span></span><br><span class="line">    <span class="keyword">float</span> t = curveT - cache.time;</span><br><span class="line">    output = (t * (t * (t * cache.coeff[<span class="number">0</span>] + cache.coeff[<span class="number">1</span>]) + cache.coeff[<span class="number">2</span>])) + cache.coeff[<span class="number">3</span>];</span><br><span class="line">    DebugAssertIf (!IsFinite(output));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Unity中的AnimationCurve正是使用的3阶贝塞尔曲线。<br>四阶贝塞尔如下：<br><img src="/2019/06/20/bezier-curve/9.webp"><br>一阶贝塞尔(线性插值)：<br><img src="/2019/06/20/bezier-curve/10.webp"><br>$B(t)=P_0+(P_1-P_0)t=(1-t)P_0+tP_1,t\in[0,1]$</p>
 
       
     </div>
@@ -543,6 +544,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/20/barycentric-coordinate/" rel="prev" title="重心坐标系">
+                重心坐标系 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -720,7 +725,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -923,7 +932,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">95</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">97</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

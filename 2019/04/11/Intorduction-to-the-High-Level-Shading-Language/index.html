@@ -138,15 +138,16 @@
 
 
   <meta name="description" content="在这一章里我们描述高级着色器语言（High-Level Shading Language ，简称HLSL），在下三章里我们用它去编写顶点和像素着色器。简单的说，在我们写的程序里顶点和像素是很小的对象，它们由GPU来执行，是固定功能管线的一部分。用我们自己写的着色器程序替换一部分固定功能管线，在绘制效果上我们获得很大的灵活性。我们不再局限于预定义的”固定”操作。   为了编写着色器程序，我们需">
+<meta name="keywords" content="Direct3D">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language)">
+<meta property="og:title" content="高级着色器语言入门(Introduction to the High-Level Shading Language)">
 <meta property="og:url" content="http://zentia.github.io/2019/04/11/Intorduction-to-the-High-Level-Shading-Language/index.html">
 <meta property="og:site_name">
 <meta property="og:description" content="在这一章里我们描述高级着色器语言（High-Level Shading Language ，简称HLSL），在下三章里我们用它去编写顶点和像素着色器。简单的说，在我们写的程序里顶点和像素是很小的对象，它们由GPU来执行，是固定功能管线的一部分。用我们自己写的着色器程序替换一部分固定功能管线，在绘制效果上我们获得很大的灵活性。我们不再局限于预定义的”固定”操作。   为了编写着色器程序，我们需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:39.938Z">
+<meta property="og:updated_time" content="2019-06-24T14:23:00.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language)">
+<meta name="twitter:title" content="高级着色器语言入门(Introduction to the High-Level Shading Language)">
 <meta name="twitter:description" content="在这一章里我们描述高级着色器语言（High-Level Shading Language ，简称HLSL），在下三章里我们用它去编写顶点和像素着色器。简单的说，在我们写的程序里顶点和像素是很小的对象，它们由GPU来执行，是固定功能管线的一部分。用我们自己写的着色器程序替换一部分固定功能管线，在绘制效果上我们获得很大的灵活性。我们不再局限于预定义的”固定”操作。   为了编写着色器程序，我们需">
 
 
@@ -164,7 +165,7 @@
   };
 </script>
 
-  <title>第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language) | </title>
+  <title>高级着色器语言入门(Introduction to the High-Level Shading Language) | </title>
   
 
 
@@ -400,7 +401,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">第十六章 高级着色器语言入门(Introduction to the High-Level Shading Language)
+          <h2 class="post-title" itemprop="name headline">高级着色器语言入门(Introduction to the High-Level Shading Language)
 
               
             
@@ -497,7 +498,8 @@
 <ul>
 <li>学习如何定、编译一个HLSL 着色器程序。</li>
 <li>学习如何将程序中的数据传送到着色器程序。</li>
-<li><p>熟悉语法、类型，和HLSL的内建函数。<br>16.1 编写HLSL 着色器<br> 我们可以在程序源文件中用长字符串直接编写HLSL 着色器代码，然而更方便、更模块化的方法是把它与程序代码分离出来。因此，我们在记事本中编写着色器并保存成一般的ASCII文本文件，然后可以用D3DXCompileShaderFromFile函数(section 16.2.2)来编译它们。<br> 作为介绍，下面是用HLSL编写的一个简单的顶点着色器，用记事本生成并保存成文本文件“Transform.txt”。全部工程都在标题为Transform的目录下，顶点着色器用组合视图和投影矩阵转换顶点，并设置顶点漫射光为蓝色。</p>
+<li><p>熟悉语法、类型，和HLSL的内建函数。</p>
+<h1 id="编写HLSL着色器"><a href="#编写HLSL着色器" class="headerlink" title="编写HLSL着色器"></a>编写HLSL着色器</h1><p>我们可以在程序源文件中用字符串直接编写HLSL着色器代码，然而更方便、更模块化的方法是把它与程序代码分离出来。因此，我们在记事本中编写着色器并保存成一般的ASCII文本文件，然后可以用D3DXCompileShaderFromFile函数(section 16.2.2)来编译它们。<br>作为介绍，下面是用HLSL编写的一个简单的顶点着色器，用记事本生成并保存成文本文件“Transform.txt”。全部工程都在标题为Transform的目录下，顶点着色器用组合视图和投影矩阵转换顶点，并设置顶点漫射光为蓝色。</p>
 <p> 注意：这是一个顶点着色器的例子，不必关心顶点着色器做了什么，这是下一章包含的内容，现在的目标是熟悉HLSL编程的语法和格式。<br>// File: transform.txt<br>// Author: Frank D. Luna (C) All Rights Reserved<br>// System: AMD Athlon 1800+ XP, 512 DDR, Geforce 3, Windows XP,<br>// MSVC++ 7.0</p>
 </li>
 </ul>
@@ -732,6 +734,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Direct3D/" rel="tag"># Direct3D</a>
+          
+        </div>
+      
 
       
       
@@ -931,7 +939,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1134,7 +1146,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">95</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">97</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1170,7 +1186,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">+ +</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#编写HLSL着色器"><span class="nav-number">1.</span> <span class="nav-text">编写HLSL着色器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.1.</span> <span class="nav-text">+ +</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -138,7 +138,7 @@
 
 
   <meta name="description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
-<meta name="keywords" content="剑网3口袋版">
+<meta name="keywords" content="JX3M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑网3口袋版笔记">
 <meta property="og:url" content="http://zentia.github.io/2019/05/23/jx3m/index.html">
@@ -148,7 +148,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/2.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/1.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/23/jx3m/LockOpen.png">
-<meta property="og:updated_time" content="2019-05-31T15:01:08.860Z">
+<meta property="og:updated_time" content="2019-06-21T05:49:32.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑网3口袋版笔记">
 <meta name="twitter:description" content="Unity版本2018.32D场景，3D模型，确实有点惊喜，场景里面的东西看到的基本都是用片做的。那么定位就应该偏向格斗了，可能是帧同步吧。 以下基本是静态分析结果。 启动流程start场景挂了两个节点一个是Start在上面下挂了一个GameStart脚本，作为启动脚本，另一个是Camera没什么必要。GameStart在Start函数调用RuntimeCoroutineTracker.Invok">
@@ -434,7 +434,7 @@
               </span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/剑网3口袋版/" itemprop="url" rel="index"><span itemprop="name">剑网3口袋版</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JX3M/" itemprop="url" rel="index"><span itemprop="name">JX3M</span></a></span>
 
                 
                 
@@ -537,6 +537,8 @@
 <h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>字体使用的动态字体。表现效果好，但是CPU，内存占用大。不过这个也在情理之中，而且也是很常见的做法。</p>
 <h2 id="图集"><a href="#图集" class="headerlink" title="图集"></a>图集</h2><p>图集可能不是使用Texturepacker，但是都是2的幂次方，应该是要根据不同设备进行压缩的。在编辑器下观察，应该都是带alpha通道的，那么这块其实是可以优化的。比如将rgb和r通道分离。之前潘多拉就是这样的做法，这样其实和etc2的差别不是很大，但是和RGB32的差别还是肉眼可见的。<br><img src="/2019/05/23/jx3m/LockOpen.png"><br>好吧，浪费还是蛮严重的。</p>
 <h2 id="艺术字"><a href="#艺术字" class="headerlink" title="艺术字"></a>艺术字</h2><p>看着像是按照静态字体的方式制作的。</p>
+<h2 id="相机"><a href="#相机" class="headerlink" title="相机"></a>相机</h2><p>相机有一个UIMainCamera和一个FrontCamera，这里有个坑的地方就是在编辑器和模拟器上当前视图是使用的FrontCamera渲染，后置视图使用UIMainCamera并添加高斯模糊。<br>所以要注意在任何时候的相机操作。</p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="调试器"><a href="#调试器" class="headerlink" title="调试器"></a>调试器</h2><p>这里有很多调试器，都值得一试，它可能会帮助你修复难以解决的问题。<br>在Tools下面有RemoteDebugger.HierarchyPanel，打开面板，点击Query，然后所有的对象可以陈列在面板上，而且你可以对他进行修改，除了name和transform。<br>name是禁止修改的，但是transform怀疑是bug，导致无法修改。</p>
 
       
     </div>
@@ -560,7 +562,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/剑网3口袋版/" rel="tag"># 剑网3口袋版</a>
+            <a href="/tags/JX3M/" rel="tag"># JX3M</a>
           
         </div>
       
@@ -763,7 +765,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -966,7 +972,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">95</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">97</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1002,7 +1012,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#启动流程"><span class="nav-number">1.</span> <span class="nav-text">启动流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lua"><span class="nav-number">2.</span> <span class="nav-text">Lua</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">2.1.</span> <span class="nav-text">模块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AssetBundle"><span class="nav-number">3.</span> <span class="nav-text">AssetBundle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UI"><span class="nav-number">4.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构"><span class="nav-number">4.1.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common"><span class="nav-number">4.1.1.</span> <span class="nav-text">Common</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Timer-lua"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">Timer.lua</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Helper"><span class="nav-number">4.1.2.</span> <span class="nav-text">Helper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIHelper-lua"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">UIHelper.lua</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AddTimer"><span class="nav-number">4.1.2.1.1.</span> <span class="nav-text">AddTimer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UILoadHelper-lua"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">UILoadHelper.lua</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#LoadPrefabHandleAsync"><span class="nav-number">4.1.2.2.1.</span> <span class="nav-text">LoadPrefabHandleAsync</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LoadImg-img-nID-bMakePerfect-—-加载图片-UISprite-UITexture"><span class="nav-number">4.1.2.2.2.</span> <span class="nav-text">LoadImg(img, nID, bMakePerfect)—- 加载图片(UISprite, UITexture)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UINavigateHelper-lua"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">UINavigateHelper.lua</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格文件"><span class="nav-number">4.2.</span> <span class="nav-text">表格文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIPrefab绑定Lua"><span class="nav-number">4.3.</span> <span class="nav-text">UIPrefab绑定Lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">4.4.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图集"><span class="nav-number">4.5.</span> <span class="nav-text">图集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#艺术字"><span class="nav-number">4.6.</span> <span class="nav-text">艺术字</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#启动流程"><span class="nav-number">1.</span> <span class="nav-text">启动流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lua"><span class="nav-number">2.</span> <span class="nav-text">Lua</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">2.1.</span> <span class="nav-text">模块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AssetBundle"><span class="nav-number">3.</span> <span class="nav-text">AssetBundle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UI"><span class="nav-number">4.</span> <span class="nav-text">UI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录结构"><span class="nav-number">4.1.</span> <span class="nav-text">目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Common"><span class="nav-number">4.1.1.</span> <span class="nav-text">Common</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Timer-lua"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">Timer.lua</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Helper"><span class="nav-number">4.1.2.</span> <span class="nav-text">Helper</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UIHelper-lua"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">UIHelper.lua</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#AddTimer"><span class="nav-number">4.1.2.1.1.</span> <span class="nav-text">AddTimer</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UILoadHelper-lua"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">UILoadHelper.lua</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#LoadPrefabHandleAsync"><span class="nav-number">4.1.2.2.1.</span> <span class="nav-text">LoadPrefabHandleAsync</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#LoadImg-img-nID-bMakePerfect-—-加载图片-UISprite-UITexture"><span class="nav-number">4.1.2.2.2.</span> <span class="nav-text">LoadImg(img, nID, bMakePerfect)—- 加载图片(UISprite, UITexture)</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UINavigateHelper-lua"><span class="nav-number">4.1.2.3.</span> <span class="nav-text">UINavigateHelper.lua</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格文件"><span class="nav-number">4.2.</span> <span class="nav-text">表格文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UIPrefab绑定Lua"><span class="nav-number">4.3.</span> <span class="nav-text">UIPrefab绑定Lua</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">4.4.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图集"><span class="nav-number">4.5.</span> <span class="nav-text">图集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#艺术字"><span class="nav-number">4.6.</span> <span class="nav-text">艺术字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相机"><span class="nav-number">4.7.</span> <span class="nav-text">相机</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工具"><span class="nav-number">5.</span> <span class="nav-text">工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调试器"><span class="nav-number">5.1.</span> <span class="nav-text">调试器</span></a></li></ol></li></ol></div>
             
 
           </div>

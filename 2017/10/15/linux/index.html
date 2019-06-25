@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="例子：将目录A重命名为B mv A B 例子：将/a目录移动到/b下，并重命名为c mv /a /b/c  yum install wget yum install gcc yum install gcc-c++ wget http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.6.tar.gz tar -zxvf  ./configure -prefix=/us">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:40.063Z">
+<meta property="og:updated_time" content="2019-06-21T09:36:32.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux">
 <meta name="twitter:description" content="例子：将目录A重命名为B mv A B 例子：将/a目录移动到/b下，并重命名为c mv /a /b/c  yum install wget yum install gcc yum install gcc-c++ wget http://ftp.gnu.org/pub/gnu/ncurses/ncurses-5.6.tar.gz tar -zxvf  ./configure -prefix=/us">
@@ -521,13 +521,8 @@ find ./ -name &quot;*.o&quot; -exec rm {} \;
 make: ***[install_docs] Error 1
 vim /usr/bin/pod2man 注释69行#
 </code></pre><p>i386 几乎所有的X86平台<br>i686 只是i386的一个子集</p>
-<h1 id="在EC2上创建root用户，并使用root用户登录"><a href="#在EC2上创建root用户，并使用root用户登录" class="headerlink" title="在EC2上创建root用户，并使用root用户登录"></a>在EC2上创建root用户，并使用root用户登录</h1><pre><code>su
-vim /etc/ssh/sshd_config
-找到PasswordAuthentication no，把no改成yes
-PermitRootLogin yes
-sudo /sbin/service sshd restart
-su root
-</code></pre><h1 id="Linux内存管理"><a href="#Linux内存管理" class="headerlink" title="Linux内存管理"></a>Linux内存管理</h1><p>&lt;% img asset_img Linux1.webp %&gt;<br>在linux中，每一个进程都被抽象为task_struct结构体中，成为进程描述符，存储着进程各方面的信息；例如打开的文件，信号以及内存等等；然后task_struct中的一个属性mm_struct管理着进程的所有虚拟内存，成为内存描述符。在mm_struct结构体中，存储着进程各个内存段的开始以及结尾，如上图所示；进程使用的物理内存，即常驻内存RSS页数，这个内存使用的虚拟地址空间VSZ页数，还有进程虚拟内存区域集合和页表。<br>从上图可以看出，进程有代码段Text segment,数据段（已初始化的全局，静态变量），BSS段（未初始化的全局，静态变量），堆，内存映射区以及栈；<br>每一块虚拟内存区（VMA）都是由一块连续的虚拟地址组成，这些地址从不覆盖。一个vm_area_struct实例描述了一块内存区域，包括这块内存区域开始以及结尾地址；flags标志决定了这块内存的访问权限和行为；vm_file决定这块内存是由哪个文件映射的，如果没有文件映射，则这块内存为匿名的(anonymous)。上图中提到的每个内存段，都对应一个vm_area_struct结构。如下图所示<br>&lt;% asset_img Linux2.webp %&gt;<br>上图即为/bin/gonzo进程的内存布局。程序的二进制文件映射到代码段和数据段，代码段为只读只执行，不可更改；全局以及静态的未初始化的变量映射到BSS段，为匿名映射，堆和栈也是匿名映射，因为没有相对应的文件映射；内存映射区可以映射共享库，映射文件以及匿名映射，所以这块内存段可以使文件映射也可以是匿名映射。而且不同的文件，映射到不同的vm_area_struct区。<br>这些vm_area_struct集合存储在mm_struct中的一个单向链表和红黑树中；当输出/proc/pid/maps文件时，只需要遍历这个链表即可。红黑树主要是为了快速定位到某一个内存块，红黑树的跟存储在mm_rb域。<br>线性地址需要通过页表才能转换为物理地址。每个进程的内存描述符也保存了这个进程页表指针pgd,每一块虚拟内存页都和页表的某一项对应。<br>虚拟内存是不存储任何数据的，它只是将地址空间映射到物理内存。物理内存有内核伙伴系统分配，如果一块物理内存没有被映射，就可以被伙伴系统分配给虚拟内存。刚分配的物理内存可能是匿名的，存储进程数据，也可能是缓存，存储文件或块设备的数据。一块虚拟内存vm_area_struct块是由连续的虚拟内存也组成的，而这些虚拟内存块映射的物理内存却不一定连续，如下图所示：<br>&lt;% asset_img Linux3.webp  %&gt;</p>
+<h1 id="Linux内存管理"><a href="#Linux内存管理" class="headerlink" title="Linux内存管理"></a>Linux内存管理</h1><p>&lt;% img asset_img Linux1.webp %&gt;<br>在linux中，每一个进程都被抽象为task_struct结构体中，成为进程描述符，存储着进程各方面的信息；例如打开的文件，信号以及内存等等；然后task_struct中的一个属性mm_struct管理着进程的所有虚拟内存，成为内存描述符。在mm_struct结构体中，存储着进程各个内存段的开始以及结尾，如上图所示；进程使用的物理内存，即常驻内存RSS页数，这个内存使用的虚拟地址空间VSZ页数，还有进程虚拟内存区域集合和页表。<br>从上图可以看出，进程有代码段Text segment,数据段（已初始化的全局，静态变量），BSS段（未初始化的全局，静态变量），堆，内存映射区以及栈；<br>每一块虚拟内存区（VMA）都是由一块连续的虚拟地址组成，这些地址从不覆盖。一个vm_area_struct实例描述了一块内存区域，包括这块内存区域开始以及结尾地址；flags标志决定了这块内存的访问权限和行为；vm_file决定这块内存是由哪个文件映射的，如果没有文件映射，则这块内存为匿名的(anonymous)。上图中提到的每个内存段，都对应一个vm_area_struct结构。如下图所示<br>&lt;% asset_img Linux2.webp %&gt;<br>上图即为/bin/gonzo进程的内存布局。程序的二进制文件映射到代码段和数据段，代码段为只读只执行，不可更改；全局以及静态的未初始化的变量映射到BSS段，为匿名映射，堆和栈也是匿名映射，因为没有相对应的文件映射；内存映射区可以映射共享库，映射文件以及匿名映射，所以这块内存段可以使文件映射也可以是匿名映射。而且不同的文件，映射到不同的vm_area_struct区。<br>这些vm_area_struct集合存储在mm_struct中的一个单向链表和红黑树中；当输出/proc/pid/maps文件时，只需要遍历这个链表即可。红黑树主要是为了快速定位到某一个内存块，红黑树的跟存储在mm_rb域。<br>线性地址需要通过页表才能转换为物理地址。每个进程的内存描述符也保存了这个进程页表指针pgd,每一块虚拟内存页都和页表的某一项对应。<br>虚拟内存是不存储任何数据的，它只是将地址空间映射到物理内存。物理内存有内核伙伴系统分配，如果一块物理内存没有被映射，就可以被伙伴系统分配给虚拟内存。刚分配的物理内存可能是匿名的，存储进程数据，也可能是缓存，存储文件或块设备的数据。一块虚拟内存vm_area_struct块是由连续的虚拟内存也组成的，而这些虚拟内存块映射的物理内存却不一定连续，如下图所示：<br>&lt;% asset_img Linux3.webp  %&gt;</p>
+<h1 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h1><p><code>mount -t cifs -o username=administrator,passwd=,uid=&quot;1000&quot;,gid=&quot;1000&quot;,vers=2.0 //192.168.0.102/workspace /home/develop</code></p>
 
       
     </div>
@@ -754,7 +749,11 @@ su root
                     
                       
                     
-                    <span class="site-state-item-count">46</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">48</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -957,7 +956,11 @@ su root
                     
                       
                     
-                    <span class="site-state-item-count">95</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">97</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -993,7 +996,7 @@ su root
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#du查看某个文件或目录占空间大小"><span class="nav-number">1.</span> <span class="nav-text">du查看某个文件或目录占空间大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux下修改-bash-profile立即生效的方法"><span class="nav-number">2.</span> <span class="nav-text">linux下修改.bash_profile立即生效的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux中文乱码"><span class="nav-number">3.</span> <span class="nav-text">linux中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决中文乱码"><span class="nav-number">4.</span> <span class="nav-text">解决中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux中安装gcc-g-yum方式"><span class="nav-number">5.</span> <span class="nav-text">Linux中安装gcc g++ yum方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux注销用户"><span class="nav-number">6.</span> <span class="nav-text">Linux注销用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cannot-find-lgcc-s"><span class="nav-number">7.</span> <span class="nav-text">cannot find -lgcc_s</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kill-2-和-kill-9的区别"><span class="nav-number">8.</span> <span class="nav-text">kill -2 和 kill -9的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#硬链接-hard-link-和软链接-符号链接，fsoft-link或symbolic-link"><span class="nav-number">9.</span> <span class="nav-text">硬链接(hard link)和软链接(符号链接，fsoft link或symbolic link)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ssh登录方法"><span class="nav-number">10.</span> <span class="nav-text">ssh登录方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#永久性获取ROOT权限"><span class="nav-number">11.</span> <span class="nav-text">永久性获取ROOT权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64位linux机器上编译32位openssl库"><span class="nav-number">12.</span> <span class="nav-text">64位linux机器上编译32位openssl库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在EC2上创建root用户，并使用root用户登录"><span class="nav-number">13.</span> <span class="nav-text">在EC2上创建root用户，并使用root用户登录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux内存管理"><span class="nav-number">14.</span> <span class="nav-text">Linux内存管理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#du查看某个文件或目录占空间大小"><span class="nav-number">1.</span> <span class="nav-text">du查看某个文件或目录占空间大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux下修改-bash-profile立即生效的方法"><span class="nav-number">2.</span> <span class="nav-text">linux下修改.bash_profile立即生效的方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux中文乱码"><span class="nav-number">3.</span> <span class="nav-text">linux中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决中文乱码"><span class="nav-number">4.</span> <span class="nav-text">解决中文乱码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux中安装gcc-g-yum方式"><span class="nav-number">5.</span> <span class="nav-text">Linux中安装gcc g++ yum方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux注销用户"><span class="nav-number">6.</span> <span class="nav-text">Linux注销用户</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cannot-find-lgcc-s"><span class="nav-number">7.</span> <span class="nav-text">cannot find -lgcc_s</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#kill-2-和-kill-9的区别"><span class="nav-number">8.</span> <span class="nav-text">kill -2 和 kill -9的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#硬链接-hard-link-和软链接-符号链接，fsoft-link或symbolic-link"><span class="nav-number">9.</span> <span class="nav-text">硬链接(hard link)和软链接(符号链接，fsoft link或symbolic link)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ssh登录方法"><span class="nav-number">10.</span> <span class="nav-text">ssh登录方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#永久性获取ROOT权限"><span class="nav-number">11.</span> <span class="nav-text">永久性获取ROOT权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64位linux机器上编译32位openssl库"><span class="nav-number">12.</span> <span class="nav-text">64位linux机器上编译32位openssl库</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux内存管理"><span class="nav-number">13.</span> <span class="nav-text">Linux内存管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#挂载"><span class="nav-number">14.</span> <span class="nav-text">挂载</span></a></li></ol></div>
             
 
           </div>
