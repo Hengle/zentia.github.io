@@ -150,7 +150,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/05/12/opengles/3.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/12/opengles/4.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/05/12/opengles/5.jpg">
-<meta property="og:updated_time" content="2019-06-25T09:19:06.085Z">
+<meta property="og:updated_time" content="2019-06-25T12:24:35.297Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL ES 3.0">
 <meta name="twitter:description" content="Windows配置OpenGLES3开发环境OpenGL ES 3.0实现了具有可编程着色功能的图形管线，由两个规范组成：OpenGL ES 3.0 API规范和OpenGL ES着色语言3.0规范（OpenGL ES SL）。下图展示了OpenGL ES 3.0图形管线。图中带有阴影的方框表示OpenGL ES 3.0中管线的可编程阶段。下面概述OpenGL ES 3.0 图形管线的各个阶段。">
@@ -1192,7 +1192,8 @@
 <p>除了精度限定符之外，还有默认精度的概念。也就是说，如果变量声明时没有使用精度限定符，它将拥有该类型的默认精度。默认精度限定符在顶点或者片段着色器的开头用如下语法指定：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">precision highp <span class="keyword">float</span>;</span><br><span class="line">precision mediump <span class="keyword">int</span>;</span><br></pre></td></tr></table></figure></p>
 <p>在顶点着色器中，如果没有指定默认精度，则int和float的默认精度都为highp。也就是说，顶点着色器中所有没用精度限定符声明的变量都使用最高的精度。片段着色器的规则与此不同。在片段着色器中，浮点值没有默认的精度值：每个着色器必须声明一个默认的float精度，或者为每个float变量指定精度。</p>
 <h2 id="不变性"><a href="#不变性" class="headerlink" title="不变性"></a>不变性</h2><p>OpenGL ES着色语言中引入的invariant关键字可以用于任何可变的顶点着色器输出。不变性是什么意思，为什么它很必要呢？问题在于着色器需要编译，而编译器可能进行导致指令重新排序的优化。这种指令重排意味着两个着色器之间等价计算不能保证产生完全相同的结果。这种不一致性在多遍着色器特效时尤其可能称为问题，在这种情况下，相同的对象Alpha混合绘制在自身上方。如果用于计算输出位置的数值的精度不完全一样，精度差异就会导致伪像。这个问题通常表现为“深度冲突”(Z fighting)，每个像素的Z（深度）精度差异导致不同遍着色相互之间有微小的偏移。<br>invariant关键字可以用于变量声明，或者用于已经声明的变量。下面是一些例子：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">invariant gl_Position;</span><br><span class="line">invariant texCoord;</span><br></pre></td></tr></table></figure></p>
-<p>一旦某个输出变量声明了不变性，编译器便保证相同的计算和着色器输入条件下结果相同。例如，两个顶点着色器通过将视图投影矩阵和输入位置位置相乘</p>
+<p>一旦某个输出变量声明了不变性，编译器便保证相同的计算和着色器输入条件下结果相同。例如，两个顶点着色器通过将视图投影矩阵和输入位置位置相乘计算输出位置，你可以保证这些位置不变。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#version 300 es</span></span><br><span class="line">uniform mat4 u_viewProjMatrix;</span><br><span class="line">layout(location = <span class="number">0</span>) in vec4 a_vertex;</span><br><span class="line">invariant gl_Position;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Will be the same value in all shaders with the same viewProjMatrix and vertex</span></span><br><span class="line">    gl_Position = u_viewProjMatrix * a_vertex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以用#pragma指定让所有变量全都不变：<br><code>#pragma STDGL invariant(all)</code><br>警告：因为编译器需要保证不变性，所以可能限制它所做的优化。因此，invariant限定符应该只在必要时使用；否则可能导致性能下降。由于这个原因，全局启用不变性的#pragma指令之应该在不变性对于所有变量都必需的时候使用。还要注意，虽然不变性表示在指定GPU上计算会得到相同的结果，但是并不意味着计算在任何OpenGL ES实现之间保持不变。</p>
 
       
     </div>
@@ -1314,7 +1315,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">300</span>
+                    <span class="site-state-item-count">304</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1423,7 +1424,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1640,6 +1645,43 @@
 
           
 
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/zentia" title="GitHub &rarr; https://github.com/zentia" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:363477658@qq.com" title="E-Mail &rarr; mailto:363477658@qq.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.zhihu.com/people/zentia-33/activities" title="Zhihu &rarr; https://www.zhihu.com/people/zentia-33/activities" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Zhihu</a>
+                </span>
+              
+            </div>
           
 
           
