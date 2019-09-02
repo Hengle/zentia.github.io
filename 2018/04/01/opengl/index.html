@@ -137,18 +137,21 @@
 
 
 
-  <meta name="description" content="核心模式和立即渲染模式早期的OpenGL使用立即渲染模式（Immediate mode，也就是固定渲染管线），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。 状态机OpenGL自身是一个巨大的状态机(State Machine)：一系列的变脸描述OpenGL此刻应当如何运行">
+  <meta name="description" content="基本概念与读者以前听说的可能不同，OpenGL（对其它3D应用程序接口来说也是如此）3D图形编程并不都是关于着色器的。不管是使用C、C++、C#、JavaScript等编程语言的哪一种，客户端都必须完成相当多的工作，来管理这些着色器，以及向它们馈送（feed）几何图形、变换矩阵和其他各种数据。本书的第一部分是真正的数据——3D图形编程教程，从基本原则开始讲述，当然这些都是基于实时3D图形渲染的行业">
 <meta name="keywords" content="OpenGL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OpenGL">
 <meta property="og:url" content="http://zentia.github.io/2018/04/01/opengl/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="核心模式和立即渲染模式早期的OpenGL使用立即渲染模式（Immediate mode，也就是固定渲染管线），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。 状态机OpenGL自身是一个巨大的状态机(State Machine)：一系列的变脸描述OpenGL此刻应当如何运行">
+<meta property="og:description" content="基本概念与读者以前听说的可能不同，OpenGL（对其它3D应用程序接口来说也是如此）3D图形编程并不都是关于着色器的。不管是使用C、C++、C#、JavaScript等编程语言的哪一种，客户端都必须完成相当多的工作，来管理这些着色器，以及向它们馈送（feed）几何图形、变换矩阵和其他各种数据。本书的第一部分是真正的数据——3D图形编程教程，从基本原则开始讲述，当然这些都是基于实时3D图形渲染的行业">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:40.074Z">
+<meta property="og:image" content="http://zentia.github.io/2018/04/01/opengl/1.jpg">
+<meta property="og:image" content="http://zentia.github.io/2018/04/01/opengl/2.jpg">
+<meta property="og:updated_time" content="2019-09-02T02:05:27.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="OpenGL">
-<meta name="twitter:description" content="核心模式和立即渲染模式早期的OpenGL使用立即渲染模式（Immediate mode，也就是固定渲染管线），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。 状态机OpenGL自身是一个巨大的状态机(State Machine)：一系列的变脸描述OpenGL此刻应当如何运行">
+<meta name="twitter:description" content="基本概念与读者以前听说的可能不同，OpenGL（对其它3D应用程序接口来说也是如此）3D图形编程并不都是关于着色器的。不管是使用C、C++、C#、JavaScript等编程语言的哪一种，客户端都必须完成相当多的工作，来管理这些着色器，以及向它们馈送（feed）几何图形、变换矩阵和其他各种数据。本书的第一部分是真正的数据——3D图形编程教程，从基本原则开始讲述，当然这些都是基于实时3D图形渲染的行业">
+<meta name="twitter:image" content="http://zentia.github.io/2018/04/01/opengl/1.jpg">
 
 
 
@@ -469,7 +472,10 @@
       
 
       
-        <h1 id="核心模式和立即渲染模式"><a href="#核心模式和立即渲染模式" class="headerlink" title="核心模式和立即渲染模式"></a>核心模式和立即渲染模式</h1><p>早期的OpenGL使用<strong>立即渲染模式</strong>（Immediate mode，也就是<strong>固定渲染管线</strong>），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。</p>
+        <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p>与读者以前听说的可能不同，OpenGL（对其它3D应用程序接口来说也是如此）3D图形编程并不都是关于着色器的。不管是使用C、C++、C#、JavaScript等编程语言的哪一种，客户端都必须完成相当多的工作，来管理这些着色器，以及向它们馈送（feed）几何图形、变换矩阵和其他各种数据。<br>本书的第一部分是真正的数据——3D图形编程教程，从基本原则开始讲述，当然这些都是基于实时3D图形渲染的行业标准OpenGL的。<br>着色器编程非常令人兴奋，但是作者并不打算将本书写成一本着色器编程数据。实际上，如果没有如何管理场景，设置视点、模型和变换矩阵，以及载入纹理等知识，那么即使懂得如何编写优秀的着色器也难有所成……我想读者一定明白我的意思。<br>为了帮助读者上手，本书提供了一个小型的“存储着色器”库，它们能够完成大多数常规任务。读者甚至可能会发现，对于简单3D渲染来说，这些着色器已经能够满足所有需要了。但是，随着知识的增长，读者可能并不会满足于此。在进入第二部分之前，还未读者准备GLSL“快速开始”，因此读者无需等到完成掌握OpenGL应用程序接口就能开始创造性了。</p>
+<h2 id="3D图形技术和术语"><a href="#3D图形技术和术语" class="headerlink" title="3D图形技术和术语"></a>3D图形技术和术语</h2><p>本书的每一章都包含一个或多个实例程序用来演示这一章锁讨论的编程技术。尽管本章有意避免了关于编程细节的讨论，但扔提供了一个示例程序向读者演示最低程度上需要熟悉的技术和术语，以帮助读者充分利用本书。本章的示例程序叫做BLOCK，读者可以从随书提供的示例程序集中的“Chapter 1”文件夹中找到它。<br>将数学和图形数据转换到3D空间图像的操作叫做渲染（Rendering）。当这个术语作为动词使用时，指的是计算机创建三维图像时所经历的过程。它也作为名词使用，指的仅仅是最终的图像作品。</p>
+<h3 id="光栅化（Rasterization）"><a href="#光栅化（Rasterization）" class="headerlink" title="光栅化（Rasterization）"></a>光栅化（Rasterization）</h3><p>实际绘制或填充每个定点之间的像素形成线段就叫做光栅化（Rasterization）。我们可以通过隐藏表面消除（Hidden Surface Removal）来进一步澄清3D设计意图。<br>视口：把绘图坐标映射到窗口坐标<br>裁剪区域的高度和宽度很少正好与窗口的宽度和高度（以像素为单位）相匹配。因此，坐标系统必须从逻辑笛卡尔坐标映射到物理屏幕像素坐标。这个映射是通过一种叫做视口（ViewPort）的设置来指定的。视口就是窗口内部用于绘制裁剪区域的客户区域。视口简单地把裁剪区域映射到窗口的一个区域。通常，视口被定义为整个窗口，但这并非严格必须的。例如，我们可能只希望在窗口的下半部分进行绘图。在用GPA抓帧的时候会发现，如果更改屏幕分辨率，就是只绘制到了视口或者窗口的一部分。<br><img src="/2018/04/01/opengl/1.jpg"><br>与此形成对照的是，图1.20所示显示了一个与裁剪区域相匹配的视口。我们所看到的的这个窗口仍然是300*200像素。但是，现在可视区域将占据窗口的左下部分。<br>我们可以使用视口来缩小或放大窗口中的图像，也可以通过把视口设置为大于窗口的用户区域，从而只显示裁剪区域的一部分。<br><img src="/2018/04/01/opengl/2.jpg"><br>顶点——空间中的一个位置</p>
+<h1 id="核心模式和立即渲染模式"><a href="#核心模式和立即渲染模式" class="headerlink" title="核心模式和立即渲染模式"></a>核心模式和立即渲染模式</h1><p>早期的OpenGL使用<strong>立即渲染模式</strong>（Immediate mode，也就是<strong>固定渲染管线</strong>），立即渲染模式容易使用和理解，但是效率太低。因此从OpenGL3.2开始，规范文档开始废弃立即渲染模式，推出核心模式(Core-profile)，这个模式完全移除了旧的特性。</p>
 <h1 id="状态机"><a href="#状态机" class="headerlink" title="状态机"></a>状态机</h1><p>OpenGL自身是一个巨大的状态机(State Machine)：一系列的变脸描述OpenGL此刻应当如何运行。</p>
 <h1 id="颜色缓冲区"><a href="#颜色缓冲区" class="headerlink" title="颜色缓冲区"></a>颜色缓冲区</h1><p>颜色缓冲区（COLOR_BUFFER）就是帧缓冲区（FRAME_BUFFER），你需要渲染的场景最终每一个像素都要写入该缓冲区，然后由它渲染到屏幕上显示。</p>
 <h1 id="深度缓冲区"><a href="#深度缓冲区" class="headerlink" title="深度缓冲区"></a>深度缓冲区</h1><p>深度缓冲区（DEPTH_BUFFER）与帧缓冲区对应，用于记录上面每个像素的深度值，通过深度缓冲区，我们就可以进行深度测试，从而确定像素的遮挡关系，保证渲染正确。</p>
@@ -602,7 +608,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">304</span>
+                    <span class="site-state-item-count">311</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -713,9 +719,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -995,7 +999,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#核心模式和立即渲染模式"><span class="nav-number">1.</span> <span class="nav-text">核心模式和立即渲染模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态机"><span class="nav-number">2.</span> <span class="nav-text">状态机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#颜色缓冲区"><span class="nav-number">3.</span> <span class="nav-text">颜色缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度缓冲区"><span class="nav-number">4.</span> <span class="nav-text">深度缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模版缓冲区"><span class="nav-number">5.</span> <span class="nav-text">模版缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Texture-Wrapping"><span class="nav-number">6.</span> <span class="nav-text">Texture Wrapping</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3D图形技术和术语"><span class="nav-number">1.1.</span> <span class="nav-text">3D图形技术和术语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#光栅化（Rasterization）"><span class="nav-number">1.1.1.</span> <span class="nav-text">光栅化（Rasterization）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#核心模式和立即渲染模式"><span class="nav-number">2.</span> <span class="nav-text">核心模式和立即渲染模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#状态机"><span class="nav-number">3.</span> <span class="nav-text">状态机</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#颜色缓冲区"><span class="nav-number">4.</span> <span class="nav-text">颜色缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深度缓冲区"><span class="nav-number">5.</span> <span class="nav-text">深度缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模版缓冲区"><span class="nav-number">6.</span> <span class="nav-text">模版缓冲区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Texture-Wrapping"><span class="nav-number">7.</span> <span class="nav-text">Texture Wrapping</span></a></li></ol></div>
             
 
           </div>
