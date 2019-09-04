@@ -144,7 +144,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="全局光照全局光照几乎代表了计算机图形学渲染相关的全部内容，它是一个渲染器力求模拟真实物理关于物体代表交互的全部自然现象的全部内容（当然目前计算机图形学研究领域主要限于几何光学，它并不包括更微观的如干涉，衍射等光学现象，参见第1章的介绍）：即光从光源触发，以无限的速度在环境中直线前进，经过与表面发生多次反射和折射，最后进入人的眼睛形成图像。然后由于光照方程是一个沿全空间方向的积分，这使得渲染过程非常">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-31T12:14:56.836Z">
+<meta property="og:updated_time" content="2019-09-04T00:53:18.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全局光照技术：从离线到实时渲染">
 <meta name="twitter:description" content="全局光照全局光照几乎代表了计算机图形学渲染相关的全部内容，它是一个渲染器力求模拟真实物理关于物体代表交互的全部自然现象的全部内容（当然目前计算机图形学研究领域主要限于几何光学，它并不包括更微观的如干涉，衍射等光学现象，参见第1章的介绍）：即光从光源触发，以无限的速度在环境中直线前进，经过与表面发生多次反射和折射，最后进入人的眼睛形成图像。然后由于光照方程是一个沿全空间方向的积分，这使得渲染过程非常">
@@ -474,6 +474,7 @@
 <li>基于Monte Carlo方法的光线追踪技术 Monte Carlo方法通过随机抽样，使用有限个采样点的值，来计算积分方程的值。</li>
 </ul>
 <p>这两种方法均能达到非常高的图像品质，然后它们的计算仍然十分耗时，因此主要用于电影等离线渲染领域（例如皮克斯的渲染产品RenderMan就是基于光线追踪的渲染器）。在游戏等实时渲染领域，人们寻求更简化的渲染模型，与辐射度和光线追踪技术通过简化积分方程的思路不同，实时渲染领域的主意思路是根据光学现象或者其它理论拆分光照方程，使得光照效果最终由多种效果叠加而成，例如Direct lighting（光从光源出发经过物体表面反射或者折射一次后进入如烟），（Soft）shadow，Diffuse lighting，Specular lighting，Indirect lighting，Ambient Occlusion，Subsurface Scattering，Environment lighting，Reflection等等。<br>这些效果可能分别使用不通的方法来计算，例如Shadow可以使用GPU的光栅化特性来计算，Ambient Occlusion可以使用Post processing基于屏幕空间（Screen Space）进行计算，Environment lighting则可以使用简单的贴图实现；另一些算法则使用一些特定的数据格式来加速其中的一些计算，例如Unreal Engine 4通过对整个场景构建一个Distance field的数据结构，通过它来加速遮挡关系的计算从而实现Soft shadow以及Ambient occlusion等效果，其它一些方法则通过使用Spherical Harmonic来存储一些点的近似的“环境函数”，从而能够快速地计算各个间接反射的效果。</p>
+<h1 id="光与表面的交互"><a href="#光与表面的交互" class="headerlink" title="光与表面的交互"></a>光与表面的交互</h1><p>计算机图形学（computer graphics）<br>然而，要达到逼真的视觉效果，尤其在实时的环境下，这个渲染的过程异常复杂。从技术上讲，这里有两个突出的困难需要解决：首先，对于表面上的每个点，我们必须在该点法线方向对应的半空间（hemisphere）上做积分运算以便求出该点的颜色值，因为每个点都可能接受来自场景中所有其他点反射的光照；其次，对于空间中传播的每一条光线（）</p>
 
       
     </div>
@@ -589,7 +590,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">311</span>
+                    <span class="site-state-item-count">317</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -700,7 +701,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -980,7 +983,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全局光照"><span class="nav-number">1.</span> <span class="nav-text">全局光照</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全局光照"><span class="nav-number">1.</span> <span class="nav-text">全局光照</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光与表面的交互"><span class="nav-number">2.</span> <span class="nav-text">光与表面的交互</span></a></li></ol></div>
             
 
           </div>

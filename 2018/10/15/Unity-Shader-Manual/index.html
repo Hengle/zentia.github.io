@@ -145,7 +145,7 @@
 <meta property="og:site_name">
 <meta property="og:description" content="Properties123456789101112Shader &amp;quot;ShaderLab Tutorials/TestShader&amp;quot;&amp;#123;    Properties &amp;#123;        _Range (&amp;quot;My Range&amp;quot;, Range(0.02, 0.15)) = 0.07 // sliders        _Color (&amp;quot;My">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T04:52:40.002Z">
+<meta property="og:updated_time" content="2019-09-03T07:16:14.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Unity Shader Manual">
 <meta name="twitter:description" content="Properties123456789101112Shader &amp;quot;ShaderLab Tutorials/TestShader&amp;quot;&amp;#123;    Properties &amp;#123;        _Range (&amp;quot;My Range&amp;quot;, Range(0.02, 0.15)) = 0.07 // sliders        _Color (&amp;quot;My">
@@ -682,8 +682,10 @@
 </table>
 </div>
 <h1 id="pragma-fragementoption-ARB-precision-hint-fastest"><a href="#pragma-fragementoption-ARB-precision-hint-fastest" class="headerlink" title="#pragma fragementoption ARB_precision_hint_fastest"></a>#pragma fragementoption ARB_precision_hint_fastest</h1><p>ARB_precision_hint_fastest 是用最快的方式，以最低的精度运行，提升片段着色器的运行速度，减少时间。（通常是指FP16,16bit，半精度）牺牲表现换取运行速度。</p>
-<h1 id="UnpackNormal"><a href="#UnpackNormal" class="headerlink" title="UnpackNormal"></a>UnpackNormal</h1><pre><code>half3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));
-</code></pre><p>UnpackNormal是定义在UnityCG.cginc文件中的方法，UnpackNormal接受一个fixed4的输入，并将其转换为所对应的法线值(fixed3)。</p>
+<h1 id="UnpackNormal"><a href="#UnpackNormal" class="headerlink" title="UnpackNormal"></a>UnpackNormal</h1><p><code>half3 normal = UnpackNormal(tex2D(_NormalMap, IN.uv_NormalMap));</code><br>UnpackNormal是定义在UnityCG.cginc文件中的方法，UnpackNormal接受一个fixed4的输入，并将其转换为所对应的法线值(fixed3)。</p>
+<h1 id="TANGENT-SPACE-ROTATION"><a href="#TANGENT-SPACE-ROTATION" class="headerlink" title="TANGENT_SPACE_ROTATION"></a>TANGENT_SPACE_ROTATION</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">float3 binormal = cross(v.normal,v.tangent.xyz)*v.tangent.w;</span><br><span class="line">flaot3x3 rotation = float3x3(v.tangent.xyz,binormal,v.normal);</span><br></pre></td></tr></table></figure>
+<p>也就是构造出tangent space的坐标系，定义转换world space的向量到tangent space的rotation矩阵。</p>
+<h1 id="UNITY-MATRIX-IT-MV"><a href="#UNITY-MATRIX-IT-MV" class="headerlink" title="UNITY_MATRIX_IT_MV"></a>UNITY_MATRIX_IT_MV</h1><p>专门用于将发现从模型空间变换到观察空间，为UNITY_MATRIX_MV的逆转置矩阵，</p>
 
       
     </div>
@@ -805,7 +807,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">311</span>
+                    <span class="site-state-item-count">317</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -916,7 +918,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">49</span>
+                      
+                    
+                    <span class="site-state-item-count">50</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1196,7 +1200,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Semantics"><span class="nav-number">2.</span> <span class="nav-text">Semantics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SubShader"><span class="nav-number">3.</span> <span class="nav-text">SubShader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tags-“TagName1”-”Value1”-“TagName2”-”Value2”"><span class="nav-number">3.1.</span> <span class="nav-text">Tags{“TagName1”=”Value1” “TagName2”=”Value2”}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue"><span class="nav-number">3.2.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RenderType"><span class="nav-number">3.3.</span> <span class="nav-text">RenderType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DisableBatching"><span class="nav-number">3.4.</span> <span class="nav-text">DisableBatching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">4.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot-a-b"><span class="nav-number">4.1.</span> <span class="nav-text">dot(a,b)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">5.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置函数"><span class="nav-number">6.</span> <span class="nav-text">内置函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pragma-fragementoption-ARB-precision-hint-fastest"><span class="nav-number">7.</span> <span class="nav-text">#pragma fragementoption ARB_precision_hint_fastest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UnpackNormal"><span class="nav-number">8.</span> <span class="nav-text">UnpackNormal</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">1.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Semantics"><span class="nav-number">2.</span> <span class="nav-text">Semantics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SubShader"><span class="nav-number">3.</span> <span class="nav-text">SubShader</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tags-“TagName1”-”Value1”-“TagName2”-”Value2”"><span class="nav-number">3.1.</span> <span class="nav-text">Tags{“TagName1”=”Value1” “TagName2”=”Value2”}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue"><span class="nav-number">3.2.</span> <span class="nav-text">Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RenderType"><span class="nav-number">3.3.</span> <span class="nav-text">RenderType</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DisableBatching"><span class="nav-number">3.4.</span> <span class="nav-text">DisableBatching</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Math"><span class="nav-number">4.</span> <span class="nav-text">Math</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot-a-b"><span class="nav-number">4.1.</span> <span class="nav-text">dot(a,b)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Miscellaneous"><span class="nav-number">5.</span> <span class="nav-text">Miscellaneous</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内置函数"><span class="nav-number">6.</span> <span class="nav-text">内置函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pragma-fragementoption-ARB-precision-hint-fastest"><span class="nav-number">7.</span> <span class="nav-text">#pragma fragementoption ARB_precision_hint_fastest</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UnpackNormal"><span class="nav-number">8.</span> <span class="nav-text">UnpackNormal</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TANGENT-SPACE-ROTATION"><span class="nav-number">9.</span> <span class="nav-text">TANGENT_SPACE_ROTATION</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UNITY-MATRIX-IT-MV"><span class="nav-number">10.</span> <span class="nav-text">UNITY_MATRIX_IT_MV</span></a></li></ol></div>
             
 
           </div>
