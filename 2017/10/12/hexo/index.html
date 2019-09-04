@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -137,18 +141,18 @@
 
 
 
-  <meta name="description" content="安装npm install -g hexo-cli 如果提示timeout的话，使用下面指令 npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_waves: false 嵌入PDFnpm install —save hexo-pdf添加 hexo depl">
+  <meta name="description" content="&amp;lt;span id=&amp;quot;jump&amp;quot;&amp;gt;跳转到的地方&amp;lt;/span&amp;gt;跳转到的地方 安装npm install -g hexo-cli如果提示timeout的话，使用下面指令npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Manual">
 <meta property="og:url" content="http://zentia.github.io/2017/10/12/hexo/index.html">
-<meta property="og:site_name">
-<meta property="og:description" content="安装npm install -g hexo-cli 如果提示timeout的话，使用下面指令 npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_waves: false 嵌入PDFnpm install —save hexo-pdf添加 hexo depl">
+<meta property="og:site_name" content="莫得感情的杀手">
+<meta property="og:description" content="&amp;lt;span id=&amp;quot;jump&amp;quot;&amp;gt;跳转到的地方&amp;lt;/span&amp;gt;跳转到的地方 安装npm install -g hexo-cli如果提示timeout的话，使用下面指令npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-22T06:11:15.345Z">
+<meta property="og:updated_time" content="2019-09-04T04:56:35.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo Manual">
-<meta name="twitter:description" content="安装npm install -g hexo-cli 如果提示timeout的话，使用下面指令 npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_waves: false 嵌入PDFnpm install —save hexo-pdf添加 hexo depl">
+<meta name="twitter:description" content="&amp;lt;span id=&amp;quot;jump&amp;quot;&amp;gt;跳转到的地方&amp;lt;/span&amp;gt;跳转到的地方 安装npm install -g hexo-cli如果提示timeout的话，使用下面指令npm config delete proxy 关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段1three_">
 
 
 
@@ -165,7 +169,7 @@
   };
 </script>
 
-  <title>Hexo Manual | </title>
+  <title>Hexo Manual | 莫得感情的杀手</title>
   
 
 
@@ -224,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -387,13 +391,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -469,17 +473,12 @@
       
 
       
-        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre><code>npm install -g hexo-cli
-</code></pre><p>如果提示timeout的话，使用下面指令</p>
-<pre><code>npm config delete proxy
-</code></pre><h1 id="关闭背景动画"><a href="#关闭背景动画" class="headerlink" title="关闭背景动画"></a>关闭背景动画</h1><p>背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">three_waves: <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="嵌入PDF"><a href="#嵌入PDF" class="headerlink" title="嵌入PDF"></a>嵌入PDF</h1><p>npm install —save hexo-pdf<br>添加</p>
-<pre><code>hexo deploy -- 发布
-</code></pre><p>编辑主题的 source/css/_variables/custom.styl 文件，新增变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 修改成你期望的宽度</span><br><span class="line">$content-desktop = 700px</span><br><span class="line"></span><br><span class="line">// 当视窗超过 1600px 后的宽度</span><br><span class="line">$content-desktop-large = 900px</span><br></pre></td></tr></table></figure></p>
-<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><pre><code>hexo d -g
-</code></pre><p>如果发布失败的话，将ssh换成<a href="https://github.com/zentia/zentia.github.io.git" target="_blank" rel="noopener">https://github.com/zentia/zentia.github.io.git</a></p>
-<h1 id="Insert-Image"><a href="#Insert-Image" class="headerlink" title="Insert Image"></a>Insert Image</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img example.jpg This is an example image %&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font size = 4 color=red&gt;&lt;/font&gt; # 字体大小颜色设置</span><br></pre></td></tr></table></figure>
+        <p><code>&lt;span id=&quot;jump&quot;&gt;跳转到的地方&lt;/span&gt;</code><br><span id="jump">跳转到的地方</span></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p><code>npm install -g hexo-cli</code><br>如果提示timeout的话，使用下面指令<br><code>npm config delete proxy</code></p>
+<h1 id="关闭背景动画"><a href="#关闭背景动画" class="headerlink" title="关闭背景动画"></a>关闭背景动画</h1><p>背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">three_waves: <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="嵌入PDF"><a href="#嵌入PDF" class="headerlink" title="嵌入PDF"></a>嵌入PDF</h1><p><code>npm install --save hexo-pdf</code><br>添加<br><code>hexo deploy -- 发布</code><br>编辑主题的 source/css/_variables/custom.styl 文件，新增变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 修改成你期望的宽度</span><br><span class="line">$content-desktop = 700px</span><br><span class="line"></span><br><span class="line">// 当视窗超过 1600px 后的宽度</span><br><span class="line">$content-desktop-large = 900px</span><br></pre></td></tr></table></figure></p>
+<h1 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h1><p><code>hexo d -g</code><br>如果发布失败的话，将ssh换成<a href="https://github.com/zentia/zentia.github.io.git" target="_blank" rel="noopener">https://github.com/zentia/zentia.github.io.git</a></p>
+<h1 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h1><p><code>&lt;font size = 4 color=red&gt;&lt;/font&gt; # 字体大小颜色设置</code></p>
 <ul>
 <li><strong>列表嵌套</strong><ul>
 <li>上一级和下一级之间敲三个空格即可</li>
@@ -516,9 +515,9 @@
 </div>
 <h1 id="修复图片展示"><a href="#修复图片展示" class="headerlink" title="修复图片展示"></a>修复图片展示</h1><p>新建博文，设置type: “picture”，使用{\% gp x-x \%} … {\% endgp \%}标签引用要展示的图片地址，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Naruto-Pictures</span><br><span class="line">categories: [图片]</span><br><span class="line">tags: [picture,naruto]</span><br><span class="line">date: 2016-09-02 14:36:04</span><br><span class="line">keywords: picture,naruto</span><br><span class="line">type: &quot;picture&quot;</span><br><span class="line">top: 999</span><br><span class="line">---</span><br><span class="line">&#123;% gp 5-3 %&#125;</span><br><span class="line">![](https://cdn.ehlxr.top/post/18210.jpg)</span><br><span class="line">![](https://cdn.ehlxr.top/post/196232.jpg)</span><br><span class="line">![](https://cdn.ehlxr.top/post/224147.jpg)</span><br><span class="line">![](https://cdn.ehlxr.top/post/199301.jpg)</span><br><span class="line">![](https://cdn.ehlxr.top/post/213318.jpg)</span><br><span class="line">&#123;% endgp %&#125;</span><br></pre></td></tr></table></figure></p>
 <p>{\% gp 5-3 \%}：设置图片展示效果，参考 theme/next/scripts/tags/group-pictures.js 注释示意图。<br>主题目前首页可以正常显示步骤 8.2 设置的图片效果，但是点击进入后显示效果丢失，所以需要修改一下文件 themes\next\source\css_common\components\tags\group-pictures.styl 中的以下样式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.page-post-detail .post-body .group-picture-column &#123;</span><br><span class="line">  // float: none;</span><br><span class="line">  margin-top: 10px;</span><br><span class="line">  // width: auto !important;</span><br><span class="line">  img &#123; margin: 0 auto; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="algolia"><a href="#algolia" class="headerlink" title="algolia"></a>algolia</h1><p>由于zentia.site这个域名没有备案，导致一直无法使用，然后只能使用zentia.github.io。然后一直没有更新algolia导致搜索还是访问之前的源，这个问题痛苦了好久。然后今天解决</p>
-<pre><code>hexo algolia
-</code></pre><p>可能会提示”ERROR [hexo-algolia] Please set an <code>HEXO_ALGOLIA_INDEXING_KEY</code> environment varia”这个问题，然后”export HEXO_ALGOLIA_INDEXING_KEY=’f4ca7ae2408d2e27ffc8269ad8d34273’”这样就解决了。</p>
+<h1 id="algolia"><a href="#algolia" class="headerlink" title="algolia"></a>algolia</h1><p>由于zentia.site这个域名没有备案，导致一直无法使用，然后只能使用zentia.github.io。然后一直没有更新algolia导致搜索还是访问之前的源，这个问题痛苦了好久。然后今天解决<br><code>hexo algolia</code><br>可能会提示<br><code>ERROR [hexo-algolia] Please set an HEXO_ALGOLIA_INDEXING_KEY environment varia</code><br>这个问题，然后<code>export HEXO_ALGOLIA_INDEXING_KEY=&#39;f4ca7ae2408d2e27ffc8269ad8d34273&#39;</code>这样就解决了。</p>
+<h1 id="上下标"><a href="#上下标" class="headerlink" title="上下标"></a>上下标</h1><p><code>H&lt;sub&gt;2&lt;/sub&gt;O CO&lt;sub&gt;2&lt;/sub&gt;</code><br><code>引用&lt;sup&gt;&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot; title=&quot;百度一下&quot;&gt;[1]&lt;/a&gt;&lt;/sup&gt;</code><br>引用<sup><a href="http://www.baidu.com" target="_blank" title="百度一下">[1]</a></sup></p>
+<h1 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h1><p><code>[点击跳转](#jump)</code><br><a href="#jump">点击跳转</a></p>
 
       
     </div>
@@ -629,7 +628,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -640,7 +639,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1033,7 +1032,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭背景动画"><span class="nav-number">2.</span> <span class="nav-text">关闭背景动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌入PDF"><span class="nav-number">3.</span> <span class="nav-text">嵌入PDF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">4.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Insert-Image"><span class="nav-number">5.</span> <span class="nav-text">Insert Image</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Font"><span class="nav-number">6.</span> <span class="nav-text">Font</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修复图片展示"><span class="nav-number">7.</span> <span class="nav-text">修复图片展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#algolia"><span class="nav-number">8.</span> <span class="nav-text">algolia</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭背景动画"><span class="nav-number">2.</span> <span class="nav-text">关闭背景动画</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#嵌入PDF"><span class="nav-number">3.</span> <span class="nav-text">嵌入PDF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布"><span class="nav-number">4.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Font"><span class="nav-number">5.</span> <span class="nav-text">Font</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修复图片展示"><span class="nav-number">6.</span> <span class="nav-text">修复图片展示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#algolia"><span class="nav-number">7.</span> <span class="nav-text">algolia</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上下标"><span class="nav-number">8.</span> <span class="nav-text">上下标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跳转"><span class="nav-number">9.</span> <span class="nav-text">跳转</span></a></li></ol></div>
             
 
           </div>
@@ -1058,7 +1057,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1145,6 +1144,8 @@
 
 
 
+  
+
 
 
   
@@ -1178,6 +1179,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

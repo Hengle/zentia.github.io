@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="非真实感渲染">
 <meta property="og:url" content="http://zentia.github.io/2019/04/28/Non-photorealistic-rendering/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="卡通风格的渲染实现方式：基于色调的着色技术（tone-based shading）高光：一块块分界明显的纯色区域 渲染轮廓线 基于观察者角度和表面法线的轮廓线渲染。使用视角方向和表面法线的点乘结果得到轮廓线信息。优点可以在一个Pass中得到渲染结果，但效果不好。 过程式几何轮廓线渲染，使用两个Pass渲染。第一个Pass渲染背面的面片，第二个Pass渲染正面的面片，适用于绝大多数表面平滑的模型，缺">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.github.io/2019/04/28/Non-photorealistic-rendering/1.jpg">
@@ -169,7 +173,7 @@
   };
 </script>
 
-  <title>非真实感渲染 | </title>
+  <title>非真实感渲染 | 莫得感情的杀手</title>
   
 
 
@@ -228,7 +232,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -391,13 +395,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/28/Non-photorealistic-rendering/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -619,7 +623,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -630,7 +634,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1048,7 +1052,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1135,6 +1139,8 @@
 
 
 
+  
+
 
 
   
@@ -1168,6 +1174,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

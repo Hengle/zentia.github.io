@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -138,12 +142,12 @@
 
 
   <meta property="og:type" content="website">
-<meta property="og:title">
+<meta property="og:title" content="莫得感情的杀手">
 <meta property="og:url" content="http://zentia.github.io/page/31/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:locale" content="zh-CN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title">
+<meta name="twitter:title" content="莫得感情的杀手">
 
 
 
@@ -160,7 +164,7 @@
   };
 </script>
 
-  <title></title>
+  <title>莫得感情的杀手</title>
   
 
 
@@ -220,7 +224,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -378,16 +382,167 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/hexo/">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/servercfg/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/12/servercfg/" class="post-title-link" itemprop="url">服务器配置文件说明</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2017/10/12/servercfg/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2017/10/12/servercfg/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              摘要：本文档描述手游服务器的各个配置文件的使用和配置参数说明。关键字：服务器 维护 配置
+1.概述请先参考《游戏系统架构》以了解手游的服务器架构状况。手游的所有配置文件都采用相同的格式。运维人员会经常用到的配置文件特性有：注释，文件包含include、宏定义、条件读取。
+2.各个服务器主要配置参数说
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2017/10/12/servercfg/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="莫得感情的杀手">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -461,10 +616,9 @@
         
           
             <p>
-              安装npm install -g hexo-cli
-如果提示timeout的话，使用下面指令
-npm config delete proxy
-关闭背景动画背景动画基于canvas，个人感觉比较耗，毕竟i3，所以关闭，在\themes\next_config.yml中修改字段three_waves: 
+              &lt;span id=&quot;jump&quot;&gt;跳转到的地方&lt;/span&gt;跳转到的地方
+安装npm install -g hexo-cli如果提示timeout的话，使用下面指令npm config delete proxy
+关闭背景动画背景动画基于canvas，个人感觉
               ...
             </p>
           <!--noindex-->
@@ -533,13 +687,13 @@ npm config delete proxy
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/git-question/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -682,13 +836,13 @@ npm config delete proxy
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/12/The-following-untracked/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -832,13 +986,13 @@ npm config delete proxy
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/11/init-server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -982,13 +1136,13 @@ clone git仓库上传代码git commit -am ““, 将所有修改，但未进sta
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/05/2d-outline/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -1132,13 +1286,13 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/05/pixel-and-voxel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -1283,13 +1437,13 @@ Shader &quot;Hidden/NewImageEffectShader&quot;&#123;    Prope
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/04/assetSplit-dynamicLoad/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -1464,13 +1618,13 @@ T4M
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/03/lightmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -1613,13 +1767,13 @@ T4M
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/02/ABTheory/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -1761,155 +1915,6 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/09/29/AI/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2017/09/29/AI/" class="post-title-link" itemprop="url">AI</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2017/09/29/AI/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2017/09/29/AI/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              ML（机器学习）与AI(人工智能）首先来介绍下Machine Learning(机器学习，下文简称ML）和游戏Artificial Intelligence(人工智能，下文简称AI）间的关系。现存的大部分游戏AI都是手工源码，由大量决策树组成，有时会包含多达数千条规则。而且必须由手工维护和测试。而M
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2017/09/29/AI/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1945,7 +1950,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -1956,7 +1961,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2357,7 +2362,7 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -2444,6 +2449,8 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
 
 
 
+  
+
 
 
   
@@ -2477,6 +2484,9 @@ Bundle之间也存在着依赖。AssetBundle带有三种压缩选项：不压缩
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

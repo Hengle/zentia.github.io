@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="虚幻引擎学习之路：渲染模块之光照系统">
 <meta property="og:url" content="http://zentia.github.io/2017/12/10/Study_unreal4_Rendering_1/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="我们准备从三方面来介绍Unreal 4引擎的渲染模块，主要包括：光照系统，材质系统喝图像后处理。本篇文章重点讲解第一部分：光照系统。在对比Unreal 4与Unity两者引擎时，本文分别采用的版本是Unreal 4.18.1和Unity 5.3.8.f1。 本节将介绍Unreal 4引擎的光照系统。在介绍基础功能时，本文将分四块进行介绍，主要包括：光源、全局光照、阴影以及反射效果。同时，本文将与U">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-22T04:52:39.981Z">
@@ -165,7 +169,7 @@
   };
 </script>
 
-  <title>虚幻引擎学习之路：渲染模块之光照系统 | </title>
+  <title>虚幻引擎学习之路：渲染模块之光照系统 | 莫得感情的杀手</title>
   
 
 
@@ -224,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -387,13 +391,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/12/10/Study_unreal4_Rendering_1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -585,7 +589,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -596,7 +600,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1014,7 +1018,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1101,6 +1105,8 @@
 
 
 
+  
+
 
 
   
@@ -1134,6 +1140,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

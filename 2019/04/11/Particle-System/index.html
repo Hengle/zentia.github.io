@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="第十四章 粒子系统(Particle Systems)">
 <meta property="og:url" content="http://zentia.github.io/2019/04/11/Particle-System/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="许多自然现象是由很多小的小颗粒组成的，它们有相似的行为。（例如，雪花落下，闪烁的火焰，冲出枪管的“子弹”），粒子系统用来模拟这种现象。目标：  学习我们给定的粒子属性，如何描述D3D中的粒子。 设计一个灵活的粒子基系统的基类，包括一般的粒子系统都有的属性和方法。 模拟3个具体的粒子系统，雪、爆炸、粒子枪。14.1 粒子和点精灵（Point Sprite） 粒子是一个很小的对象，它通常用来模拟">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-22T04:52:39.963Z">
@@ -165,7 +169,7 @@
   };
 </script>
 
-  <title>第十四章 粒子系统(Particle Systems) | </title>
+  <title>第十四章 粒子系统(Particle Systems) | 莫得感情的杀手</title>
   
 
 
@@ -224,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -387,13 +391,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/Particle-System/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -898,7 +902,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -909,7 +913,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1310,7 +1314,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1397,6 +1401,8 @@
 
 
 
+  
+
 
 
   
@@ -1430,6 +1436,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

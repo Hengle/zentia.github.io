@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -141,7 +145,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="第十九章 效果架构(The Effects Framework)">
 <meta property="og:url" content="http://zentia.github.io/2019/04/11/The-Effects-Framework/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="概述一个渲染效果一般由以下部分组成：一个顶点和/或像素着色器，一个需要设置的设备状态列表，一个或更多的渲染通道（rendering passes）。此外，有一个能在不同级别的图形硬件上渲染效果的可靠机制通常是值得的（也就是说，有不同的可用的效果版本执行同样的效果或尽可能尝试执行同样的效果）。显然，所有这些必要的任务组合在一起成为一个效果。因此，一个合理的做法是，设法将这些任务封装到一个单元中。Di">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-22T04:52:39.983Z">
@@ -164,7 +168,7 @@
   };
 </script>
 
-  <title>第十九章 效果架构(The Effects Framework) | </title>
+  <title>第十九章 效果架构(The Effects Framework) | 莫得感情的杀手</title>
   
 
 
@@ -223,7 +227,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -386,13 +390,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/11/The-Effects-Framework/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -749,7 +753,7 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -760,7 +764,7 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1178,7 +1182,7 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1265,6 +1269,8 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
 
 
 
+  
+
 
 
   
@@ -1298,6 +1304,9 @@ m_LightTexEffect-&gt;SetMatrix( m_ProjMatrixHandle, &amp;P);
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

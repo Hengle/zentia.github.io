@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="光线跟踪">
 <meta property="og:url" content="http://zentia.github.io/2019/05/27/RayTracying/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="RayTracyingRayTracying最关键的点是：  👁看出去的世界 而非世界如何达到👁  这也是这个算法叫做ray tracying - 光线跟踪的原因。 例子1.预备知识1.1 屏幕坐标 vs 画布坐标一般来说屏幕坐标都是始于左上角，然后朝右和下延伸。  不过这里为了作图方便，我们把坐标系按照数学中更常见的方式把原点放于屏幕中央，x和y的延伸方向按照平时的习惯来放。  这样可以知道">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.github.io/2019/05/27/RayTracying/raytracing.png">
@@ -178,7 +182,7 @@
   };
 </script>
 
-  <title>光线跟踪 | </title>
+  <title>光线跟踪 | 莫得感情的杀手</title>
   
 
 
@@ -237,7 +241,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -400,13 +404,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/05/27/RayTracying/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -697,7 +701,7 @@ k_3 = |\overrightarrow{OC}|^2 -r^2</script><p>这就变成解关于t的一元二
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -708,7 +712,7 @@ k_3 = |\overrightarrow{OC}|^2 -r^2</script><p>这就变成解关于t的一元二
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1126,7 +1130,7 @@ k_3 = |\overrightarrow{OC}|^2 -r^2</script><p>这就变成解关于t的一元二
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1213,6 +1217,8 @@ k_3 = |\overrightarrow{OC}|^2 -r^2</script><p>这就变成解关于t的一元二
 
 
 
+  
+
 
 
   
@@ -1246,6 +1252,9 @@ k_3 = |\overrightarrow{OC}|^2 -r^2</script><p>这就变成解关于t的一元二
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

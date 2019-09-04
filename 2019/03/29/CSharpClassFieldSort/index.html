@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="C#中静态字段和类成员的执行顺序">
 <meta property="og:url" content="http://zentia.github.io/2019/03/29/CSharpClassFieldSort/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="先进行细分：类的成员分为：字段、属性、方法、构造方法成员的修饰符：静态成员、实例成员层次结构：父类、子类 先不考虑继承关系，执行顺序为：  静态字段 静态构造方法 实例字段 实例构造方法  在考虑继承关系，执行顺序为：  子类的静态字段 子类的静态构造方法 子类的实例字段 父类的静态字段 父类的静态构造方法 父类的实例字段 父类的实例构造方法 子类的实例构造方法  类的静态字段变量初始值设定项对应">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-22T04:52:39.924Z">
@@ -165,7 +169,7 @@
   };
 </script>
 
-  <title>C#中静态字段和类成员的执行顺序 | </title>
+  <title>C#中静态字段和类成员的执行顺序 | 莫得感情的杀手</title>
   
 
 
@@ -224,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -387,13 +391,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/03/29/CSharpClassFieldSort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -606,7 +610,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -617,7 +621,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1018,7 +1022,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1105,6 +1109,8 @@
 
 
 
+  
+
 
 
   
@@ -1138,6 +1144,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

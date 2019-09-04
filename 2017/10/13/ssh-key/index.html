@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssh">
 <meta property="og:url" content="http://zentia.github.io/2017/10/13/ssh-key/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="ssh中，有两个钥匙：公钥、私钥，公钥主要是用于对一些敏感信息进行加密，私钥适用于解密。ssh的文件都存在于机器~/.ssh中。  客户端：id_rsa(私钥)、id_rsa.pub(公钥)、known_hosts(已知远程主机) 服务端: authorized_keys(验证过的公钥列表)、sshd_config(ssh配置文件)  设置ssh连接不断开vim /etc/ssh/sshd_con">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-05-22T04:52:40.117Z">
@@ -165,7 +169,7 @@
   };
 </script>
 
-  <title>ssh | </title>
+  <title>ssh | 莫得感情的杀手</title>
   
 
 
@@ -224,7 +228,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -387,13 +391,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2017/10/13/ssh-key/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -590,7 +594,7 @@ service sshd restart
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -601,7 +605,7 @@ service sshd restart
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1019,7 +1023,7 @@ service sshd restart
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1106,6 +1110,8 @@ service sshd restart
 
 
 
+  
+
 
 
   
@@ -1139,6 +1145,9 @@ service sshd restart
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>

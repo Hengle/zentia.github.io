@@ -43,6 +43,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
 
 
 
@@ -116,7 +120,7 @@
     scheme: 'Mist',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
-    fancybox: false,
+    fancybox: true,
     fastclick: false,
     lazyload: false,
     tabs: true,
@@ -142,7 +146,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="【spine】反向动力学 Inverse Kinematics (IK)">
 <meta property="og:url" content="http://zentia.github.io/2019/04/30/spine-IK/index.html">
-<meta property="og:site_name">
+<meta property="og:site_name" content="莫得感情的杀手">
 <meta property="og:description" content="通常情况下，我们使用FK工具设置动画，它是正向动力学的缩写。当设置手部位置动画时，FK从上至下驱动，先转动大臂，再转动小臂来实现。大多数情况下它能很好的达到我们想要的效果。但某些特殊情况比如：一个坐着的角色手扶桌面，慢慢起身，这时FK需要不段的调整手部的位置，以使其能保持按在桌面上。这将需要创建大量关键帧来实现。IK对于这种情况会更合适，它是反向动力学的缩写。IK从下至上驱动。设置好手部的位置后，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://zentia.github.io/2019/04/30/spine-IK/1.png">
@@ -172,7 +176,7 @@
   };
 </script>
 
-  <title>【spine】反向动力学 Inverse Kinematics (IK) | </title>
+  <title>【spine】反向动力学 Inverse Kinematics (IK) | 莫得感情的杀手</title>
   
 
 
@@ -231,7 +235,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title"></span>
+        <span class="site-title">莫得感情的杀手</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -394,13 +398,13 @@
     <link itemprop="mainEntityOfPage" href="http://zentia.github.io/2019/04/30/spine-IK/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
       <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content>
+      <meta itemprop="name" content="莫得感情的杀手">
     </span>
 
     
@@ -606,7 +610,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-author-name" itemprop="name">莫得感情的杀手</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -617,7 +621,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">318</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1035,7 +1039,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder"></span>
+  <span class="author" itemprop="copyrightHolder">莫得感情的杀手</span>
 
   
 
@@ -1122,6 +1126,8 @@
 
 
 
+  
+
 
 
   
@@ -1155,6 +1161,9 @@
 
   
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
   
   <script src="/lib/three/three.min.js"></script>
