@@ -151,7 +151,7 @@
 <meta property="og:image" content="http://zentia.github.io/2019/09/04/GPU-Optimize/1.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/09/04/GPU-Optimize/2.jpg">
 <meta property="og:image" content="http://zentia.github.io/2019/09/04/GPU-Optimize/3.jpg">
-<meta property="og:updated_time" content="2019-09-04T05:35:38.324Z">
+<meta property="og:updated_time" content="2019-09-05T07:59:23.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="当我们谈优化时，我们谈些什么">
 <meta name="twitter:description" content="过去几年里，我经历过大约几十场面试，几乎在每次面试的时候，面试官都会提问一个问题：“你在渲染性能优化方面有什么经验？”这个时候我就会开始揣测面试官的意图，试着去回忆他之前提的问题，看看面试官到底想听什么样的回答，往往这种尝试都是失败的，结果就是不知道从何说起，因为没有具体的情景，最后只能说“整个渲染流程中很多地方都可能出现瓶颈，只能case by case的去查看，找到项目的具体瓶颈，然后针对性的">
@@ -482,6 +482,8 @@
 <h1 id="说说GPU架构"><a href="#说说GPU架构" class="headerlink" title="说说GPU架构"></a>说说GPU架构</h1><p>核弹厂有一篇关于自己GPU架构和逻辑管线的非常好的文章<sup><a href="https://developer.nvidia.com/content/life-triangle-nvidias-logical-pipeline" target="_blank" title="life is triangle">[1]</a></sup>，如果你想要对GPU的结构有一个完整系统的认识，请一定不要错过。比较可惜的是，这边文章只更新到Maxwell这代架构，没有较新的Pascal架构（GTX10x0系列）和Turing架构（RTX20x0）的技术细节，不过总体来说，现代GPU的设计架构已经趋于稳定，一般只是针对某些单元做优化，或者增加feature，所以文章中的大部分内容仍然是有效的，这是文中的一张图：<br><img src="/2019/09/04/GPU-Optimize/2.jpg"><br>这张图是基于数据的流向，对GPU的硬件单元进行了大致的划分，实际上GPU中，最核心的部分可以被分为三大块，我画了图中示意他们大致的协作模式：<br><img src="/2019/09/04/GPU-Optimize/3.jpg"><br>通常来说，GPU会有三个比较重要的部分，分别是控制模块，计算模块（图中GPC）和输出模块（图中的FBP）。通常来说，GPU架构的设计需要有课伸缩性，这样通过增加/阉割计算和输出模块，就能产生性能不同的同架构产品（比如GTX1070和GTX1080的主要区别就是GPC和FBP的数量），以满足不同消费水平和应用场景的需求。</p>
 <h1 id="控制模块"><a href="#控制模块" class="headerlink" title="控制模块"></a>控制模块</h1><p>控制模块负责接收和验证（主要是Host和Front End）来自CPU的经过打包的PushBuffer（经过Driver翻译的Command Buffer），然后读取顶点索引（注意是Vertex Indices不是Vertex Attributes，主要是由Primitive Distributor负责）分发到下游管线或者读取Compute Grid的信息（主要由CWD负责，这部分是Compute Pipeline，不做展开）并向下游分发给CTA。</p>
 <p>Tips：计算管线和图形管线共享大部分的芯片单元，只在分发控制的单元上各自独享（PD和CWD）。许多较新的Desktop GPU允许图形和计算管线并行执行，可以在一些SM压力轻的图形计算环节（比如Shadow Map绘制），利用Compute Shader去做一些SM压力重的工作（比如后处理），让各个硬件单元的负载更加平衡。</p>
+<h1 id="什么情景会造成性能瓶颈？"><a href="#什么情景会造成性能瓶颈？" class="headerlink" title="什么情景会造成性能瓶颈？"></a>什么情景会造成性能瓶颈？</h1><h1 id="Shader的优化"><a href="#Shader的优化" class="headerlink" title="Shader的优化"></a>Shader的优化</h1><h2 id="减少分支"><a href="#减少分支" class="headerlink" title="减少分支"></a>减少分支</h2><p>我们已经解释过GPU是如何实现分支的，</p>
+<h1 id="用贴图缓存中间计算结果？"><a href="#用贴图缓存中间计算结果？" class="headerlink" title="用贴图缓存中间计算结果？"></a>用贴图缓存中间计算结果？</h1><p>很多时候，我们会把一些数学上的中间计算缓存到一张贴图里，这些贴图的数值本身不代表视觉信息，而是纯粹的数学。比如Marschner Hair Mode用LUT去存BRDF；UE4用LUT去存储PBR的环境光BRDF。</p>
 
       
     </div>
@@ -597,7 +599,7 @@
                 
                   <a href="/archives">
                 
-                    <span class="site-state-item-count">319</span>
+                    <span class="site-state-item-count">324</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -710,7 +712,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">50</span>
+                      
+                    
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -990,7 +994,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说说GPU架构"><span class="nav-number">1.</span> <span class="nav-text">说说GPU架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制模块"><span class="nav-number">2.</span> <span class="nav-text">控制模块</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#说说GPU架构"><span class="nav-number">1.</span> <span class="nav-text">说说GPU架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制模块"><span class="nav-number">2.</span> <span class="nav-text">控制模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么情景会造成性能瓶颈？"><span class="nav-number">3.</span> <span class="nav-text">什么情景会造成性能瓶颈？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shader的优化"><span class="nav-number">4.</span> <span class="nav-text">Shader的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#减少分支"><span class="nav-number">4.1.</span> <span class="nav-text">减少分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用贴图缓存中间计算结果？"><span class="nav-number">5.</span> <span class="nav-text">用贴图缓存中间计算结果？</span></a></li></ol></div>
             
 
           </div>
